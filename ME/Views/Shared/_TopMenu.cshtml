@@ -1,0 +1,45 @@
+﻿@model IEnumerable<HRRcp.Areas.ME.Models.ME_SqlMenu>
+
+@foreach (var menu in Model)
+{
+    if (menu.ParentId == 0)
+    {
+
+        <ul id="@menu.Id" class="dropdown-content">
+            @foreach (var item in Model.Where(x => x.ParentId == menu.Id))
+            {
+
+                <li>
+                    <a href="@Url.Action(item.Par1, item.Par2)">@item.MenuText</a>
+                </li>
+            }
+        </ul>
+    }
+}
+
+
+<nav>
+    <div class="nav-wrapper white" id="nav">
+
+        <a href="#!" class="brand-logo" style="padding-left: 20px; color: #26eb00;">Logo<i class="material-icons right">donut_small</i></a>
+        <ul class="right hide-on-med-and-down">
+            @foreach (var menu in Model)
+            {
+                if (menu.ParentId == 0)
+                {
+                <li>
+                    <a class="dropdown-button cznav" href="@Url.Action(menu.Par1, menu.Par2)" 
+                       data-activates="@menu.Id" data-beloworigin="true">
+                        @menu.MenuText
+                        <i class="material-icons left">@menu.Image</i>
+                    </a>
+
+
+                </li>
+                }
+            }
+        </ul>
+    </div>
+
+</nav>
+

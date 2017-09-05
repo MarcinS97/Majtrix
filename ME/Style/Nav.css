@@ -1,0 +1,63 @@
+﻿.cznav {
+    font-size: 15px;
+    color: #343434;
+}
+
+body {
+    background-color: #f3f3f3 !important;
+}
+
+i {
+    font-size: 25px !important;
+}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v29/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+
+
+nav ul li a{
+    padding: 0px 25px 0px 25px;
+    
+}
+.dropdown-content li a{
+    font-size:14px !important;
+    
+}
+
+
+
+
+/*.nav-wrapper ul li a{
+    color: black;
+}
+
+.nav-wrapper ul li a:hover {
+    color: white;
+    background-color: black;
+}*/
+
+/*.nav-wrapper a {
+    color: black;
+}*/
