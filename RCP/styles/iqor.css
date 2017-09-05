@@ -1,0 +1,399 @@
+﻿/*----- topMenu padding -----*/
+div.topMenu div.mmStrip span.mmItem div.mmCaption div.mmText span,
+div.topMenu table.mmStrip table.mmItem div.mmCaption div.mmText span
+{
+    padding: 0px 0px 0px 0px;    
+}
+
+/*----- PORTAL -----*/
+div#portal { height: 100%; text-align: left; }
+table.portal { height: 100%; }
+table.portal td.menu { width: 220px; vertical-align: top; padding:0px; }
+table.portal td.content { vertical-align: top; xpadding-left: 10px; padding-right: 16px; }
+table.portal td.portal_right { width: 198px; }
+
+
+/*----- PORTAL - LEFT MENU -----*/
+div.mnKategorie  
+{
+    cursor:pointer;
+    width:220px;
+    height:1024px !important;
+    overflow:hidden !important;
+    
+    font-family:Segoe UI !important;
+    position:relative;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    background-color:#414141;
+    background-image:none;
+    z-index:5;
+    border-right:1px solid #e1e1e1;
+    }
+div.mnKategorie table {  }
+div.mnKategorie table td { overflow:hidden; padding: 0px; xborder: solid 1px red; }
+div.mnKategorie a,
+div.mnKategorie span 
+{
+    overflow:hidden;
+    color:#a6a6a6;
+    font-size:20px;
+    text-decoration: none;
+    margin-left:10px;
+    width:180px;
+    height:40px;
+    margin-top:10px;
+    margin-bottom:-12px;
+    line-height:40px;
+    background-color:transparent;
+    background-image:none;
+    display:inline-block;
+    padding-left:10px;
+    padding-right:10px;
+    text-shadow:0px 0px 2px black;
+    border-radius:0px 0px 0px 0px;
+    transition: background 0.5s, box-shadow 0.8s;
+    border:none;
+}
+
+div.mnKategorie span:active{color:inherit;}
+div.mnKategorie span:hover{background:#232323; color:White;  }
+div.mnKategorie a { text-decoration: none; }
+div.mnKategorie a.button_postback { display: none; }
+
+div.mnKategorie div.mnKategoriaSelected span 
+{
+    overflow:hidden; 
+    color: #a6a6a6; 
+    text-shadow:none; 
+    margin-left:10px !important;
+    width:180px;
+    background:#232323;
+    box-shadow:0px 1px 1px black inset;
+}
+
+div.mnKategorieContent {overflow:hidden; xborder: solid 1px green; }
+table.mnPodKategorie  
+{
+    overflow:hidden; 
+    background:#232323;
+    width:200px;
+    margin-left:10px;
+    border-radius:0px 0px 0px 0px;
+    box-shadow:0px -3px 1px black inset;
+}
+table.mnPodKategorie a, 
+table.mnPodKategorie span 
+{
+    overflow:hidden;
+    color:#a6a6a6;
+    font-size:20px;
+    text-decoration: none;
+    text-align:left;
+    margin-left:10px ;
+    margin-right:10px ;
+    margin-top:4px;
+    margin-bottom:10px;
+    padding:0px ;
+    width:180px ;
+    height:40px;
+    line-height:40px;
+    background:none;
+    display:inline-block;
+}
+
+table.mnPodKategorie a:hover
+{background:#424242; color:white; box-shadow:none;}    
+
+/*----- HEADER -----*/
+
+#mainformcontent div#header
+{
+	display: block;
+	clear: both;
+	height: 100px;
+	width: 100%; 
+    background-image:url('../images/portal/p2/menu_grad.png');
+    background-repeat:repeat-x;
+    background-position:0px 30px;
+    background-color: #dddddd;
+    border-bottom:1px solid #e1e1e1;
+}
+
+div#mainformcontent div#header div.topMenuContainer {
+    background: url('~/../../images/portal/p2/iqor.png') no-repeat 100px;
+    height:70px;
+    width:1000px;
+}
+
+div#mainformcontent div#header div.topMenuContainer:hover {
+    background-image: url('~/../../images/portal/p2/iqorC.png');
+}
+
+div.topMenu a { height: 1px; display: block; }   /* niektóre przegladarki wyswietlają zawsze height: 1px dla skiplink */ 
+div.topMenu div.mmStrip a.mmItem,
+div.topMenu table.mmStrip a.mmItem { height: auto; }
+
+div.topMenu div.mmStrip,
+div.topMenu table.mmStrip {
+    position: relative;
+    top: -1px;          /* skip link */
+    empty-cells: hide;  /* dla ie78 - td 3px */
+
+    border-collapse: collapse;
+    border-spacing: 0px;    
+    border-width: 0px;
+}
+div.topMenu table.mmStrip {
+    z-index: 100;        /* IE8 fix znika tab*/
+}
+
+div.topMenu table.mmStrip td { vertical-align: top; } 
+
+div.topMenu div.mmStrip td span.mmItem,
+div.topMenu table.mmStrip td table.mmItem {
+    border-collapse: collapse;
+    border-spacing: 0px;    
+    border-width: 0px;
+}
+div.topMenu table.mmStrip table.mmItem td { } 
+
+div.topMenu div.mmStrip a.mmItem { float: left; }
+
+div.topMenu div.mmStrip a.mmItem,
+div.topMenu table.mmStrip a.mmItem { 
+    width: 160px;       /* regulacja szerokości */
+}
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption,
+div.topMenu table.mmStrip table.mmItem div.mmCaption { 
+    position: relative;
+    width: 160px;       /* regulacja szerokości */
+    height: 50px;       /* regulacja wysokości */
+    xbackground-image: none !important;
+    cursor: pointer;
+    
+}
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption div.mmText, 
+div.topMenu table.mmStrip table.mmItem div.mmCaption div.mmText 
+{
+    font-family: Segoe UI, Arial, Verdana, sans-serif;
+    
+    font-weight: normal;
+    font-style: normal;
+    font-size: 19px;
+    line-height: 17px; 
+    color: #555;
+    text-align: left;    
+}
+
+.not_ie .mmItem .mmText { font-size: 12px; }
+.ie .mmItem .mmText { font-size: 12px; }
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption div.mmText span,
+div.topMenu table.mmStrip table.mmItem div.mmCaption div.mmText span
+{
+    color:black;
+    border-left:none;
+    border-bottom:1px solid #e1e1e1;
+    display: block;
+    padding: none;  
+}
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption:hover div.mmText span,
+div.topMenu table.mmStrip table.mmItem div.mmCaption:hover div.mmText span
+{
+    text-shadow:none;    
+}
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption div.mmText div,
+div.topMenu table.mmStrip table.mmItem div.mmCaption div.mmText div
+{
+    font-family: Tahoma, Helvetica, sans-serif;
+
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 12px;
+
+    text-align:right;
+    color:black;
+
+    line-height: 12px; 
+    padding: 2px;
+    
+    white-space: normal !important;
+    height:28px;
+}
+
+div.topMenu table.mmStrip table.mmItem div.mmCaption:hover div.mmText div
+{
+    color:#ED1C24;
+    background:transparent;
+}
+
+.xxxmmItem div#mmCaption5 { border-right: none !important; }
+.mmItem div#mmCaption4 { border-right: none !important; }
+.mmItem div.mmCaption { border-left: none !important; }
+
+.mmItem #mmCaption1 { background:none; }
+.mmItem #mmCaption2 { background:none; }
+.mmItem #mmCaption3 { background:none; }
+.mmItem #mmCaption4 { background:none; }
+.mmItem #mmCaption5 { background:none; }
+
+xx.mmItem div#mmCaption4{border-right:none;}  /* 1-orange 2-green 3-blue 4-red 5-lblue          orange lblue blue red green*/ 
+
+.mmItem #mmCaption:hover { box-shadow: 0px 15px 10px -10px #47A942 }
+
+.mmItem #mmCaption1:hover { background:none; }
+.mmItem #mmCaption2:hover { background:none;}
+.mmItem #mmCaption3:hover { background:none;}
+.mmItem #mmCaption4:hover { background:none; }
+.mmItem #mmCaption5:hover { background:none; }
+
+.mmSelected #mmCaption1 { background:none; }
+.mmSelected #mmCaption2 { background:none; }
+.mmSelected #mmCaption3 { background:none; }
+.mmSelected #mmCaption4 { background:none; }
+.mmSelected #mmCaption5 { background:none; }
+
+
+
+
+/*----- PORTAL -----*/
+div#portal { height: 100%; xborder: solid 1px red; text-align: left; }
+table.portal { height: 100%; xborder: solid 1px green !important; }
+table.portal td.menu { width: 220px; vertical-align: top; padding:0px; }
+table.portal td.content { vertical-align: top; xpadding-left: 10px; padding-right: 16px; }
+table.portal td.portal_right { width: 198px; }
+
+
+
+
+/*----- CONTENT -----*/
+#mainformcontent div#content 
+{
+	min-height: 400px;
+	width: 100%;
+    background:#F1F1F1; 
+ }
+
+
+table.mnPodKategorie tr.sit a,
+table.mnPodKategorie tr.sit span {overflow:hidden; background-color: #DDDDDD; xcolor: Red; }
+
+
+div.page960
+{
+    padding:25px 10px 15px 10px;
+    margin-top:30px;
+    color:black;
+    background:white;
+    border:1px solid #e1e1e1;
+    border-bottom-width:3px;
+    border-bottom-color:#ED1C24;
+    box-shadow:none;
+    border-radius:5px 5px 0px 0px;
+}
+
+/*----- FOOTER -----*/
+#mainformcontent div#footer 
+{
+    min-height: 60px;
+	width: 100%;
+	border-top:1px solid #e1e1e1;
+    background-color:#fff;
+    background-image:url('../images/portal/p2/noisepattern.png');
+    box-shadow:0px 3px 3px #dedede inset;
+}
+
+#mainformcontent #footer div.center
+{
+    margin-top:0px;
+    margin-bottom:0px;
+    height:60px;
+    float:left;
+    margin-left:15px;
+    color:Black;
+    text-shadow:none; 
+} 
+
+#mainformcontent #footer div.center a.right
+{
+    
+}
+
+
+/*----- Imie i nazwisko -----*/
+#mainformcontent div#header div#user span, #mainformcontent div#header div#user a {
+    color: #FFF;
+}
+
+#concept
+{
+    float:left;
+    width:220px;
+    height:70px;
+    color:#000;
+    
+    position:absolute;
+    top:30px;
+    left:0px;
+    
+    background:none;
+    border-right:1px solid #e1e1e1;
+    
+    box-shadow:none;
+    /*
+background: #f7f7f7;
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZWVlZWVlIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background: -moz-linear-gradient(top,  #f7f7f7 10%, #eeeeee 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(10%,#f7f7f7), color-stop(100%,#eeeeee));
+background: -webkit-linear-gradient(top,  #f7f7f7 10%,#eeeeee 100%);
+background: -o-linear-gradient(top,  #f7f7f7 10%,#eeeeee 100%);
+background: -ms-linear-gradient(top,  #f7f7f7 10%,#eeeeee 100%);
+background: linear-gradient(to bottom,  #f7f7f7 10%,#eeeeee 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#eeeeee',GradientType=0 );
+*/
+}
+
+#concept table
+{
+    font-weight:bold;
+    width:100%;
+    height:100%;
+    text-align:center;
+}
+
+#concept table tr td
+{
+    xborder:1px solid white;
+}
+
+div.photo
+{
+    border:2px solid white;
+    background-image:url('../images/portal/p2/stock.png');
+    width:50px;
+    height:50px;
+    border-radius:100%;
+    box-shadow:0px 0px 2px black inset;
+    margin:0 auto;
+}
+
+div.switch
+{
+    width:20px;
+    height:50px;
+    background: url('../images/portal/p2/menu_icon.png') no-repeat center;
+    xbox-shadow:0px 0px 5px black inset;
+    cursor:pointer;
+}
+
+div.switch:hover
+{
+    background-color: #e1e1e1;
+}

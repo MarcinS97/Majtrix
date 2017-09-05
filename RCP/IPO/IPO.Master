@@ -1,0 +1,380 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="IPO.Master.cs" Inherits="HRRcp.IPOMasterPage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register src="~/Controls/Help.ascx" tagname="HelpControl" tagprefix="uc1" %>
+<%@ Register src="~/Controls/FooterControl.ascx" tagname="FooterControl" tagprefix="uc1" %>
+<%@ Register src="~/Controls/Portal/cntSqlMenu.ascx" tagname="cntSqlMenu" tagprefix="uc2" %>
+
+<%@ Register src="~/Controls/Portal/cntAplikacjeMenu.ascx" tagname="cntAplikacjeMenu" tagprefix="uc3" %>
+
+<%@ Register src="~/Controls/Portal/cntKiosSlider.ascx" tagname="cntKiosSlider" tagprefix="uc4" %>
+
+<%--
+<%@ Register src="Controls/HelpControl.ascx" tagname="HelpControl" tagprefix="uc1" %>
+--%>
+
+<!DOCTYPE html public "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>iPO</title>
+
+    <link href="~/styles/master.css" rel="stylesheet" type="text/css" />
+    <link href="~/styles/mainmenu.css" rel="stylesheet" type="text/css" runat="server" id="css1" visible="false"/>
+
+
+    <link href="~/styles/Controls.css" rel="stylesheet" type="text/css" />    
+    <link href="~/styles/Portal.css" rel="stylesheet" type="text/css" />    
+    <link href="~/styles/ui-lightness/jquery-ui-1.8.17.custom.css" rel="stylesheet" type="text/css" />
+    <link href="~/styles/Portal_iQor.css" rel="stylesheet" type="text/css" runat="server" id="cssPortal_iQor" visible="false"/>    
+    <link href="~/styles/Portal_SPX.css" rel="stylesheet" type="text/css" runat="server" id="cssPortal_SPX" visible="false"/>    
+    <link href="~/styles/default/custom.css" rel="stylesheet" type="text/css" runat="server" id="cssPortal" visible="false"/>    
+
+    <link href="~/styles/Portal_Kiosk.css" rel="stylesheet" type="text/css" runat="server" id="cssPortal_Kiosk" visible="false"/>    
+
+
+
+    <link href="~/scripts/slider/jquery.bxslider.css" rel="stylesheet" type="text/css" />
+
+
+
+
+    <link href="<%# ResolveUrl("~/styles/print.css") %>" rel="stylesheet" media="print" type="text/css" />
+
+	<script src="<%# ResolveUrl("~/scripts/jquery-1.7.1/jquery.min.js") %>" type="text/javascript"></script>
+	<script src="<%# ResolveUrl("~/scripts/jquery-ui-1.8.17.custom.min.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/scripts/table2CSV.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/scripts/common.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/scripts/jscolor/jscolor.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/IPO/scripts/IPO.js") %>" type="text/javascript"></script>
+
+
+
+
+    <script src="<%# ResolveUrl("~/scripts/slider/jquery.easing.1.3.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/scripts/slider/jquery.cycle.all.js") %>" type="text/javascript"></script>
+    <script src="<%# ResolveUrl("~/scripts/slider/jquery.bxslider.min.js") %>" type="text/javascript"></script>
+
+
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+    
+    <script type="text/javascript">
+
+
+        $(document).ready(function() {
+
+        });
+
+
+
+
+
+
+        function resize() {
+            var wh = getClientSize();
+            var h = wh[1];
+            if (h < 400) h = 400;
+
+            var c = $('#content');
+            c.height('auto');
+
+          
+
+            var ctop = c.offset().top;
+            if (ctop + c.height() + 25 < h) {
+                var h2 = h - ctop - 25;
+                c.height(h2);
+
+                
+            }
+            showFooter();
+        }
+
+        function initialize() {
+            setColumnIEofs();
+            resize();
+        }
+    </script>
+
+    <script type="text/javascript">
+        var v = getInternetExplorerVersion2();
+        if (v != -1)
+            document.documentElement.className += 'ie ie' + v;
+
+
+        function checkSearch(bt) {
+            var id = bt.id.replace('btSearch','tbSearch');
+            var s = $.trim($('#' + id).val());            
+            return s != '';
+        }
+    </script>
+
+    <asp:PlaceHolder runat="server" id="jsLoginTest" visible="false">
+        <script type="text/javascript" >
+            function testLoginUser(ddl) {
+                var a = ddl.value.split('|');
+                if (a.length > 2) {
+                    if (a[2] == '')
+                        $('#kartaRCP').val(a[1]);
+                    else {
+                        //$('#login').val(a[1]);
+                        $('#login').val(a[0]);
+                        $('#pass').val(a[2]);
+                    }
+
+                    //alert(a[0] + ' ' + a[1] + ' ' + a[2]);
+
+                    document.forms[0].method = 'post';
+                    document.forms[0].action = '/Kiosk/Login.aspx';
+                    document.forms[0].submit();
+                }
+            }
+        </script>
+    </asp:PlaceHolder>
+</head>
+
+
+
+
+
+<body onload="javascript:initialize();" onresize="javascript:resize();" class="not_ie"><!--<![endif]-->
+    <form enctype="multipart/form-data" method="post" class="mainform portal" id="form1" runat="server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" 
+        EnablePartialRendering="true" 
+        EnablePageMethods="true"
+        EnableScriptGlobalization="True">
+    </asp:ToolkitScriptManager>
+
+    <div id="mainformcontent">
+
+		<div id="header" class="printoff" >
+			<div class="center">
+                
+                <div class="topLine">
+                    <div id="program">
+                        <asp:Label ID="lbProgram" runat="server" Visible="true"></asp:Label>
+                    </div>
+                    <div id="user">                        
+                        <asp:Label ID="lbWelcome" runat="server" CssClass="text" Text="Witaj:" Visible="false"></asp:Label>
+                        <asp:Label ID="lbUser" runat="server" Text="Niezalogowany" Visible="false"></asp:Label>
+                        <asp:LinkButton ID="lbtLogin" runat="server" Text="Zaloguj" onclick="lbtLogin_Click" Visible="false"></asp:LinkButton>
+
+                        <asp:DropDownList ID="ddlLogin" runat="server" DataSourceID="SqlDataSource1" AutoPostBack="true" Visible="false"
+                            DataTextField="Pracownik" DataValueField="Id" 
+                            onselectedindexchanged="ddlLogin_SelectedIndexChanged" 
+                            ondatabound="ddlLogin_DataBound" >
+                        </asp:DropDownList>
+  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IPO %>"
+
+                            SelectCommand="
+
+                        select 'zmień użytkownika ...' as Pracownik, null as Id, 1 as Sort
+                        union all
+                        select Nazwisko + ' ' + Imie + ' | ' + ISNULL(KadryId, '-') + ' | ' + ISNULL(Login, '-') + ' | ' + ISNULL(NrKarty1, '-') + ' | ' +
+                        case when Kierownik = 1 then ' K' else '' end as Pracownik,
+                        convert(varchar, Id) + '|' +
+                        ISNuLL(NrKarty1 + '|', ISNULL(KadryId,'') + '|kdr123') as Id                        
+                        --case when NrKarty1 is null then ISNULL(KadryId,'') + '|kdr123'
+                        --else NrKarty1 + '|'
+                        --end as Id
+                        ,2 as Sort
+                        from Pracownicy
+                        where
+                        (
+                               Status &gt;= 0
+                               -- or Admin = 1
+                               or dbo.GetRightId(Rights,49) = 1
+                        )
+                        and Id in (select distinct UserId from IPO_ccPrawa)
+                        order by Sort,1
+                           ">
+                        </asp:SqlDataSource>
+
+                    </div>
+                    
+                    <div id="debug"></div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div id="paKioskLogin_x" runat="server" class="paKioskLogin" visible="false">
+                        <div class="float">
+                            <asp:HiddenField ID="hidUniqueId" runat="server" />
+                            <input type="hidden" id="login_x" name="login"/>
+                            <input type="hidden" id="pass_x" name="pass"/>
+                            <div class="line1">
+                                <span id="lblogin">numer ewidencyjny</span> 
+                                <span id="erlogin">podaj numer ewidencyjny</span>
+                            </div>
+                            <asp:TextBox ID="tbLogin" runat="server" MaxLength="30" AutoCompleteType="Disabled"></asp:TextBox>
+                            <div class="line2">
+                                <span id="lbpass">hasło</span> 
+                                <span id="erpass">podaj hasło</span>
+                            </div>
+                            <asp:TextBox ID="tbPass" runat="server" MaxLength="30" TextMode="Password" AutoCompleteType="Disabled"></asp:TextBox>
+                        </div>
+                    </div>
+                    
+                    
+                    <div id="paKioskLogin" runat="server" class="paKioskLogin" visible="false" style="display: none;">
+                        <div class="float">
+                            <input type="hidden" id="login" name="login"/>
+                            <input type="hidden" id="pass" name="pass"/>
+                            <input type="hidden" id="kartaRCP" name="kartaRCP"/>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div id="paLogo" class="logo" runat="server" visible="true" >
+                    <asp:LinkButton ID="lbtLogo" runat="server">
+    		            <asp:Image ID="imgLogo" ImageUrl="~/images/iQor/iQor2b.png" runat="server" Visible="true" />
+    		        </asp:LinkButton>    	
+                </div>
+                
+                <div id="paSearch" class="search" runat="server" visible="true">
+                    <div>
+                        <asp:TextBox ID="tbSearch" CssClass="textbox" MaxLength="100" runat="server"></asp:TextBox>
+                        <asp:Button ID="btSearch" CssClass="button" runat="server" onclick="btSearch_Click" OnClientClick="return checkSearch(this);"/>
+                    </div>
+                </div>
+
+                <div id="topMenuContainer" class="topMenuContainer" runat="server">
+                    <div id="topMenu" class="topMenu" runat="server">
+                        <asp:Menu ID="MainMenu" runat="server" Orientation="Horizontal" onmenuitemclick="MainMenu_MenuItemClick">
+                            <StaticMenuStyle CssClass="mmStrip" />
+                            <StaticMenuItemStyle CssClass="mmItem" />
+                            <StaticSelectedStyle CssClass="mmSelected" />
+                            <StaticHoverStyle CssClass="mmHover" />
+                            <Items>
+                                <asp:MenuItem Text="<span>Zamówienia<br />&nbsp;</span><div>System zamówień wewnątrznych</div>" Value="IPO" Selected="true"></asp:MenuItem>
+                                <asp:MenuItem Text="<span>Baza <br />Produktów</span><div>Baza produktów i dostawców IPO</div>" Value="BAZAPROD"  ></asp:MenuItem>
+                                <asp:MenuItem Text="<span>Administracja <br />IPO</span><div>Administracja uprawnieniami i konfiguracją globalną</div>" Value="ADMINIPO" ></asp:MenuItem>
+                                <asp:MenuItem Text="<span>Wyloguj<br />&nbsp;</span><div>Wylogowanie z portalu</div>" Value="LOGOUT"></asp:MenuItem>
+         
+         
+         
+                            </Items>
+                            <StaticItemTemplate>
+                                <div class="mmCaption" id="mmCaption<%# GetMenuIndex() %>">
+                                    <div class="mmText">
+                                        <asp:Literal runat="server" ID="Literal1" Text='<%# Eval("Text") %>' />
+                                    </div>
+                                </div>
+                            </StaticItemTemplate>
+                        </asp:Menu>
+                    </div>
+                </div>                
+			</div>
+		</div>
+
+
+
+        <uc4:cntKiosSlider ID="cntKiosSlider1" runat="server" Visible="false"/>
+
+
+
+		<div id="content">
+            <div id="divHelp" class="center">
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        <div id="helpButton" class="printoff">
+                            <div>
+                                <asp:LinkButton ID="btHelp" runat="server" onclick="btHelp_Click">Pomoc</asp:LinkButton>
+                                &nbsp;&nbsp;
+                                <asp:LinkButton ID="lbtTest" runat="server" Visible="false" PostBackUrl="~/test.aspx">Test</asp:LinkButton>
+                                <asp:LinkButton ID="lbtPrzypisz" runat="server" Visible="false" PostBackUrl="~/Kiosk/PrzypiszRCP.aspx">Karty</asp:LinkButton>
+                                <asp:LinkButton ID="lbtLogout" runat="server" Visible="false" Text="Wyloguj" onclick="lbtLogout_Click" ></asp:LinkButton>
+                                &nbsp;&nbsp;
+                            </div>
+                        </div>
+                        <uc1:HelpControl ID="cntHelp" runat="server" Visible="false"/>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+
+            <div id="portal">  
+                <table class="portal table0">
+                    <tr>
+                        <td id="tdLeft" runat="server" class="menu printoff" visible="false">          
+                            <div class="menu">              
+
+            
+                                <div id="LeftPanel" style="position:relative;" runat="server">
+
+                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server"  visible="false">
+                                        <ContentTemplate>
+                                            <uc2:cntSqlMenu ID="cntLeftMenuP" runat="server" Grupa="PRAC" OnSelectedChanged="cntLeftMenu_SelectedChanged" Visible="true" />
+                                            <uc2:cntSqlMenu ID="cntLeftMenuK" runat="server" Grupa="KIER" OnSelectedChanged="cntLeftMenu_SelectedChanged" Visible="false" />
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                
+                                </div>
+                                
+                            </div>
+                        </td>
+                        <td class="content" style="padding: 0px 10px;">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolderReport" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                        <td id="tdRight" runat="server" class="portal_right printoff" visible="true">
+               
+               
+                            <div id="RightPanel" style="position:relative;" runat="server">
+               
+                                <uc3:cntAplikacjeMenu ID="cntAplikacjeMenuP" CId="appMenuP" Menu="CAROUSEL" runat="server" Visible="false" />
+                                <uc3:cntAplikacjeMenu ID="cntAplikacjeMenuK" CId="appMenuK" Menu="CAROUSEL_K" runat="server" Visible="false" />
+                                
+                                <div id="paRightFiller" class="right_filler" runat="server" visible="true"></div>                            
+                            
+                            </div>
+                            
+                        </td>
+                    </tr>
+                </table>
+		    </div>
+
+		    <div id="divContent" runat="server" class="center portal" style="display: none;" visible="false">
+		    </div>
+       </div>
+
+        <uc1:FooterControl ID="FooterControl1" runat="server" />
+        
+        <asp:UpdateProgress ID="updProgress1" runat="server" DisplayAfter="10">
+            <ProgressTemplate>
+                <div class="updProgress1">
+                    <div class="center">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/activity.gif" />
+                        <span>Trwa przetwarzanie. Proszę czekać ...</span>
+                    </div>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+    </div>
+
+    <script type="text/javascript">
+        hideFooter();
+        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+        function BeginRequestHandler(sender, args) {
+        }
+
+        function EndRequestHandler(sender, args) {
+            resize();
+        }
+    </script>
+    
+    </form>
+</body>
+</html>

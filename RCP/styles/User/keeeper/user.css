@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+﻿.navbar .navbar-brand img { height: 35px; position: absolute; top: 6px; left: 50%; transform: translateX(-50%); }
+.navbar .navbar-brand span { font-weight: bold; color: #030303; font-family: Century Gothic; margin-left: 4px; }
+
+x.navbar .navbar-brand img { height: 35px; }
+
+
+.GridView1 td.pracname { padding: 4px; }
+
+
+div.pagetitle table td.title span { font-family: sans-serif; }
+
+div.cntPlanPracyZmiany div.search div { right: 0; margin-left: 0px;}
+
+div.cntPlanPracyZmiany div.filter { text-align: left; }
+div.cntPlanPracyZmiany div.filter select.ddlKier { float: none; display: inline-block;}
+=======
+﻿.navbar-brand img { 
+	left: 0px !important; 
+	margin-top: -11px !important;
+	margin-left: -20px;
+}
+
+table.rep_header td.col3 img {
+	position: relative;
+	
+}
+>>>>>>> dbc38622169c8ae720f00901a1c53fa05862f7d6

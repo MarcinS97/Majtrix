@@ -1,0 +1,92 @@
+﻿@model IEnumerable<HRRcp.Areas.MVC.Models.obdPolaDict>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<h2>Index</h2>*@
+
+
+<h4>Pola w systemie</h4>
+
+<hr />
+
+
+    <div >
+        @Html.ActionLink("Dodaj nowy", "Create", new { }, new { @class = "waves-effect waves-light btn green btnpad" })
+    </div>
+
+<br />
+<table class="striped bordered">
+    
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DozwoloneZnaki)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MaxDlugosc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MinDlugosc)
+            </th>
+            <th></th>
+        </tr>
+    
+@foreach (var item in Model)
+{
+   
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.DozwoloneZnaki)
+               
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxDlugosc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinDlugosc)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edytuj", "Edit", new { id = item.Id }, new { @class = "mui-btn mui-btn--small mui-btn--primary" })*@ 
+                @*@Html.ActionLink("Szczegóły", "Details", new { id = item.Id }, new { @class = "mui-btn mui-btn--raised mui-btn--accent" })*@ 
+                <a href="@Url.Action("Edit", "obdPolaDicts",new {RoleId=item.Id })" title="Edytuj">
+                    <i class="material-icons gray">edit</i>
+                </a>
+                @*@Html.ActionLink("Usuń", "Delete", new { id = item.Id }, new { @class = "mui-btn mui-btn--small mui-btn--danger" })*@
+                <a href="@Url.Action("Delete", "obdPolaDicts",new {id=item.Id })" title="Usuń">
+                    <i class="material-icons gray">delete</i>
+                </a>
+            </td>
+        </tr>
+  
+}
+
+</table>
+
+ <!-- Modal Structure -->
+@*<button data-target="modal1" class="btn modal-trigger">Modal</button>*@
+
+
+<script type="text/javascript">
+
+    //$(function () {  
+    //    //$('.selectmui').material_select();      
+    //    $('.modal').modal();
+
+    //    $('.xxmodal').on('click', function () {
+           
+    //        $('#modal1').modal('open');
+    //    });
+    //    $('.xxmodal').on('click', function () {
+    //        $('#modal1').modal('close');
+    //    });
+    //})
+
+   
+</script>

@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Scorecards/Scorecards.Master" CodeBehind="Report.master.cs" Inherits="HRRcp.Scorecards.ReportMaster"%>
+
+<asp:Content runat="server" ID="Content1" ContentPlaceHolderID="head">
+    <link href="<%# ResolveUrl("~/styles/print.css") %>" rel="stylesheet" media="print" type="text/css" />
+    <script type="text/javascript">
+        function exportExcelClick() {
+            return exportExcel('<%=hidReport.ClientID%>');
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="headReport" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content runat="server" ID="Content2" ContentPlaceHolderID="ContentPlaceHolderReport">
+    <asp:HiddenField ID="hidReport" runat="server" />
+    <asp:HiddenField ID="hidReportTitle" runat="server" />
+    <div class="center">
+        <table class="caption printoff" >
+            <tr>
+                <td>
+                    <span class="caption4">
+                        <img alt="" src="~/images/captions/AnkietaView.png" runat="server"/>
+                        Raporty i zestawienia
+                    </span>
+                </td>
+                <td class="btprint_top" align="right" style="vertical-align: middle;">
+                    <%--<asp:Button ID="btRepBack1" class="button75" runat="server" Text="Powrót" OnClientClick="history.back();return false;" />--%>
+                    <%--<asp:Button ID="btRepPrint1" class="button75" runat="server" Text="Drukuj" OnClientClick="printPreview();return false;" />--%>
+                    <%--<asp:Button ID="btRepExcel1" class="button75" runat="server" Text="Excel" OnClientClick="return exportExcelClick();" onclick="btExcel_Click" />--%>
+                    <%--<asp:Button ID="btnPDF" runat="server" CssClass="button75" Text="PDF" OnClick="btnPDF_Click" />--%>
+                    
+                    <asp:LinkButton ID="btRepBack1" class="button75" runat="server" Text="Powrót" OnClientClick="history.back();return false;" ><i class="fa fa-chevron-circle-left"></i>Powrót</asp:LinkButton>
+                    <asp:LinkButton ID="btRepPrint1" CssClass="button75" runat="server" Text="Drukuj" OnClientClick="printPreview();return false;" ><i class="fa fa-print"></i>Drukuj</asp:LinkButton>
+                    <asp:LinkButton ID="btnRepExcel1" CssClass="button75" runat="server" Text="Excel" OnClientClick="return exportExcelClick();" OnClick="btExcel_Click"><i class="fa fa-file-excel-o"></i>Excel</asp:LinkButton>
+                    <asp:LinkButton ID="btnPDF" runat="server" CssClass="button75" Text="PDF" OnClick="btnPDF_Click"><i class="fa fa-file-pdf-o"></i>PDF</asp:LinkButton>
+                </td>
+            </tr>
+        </table>     
+    </div>
+
+    <div class="report_content">
+
+<%--
+        <hr />
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+        </asp:SiteMapPath>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+        <hr />
+        NAWIGACJA<br />
+        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" 
+            ImageSet="Arrows" ontreenodedatabound="TreeView1_TreeNodeDataBound">
+            <ParentNodeStyle Font-Bold="False" />
+            <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+            <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
+            <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" />
+        </asp:TreeView>        
+        <hr />
+--%>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderReport" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <div class="center">
+        <table class="printoff table0">
+            <tr>
+                <td class="btprint_bottom2" style="height: 40px;" >
+<%--                    <asp:Button ID="btRepBack2" class="button75" runat="server" Text="Powrót" OnClientClick="history.back();return false;" />
+                    <asp:Button ID="btRepPrint2" class="button75" runat="server" Text="Drukuj" OnClientClick="printPreview();return false;" />
+                    <asp:Button ID="btRepExcel2" class="button75" runat="server" Text="Excel" OnClientClick="return exportExcelClick();" onclick="btExcel_Click" />
+                    <asp:Button ID="btnPDF2" runat="server" CssClass="button75" Text="PDF" OnClick="btnPDF_Click" />--%>
+                    
+                    <asp:LinkButton ID="btRepBack2" class="button75" runat="server" Text="Powrót" OnClientClick="history.back();return false;" ><i class="fa fa-chevron-circle-left"></i>Powrót</asp:LinkButton>
+                    <asp:LinkButton ID="btRepPrint2" CssClass="button75" runat="server" Text="Drukuj" OnClientClick="printPreview();return false;" ><i class="fa fa-print"></i>Drukuj</asp:LinkButton>
+                    <asp:LinkButton ID="btRepExcel2" CssClass="button75" runat="server" Text="Excel" OnClientClick="return exportExcelClick();" OnClick="btExcel_Click"><i class="fa fa-file-excel-o"></i>Excel</asp:LinkButton>
+                    <asp:LinkButton ID="btnPDF2" runat="server" CssClass="button75" Text="PDF" OnClick="btnPDF_Click"><i class="fa fa-file-pdf-o"></i>PDF</asp:LinkButton>
+                </td>
+            </tr>
+        </table>     
+
+        <div class="print_footer">
+            <asp:Label ID="lbPrintFooter" class="left" runat="server" Text="Wydrukowano z systemu Scorecards v."></asp:Label>
+            <asp:Label ID="lbPrintVersion" class="left" runat="server" Text="1.0.0.0"></asp:Label>
+            <br />
+            <asp:Label ID="lbPrintTime" class="left" runat="server" ></asp:Label>
+        </div>
+    </div>
+
+    <asp:UpdateProgress ID="updProgress1" runat="server" DisplayAfter="10">
+        <ProgressTemplate>
+            <div class="updProgress1">
+                <div class="center">
+                    <img alt="Indicator" src="~/images/activity.gif" runat="server"/> 
+                    <span>Trwa przetwarzanie. Proszę czekać ...</span>
+                </div>
+            </div>
+        </ProgressTemplate>
+    </asp:UpdateProgress>
+</asp:Content>

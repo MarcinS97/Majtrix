@@ -1,0 +1,281 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Portal3.Master.cs" Inherits="HRRcp.PortalMasterPage3" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register Src="~/Portal/Controls/cntLogin.ascx" TagPrefix="uc1" TagName="cntLogin" %>
+<%@ Register Src="~/RCP/Controls/cntModal.ascx" TagPrefix="uc1" TagName="cntModal" %>
+
+
+<%--
+<%@ Register Src="~/Portal/Controls/cntImageEditModal.ascx" TagPrefix="uc1" TagName="cntImageEditModal" %>
+--%>
+
+
+<%@ Register Src="~/Portal/Controls/Ubezpieczenia/Majatkowe/cntWniosekModal.ascx" TagPrefix="uc1" TagName="cntWniosekModal" %>
+<%@ Register Src="~/Portal/Controls/cntSidebar.ascx" TagPrefix="uc1" TagName="cntSidebar" %>
+<%@ Register Src="~/Portal/Controls/cntAppBar.ascx" TagPrefix="uc1" TagName="cntAppBar" %>
+<%@ Register Src="~/Controls/FooterControl.ascx" TagPrefix="uc1" TagName="FooterControl" %>
+<%@ Register Src="~/Portal/Controls/Social/cntSocialBar.ascx" TagPrefix="uc1" TagName="cntSocialBar" %>
+<%@ Register Src="~/Portal/Controls/Social/cntAvatar.ascx" TagPrefix="uc1" TagName="cntAvatar" %>
+<%@ Register Src="~/Portal/Controls/cntLoginAs.ascx" TagPrefix="uc1" TagName="cntLoginAs" %>
+<%@ Register Src="~/Portal/Controls/Adm/cntSqlMenuEditGrupyChld.ascx" TagPrefix="uc1" TagName="cntSqlMenuEditGrupyChld" %>
+
+<!DOCTYPE html>
+<html lang="pl">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Portal</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/FontAwesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/Bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="Portal/Styles/Portal3.css?v=1" />
+
+    <link href="~/Portal/Styles/User/iqor.css" rel="stylesheet" type="text/css" runat="server" id="css_iqor" visible="false" />
+    <link href="~/Portal/Styles/User/spx.css" rel="stylesheet" type="text/css" runat="server" id="css_spx" visible="false"/>
+    <link href="~/Portal/Styles/User/co.css" rel="stylesheet" type="text/css" runat="server" id="css_co" visible="false"/>
+    
+    <script type="text/javascript" src="<%# ResolveUrl("~/styles/jQuery/js/jquery-2.1.4.min.js") %>" ></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/styles/Bootstrap/js/bootstrap.js") %>"></script>
+
+    <script type="text/javascript" src="<%# ResolveUrl("~/Portal/Scripts/bootstrap-datepicker.js") %>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/Portal/Scripts/bootstrap-datepicker.pl.min.js") %>"></script>
+
+    <%--<script src="<%# ResolveUrl("~/scripts/jqueryui/jquery-ui.min.js") %>" type="text/javascript"></script>--%>
+    <script type="text/javascript" src="<%# ResolveUrl("~/scripts/common.js?v=1.0.2") %>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/Portal/Scripts/jquery.hotkeys.js") %>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/Portal/Scripts/bootstrap-wysiwyg.js") %>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/Scripts/jquery.validate.min.js") %>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/Portal/Scripts/jquery.Jcrop.js") %>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/Portal/Scripts/tinymce.min.js") %>"></script>
+    <script type="text/javascript" src="<%# ResolveUrl("~/Portal/Scripts/Portal.js") %>"></script>
+
+    <%--<link rel="stylesheet" href="Portal/Styles/emojionearea.min.css">--%>
+    <script type="text/javascript" src="<%# ResolveUrl("~/Portal/Scripts/emojionearea.min.js") %>"></script>
+
+    <%--<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">--%>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script type="text/javascript">
+        //function resize() {
+        //    setTimeout(function () {
+
+        //var wh = getClientSize();
+        //var h = wh[1];
+        //if (h < 400) h = 400;
+
+        //var c = $('#content');
+        //var l = c.find("*").length;
+        //if (l <= 1)
+        //    c = $('.container.wide');
+        ////alert(c.find("*").length);
+
+        //c.height('auto');
+
+        ////alert(c.offset());
+
+        //var ctop = c.offset().top;
+        ////if (ctop + c.height() + 125 - 80 < h) {
+        ////    var h2 = h - ctop - 125 - 80 + 8;
+        ////    c.height(h2);
+        ////}
+
+        //if (ctop + c.height() + (81 + 60) < h) {    // 81 - menu height, 60 - footer margin-top
+        //    var h2 = h - ctop - (81 + 60);
+        //    c.height(h2);
+        //}
+
+        ////console.log('resize');
+        //showFooter();
+        //    }, 0);
+        //}
+
+        //$(document).on('ready', function () {
+        //    resize();
+        //});
+
+        //$(window).on('resize', function () {
+        //    resize();
+        //});
+    </script>
+
+</head>
+<body>
+    <form id="form1" runat="server" enctype="multipart/form-data">
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"
+            EnablePartialRendering="true"
+            EnableScriptGlobalization="True">
+        </asp:ToolkitScriptManager>
+
+        <asp:UpdatePanel ID="upMainMenu" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+<%--               <asp:Literal ID="MainMenu" runat="server" ></asp:Literal>--%>
+
+<asp:Literal ID="MainMenu" runat="server"></asp:Literal>
+ <%--<nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <asp:LinkButton ID="lbtLogo" class="navbar-brand" runat="server" OnClick="lbtLogo_Click">
+                                <asp:Image ID="imgLogo" runat="server" ImageUrl="~/styles/User/logo.png" />
+                            </asp:LinkButton>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">                               
+                                <li class="sidebar-hide" title="Pokaż lewe menu"><a id="hideSidebar" href="javascript:" class="" title="Ukryj boczne menu"><i class="glyphicon glyphicon-chevron-left"></i></a></li>
+                                <li class="hidden sidebar-show" title="Ukryj lewe menu"><a id="showSidebar" href="javascript:" class="" title="Pokaż boczne menu"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+                                <li class="pass-change" title="Zmiana hasła">
+                                    <asp:LinkButton ID="lbtChangePass" runat="server" PostBackUrl="~/Portal/PracPassChange.aspx"><i class="fa fa-exchange"></i></asp:LinkButton></li>
+                                <li title="Wyszukaj...">
+                                    <asp:TextBox ID="tbSearch" runat="server" CssClass="search portal-search" placeholder="Wyszukaj..." MaxLength="50" />
+                                    <asp:Button ID="btnSearch" runat="server" CssClass="hidden btn-search" OnClick="btnSearch_Click" />
+                                    <asp:LinkButton ID="lnkSearch" runat="server" class="search-icon" OnClick="lnkSearch_Click" OnClientClick="searchClick();return false;"><i class="glyphicon glyphicon-search"></i></asp:LinkButton>
+                                </li>
+                                <li style="padding: 12px 0px;">
+                                    <uc1:cntLoginAs runat="server" id="cntLoginAs" Visible="false" />
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <asp:Repeater runat="server" DataSourceID="dsMainMenu">
+                                    <ItemTemplate>
+                                        <%# Eval("_magic") %>
+                                        <asp:LinkButton ID="lnkMainMenuRedirect" runat="server"
+                                            CommandArgument='<%# Eval("Command") + ";" + Eval("Id") %>' Visible='<%# (int)Eval("Avis") == 0 %>'
+                                            CssClass='<%# GetMainMenuSelectedClass(Eval("Par2").ToString()) + Eval("Class") %>'
+                                            OnClick="lnkMainMenuRedirect_Click">
+                                            <%# Eval("MenuText") %>
+                                        </asp:LinkButton>
+                                        <%# Eval("_magic2") %>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+
+                                <asp:SqlDataSource ID="dsMainMenu" runat="server" ConnectionString="<%$ ConnectionStrings:PORTAL %>" OnSelecting="dsMainMenu_Selecting"
+                                    SelectCommand="select * from fn_GetMenu3('MAINMENU', @ids) order by Sort">
+                                    <SelectParameters>
+                                        <asp:Parameter Name="ids" Type="String" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
+
+                                <asp:SqlDataSource ID="dsMainMenuItems" runat="server" ConnectionString="<%$ ConnectionStrings:PORTAL %>" SelectCommand="select * from SqlMenu where Grupa = 'MAINMENU'" />
+
+                                <li id="liChat" runat="server" visible="false">
+                                    <asp:LinkButton ID="lnkChat_" Visible="true" runat="server" ToolTip="Czat..." CssClass="social-bar-opener" OnClientClick="return false;"><i class="fa fa-comments-o"></i></asp:LinkButton></li>
+                                <li id="liLogout" runat="server" visible="false">
+                                    <asp:LinkButton ID="lnkLogout_" runat="server" OnClick="lnkLogout_Click" ToolTip="Wyloguj..."><i class="xglyphicon xglyphicon-log-out fa fa-sign-out"></i></asp:LinkButton></li>
+                                <li id="liAdmin" runat="server" visible="true">
+                                    <asp:LinkButton ID="lnkAdmin" runat="server" OnClick="lnkAdmin_Click" ToolTip="Admin"><i class="xglyphicon xglyphicon-log-out fa fa-gear"></i></asp:LinkButton></li>                               
+                            </ul>
+                        </div>
+                    </div>
+                </nav>--%>
+                <div id="login" style="position:absolute">
+                    <ul>
+                        <li id="liLogout" runat="server" visible="false">
+                            <asp:LinkButton ID="lnkLogout_" runat="server" OnClick="lnkLogout_Click" ToolTip="Wyloguj..."><i class="xglyphicon xglyphicon-log-out fa fa-sign-out"></i></asp:LinkButton></li>
+                    </ul>
+                </div>
+                <div id="settings" style="position:absolute">
+                    <ul>
+                        <li id="liAdmin" runat="server" visible="true">
+                            <asp:LinkButton ID="lnkAdmin" runat="server" OnClick="lnkAdmin_Click" ToolTip="Admin"><i class="xglyphicon xglyphicon-log-out fa fa-gear"></i></asp:LinkButton></li>
+                    </ul>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+        <div id="main">
+            <div class="push-footer">
+                
+                <%--        
+                <uc1:cntImageEditModal runat="server" ID="cntImageEditModal" Visible="false" />
+                --%>
+               
+                <asp:HiddenField ID="hidGroup"  runat="server" Visible="false" />
+               <%-- <uc1:cntSidebar runat="server" ID="cntSidebar" />--%>
+                 <asp:Literal ID="SideBar" runat="server"></asp:Literal>
+
+                <asp:UpdateProgress ID="updProgress1" runat="server" DisplayAfter="300">
+                    <ProgressTemplate>
+                        <div class="loading-overlay"></div>
+                        <div class="loading">
+                            <svg class="pl-circular" viewBox="25 25 50 50">
+                                <circle class="plc-path" cx="50" cy="50" r="20"></circle>
+                            </svg>
+                        </div>
+                    </ProgressTemplate>
+                </asp:UpdateProgress>
+
+                <div class="master-buttons">
+                    <asp:LinkButton ID="lbtnBack" runat="server" CssClass="btn btn-default btn-back" OnClientClick="history.back();return false;" Visible="false">
+                        <i class="fa fa-undo"></i>
+                        Powrót
+                    </asp:LinkButton>
+                    <asp:LinkButton ID="lbtnFillRequest" runat="server" CssClass="btn btn-primary btn-back" OnClick="lbtnFillRequest_Click" Visible="false">
+                        <i class="fa fa-pencil"></i>
+                        Wypełnij wniosek
+                    </asp:LinkButton>
+                </div>
+
+                <div id="content" class="xcontainer xwide main-container">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderReport" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <div class="clear-fix"></div>
+                </div>
+
+                <div class="xcontainer xwide main-container">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderWide" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <div class="clear-fix"></div>
+                </div>
+            </div>
+
+            <uc1:FooterControl runat="server" ID="FooterControl" />
+        </div>
+
+       <%-- <uc1:cntAppBar runat="server" ID="cntAppBar" />--%>
+        <asp:Literal ID="AppBar" runat="server"></asp:Literal>
+        <uc1:cntSocialBar runat="server" ID="cntSocialBar" Visible="true" />
+
+        <uc1:cntSqlMenuEditGrupyChld runat="server" ID="cntSqlMenuEditGrupyChld" Visible="false" />
+
+        <script type="text/javascript">
+            //$("#rightlist").append($('#liAdmin'));
+            $("#rightlist").append($('#login>ul>li'));
+
+            $("#rightlist").append($('#settings>ul>li'));
+
+            $("#ctl00_liAdmin").on('click', function () {                
+            });
+
+            //var va = $('#ctl00_hidGroup').val();
+            // alert(va);
+
+            prepareMaster();
+            //hideFooter();
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+           
+
+            function BeginRequestHandler(sender, args) {
+
+            }
+
+            function EndRequestHandler(sender, args) {
+                //resize();
+            }
+
+        </script>
+    </form>
+</body>
+</html>

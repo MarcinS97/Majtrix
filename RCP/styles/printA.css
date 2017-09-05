@@ -1,0 +1,27 @@
+/*----- ANKIETA PRINTING -----*/
+#mainformcontent #header { display: none; }
+#mainformcontent #footer { display: none; }
+#mainformcontent #content { background-image: none !important; border: none !important; }
+#mainformcontent #content .center { border: none !important; background: none; }
+
+.printoff { display: none !important; }
+.printon { display: inline; }
+
+.pageContent 
+{
+     border-left: none;
+     border-right: none;
+     border-bottom: none;
+}
+
+.print_footer 
+{ 
+    display: inline-block; 
+    width: 100%;
+    margin-top: 24px; 
+    padding-top: 4px;
+    border-top: solid 1px black;
+    font-size: 10px;
+}
+.print_footer span.left { float: left; }
+.print_footer span.right { float: right; }

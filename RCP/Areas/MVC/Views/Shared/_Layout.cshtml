@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title   - My ASP.NET Application</title>
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/styles/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/styles/mui/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>   
+    <link href="~/Content/materialize/css/materialize.min.css" rel="stylesheet" /> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+      
+    <link rel="stylesheet" type="text/css" href="~/styles/FontAwesome/css/font-awesome.min.css" />    
+    <link rel="stylesheet" type="text/css" href="~/Portal/Styles/PortalMVC.css?v=1" />
+
+   
+    @*<link rel="stylesheet" type="text/css" href="~/Portal/Styles/Portal3.css?v=1" />*@    
+    <link href="~/Portal/Styles/User/iqor.css" rel="stylesheet" type="text/css" runat="server" id="css_iqor" visible="false" />
+    <link href="~/Portal/Styles/User/spx.css" rel="stylesheet" type="text/css" runat="server" id="css_spx" visible="false" />
+    <link href="~/Portal/Styles/User/co.css" rel="stylesheet" type="text/css" runat="server" id="css_co" visible="false" />
+
+    <script type="text/javascript" src="~/styles/jQuery/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="~/styles/Bootstrap/js/bootstrap.js"></script>
+    @*<script src="~/scripts/materialize/materialize.min.js"></script>
+    <link href="~/Content/materialize/css/materialize.min.css" rel="stylesheet" />*@ 
+
+
+    <script type="text/javascript" src="~/Portal/Scripts/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="~/Portal/Scripts/bootstrap-datepicker.pl.min.js"></script>
+
+    @*<script src="~/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>*@
+    <script src="~/styles/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/styles/mui/js/mui.min.js"></script>
+
+    <script type="text/javascript" src="~/scripts/common.js?v=1.0.2")"></script>
+    <script type="text/javascript" src="~/Portal/Scripts/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="~/Portal/Scripts/bootstrap-wysiwyg.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/Portal/Scripts/jquery.Jcrop.js"></script>
+    <script type="text/javascript" src="~/Portal/Scripts/tinymce.min.js"></script>
+    <script type="text/javascript" src="~/Portal/Scripts/Portal.js"></script>
+    <script type="text/javascript" src="~/Portal/Scripts/tinymce/js/tinymce/tinymce.min.js"></script>
+    <script src="~/scripts/materialize/materialize.min.js"></script>
+
+
+
+    @*<link rel="stylesheet" href="~/Portal/Styles/emojionearea.min.css">*@
+    <script src=" ~/Portal/Scripts/emojionearea.min.js"></script>
+    
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">*@
+
+    <div>
+        @*<ul class="nav navbar-nav">
+            </ul>*@
+        @*@RenderSection("mainMenu", false)*@
+        @{Html.RenderAction("TopMenu", "Layout");}
+
+        @{Html.RenderAction("LeftMenu", "Layout");}
+
+        @{Html.RenderAction("RightMenu", "Layout");}
+    </div>
+
+
+
+    
+    @*<div class="container body-content">*@
+    <div id="content" class="xcontainer xwide main-container">
+        <div class="container wide">
+            <div id="main">
+                <div class="push-footer">
+                    
+                    @RenderBody()
+                 
+                    
+                    <hr />
+                    <footer>
+                       
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        prepareMaster();        
+    </script>
+
+</body>
+
+</html>

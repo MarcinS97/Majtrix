@@ -1,0 +1,447 @@
+﻿function confirmDelete() {
+    return confirm("Potwierdzasz usunięcie rekordu danych ?");
+}
+
+function insertAtCursor(Field, Text) {
+    p = Field.scrollTop;
+    Field.focus();
+    if (document.selection) {   //IE
+        sel = document.selection.createRange();
+        sel.text = Text;
+    } else if (Field.selectionStart || Field.selectionStart == '0') {  //Mozilla/Firefox/Netscape 7+ 
+        var startPos = Field.selectionStart;
+        var endPos = Field.selectionEnd;
+        Field.value = Field.value.substring(0, startPos) + Text + Field.value.substring(endPos, Field.value.length);
+        Field.setSelectionRange(endPos + Text.length, endPos + Text.length);
+    } else {
+        Field.value += Text;
+    }
+    Field.scrollTop = p
+}
+//------ HRCheck --------------------------------
+function showAItemEdit(show, tdId) {
+    $('#' + tdId).children('*').each(
+        function() {
+            //alert($(this).attr("id"));
+            if (show) {
+                if ($(this).attr("id").indexOf("lbError") != -1)
+                    $(this).hide();
+                else
+                    $(this).show();
+            }
+            else
+                $(this).hide();
+        });
+}
+//------ RCP ---------------------------------------
+function changeColorCPE(sender) {  // ajax color picker extender
+    sender.get_element().style.color = "#" + sender.get_selectedColor();
+}
+
+function selectCellPP(cell, index, dataid, zmid) {
+    //alert(cell.id + ' ' + cell.parentNode.id);
+
+    var data = document.getElementById(dataid);
+    if (data != null) {
+        var zmiana = document.getElementById(zmid);
+        if (zmiana != null) {
+            var dv = data.value.split(',');                 // data line -> cell data
+            var zm = dv[index].split('|');                  // cell data -> array
+            var zmSel = zmiana.value.split('|');            // sel -> array
+            var zmSelId = zmiana.value != '' ? zmSel[0] : '';
+            
+            if (zm[0] == zmSelId || zmSelId == '') {        // zmiana na pusto
+                zm[0] = '';
+                zm[1] = '';
+                zm[2] = '';
+            } else {
+                zm[0] = zmSel[0];
+                zm[1] = zmSel[1];
+                zm[2] = zmSel[2];
+            }
+            dv[index] = zm.join('|');
+            data.value = dv.join(',');
+
+            var id = cell.id.substring(0, cell.id.length - 5) + 'lbTop';
+            alert(id);
+            
+            var lb = document.getElementById(zmid);
+            cell.innerHTML = zm[1];                         // uwaga! - teraz napisy są w span wypada zmienić chociaz tez dziala
+            cell.parentNode.style.backgroundColor = zm[2];  // td zmieniam bo cell to div 
+            cell.parentNode.style.backgroundImage = zm[2] != '' ? 'none' : '';
+        }
+    }
+}
+
+
+
+function selectCellPPAcc(cell, pracId, index, ctrlId) {
+    var parPracId = document.getElementById(ctrlId + 'hidSelPracId');
+    var parIndex = document.getElementById(ctrlId + 'hidSelIndex');
+    var bt = document.getElementById(ctrlId + 'btSelectAcc');
+    if (parPracId != null && parIndex != null && bt != null) {
+        parPracId.value = pracId;
+        parIndex.value = index;
+        /*
+        var pa = document.getElementById(ctrlId + 'paAccept');
+        if (pa != null) pa.visible = true;
+        */
+        //alert(bt);
+        bt.click();
+        //alert(0);
+    }
+    /*
+    else if (parPracId == null) alert(1);
+    else if (parIndex == null) alert(2);
+    else alert(3);
+    /**/
+
+}
+        
+
+
+
+function selectCellPPAccxxx(cell, pracId, index, ctrlId) {
+    var parPracId = document.getElementById(ctrlId + 'hidSelPracId');
+    var parIndex = document.getElementById(ctrlId + 'hidSelIndex');
+    var bt = document.getElementById(ctrlId + 'btSelectAcc');
+    if (parPracId != null && parIndex != null && bt != null) {
+        parPracId.value = pracId;
+        parIndex.value = index;
+        bt.Click();
+        alert(0);
+    }
+    else 
+        if (parPracId == null) alert(1);
+        else if (parIndex == null) alert(2);
+        else alert(3);
+
+}
+
+
+
+function selectCellPP_1(cell, index, dataid, zmid) {
+    //alert(dataid);
+
+    var data = document.getElementById(dataid);
+    if (data != null) {
+        //var p = dataid.indexOf('_');
+        //var root = p > 0 ? dataid.substring(0, p) : dataid;
+        //var zmiana = document.getElementById(root + '_hidSelZmiana');
+        var zmiana = document.getElementById(zmid);
+        if (zmiana != null) {
+            var dv = data.value.split(',');
+            var zm = dv[index].split('|');
+            var h, c, i;
+            //alert(dv[index] + '\n' + zmiana.value);
+            if (dv[index] == zmiana.value || zmiana.value == '') {
+                dv[index] = '';   //'||||'; 
+                h = '';
+                c = '';
+            }
+            else {
+                dv[index] = zmiana.value;
+                var zm = zmiana.value.split('|');
+                h = zm[1];
+                c = zm[2];
+            }
+            data.value = dv.join(',');
+            var zm = zmiana.value.split('|');
+            cell.innerHTML = h;
+            cell.style.backgroundColor = c;
+            cell.style.backgroundImage = c != '' ? 'none' : '';
+        }
+    }
+}
+
+
+
+
+//---------------------------------------------
+function setClassById(id, css) {
+    elem = document.getElementById(id);
+    if (elem != null)
+        elem.className = css;
+       //elem.setAttribute('class', css); <<< to nie działa na IE - zmienia ale nie odświeża wyglądu !!!
+}
+
+function setDdlParentClass(ddl, hidId, cls) {
+    if (ddl.selectedIndex == 0) {
+        //$('#' + ddl.parentNode.id).removeClass('colWyjasnicRed');
+        $(ddl.parentNode).removeClass(cls);
+    }
+    else {
+        //$('#' + ddl.parentNode.id).addClass('colWyjasnicRed');
+        $(ddl.parentNode).addClass(cls);
+    }
+    var hid = document.getElementById(hidId);
+    if (hid != null) hid.value = $(ddl.parentNode).attr("class");
+}
+
+//---------------------------------------------
+function showModal(form, settings) {
+    var Args = window.showModalDialog(form, null, settings);
+}
+
+//---------------------------------------------
+/*
+String.prototype.startsWith = function(str) {
+    return this.substr(0, str.length) == str;
+}
+*/
+
+function startsWith(str, start) {
+    //return str.substr(0, start.length).toLowerCase() == start;
+    return str.substr(0, start.length) == start;
+}
+
+//---------------------------------------------
+function isMaxLen(textBox, maxLen) {   // multiline textbox fix
+    return textBox.value.length < maxLen;
+}
+
+function cutMaxLen(textBox, maxLen) {   // multiline textbox fix
+    window.setTimeout(                  // trick bo jeszcze nie widać zmian
+        function() {
+            if (textBox.value.length > maxLen) {
+                textBox.value = textBox.value.substring(0, maxLen);  // index - index-1; tu nie moze byc alertu bo sie onblur wykona na ie
+            }
+        }
+    , 1);    
+}
+
+function checkMaxLen(textBox, maxLen) {
+    if (textBox.value.length > maxLen) {
+        textBox.focus();
+        alert("Wprowadzony tekst jest zbyt długi (ilość znaków: " + textBox.value.length + ").\nMaksymalna ilość znaków to: " + maxLen + ".");
+        return false;
+    }
+    else
+        return true;
+}
+
+//---------------------------------------------
+function printAnkieta(form) {
+    var settings = "center:yes;resizable:yes;status:no;dialogHeight:800px;dialogWidth:1050px;"
+    /*
+    form = 'PrintAnkietaForm.aspx?aid=42&p=Z';
+    alert(form);
+    */
+    showModal(form, settings);
+}
+
+function printAnkieta3(form) {
+    window.open(form, "_blank"); 
+}
+//---------------------------------------------
+
+function toCSV(el, name) {        // header, report, footer ...
+    var csvData = [];
+    //var tag = el.tagName;
+    if ($(el).is('table')) {
+        //$(el).find('tr').each(
+        $(el).children('tbody,thead').children('tr').each(
+            function() {
+                var tmpRow = [];
+                var ret = null;
+                if ($(this).hasClass("group"))
+                    tmpRow[tmpRow.length] = '#group#';
+                //$(this).filter(':visible').find('th,td').each(
+                $(this).children('th,td').each(
+                    function() {
+                        if ($(this).css('display') != 'none') {
+                            if ($(this).is('th')) {
+                                tmpRow[tmpRow.length] = formatData($(this).html());
+                            }
+                            else if ($(this).is('td')) {
+                                var cb = $(this).find('input[type=checkbox]');
+                                if (cb.length != 0) {
+                                    var checked = $(cb).is(':checked');
+                                    tmpRow[tmpRow.length] = checked ? 'Tak' : 'Nie';
+                                }
+                                else {
+                                    var tb = $(this).find('input[type=text]');
+                                    if (tb.length != 0)
+                                        tmpRow[tmpRow.length] = tb.val();
+                                    else {
+                                        //var t = $(this).find('table');
+                                        var t = $(this).children('table');
+                                        if (t.length != 0) {
+                                            ret = //'#table#\n' +
+                                                  toCSV(t, null);  //null bo tabela w tabeli zwraca podwojnie
+                                            return false;   // nic wiecej nie ma w td, dodane do CSV w środku
+                                        }
+                                        else
+                                            tmpRow[tmpRow.length] = formatData($(this).html());
+                                    }
+                                }
+                            }
+                            var cs = $(this).attr('colspan');
+                            if (cs != null && cs > 1)
+                                for (k = 1; k < cs; k++)
+                                tmpRow[tmpRow.length] = "";
+                        }
+                    });
+                if (ret == null)
+                    row2CSV(tmpRow);
+                else {
+                    ret = ret.slice(0, -1);
+                    add2CSV(ret);
+                }
+            });
+    }
+    else if ($(el).is('div')) {
+        $(el).find('span').each(
+            function() {
+                if ($(this).css('display') != 'none') {
+                    var tmpRow = [];
+                    tmpRow[tmpRow.length] = formatData($(this).html());
+                    row2CSV(tmpRow);
+                }
+            });
+    }
+    else if ($(el).is('span')) {
+        if ($(el).css('display') != 'none') {
+            var tmpRow = [];
+            tmpRow[tmpRow.length] = formatData($(el).html());
+            row2CSV(tmpRow);
+        }
+    }    
+
+    var mydata;
+    if (csvData.length > 0)
+        if (name != null)
+            mydata = '[' + name + ']\n' + csvData.join('\n') + '\n';
+        else
+            mydata = csvData.join('\n') + '\n';
+       //mydata = '[' + name + ']\r' + csvData.join('\r') + '\r';  // nie robi, po stronie serwera zawsze jest cr lf na końcu
+    else
+        mydata = '';
+    return mydata;
+
+    //---------------------------   
+    function row2CSV(tmpRow) {
+        var tmp = tmpRow.join('') // to remove any blank rows
+        if (tmpRow.length > 0 && tmp != '') {
+            var mystr = tmpRow.join('\t');
+            csvData[csvData.length] = mystr;
+        }
+    }
+
+    function add2CSV(row) {
+        if (row != '') 
+            csvData[csvData.length] = row;
+    }
+
+    function formatData(input) {
+        /*
+        var regexp = new RegExp(/["]/g);
+        var output = input.replace(regexp, "“");
+        */
+        var regexp = new RegExp(/[\n] */g);
+        var output = input.replace(regexp, "");             // cr lf i spacje z początku następnej linii ! uwaga input a nie output.replace
+        
+        regexp = new RegExp(/\<[Bb][Rr]\>/g);
+        output = jQuery.trim(output.replace(regexp, "\b")); // na bs ...
+
+        regexp = new RegExp(/\<[Ll][Ii]\>/g);
+        output = jQuery.trim(output.replace(regexp, "• ")); // ul-li
+
+        regexp = new RegExp(/\<script.*script\>/gi);
+        output = jQuery.trim(output.replace(regexp, ""));   // javascript - KomisjaControl.ascx
+
+        regexp = new RegExp(/\<[^\<]+\>/g);
+        output = jQuery.trim(output.replace(regexp, ""));   // html tags
+
+        //if (output == "") return '';
+        //return '"' + output + '"'; 
+        return output;
+    }
+};
+
+function exportExcel(repId) {
+    var rep = "";
+    for (i = 0; i < document.all.length; i++) {
+        var el = document.all(i);
+        //var name = el.name;   // nie dziala na chrome
+        var name = $(el).attr("name");
+        if (name != null && name != "") {
+            if (startsWith(name, "header") ||
+                startsWith(name, "report") ||
+                startsWith(name, "footer"))
+                rep += toCSV(el, name);
+        }
+    }
+    var h = document.getElementById(repId);
+    if (h != null) {
+        h.value = rep;      // przechowuje na postback
+        /*alert(rep);
+        return false;/**/
+        return true;
+    }
+    else {
+        alert("Wystąpił błąd podczas eksportu danych.");
+        return false;
+    }
+}
+//--------------------------------------------
+function getClientSize() {
+    var cWidth = 0, cHeight = 0;
+    if (typeof (window.innerWidth) == 'number') {
+        //Non-IE
+        cWidth = window.innerWidth;
+        cHeight = window.innerHeight;
+    } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        //IE 6+ in 'standards compliant mode'
+        cWidth = document.documentElement.clientWidth;
+        cHeight = document.documentElement.clientHeight;
+    } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        //IE 4 compatible
+        cWidth = document.body.clientWidth;
+        cHeight = document.body.clientHeight;
+    }
+    return [cWidth, cHeight];
+}
+
+function hideFooter() {
+    $('#footer').hide();
+}
+
+function showFooter_1() {
+    var f = $('#footer');
+    if (!f.is(':visible')) // removeAttr psuje przy przelaczaniu tabow
+        f.fadeIn(250, function() { this.style.removeAttribute("filter"); });
+    //$('#footer').fadeIn(250);
+}
+
+function showFooter() {
+    var f = $('#footer');
+    if (!f.is(':visible')) // removeAttr psuje przy przelaczaniu tabow
+        f.fadeIn(250, function() {
+            if (this.style.removeProperty)
+                this.style.removeProperty("filter"); //!IE
+            else
+                this.style.removeAttribute("filter");
+        });
+    //$('#footer').fadeIn(250);
+}
+        
+
+
+function resize() {
+    var wh = getClientSize();
+    var h = wh[1];
+    if (h < 400) h = 400;
+
+    var c = $('#content');
+    //c.height('auto');
+
+    var ctop = c.offset().top;
+    if (ctop + c.height() + 26 < h) {
+        var h2 = h - ctop - 26;
+        c.height(h2);
+    }
+    showFooter();
+}
+
+

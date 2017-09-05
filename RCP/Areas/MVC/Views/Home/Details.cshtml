@@ -1,0 +1,55 @@
+﻿@model HRRcp.Areas.MVC.Models.obdSzablon
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/MVC/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Portal/Scripts/tinymce.min.js"></script>
+<script>tinymce.init({ selector: 'textarea', readonly: 1, menubar: false, toolbar:false, height:500 });</script>
+<h2>Details</h2>
+
+<div>
+    <h4>obdSzablon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdObieguDict)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdObieguDict)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentHTML)
+        </dt>
+
+        <dd>
+
+            @Html.TextArea("contentHTML",(string)Model.ContentHTML , new { @class = "editor tinymce-editor", col = "15", @name = "contentHTML" })
+
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "ListaSzablonow")
+</p>

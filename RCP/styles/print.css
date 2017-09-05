@@ -1,0 +1,176 @@
+/*----- PRINTING -----*/
+#mainformcontent #header { display: none; }
+#mainformcontent #footer { display: none; }
+
+.content2 { padding: 0px !important; }
+#mainformcontent div#content { background-image: none; border: none !important; background-color: White !important; margin: 0px !important; }
+#mainformcontent #content .center { border: none !important; background: none; }
+
+.pageContent { border: none !important; padding: 0px; }
+
+div.paAdmin div.padding, 
+div.paKierownika div.padding { padding: 0px !important; }
+
+/*----- MasterPage3 -----*/
+form.mainform div#content { margin: 0px !important; xborder: solid 1px red;}
+form.mainform div.pagetitle { display: none; }
+
+/*----- ankieta -----*/
+.ankieta_debug { display: none; }
+span.ankieta_title { font-size: 18px; }
+#ankieta_caption { display: none; }
+#ankieta_buttons { display: none; }
+
+/*----- archiwum -----*/
+.caption { display: none; }
+.tabsStrip { display: none !important; }
+.tabsContent 
+{ 
+    border: none; 
+    padding: 0px; 
+    min-height: 200px; 
+    -webkit-box-shadow: none;     
+    -moz-box-shadow: none;
+	box-shadow: none;    
+}
+.bottom_buttons { display: none; }
+
+/*----- zestawienia -----*/
+.printoff { display: none !important; }
+.printon { display: inline; }
+
+td.LeftMenu {border: none !important;}
+td.LeftMenuContent 
+{
+    border: none !important; 
+    text-align: center; 
+    padding: 0px !important; 
+    margin: 0px !important;
+    }
+
+#wyniki_podsumowanie .progressBar3 {display: none; }
+.wyniki_realizacja .progressBar3 {display: none; }
+.wyniki_realizacja td.stanpcent {border-right: none !important; }
+.wyniki_realizacja td.progressbar {width: 1px !important;}
+
+table.wyniki_realizacja,
+table.wyniki_sciezka,
+table#wyniki_szkolenia,
+table#rep_stanowiska {width: 960px;}
+
+.rep_content div.ankieta { text-align: left; }
+div#app_info { display: none; }    
+/*table.tabsContent { margin: 0px !important; } */
+
+div.report_page { border: none; -webkit-box-shadow: none; margin: 0px; }
+xxdiv.report_page table.GridView1 th { border-top: solid 1px Silver; border-bottom: solid 1px Silver; }
+div.report_page table.GridView1 { margin-right: 0px; }
+div.report_page table.GridView1 th { border-color: #DDD; }
+div.report_page table.GridView1 td a { color: Black !important; }
+
+div.report_page table.GridView1 tr th,
+div.report_page table.GridView1 tr.sum td { background-color: #F0F0F0 !important; }
+
+div.RaportF table.tbFilterFields td { border: none; }
+div.RaportF div.report-header { padding-top: 0px; padding-left: 0px; padding-right: 0px; }
+div.RaportF div.report-header td.col1 { display: none; }
+div.RaportF div.cntFilter { padding-left: 0px; background-color: white; }
+div.RaportF div.grid-wrapper { padding-left: 0px; padding-right: 0px; border-radius: 0px; }
+
+xxdiv.RaportF div.grid-wrapper table { border: solid 1px #DDD; }
+div.RaportF table.GridView1 tr th:first-child, 
+div.RaportF table.GridView1 tr.sum td:first-child { border-left: solid 1px #DDD; } 
+div.RaportF table.GridView1 tr th:last-child,
+div.RaportF table.GridView1 tr.sum td:last-child { border-right: solid 1px #DDD; } 
+
+div.RaportF table.GridView1 tr th,
+div.RaportF table.GridView1 tr td { 
+    page-break-inside: avoid !important; 
+    xmargin: 4px 0 4px 0;  /* to keep the page break from cutting too close to the text in the div */
+}
+
+xdiv.RaportF table.GridView1 tbody tr td:before,
+xdiv.RaportF table.GridView1 tbody tr td:after {
+    content : "";
+    height : 4px;
+    display : block;
+}
+
+
+/*----- -----*/
+.print_footer 
+{ 
+    display: inline-block; 
+    width: 100%;
+    margin-top: 24px; 
+    padding-top: 4px;
+    border-top: solid 1px black;
+    font-size: 10px;
+}
+
+.print_footer span.left { float: left; }
+.print_footer span.right { float: right; }
+
+#info_spacer { display: none; }
+.info_content { display: none; }
+div.info_content { display: none; }
+
+/*----- PWD - zestawienia -----*/
+.ListView1 table.tbPracownicy th.control,
+.ListView1 table.tbPracownicy td.control { display: none; }
+.ListView1 table.tbPracownicy a { color: Black !important; }
+
+.ListView1 .prac30 table.tbPracownicy th.col3,
+.ListView1 .prac30 table.tbPracownicy td.col3 { border-right-color: red; }
+
+/*----- RCP - raport PP -----*/
+.tbPlanPracy tr.it td.day div.day { z-index: 1; position: relative; }
+.tbPlanPracy tr.it td.day div.bck {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    width: 28px;
+    border: none;
+    xborder-top-style: solid;
+    xborder-top-width: 24px;
+    border-bottom-style: solid;
+    border-bottom-width: 24px;
+}
+.not_ie .tbPlanPracy tr.it td.day { background-color: Transparent !important; }
+.ie .tbPlanPracy tr.it td.day div.bck { display: none; }
+
+.tbPlanPracy tr.it td.holiday div.bck {
+    border-bottom-width: 21px !important;
+}
+
+/*----- wydruk planu pracy -----*/
+div.PlanPracyZmiany { xpage-break-inside: avoid; display: block; position: relative; height: 100%; }
+div.PlanPracyZmiany tr.it td.day div.bck { border-bottom-width: 30px; }
+div.PlanPracyZmiany div.legendaZmiany { display: block; page-break-before: always; }
+
+.pagebreak1 { page-break-before: always; }
+.pagebreak2 { page-break-after: always; }
+
+/*----- wniosek ------*/
+div.pgWniosekWolneZaNadg { 
+	text-align: center; 
+	width: 100%;
+}
+div.pgWniosekWolneZaNadg div.container { width: auto; padding: 0px; margin: 0px;  } 
+div.pgWniosekWolneZaNadg div.item { width: 17cm !important; padding-top: 1cm; } 
+
+div.pgWniosekWolneZaNadg div.border { 
+    border: none; 
+    -webkit-box-shadow: none;     
+    -moz-box-shadow: none;
+	box-shadow: none;    
+    xzoom: 0.5;
+    padding: 0px;
+   	width: 17cm;
+	display: inline-block;
+}
+div.cntWniosekWolneZaNadg { font-size: 10px; padding: 0px; }
+div.cntWniosekWolneZaNadg .bold2 { font-size: 12px; }
+div.cntWniosekWolneZaNadg span.label1 { width: 100px; }
+
+/*--------------------------------------*/

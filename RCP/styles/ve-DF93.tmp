@@ -1,0 +1,5787 @@
+﻿.font14 {font-size: 14px;}
+
+/*----- input text box -----*/
+input.textbox      /* ie6 */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border: solid 1px #93AFD5;
+    padding: 2px 0px 2px 0px;
+    width: 99%;
+}
+input.textbox:hover {border: solid 1px red;}
+input.textbox:focus {border: solid 1px red;}
+
+select
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+span.usertext {border-bottom: dotted 1px silver;}
+
+span.readonly, input.readonly, input.readonly:focus, input.readonly:hover
+{
+    background-color: #EEEEEE; 
+    color: #555555;
+    border: solid 1px Silver !important;
+}
+span.error { color: Red; }
+
+input.editable 
+{
+    xbackground-color: white; 
+    background-color: #FAFAFA;
+}
+
+input[type="text"]   
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border: solid 1px #93AFD5;
+    xposition: relative;
+    xleft: -3px;
+    xtop: 0px;
+    padding: 2px 2px 2px 2px;
+    width: 100%;
+}
+
+input[type="text"]:hover   /* 1 line edit */
+{
+    border: solid 1px red;
+}
+
+input[type="text"]:focus   /* 1 line edit */
+{
+    border: solid 1px red;
+}
+
+textarea     /* multiline edit */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    width: 100%;
+    font-size: 12px;
+    border: solid 1px #93AFD5;
+    xposition: relative;
+    xleft:-3px;
+    padding: 2px 2px 2px 2px;
+}
+
+textarea:hover
+{
+    border: solid 1px red;
+}
+
+input.ico { width: 16px; height: 16px; }
+
+
+.tooltip { cursor: default; }
+
+/*----- KONTROLKI -----*/
+select,
+textarea,
+input 
+{ 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 12px; 
+    margin: 0px; 
+}
+select { height: 20px; }
+
+span.check { width: auto; margin: 0px; padding: 0px; xborder: solid 1px red;}
+span.check input,
+input.check { width: auto !important; margin: 0px; padding: 0px; xborder: solid 1px red;}
+span.check label { margin-left: 8px; }
+
+table.narrow td,
+table.narrow select,
+table.narrow textarea,
+table.narrow input 
+{ 
+    font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    font-size: 13px; 
+}
+table.narrow select { xheight: 22px; xpadding-top: 4px; xpadding-bottom: 4px; height: auto;}
+table.narrow td.data input.dateedit { width: 70px !important; }
+
+/*----- BUTTONS -----*/
+.bottom_buttons 
+{
+    text-align: right;
+    padding-top: 8px !important;
+    xmargin-top: 8px;
+    xborder: solid 1px green;
+}
+.bottom_buttons span
+{
+    display: inline-block;
+    line-height: 25px;
+    height: 25px;
+    vertical-align: top;
+}
+
+.button100 {width: 100px; height: 25px}
+.button75 {width: 75px; height: 25px}
+.button {height: 25px}
+.button_postback { visibility: hidden;}
+
+.fileupload { xheight: 25px; xborder: solid 1px red; }
+
+/*----- -----*/
+table.table0 { width: 100%; border-collapse: collapse; border-spacing: 0px; border-width: 0px; }
+.margin0 { margin: 0px; }
+
+
+/*----- -----*/
+#table4 select      /* table4 - ankieta ddl */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    width: 100%;
+    font-size: 12px;
+    border: solid 1px #93AFD5;
+    height: 20px;
+}
+
+#table4 select:hover  /* hover nie działa ... */
+{
+    border: solid 1px red;
+}
+
+#table4 select:focus  /* hover nie działa ... */
+{
+    border: solid 1px red;
+}
+
+/*----- fonty -----*/
+
+.t0  /* czcionka podstawowa */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px; 
+}
+
+.t0b  /* czcionka podstawowa - bold */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px; 
+}
+
+.t0g  /* czcionka podstawowa - szara */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px; 
+    color: Gray;
+}
+
+.t1  /* nagłówki tabel i danych*/
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 9px; 
+    text-transform: uppercase;
+    color: Gray;
+}
+.t2  /* tytuły - nagłówki (form captions)*/
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px; 
+}
+
+.t3  /* tytuły - nagłówki sekcji w ankiecie */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    xcolor: #5683BE;
+    color: #449513;
+    font-size: 14px; 
+}
+
+.t4  /* informacje dodatkowe np teksty pomocy pod nazwami pól do edycji*/
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 9px; 
+    text-transform: uppercase;
+    color: Gray;
+}
+.t4n  /* j.w. bez upper */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 9px; 
+    text-transform: none;
+    color: Gray;
+}
+.t4s  /* jak t4 ale Silver */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 9px; 
+    text-transform: uppercase;
+    color: Silver;
+}
+.t5  /* nagłówki grup */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    xfont-weight: bold;
+    font-weight: normal;
+    font-size: 12px; 
+    xtext-transform: uppercase;
+    color: #449513;
+}
+/*----- komentarz -----*/
+.comment  
+{
+    xfont-family: Verdana, Arial, Helvetica, sans-serif;
+    xfont-weight: normal;
+    xfont-size: 12px; 
+    color: Silver;
+}
+/*----- Form Captions -----*/
+table.caption   /* dla caption w wielu liniach */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border-collapse: collapse;
+    white-space: nowrap;
+    padding: 0px;
+    margin: 0px;
+}
+table.caption td { padding: 16px 0px 0px 0px; vertical-align: top;}
+table.caption td.caption_text { padding: 16px 0px 16px 0px; }
+table.caption img { padding: 2px 16px 0px 24px; }
+
+span.caption_icon { width: 32px; height: 48px; margin: 0px 16px 0px 0px; display:inline-block; float: left; xborder: solid 1px red; }
+
+span.caption, span.caption1, span.caption2, span.caption3, span.caption4    /* dla caption w jednej linii */
+{
+    padding-left:24px;
+    height: 32px;
+    line-height: 32px;
+    white-space: nowrap;
+    vertical-align: middle;
+    
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:14px;
+    font-weight:bold;
+    display: block;
+    
+    xbackground-color: #EEEEEE;
+    xclear: right;
+}
+
+span.caption img, span.caption1 img, span.caption2 img, span.caption3 img, span.caption4 img
+{
+    padding-right:8px;
+    float: left;
+}
+
+span.caption1   /* odstęp od góry */
+{
+    padding-top: 8px;
+}
+
+span.caption2   /* odstęp od dołu */
+{
+    padding-bottom: 8px;
+}
+
+span.caption3   /* odstęp od góry i od dołu */
+{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    
+    xborder: solid 1px red;
+    xbackground-color: Gray;
+}
+
+span.caption4   /* odstęp od góry i od dołu */
+{
+    padding-top: 8px;
+    padding-bottom: 16px;
+}
+
+/*----- FORM CAPTIONS #2 -----*/
+div.title3 { padding:0px; margin: 0px;}
+div.title3 img.ico { display: block; width: 32px; margin: 3px 16px 0px 8px; float: left;}
+div.title3 span.captions { display: inline-block; }
+div.title3 .captions span { vertical-align: baseline; white-space: nowrap; line-height: normal; height: auto; padding: 0px; }
+div.title3 .captions span.title { display: block; font-size: 14px; font-weight: bold; color: #3F3F3F; }
+div.title3 .captions span.subtitle { display: block; line-height: 1.5em; }
+div.title3 .captions span.subtitle span.caption { display: inline-block; font-size: 9px; font-weight: bold; color: Gray; text-transform: uppercase; }
+div.title3 .captions span.subtitle span.value { display: inline-block; xfont-weight: bold;}
+
+/*----- Tab Control -----*/
+/*----- TABS - wspólne -----*/
+.tabsStrip { margin-left: 12px; }
+
+/*----- TABS - IE -----*/
+table.tabsStrip { border-collapse: collapse; empty-cells: hide; }     /* dla ie78*/
+table.tabsStrip td { width: 0px !important; } /* tak wycinamy odstęp 3px między tabami, działa też na IE6 */
+table.tabItem {}
+table.tabItem td {} /* tabela */
+
+/*----- TABS - Chrome -----*/
+div.tabsStrip { display: inline-block; }
+span.tabItem { float: left; }           /* zeby byly obok siebie */
+span.tabItem[disabled] .tabRight { color: Silver; cursor: auto;}
+
+/*-----*/
+div.tabCaption
+{
+    display: block;
+    padding: 0px 0px 0px 0px;
+    background:url(../images/tab2_m.jpg) repeat-x top; 
+    height:23px;
+}
+
+div.tabLeft
+{
+    display: block;
+    background:url(../images/tab2_l.jpg) no-repeat left top; 
+    height: 23px;
+}
+
+div.tabRight
+{
+    display: block;
+    background:url(../images/tab2_r.jpg) no-repeat right top; 
+    
+    padding: 2px 10px 0px 10px; 
+    height: 21px;       /* padding 2px */
+    line-height: 20px;  /* tak wyglada lepiej */
+
+    font-size: 10px; 
+    color: #333; 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px; 
+    white-space: nowrap;
+    
+    position: relative;
+    right: -1px;
+}
+
+.tabSelected .tabCaption {background:url(../images/tab2_msely.jpg) repeat-x top; position: relative; top: 1px;}
+.tabSelected .tabLeft {background:url(../images/tab2_lsel.jpg) no-repeat left top; }
+.tabSelected .tabRight {background:url(../images/tab2_rsel.jpg) no-repeat right top; }
+
+.tabHover .tabCaption {background:url(../images/tab2_mselb.jpg) repeat-x top; position: relative; top: 1px; cursor: hand;} /* na ie7 nie zmieniał kursora */
+.tabHover .tabLeft {background:url(../images/tab2_lsel.jpg) no-repeat left top; }
+.tabHover .tabRight {background:url(../images/tab2_rsel.jpg) no-repeat right top; }
+
+span.tabItem:hover .tabCaption {background:url(../images/tab2_mselb.jpg) repeat-x top; position: relative; top: 1px;} /*na chrome nie działa hover z menu*/
+span.tabItem:hover .tabLeft {background:url(../images/tab2_lsel.jpg) no-repeat left top; }
+span.tabItem:hover .tabRight {background:url(../images/tab2_rsel.jpg) no-repeat right top; } 
+
+span.tabItem[disabled]:hover .tabCaption {background:url(../images/tab2_m.jpg) repeat-x top; top: 0px;} /*na chrome nie działa disabled*/
+span.tabItem[disabled]:hover .tabLeft {background:url(../images/tab2_l.jpg) no-repeat left top; }
+span.tabItem[disabled]:hover .tabRight {background:url(../images/tab2_r.jpg) no-repeat right top; } 
+
+
+/*----- TABS Content -----*/
+.tabsContent 
+{
+    xborder: solid 1px gray;
+    border: solid 1px Silver;
+    background-color: White; 
+    border-collapse: collapse;
+    padding: 16px;
+    width:auto; 
+    clear: both;
+    display: block;
+    min-height: 600px; 
+    margin-bottom: 16px;
+
+    -moz-border-radius: 5px;                        
+    -webkit-border-radius: 5px;                         
+    -khtml-border-radius: 5px;                      
+    border-radius: 5px;                             
+    xbehavior: url(css/border-radius.htc);   
+
+    x-webkit-box-shadow: 0 0 15px Silver;    
+    -webkit-box-shadow: 0 0 15px #D0D0D0;    
+}
+
+.x_tabsContentScroll
+{
+    display: block;
+    border: solid 1px gray;
+    background-color:#fff; 
+    padding: 16px;              
+    overflow: auto;             /* będą scrollbary widoczne */
+    width:960px; 
+}
+
+/*----- content ----- teoretycznie to samo co tabsContent - na formatkach na których nie ma tabów*/
+.pageContentWrapper
+{
+    display: block;
+    clear: both;        /* nie trzeba ustawiać width */
+}
+
+.pageContent
+{
+    xdisplay: inline-block;      /* na IE6 padding przy block jest podwajany a tak nie */
+    xwidth: 100%;   /* psuje w trybie zgodnosci */
+    xheight: 100%;
+    xclear: both;
+    xfloat: none;
+    
+    border: solid 1px gray;
+    background-color: #fff;
+    width: auto;
+    padding: 16px;
+    min-height: 600px; 
+    margin-bottom: 16px;
+} 
+
+.infoContent
+{
+    padding-top: 32px;
+}
+
+/*----- GroupBox -----*/
+
+table.GroupBox1 {
+    border-collapse: collapse;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 16px 0px 0px;
+    xmargin: 0px 16px 0px 0px;
+    empty-cells: show;    
+    xborder: solid 1px red;
+}
+
+table.GroupBox1 tr {
+    xborder-collapse: collapse;
+    xvertical-align: top;
+    xbackground-repeat: no-repeat;
+    xpadding: 0px 0px 0px 0px;
+    xmargin: 0px;
+}
+
+table.GroupBox1 td {
+    background-repeat: no-repeat;
+    padding: 0px 0px 0px 0px;
+
+    xborder-collapse: collapse;
+    xvertical-align: top;
+    xmargin: 0px;
+    xempty-cells: show;
+    xwidth: 11px;
+    xmin-width: 11px !important;
+    xborder: solid 1px red;
+    xdisplay: inline;
+    xwhite-space: normal;
+}
+
+table.GroupBox1 .title {
+    background-color: white;
+    xxxbackground-color: #FAFAFA;
+
+    xborder: solid 1px green;
+    xxxcolor: #93AFD5;
+    xxxxcolor: #7498C9;
+
+    color: #4472B0;
+    font-family: Verdana;
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 2px;
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+table.GroupBox1 .tl 
+{
+    width: 11px;
+    min-width: 11px;
+    height: 18px;
+    background-image: url('../images/gb1_tl.png');
+}
+  
+table.GroupBox1 .th {
+    min-height: 18px;
+    xwidth: 100%;
+    background-image: url('../images/gb1_th.png');
+    background-repeat: repeat-x;
+    vertical-align: top;
+}
+
+table.GroupBox1 .tr 
+{
+    width: 11px;
+    min-width: 11px;
+    height: 18px;
+    background-image: url('../images/gb1_tr.png');
+}
+
+table.GroupBox1 .vl {
+    min-width: 11px;
+    height: 100%;
+    background-image: url('../images/gb1_vl.png');
+    background-repeat: repeat-y;
+}
+
+table.GroupBox1 .vr {
+    min-width: 11px;
+    height: 100%;
+    background-image: url('../images/gb1_vr.png');
+    background-repeat: repeat-y;
+}
+    
+table.GroupBox1 .bl 
+{
+    min-width: 11px;
+    height: 11px;
+    background-image: url('../images/gb1_bl.png');
+}
+    
+table.GroupBox1 .bh {
+    min-height: 15px;
+    xwidth: 100%;
+    background-image: url('../images/gb1_bh.png');
+    background-repeat: repeat-x;
+}
+
+table.GroupBox1 .br {
+    min-width: 11px;
+    height: 11px;
+    background-image: url('../images/gb1_br.png');
+}
+/*----- -----*/
+.xxxGroupBox1 .title {background-color: white;}
+   
+/*----- LIST WRAPPER - TABLE -----*/
+table.listWrapper {padding: 0px; margin: 0px; border-collapse: collapse; border-width: 0px; border-spacing: 0px;}
+.listWrapper th.t1 
+{
+    padding-left: 2px;
+    text-align: left;
+    height: 14px; 
+    color: #4472B0;     /* niebieskawy jak groupbox title */
+}
+.listWrapper .buttons {padding: 0px 2px 0px 2px; width: auto;}
+.listWrapper .button {width: 100%; height: 25px}
+.listWrapper .list {xheight: 400px; border: solid 1px gray;}
+.listWrapper select {cursor: hand; margin: 0px;}
+
+#listWrapper1 .col1 {width: 220px;}         /*struktura*/
+#listWrapper1 .col3 {width: 220px;}
+#listWrapper1 .col5 {width: 285px;}
+#listWrapper1 .list1 {width: 220px; margin: 0px;}
+#listWrapper1 .list2 {width: 220px; margin: 0px;}
+#listWrapper1 .list3 {width: 285px; height: 404px; background-color: White; }
+
+#aaalistWrapper1 table
+{
+    padding: 0px;
+    margin: 0px;
+    border-width: 0px;
+}
+
+#listWrapper1 .list3 td 
+{
+    xfont-family: Verdana, Arial, Helvetica, sans-serif;
+    xfont-size: 12px;
+
+    height: 20px; 
+    line-height: 20px; 
+    xmin-width : 20px !important;
+    width : 20px !important;
+    
+    xtext-align: right;
+    xpadding-right: 1px;
+    xpadding-left: 1px;
+    xoverflow: hidden;
+    xwhite-space: nowrap !important;
+    
+    vertical-align: top; 
+    xborder: solid 1px red;
+}
+
+#listWrapper1 .list3 td div 
+{
+    display: block !important; 
+    height: 20px !important;
+    width: 20px !important;
+}
+
+#listWrapper1 .list3 td a 
+{
+    height: 20px;
+    vertical-align: top;
+    display: inline-block;
+    xcolor: Black;
+    white-space: nowrap !important;
+}
+
+#listWrapper1 .list3 td a[tabIndex]
+{
+    xborder: solid 1px red !important;
+    padding-top: 2px;
+    padding-left: 1px;
+    padding-right: 0px;
+    width: 16px;
+    height: 18px;
+}
+
+#listWrapper1 select {cursor: hand; margin: 0px;}
+#listWrapper1 select option {cursor: hand;}
+#xxxlistWrapper1 .list3 a {cursor: default;}
+
+
+#listWrapper2 td.col1 {width: 450px;}         /*zastępstwa*/
+#listWrapper2 td.col2 {padding: 0px 4px 0px 4px; }
+#listWrapper2 td.col3 {width: 220px;}
+#listWrapper2 .list1 {width: 450px;}
+#listWrapper2 .list2 {width: 220px;}
+#listWrapper2 div.date {display: block; vertical-align: top; padding-bottom: 8px; margin-top: 1px;}
+#listWrapper2 div.date input {left: 0px; vertical-align: top; margin: 0px !important; }
+
+#listWrapper2 div.date input.ico {vertical-align: top; position: relative; top: 1px;}
+
+
+#listWrapper3 .col1 {width: 220px;}         /*administratorzy*/
+#listWrapper3 .col3 {width: 220px;}
+#listWrapper3 .list1 {width: 220px; }
+#listWrapper3 .list2 {width: 220px; }
+#listWrapper3 .button {width: 85px;}
+
+#dzialyWrapper .col1 {width: 400px;}        /*dzialy i stanowiska*/
+#dzialyWrapper .col2 {padding-left:8px; }
+#dzialyWrapper .col2 input {left: 0px;}
+
+#dzialyWrapper .listDzialy {width: 400px; height: 420px; }
+
+#dzialyWrapper .listDzialy td 
+{
+    height: 20px; 
+    line-height: 20px; 
+    min-width : 20px;
+    vertical-align: top; 
+    width : 20px !important;
+}
+
+#dzialyWrapper .listDzialy td div 
+{
+    display: block !important; 
+    height: 20px !important;
+}
+
+#dzialyWrapper .listDzialy td a 
+{
+    height: 20px;
+    vertical-align: top;
+    display: inline-block;
+    white-space: nowrap !important;
+}
+
+#dzialyWrapper .listDzialy td a[tabIndex]
+{
+    xborder: solid 1px red !important;
+    padding-top: 2px;
+    xmargin-top: 2px;
+    height: 18px;
+    width: 20px;
+}
+
+
+/*----- table1 -----*/
+
+.table1     /* np ankieta - informacje o pracowniku */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: solid 1px silver;
+    border-collapse:collapse;
+    padding: 0px;
+    margin: 0px; 
+}
+
+.table1 .header td
+{
+    font-size: 9px; 
+    font-weight: bold;
+    xtext-transform:uppercase;  /*ładniej bez tego*/
+    color: Gray;
+    height: 16px;
+    border-right: solid 1px silver;
+    border-top: dashed 1px silver;
+    padding-left: 8px;
+    padding-right: 40px;
+    text-align: left;
+    background: url('../images/back/back1_20.png') repeat-x bottom;
+}
+
+.table1 .data td
+{
+    font-size: 12px; 
+    height: 30px;
+    border-top: dotted 1px silver;
+    border-left: solid 1px transparent;  
+    padding-left: 8px;
+    padding-right: 16px;
+    text-align: left;
+    background: url('../images/back/back2_30.png') repeat-x bottom;
+}
+
+.table1 .data td.col1
+{
+    border-left: solid 1px silver;
+}
+
+/*----- table2 -----*/
+
+.table2     /* np ankieta - skala ocen */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: solid 1px silver;
+    border-collapse:collapse;
+}
+
+.table2 td
+{
+    border-top: dotted 1px silver;
+    padding: 8px 8px 20px 8px;
+    text-align: left;
+    vertical-align: top;
+    background: url('../images/back/back2_30.png') repeat-x bottom;
+    border-right: dotted 1px silver;
+    width: 150px;
+}
+
+.table2 .topline
+{
+    font-weight: bold;
+}
+
+.table2 .bottomline
+{
+    position: relative;
+    top: 8px;
+}
+
+/*----- table3 -----*/
+.table3A     /* parametry programu oceny */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: solid 1px #ddd;
+    border-collapse:collapse;
+    width: 100%;
+    xline-height: 30px;
+    line-height: 28px;
+}
+
+.table3A td.col1, .table3A td.col2  
+{
+    border-top: solid 1px silver;
+    border-right: solid 1px silver;
+    padding: 0px 8px 0px 8px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.table3A td.col1
+{
+    background: url('../images/back/back1_30.png') repeat-x bottom;
+    xwidth: 120px;
+    width: 140px;
+}
+
+.table3A td.col2   
+{
+    background: url('../images/back/back2_30.png') repeat-x bottom;
+}
+
+.table3A td.col2 span  
+{
+    line-height: 18px;
+    vertical-align: middle;
+    padding: 0px;
+    margin: 0px;
+    xwhite-space: nowrap;
+    display: inline-block; 
+}
+
+/*.table3A input[type="image"]    /* ie tego nie widzi */
+.table3A input.ico
+{
+    position: relative;
+    top: 2px;
+}
+
+.table3A input[type="text"]   /* 1 line edit */
+{
+    xleft: 0px;
+    width: 99%;
+}
+
+.table3A select   /* 1 line edit */
+{
+    position: relative;
+    left: -3px;
+}
+
+.table3A td.col2 input.textbox   /* dla ie6 */
+{
+    width: 99%;
+}
+
+/*---------------------------*/
+.table3B     /* parametry programu oceny - dolna tabelka */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: solid 1px silver;
+    border-collapse:collapse;
+    width: 100%;
+    line-height: 30px;
+}
+
+.table3B td.col1, .table3B td.col2
+{
+    border-top: solid 1px silver;
+    border-right: solid 1px silver;
+    padding: 0px 8px 0px 8px;
+    vertical-align: middle;
+}
+
+.table3B td.col1
+{
+    text-align: left;
+    vertical-align: top;
+    background: url('../images/back/back1_30.png') repeat-x bottom;
+    width: auto;
+}
+
+.table3B td.col2
+{
+    text-align: right;
+    background: url('../images/back/back2_30.png') repeat-x bottom;
+    width: 50px;
+}
+
+.table3B td.checkbox
+{
+    xtext-align: center;
+}
+
+.table3B th
+{
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 3px 8px 3px 8px;
+    line-height: normal;
+    background: url('../images/back/back1_20.png') repeat-x bottom;
+    color: Gray;
+}
+
+.table3B input[type="text"]   /* 1 line edit */
+{
+    text-align: right;
+}
+
+.table3B .row_2lines td.col1 {line-height: 17px;}
+
+/*------------------------*/
+.table3A input.textbox {xtext-align: left;}
+.table3A input.textbox[readonly]
+{
+    border: solid 1px Transparent !important;
+    background-color: Transparent;
+    xtext-align: right;
+}
+
+.table3B input.textbox 
+{
+    text-align: left;
+}
+
+.table3B input.textbox[readonly]
+{
+    border: solid 1px Transparent !important;
+    background-color: Transparent;
+    text-align: right;
+}
+
+
+
+/*------------------------*/  /* tabelka ustawień - bez ramek i tła*/
+.table3C    
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border-collapse:collapse;
+    width: 100%;
+    xline-height: 30px;
+}
+
+.table3C td.col1, .table3C td.col2
+{
+    xborder: solid 1px red;
+    padding: 8px 8px 0px 8px;
+    vertical-align: top;
+    height: 36px;
+}
+
+.table3C td.oneline 
+{
+    padding-top: 12px;
+    height: 32px;
+}
+
+.table3C .lastline td
+{
+    height: 26px !important;
+}
+
+.table3C td.col1
+{
+    width: 220px;
+}
+
+/*----- table4 -----*/
+.table4     /* ankieta - pytania */
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: solid 1px silver;
+    border-collapse:collapse;
+    width: 100%;
+}
+
+.table4 th
+{
+    padding: 8px 8px 8px 8px;
+    text-align: left;
+    vertical-align: top;
+    background: white url('../images/back/back1_30.png') repeat-x bottom;
+    border-right: dotted 1px silver;
+    border-bottom: solid 1px silver;
+}
+
+.table4 td
+{
+    line-height: 20px;
+    border-top: dotted 1px silver;
+    border-right: dotted 1px silver;
+    padding: 5px 8px 5px 8px;
+    text-align: left;
+    vertical-align: top;
+    background: white url('../images/back/back2_30.png') repeat-x bottom;
+}
+
+.table4 .firstrow
+{
+    border-bottom: dotted 1px silver;
+    background: url('../images/back/back1_30.png') repeat-x bottom;
+}
+
+.table4 .lastrow
+{
+    border-top: dotted 1px silver;
+    background: white url('../images/back/back1_30.png') repeat-x bottom;
+}
+
+.table4 .lastcol    
+{
+    border-right: solid 1px silver;
+}
+
+.table4 td.fullwidth
+{
+    width: 100% !important;
+}
+
+.table4 td.autowidth
+{
+    width: auto;
+}
+
+.ankieta hr  
+{
+    height:0px; 
+    border: none;
+    margin-top: 13px;
+    xborder-top: dashed 1px silver;
+    border-bottom: solid 1px silver;
+}
+
+.ankieta textarea.opis { xwidth: 886px; width: 902px; left: 0px; }  /* Scieżka Kariery */
+.ankieta textarea.powod { width: 902px; left: 0px;} 
+.ankieta textarea.uwagi { width: 822px !important; left: 0px; } /* po spotkaniu */
+.ankieta textarea.wnioski { width: 902px; left: 0px;}  /* wnioski z komisji */
+
+/* skala ocen */
+/* pytania w skali ocen */
+#ankieta1 th {border-bottom: solid 1px silver;}
+#ankieta1 .col1 {width: 40%; }
+#ankieta1 td.col3 {width: 80px; text-align: right; }
+#ankieta1 td.col4 {width: 80px; text-align: right;}
+#ankieta1 xxxinput {text-align: right; }
+#ankieta1 .lastrow td {border-top: solid 1px silver; background: url('../images/back/back1_30.png') repeat-x bottom; }
+
+#ankieta1 input {left: 0px; width: 72px;}
+#ankieta1 .lastrow input {width: 80px;}
+
+/* pytania opisowe */
+#ankieta2 th {border-bottom: solid 1px silver;}
+#ankieta2 td.col1 {width: 20px; text-align: right; }
+#ankieta2 th.col2 {width: 48%; }
+#ankieta2 td.col2 {width: 48%; }
+#ankieta2 th.col3 {width: 48%; }
+#ankieta2 td.col3 {width: 48%; }
+#ankieta2 .row2 {color: Gray; }
+#ankieta2 .lastrow td.col1 {text-align: left; width: 100%;}
+#ankieta2 .lastrow td {border-top: solid 1px silver; background: url('../images/back/back1_30.png') repeat-x bottom; }
+
+#ankieta2a th {border-bottom: solid 1px silver;}
+#ankieta2a td.col1 {width: 20px; text-align: right; }
+#ankieta2a th.col2 {width: 48%; }
+#ankieta2a td.col2 {width: 48%; }
+#ankieta2a td.col2 input {width: 424px; left: 0px; }
+#ankieta2a th.col3 {width: 48%; }
+#ankieta2a td.col3 {width: 48%; }
+#ankieta2a td.col3 input {width: 424px; left: 0px; }
+#ankieta2a th.col23 {width: 98%; }
+#ankieta2a td.col23 {width: 98%; }
+#ankieta2a td.col23 input {width: 852px; left: 0px; }
+#ankieta2a .row2 {color: Gray; }
+#ankieta2a td.col123 {text-align: left; }
+#ankieta2a .lastrow td {border-top: solid 1px silver; background: url('../images/back/back1_30.png') repeat-x bottom; }
+
+/* szkolenia */
+#ankieta3 .row2 th {border-bottom: solid 1px silver;}
+#ankieta3 td { border-top: solid 1px #E3E3E3;}
+#ankieta3 td.col1 {width: 30px; text-align: right; }
+#xxxankieta3 td.col2[colspan] {border-top: solid 1px silver;}
+#ankieta3 td.col3 {width: 80px; text-align: center; }
+#ankieta3 td.col4 {width: 80px; text-align: center; }
+#ankieta3 .row2 {color: Gray; }
+#ankieta3 .lastrow td.col1 {text-align: left; width: 100%;}
+#ankieta3 .lastrow td {border-top: solid 1px silver; background: url('../images/back/back1_30.png') repeat-x bottom; }
+
+/* podsumowanie - spotkanie */
+#ankieta4 th {border-bottom: solid 1px silver;}
+#ankieta4 td.col1 {xwidth: 99%;}
+#ankieta4 th.col2 {width: 80px;}
+#ankieta4 td.col2 {width: 80px; text-align: right; }
+
+#ankieta4 td.col1 { xpadding: 0px; xwidth: 600px;}
+#ankieta4 textarea 
+{
+    left: 0px;
+    width: 800px; 
+    xborder: solid 1px red;
+    xpadding: 8px;
+    
+}
+#ankieta4 span.uwagi {}
+
+/* ścieżka kariery */
+#ankieta5 th {border-bottom: solid 1px silver;}
+#ankieta5 td {padding-top: 8px; padding-bottom: 8px; background-color: white;}
+
+#xxxankieta5 select.wybierz 
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    xpadding: 2px 0px 2px 0px;
+    xwidth: 99%;
+}
+#ankieta5 span.wybierz {font-weight: bold;}
+#ankieta5 textarea.opis {margin-top: 8px;}
+#ankieta5 span.opis {margin-top: 8px; }
+#ankieta5 span.stanowiska {}
+#ankieta5 span.stanowiska ul { margin-top: 0px; margin-bottom: 0px; }
+
+/* zamknięcie */
+#ankieta6 th {border-bottom: solid 1px silver;}
+#ankieta6 td {padding-top: 8px; padding-bottom: 8px; }
+#ankieta6 span.powod { }
+
+/* wnioski po komisji */
+#ankieta7 th {border-bottom: solid 1px silver;}
+#ankieta7 td {padding-top: 8px; padding-bottom: 8px; }
+#ankieta7 span.wnioski { } 
+#ankieta7b td { padding: 8px; xmargin: 0px !important; }
+
+div.wnioskiButtons 
+{
+    padding-top: 8px;
+    text-align: right;
+}
+
+table.FilesList { border: none; border-collapse: collapse; width: 100%; }
+table.FilesList td { border: none; background: none; padding: 0px !important; margin: 0px;}
+table.FilesList table { border: none; border-collapse: collapse; width: 100%; }
+    
+table.FilesList table th
+{ 
+    xbackground: #fff url(../images/back/back1_20.png) repeat-x bottom;
+    background: none;
+    font-weight: bold;
+    font-size: 9px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: gray;
+    text-align: left;
+    height: 20px;
+    line-height: 20px;
+    border: none; 
+    border-bottom: solid 1px silver;
+    padding: 0px 8px 0px 8px;
+}
+table.FilesList table td 
+{ 
+    background: #fff url(../images/back/back2_24.png) repeat-x bottom;
+    text-align: left;
+    height: 24px;
+    line-height: 24px;
+    border: none; 
+    border-bottom: solid 1px #E0E0E0;
+    padding: 0px 8px 0px 8px !important;  /* important bo ankieta7b powyzej wzniejsze !? */
+    xborder-right: dotted 1px #E0E0E0;
+}
+
+table.FilesList table td.col1 { xwidth: 350px; 
+                                text-overflow: ellipsis; 
+                                xwhite-space: nowrap; }
+
+table.FilesList table td.col1 input { vertical-align: middle; }
+table.FilesList table td.col1 a { color: Black; text-decoration: none; }
+table.FilesList table td.col1 a:hover { color: Highlight; text-decoration: underline; }
+table.FilesList table td.col2 { width: 140px; } 
+xxtable.FilesList table td.col3 { width: 160px; } 
+table.FilesList table td.col4 { width: 90px; } 
+table.FilesList table td.col3 span { white-space: nowrap; } 
+table.FilesList table td.col4 span { white-space: nowrap; } 
+table.FilesList table td.control
+{
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    border-right: none; 
+    width: 60px;
+}
+table.FilesList table.control1 td.control
+{
+    width: 110px !important;
+}
+table.FilesList table td.control input
+{ 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    color:#375C8E;
+    border: none;
+    background-color:Transparent;
+    cursor: pointer;
+    padding: 2px 2px 2px 2px;   /* ciekawostka - jak padding jest na 0 to czasem nie zaznacza hover */
+    min-width: 50px;
+    text-align: center;
+}
+table.FilesList table td.control input:hover { color:Red; }
+
+div.upload { margin-top: 8px; }
+td.right, th.right { text-align: right !important; }
+td.textcenter, th.textcenter { text-align: center !important; }  /* nakładało sie z .center */
+td.nowrap, th.nowrap { white-space: nowrap; } 
+
+/*----- ankieta - panel akceptacji -----*/
+.spacer8 {display: block; height: 8px;}
+.spacer16 {display: block; height: 16px;}
+.spacer32 {display: block; height: 32px;}
+
+.accept
+{
+    width: 100%;
+    margin-top: 24px;
+    border: solid 1px silver;
+    background-color: #ddd;
+    border-collapse: collapse;
+    empty-cells: hide;
+    border-collapse: collapse;
+}
+
+.accept td
+{
+    padding: 16px 0px 16px 16px;
+    xwidth: 30%;
+    xwidth: auto;
+    xborder: solid 1px red;
+}
+
+.accept .controls {text-align: right; padding-right: 16px; width: 80%;}
+.accept .controls .but_save {width: 75px; height: 25px;} 
+.accept .controls .but_accept {width: 150px; height: 25px;}
+.accept .controls .but_noaccept {width: 110px; height: 25px;}
+
+.accept .accept_date
+{
+    display: inline-block;
+    xwidth: 100%;
+    line-height: 24px;
+    padding: 0px 4px 0px 4px;
+    background-color: White;
+    white-space: nowrap;
+    border: solid 1px silver;
+}
+
+.zzzaccept .col2
+{
+    padding: 0px 0px 0px 4px;
+    xwidth: 100%;
+}
+
+.accept .accept_date span.date
+{
+    font-style: italic;
+    border-bottom: dotted 1px black;
+}
+
+.accept .data_spotkania td
+{
+    padding-top: 0px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.accept1 .col2 
+{
+    xwidth: 100%;
+    
+    width: 290px;
+    xpadding-right: 8px;
+    padding: 0px 0px 0px 4px;
+}
+
+.accept div.data_spotkania 
+{
+    display: inline-block;
+    xwidth: 100%;
+    width: 290px;
+    line-height: 24px;
+    border: solid 1px silver;
+    background-color: White;
+    padding: 0px 0px 0px 4px;
+    white-space: nowrap;
+}
+
+.accept div.data_spotkania span
+{
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin-right: 4px;
+}
+
+.accept div.data_spotkania input
+{
+    left: 0px;
+    xborder: solid 1px red;
+    
+}
+
+.accept2 {margin-top: 8px;}
+
+.xxxaccept 
+{
+    background-color: #fff;
+    border-color: #fff;
+}
+
+/*----- ankieta - wydruk -----*/
+.print_footer { display: none; }
+
+/*----- ListView -----*/
+.ListView1   /*zewnętrzna tabelka*/
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.ListView1 td   /*tu jest zagnieżdzona tabelka z danymi*/
+{
+    padding: 0px 0px 0px 0px;
+}
+
+.ListView1 table    /*tabelka z danymi*/
+{
+    border-collapse: collapse;
+    upadding: 0px 0px 0px 50px;
+    padding: 0px;
+    margin: 0px;
+    border: solid 1px silver;
+    width: 100%;
+    
+    xwhite-space: nowrap;
+    xtable-layout: fixed;
+    
+    text-align: left;
+}
+
+.ListView1 table th
+{
+    background: #fff url(../images/back/back1_20.png) repeat-x bottom;
+    height: 20px;
+    font-weight: bold;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: gray;
+    upadding: 0px 8px 0px 8px;
+    padding: 0px 4px 0px 4px;
+    text-align: left;
+    xborder-right: solid 1px silver;
+    border-right: solid 1px #E0E0E0;
+    border-bottom: solid 1px silver;
+}
+
+.ListView1 table th a
+{
+    color: Gray;
+    text-decoration: none;
+}
+
+.ListView1 table th a:hover
+{
+    xcolor: #375C8E;
+    zcolor: #4472B0;
+    ccolor: #0066CC;
+    color: Highlight;
+    text-decoration: underline;
+}
+
+.ListView1 table td a { xcolor: Highlight; color: #0066CC; text-decoration: none; }
+.ListView1 table td a:hover { xcolor: Highlight; color: #E00024; text-decoration: underline; }
+
+.ListView1 table td
+{
+    xbackground: #fff url(../images/back/back2_24.png) repeat-x bottom;
+    upadding: 2px 8px 2px 8px;
+    padding: 2px 4px 2px 4px;
+    zborder-bottom: solid 1px silver;
+    zborder-right: dotted 1px silver;
+    xxxborder-right: solid 1px #EAEAEA;
+
+    border-top: solid 1px #E0E0E0;
+    border-right: solid 1px #EEEEEE;
+    
+    height: 20px;           /* to jest wysokość bez padding */
+    vertical-align: top;    /* jak textbox ma wiecej niz 1 linie to ladniej jak od gory wyswietla */
+    
+    line-height: 20px;      /* kompromis pomiedzy odstepami linii a połozeniem top przy - wymaga ustawienia padding*/
+    
+    /*xoverflow:hidden; text-overflow:eillipsis; white-space:nowrap */
+    xoverflow:hidden; 
+    xwhite-space:nowrap;
+}
+
+.ListView1 table th.lastcol,
+.ListView1 table td.lastcol { border-right: solid 1px Silver;}
+
+.ListView1 table td.control
+{
+    padding: 1px 4px 0px 4px;
+    white-space: nowrap;
+    width: 130px;
+    text-align: center;
+    vertical-align: middle;
+}
+.ListView1 table th.control { text-align: center; }  
+.ListView1 table th.control,
+.ListView1 table td.control { border-right-color: Silver; }
+
+.ListView1 table td.select
+{
+    padding: 4px 0px 0px 0px !important;   /* nie wiem dlaczego w tym przypadku padding top musi być większy od .control*/
+    width: 75px !important;
+    min-width: 73px !important;
+    text-align: center;
+}
+
+.ListView1 table span.sortmarker { color : Red; text-decoration: none; }
+
+.HideControl .control { display: none; }
+.HideControl .select { display: none; }
+.HideControl .tohide { display: none; }     /* raporty */
+.HideControl1 .tohide1 { display: none; }          
+.HideControl2 .tohide2 { display: none; }          
+.HideControl3 .tohide3 { display: none; }          
+.HideControl4 .tohide4 { display: none; }          
+.HideControl5 .tohide5 { display: none; }          
+.HideControl6 .tohide6 { display: none; }          
+
+.NoDisplay { display: none; }
+
+.ListView1 input[type="text"]   /* 1 line edit */
+{
+    width: 98%;
+}
+
+.ListView1 textarea     /* multiline edit */
+{
+}
+
+.ListView1 .select input,
+.ListView1 .control input
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    xborder: solid 1px red;
+    border: none;
+    
+    font-weight: bold;
+    xtext-decoration: underline;
+    color:#375C8E;
+    background-color:Transparent;
+    cursor: pointer;
+ 
+    padding: 2px 2px 2px 2px;   /* ciekawostka - jak padding jest na 0 to czasem nie zaznacza hover */
+    xmin-width: 50px;
+    text-align: center;
+}
+
+.ListView1 input[type="submit"] /* nie dla ie6 */
+{
+    xposition:relative;          /* poniewaz td ma padding a skads sie dodaje style=top:5 wiec musimy dac troszke wyzej*/
+    xtop: -1px;
+}
+
+/*
+.ListView1 input[type="submit"]:hover
+*/
+.ListView1 .control input:hover
+{
+    xcolor:Highlight;
+    color:Red;
+}
+
+
+
+
+
+
+
+
+/*
+.ListView1 .sit input[type="submit"]:hover
+*/
+.ListView1 .sit .control input:hover
+{
+    xcolor:HighlightText;
+}
+
+.ListView1 table tr.it td
+{
+    background: #fff url(../images/back/back2_24.png) repeat-x bottom;
+}
+
+.ListView1 table tr.sit td
+{
+    xbackground: #fff url(../images/back/back3_b.png) repeat-x bottom;
+    background-image: none;
+    background-color: #91C2FF;
+}
+
+
+.ListView1 table tr.ait td
+{
+    xbackground: #f7fff7;
+    background: #fff url(../images/back/back2_24.png) repeat-x bottom;
+    xbackground: #fff url(../images/back/back2_30_blue.png) repeat-x top;
+}
+
+.ListView1 table tr.eit td
+{
+    xpadding: 8px 14px 8px 8px;  /* edity wychodzą za ... */
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    zbackground-color: #f0f0ff;
+    xbackground-color: #ECF0FB;
+
+    background-color: #91C2FF;
+    xbackground: #fff url(../images/back/back2_30_yellow.png) repeat-x top;
+
+    text-align: left;
+}
+
+
+
+/*
+.ListView1 table .iit td
+{
+    xpadding: 8px 14px 8px 8px;
+    
+    padding: 8px 8px 8px 8px;
+    
+   
+    xbackground: #fff0f0;
+    abackground: #FFF5D7;
+
+    background: #FFE28A;
+    
+    xbackground: #fff url(../images/back/back2_30_red.png) repeat-x top;
+}
+
+.ListView1 table .iit input.textbox
+{
+    left: 0px;
+    border: solid 1px red;
+    width: 100px;
+    display: inline-block;
+}
+*/
+
+.ListView1 table tr.iit td
+{
+    xpadding: 8px 14px 8px 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    
+    background: #FFE28A;
+    xbackground: #fff url(../images/back/back2_30_red.png) repeat-x top;
+    
+    text-align: left;
+}
+
+.ListView1 td.control
+{
+    text-align: center !important;
+}
+
+.ListView1 td.num
+{
+    width: 30px;
+    text-align: right;
+}
+
+.ListView1 td.nowrap
+{
+    white-space: nowrap;
+}
+
+.ListView1 td.check
+{
+    width: 30px;
+    text-align: center !important;
+}
+
+.ListView1 td.progressbar
+{
+    vertical-align: top;
+    padding-top: 7px;
+    height: 11px;
+}
+
+/*----- ListView1 Pager -----*/
+td.pager
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    color:#375C8E;
+    background-color: White;
+    padding: 8px 0px 0px 0px; 
+    vertical-align: top;
+    line-height: 14px;
+}
+td.pager span { white-space: nowrap; padding: 0px; cursor: default; }
+.pager_top
+{
+    padding: 0px 0px 6px 0px !important;
+    vertical-align: bottom !important;
+}
+.pager input
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    color:#375C8E;
+    background-color: #eee;
+
+    border: solid 1px silver;
+    cursor: pointer;
+    text-align: center;
+    
+    height: 18px;
+}
+.pager a
+{
+    color:#375C8E;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 12px;
+    border: solid 1px silver;
+    background-color: #eee;
+    text-align: center;
+    padding: 1px;
+    vertical-align: top;
+    height: 14px;
+
+    -moz-border-radius: 2px;                 /* FF */ 
+    -webkit-border-radius: 2px;              /* przeglądarki z webkitem (Safari, Chrome itp.) */ 
+    -khtml-border-radius: 2px;               /* przeglądarki typu K-meleon (typowo Linuxowe) */ 
+    border-radius: 2px;                      /* pozostałe przeglądarki */ 
+    xbehavior: url(styles/border-radius.htc);    /* dodatek dla IE */     
+    background: url('../images/back/back1_20.png') repeat-x bottom;
+}
+.pager a.nav
+{
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.pager span span
+{
+    xwidth: 12px;
+    min-width: 12px;
+    border: solid 1px silver;
+    display: inline-block;
+    text-align: center;
+    padding: 1px;
+    height: 17px;
+    vertical-align: top;
+
+    -moz-border-radius: 2px;                 /* FF */ 
+    -webkit-border-radius: 2px;              /* przeglądarki z webkitem (Safari, Chrome itp.) */ 
+    -khtml-border-radius: 2px;               /* przeglądarki typu K-meleon (typowo Linuxowe) */ 
+    border-radius: 2px;                      /* pozostałe przeglądarki */ 
+    xbehavior: url(styles/border-radius.htc);    /* dodatek dla IE */ 
+    cursor: pointer;
+}
+.pager a:hover {color: Red; background: url('../images/app/back2_20.png') repeat-x bottom; }
+.pager a[disabled] {color: silver; cursor: default;}
+.pager a[disabled]:hover {color: silver; background: url('../images/app/back1_20.png') repeat-x bottom; }
+.pager input:hover { color:Red; background: url('../images/app/back2_20.png') repeat-x bottom; }
+.pager input[disabled] { color:silver; }
+.pager input[disabled]:hover { color:silver; background: url('../images/app/back1_20.png') repeat-x bottom; }
+
+.pagerButtons span { font-size: 1px; }   /* wycinamy spacje rozdzielające bo justujemy do prawej i był odstęp */
+.pagerButtons input { margin-left: 4px;}
+.pagerNum input {width: 16px; padding: 0px 0px 0px 0px; }
+.pagerNum span span
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    color:#375C8E;
+    border: solid 1px silver;
+    display: inline-block;
+    
+    padding: 1px 0px 2px 0px;
+   
+    line-height: normal;
+    vertical-align: top;
+    text-align: center;
+    width: 14px;
+}
+
+td.pager select { margin: 0px; font-size: 9px; text-transform: uppercase; height: 18px; }
+
+
+
+/*----- Common -----*/
+table.ListView1 table td .line2 { color: Gray;}
+table.ListView1 table tr.sit td .line2 { color: #DDDDDD;}
+table.ListView1 table span.line2 { display: inline-block; width: 100%; }
+table.ListView1 table span.right { text-align: right; }
+table.ListView1 table td.title { text-align: center; xline-height: normal; xpadding: 0px; }
+
+table.ListView1 table td.nazwisko_nrew span.line2 { text-align: right; }
+table.ListView1 table td.nazwisko { xwhite-space:nowrap; }
+table.ListView1 table td.data { xwidth: 70px; text-align: center; white-space:nowrap; }
+table.ListView1 table td.data input { width: 80px; }
+table.ListView1 table td.data input.ico { width: 16px; }
+table.ListView1 table td.num { xwidth: 30px; text-align: right; }
+table.ListView1 table td.num input { width: 30px; text-align: right; }
+table.ListView1 table td.nowrap { white-space: nowrap; }
+table.ListView1 table th.check, 
+table.ListView1 table td.check { width: 14px; text-align: center !important; padding: 0px;}
+table.ListView1 table td.check { vertical-align: middle; }
+table.ListView1 table td.check span input { margin-left: 0px; margin-right: 0px; }
+table.ListView1 table th.right, 
+table.ListView1 table td.right { text-align: right; }
+table.ListView1 table th.center, 
+table.ListView1 table td.center { text-align: center; }
+
+xxxtable.ListView1 table tr:hover td { background-color: #D6EBFF; background-image: none; }
+table.hoverline table tr.it:hover td { background-color: #D6EBFF; background-image: none; }
+
+/*----- admin ankieta -----*/
+table.tbSkalaOcen td {padding: 2px 4px 2px 4px;}
+.tbSkalaOcen .textbox {left: 0px}
+.tbSkalaOcen .col1 .textbox {width: 250px;}
+.tbSkalaOcen .col2 .textbox {width: 280px;}
+.tbSkalaOcen .col3 {width: 40px !important;}
+.tbSkalaOcen .col3 .textbox {width: 40px;}
+
+table.tbPytania {} 
+table.tbPytania td {padding: 2px 4px 2px 4px;}
+.tbPytania .textbox {left: 0px}
+.tbPytania .col1 .textbox {width: 30px;}
+.tbPytania .col2 .textbox {width: 150px;}
+.tbPytania .col3 .textbox {width: 210px;}
+
+table.tbPytaniaOpisowe td {padding: 2px 4px 2px 4px;}
+.tbPytaniaOpisowe .textbox {left: 0px}
+.tbPytaniaOpisowe .col1 .textbox {width: 30px;}
+.tbPytaniaOpisowe .col2 .textbox {width: 158px;}
+.tbPytaniaOpisowe .col3 .textbox {width: 158px;}
+.tbPytaniaOpisowe .col4 .textbox {width: 30px;}
+
+table.tbWyborSzkolen td {padding: 2px 4px 2px 4px;}
+.tbWyborSzkolen .textbox {left: 0px;}
+.tbWyborSzkolen .col1 {width: 249px;}
+.tbWyborSzkolen .col2 {width: 299px;}
+.tbWyborSzkolen .col1 .textbox {width: 260px;}
+.tbWyborSzkolen .col2 .textbox {width: 310px;}
+
+table.tbSciezka{} 
+table.tbSciezka td {padding: 2px 4px 2px 4px;}
+.tbSciezka .textbox {left: 0px}
+.tbSciezka .col1 .textbox {width: 30px;}
+.tbSciezka .col2 .textbox {width: 300px;}
+.tbSciezka .col3 .textbox {width: 116px;}
+
+table.tbGrupySzkolen td {padding: 2px 4px 2px 4px;}
+.tbGrupySzkolen .textbox {left: 0px}
+.tbGrupySzkolen td.select {}
+.tbGrupySzkolen .col2 .textbox {width: 30px;}
+.tbGrupySzkolen .col3 .textbox {width: 470px;}
+
+table.tbSzkolenia td {padding: 2px 4px 2px 4px;}
+.tbSzkolenia .textbox {left: 0px}
+.tbSzkolenia .col1 .textbox {width: 30px;}
+.tbSzkolenia .col2 .textbox {width: 230px;}
+.tbSzkolenia .col3 .textbox {width: 230px;}
+
+table.tbNotatki td {padding: 2px 4px 2px 4px; }
+.tbNotatki .textbox {left: 0px}
+.tbNotatki .col1 .textbox {width: 610px;}
+.xxtbNotatki .col2 .textbox {width: 150px;}
+.xxtbNotatki .col3 .textbox {width: 150px;}
+
+/*-----------------------------*/
+div#Mailing { xmargin: 8px; }
+#Mailing table td.control { vertical-align: top; }
+#Mailing .col1 span.check { vertical-align: middle;}
+#Mailing .col1 span.textbox {display: inline-block; padding: 0px 2px 0px 2px; min-height: 20px;}
+#Mailing .col1 span.body {min-height: 60px;}
+
+#Mailing .col1 .textbox {width: 750px; left: 0px; margin: 0px;}
+#Mailing .col1 span.textbox {width: 750px; left: 0px;}
+#Mailing .it table td.col1a {width: 50px; }
+#Mailing .eit table td.col1 {width: 50px; line-height: 22px;}
+
+#Mailing .it td {padding-top: 8px; padding-bottom: 8px; background-image: none;}
+#Mailing .col1 table {border: none; margin: 8px 0px 0px 0px; padding: 0px;}
+#Mailing .col1 table td {border: none; padding: 0px;}
+#Mailing .col1 table td.col1 {padding-left: 2px; line-height: 22px;}
+#Mailing .col1 table tr.row2 td {padding-top: 8px; padding-bottom: 0px;}
+#Mailing .col1 table tr.row3 td {padding-top: 8px; padding-bottom: 0px;}
+#Mailing .col1 table td.col2 {width: auto; padding-left: 8px;}
+#Mailing span.t1 {font-weight: normal; color: #444;}
+
+#Mailing b {color: #EE9B01; font-weight: normal;}
+#Mailing .eit b {color: #93551E; xcolor: #FFE28A; font-weight: normal;}
+
+#xxxMailing .eit select.znaczniki
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border: solid 1px #93AFD5;
+    width: 150px;
+}
+#Mailing .eit div.znaczniki
+{
+    border: solid 1px silver;
+    background-color: InfoBackground;
+    padding: 2px;
+    line-height: 15px; 
+}
+#Mailing .eit span.znacznik
+{
+    xborder: solid 1px silver;
+    cursor: pointer;
+    padding: 0px;
+}
+#Mailing .eit span.znacznik:hover
+{
+    color: Red;
+}
+/*------------------*/
+#Informacje td.col1 span.body {min-height: 60px;}
+#Informacje td.col1 .textbox {width: 808px; left: 0px; margin: 0px;}
+#Informacje td.col1 span.textbox {width: 808px; left: 0px; display: inline-block; padding: 0px 2px 0px 2px; min-height: 20px;}
+#Informacje td.col1 div.textbox 
+{
+    border: solid 1px silver;
+    background-color: #EEEEEE; 
+    color: #555555;
+    padding: 0px 2px 0px 2px; 
+}
+#Informacje th.control,
+#Informacje td.control { border-right-color: Silver; } 
+
+
+#Informacje .it td {padding-top: 8px; padding-bottom: 8px;}
+#Informacje span.t1 {font-weight: normal; color: #444;}
+
+#Informacje div.ajax__htmleditor_editor_base { width: 100%; display: inline-block; padding: 0px; margin: 0px; }
+#Informacje .ajax__htmleditor_editor_base table { padding: 0px; margin: 0px; border-collapse: collapse;}
+#Informacje .ajax__htmleditor_editor_base img { padding: 0px; margin: 0px; }
+#Informacje table.ajax__htmleditor_editor_container td {border: none;}
+#Informacje table.ajax__htmleditor_editor_container td div {}
+#Informacje td.ajax__htmleditor_editor_toptoolbar 
+{background-color: #F0F0F0; 
+ padding: 1px 2px 2px 2px; 
+ border-bottom: solid 1px silver !important; }
+ 
+               
+#Informacje td.ajax__htmleditor_editor_editpanel {background-color: White; height: 300px !important; padding: 2px;}
+#Informacje td.ajax__htmleditor_editor_bottomtoolbar {background-color: #F0F0F0; padding: 2px; border-top: solid 1px silver !important;}
+#Informacje .ajax__htmleditor_toolbar_button {padding: 0px !important; margin: 1px 0px 1px 0px !important;}
+#Informacje .ajax__htmleditor_toolbar_button table{line-height: normal !important;height: auto !important; padding: 0px !important; margin: 0px !important; width: 23px !important; }
+#Informacje .ajax__htmleditor_toolbar_button td{line-height: normal !important; height: auto !important; padding: 0px !important; margin: 0px !important;}
+
+.xxxinfo_content img.ajax__htmleditor_toolbar_button[title="Decrease Indent"] {clear: left;}
+
+/*------------------*/
+table.tbLog td {padding: 2px 2px 0px 2px; line-height: normal;}
+table.tbLog td.controls {width: 0px !important; display: none;}
+table.tbLog .col1 {width: 100px;}
+table.tbLog .col2 {width: 30px; text-align: right;}
+table.tbLog .col3 {width: 30px; text-align: right;}
+table.tbLog .col4 {width: 100px; }
+table.tbLog .col5 {padding: 0px; margin: 0px;}
+table.tbLog .col6 {padding: 0px; margin: 0px;}
+table.tbLog .col7 {width: 30px; text-align: right; border-right-color: Silver;}
+table.tbLog td.col5 .textbox {width: 280px; left: 0px; margin: 0px;}
+table.tbLog td.col6 .textbox {width: 310px; left: 0px; margin: 0px;}
+table.tbLog textarea.noborder {border: none;}
+table.tbLog th {text-align: left !important; padding-left: 8px !important;}
+table.tbLog span.login {display: block; text-align: right;}
+
+table.hoverline table.tbLog tr.it:hover td textarea { background-color: #D6EBFF; }
+
+td.tbLogRefresh 
+{
+    text-align: right;
+    vertical-align: top;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    color:#375C8E;
+}
+td.tbLogRefresh span 
+{
+    display: inline-block; 
+    border: solid 1px silver;
+    background-color: #eee;
+    margin: 0px;
+    padding: 0px;
+    line-height: 16px;
+    height: 16px;
+    vertical-align: middle;
+
+    -moz-border-radius: 2px;                 /* FF */ 
+    -webkit-border-radius: 2px;              /* przeglądarki z webkitem (Safari, Chrome itp.) */ 
+    -khtml-border-radius: 2px;               /* przeglądarki typu K-meleon (typowo Linuxowe) */ 
+    border-radius: 2px;                      /* pozostałe przeglądarki */ 
+    xbehavior: url(styles/border-radius.htc);    /* dodatek dla IE */ 
+    background: url('../images/back/back1_20.png') repeat-x bottom;
+}
+td.tbLogRefresh input 
+{
+    padding-top: 0px;
+    margin-top: 0px;
+    margin-left: 3px;
+    margin: 0px !important;
+    padding: 0px !important; 
+    
+    background-color: Transparent; 
+    border: none; 
+    line-height: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+
+
+
+
+/*----- ListView2 np. panel kierownika - lista pracowników -----*/
+.ListView2   /*zewnętrzna tabelka*/
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    xwidth: 100%;
+}
+
+.ListView2 td   /*tu jest zagnieżdzona tabelka z danymi*/
+{
+    padding: 0px 0px 0px 0px;
+}
+
+.ListView2 table    /*tabelka z danymi*/
+{
+    border-collapse: collapse;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    xborder: solid 1px silver;
+    xwidth: 100%;
+}
+
+.ListView2 table th
+{
+    font-weight: bold;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: gray;
+    background: #fff url(../images/back/back1_20.png) repeat-x bottom;
+    border-right: solid 1px silver;
+    border-bottom: solid 1px silver;
+    height: 20px;
+    xpadding: 0px 8px 0px 8px;
+    padding: 0px 4px 0px 4px;
+    text-align: left;
+}
+
+.ListView2 table td
+{
+    xpadding: 2px 8px 2px 8px;
+    padding: 2px 4px 2px 4px;
+    
+    border-right: dotted 1px silver;
+    border-bottom: solid 1px silver;
+    height: 20px;           /* to jest wysokość bez padding */
+    line-height: 20px;      /* kompromis pomiedzy odstepami linii a połozeniem top przy - wymaga ustawienia padding*/
+    vertical-align: top;    /* jak textbox ma wiecej niz 1 linie to ladniej jak od gory wyswietla */
+    text-align: left;
+    /*xoverflow:hidden; text-overflow:eillipsis; white-space:nowrap */
+    xoverflow:hidden; 
+    xwhite-space:nowrap;
+}
+
+.ListView2 table td.control
+{
+    padding-left: 0px;
+    padding-right: 0px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.ListView2 table td.select
+{
+}
+
+
+
+
+.ListView2 table .it
+{
+    background: #fff url(../images/back/back2_24.png) repeat-x bottom;
+}
+
+.ListView2 table .ait
+{
+    xbackground: #f7fff7;
+    xbackground: #fff url(../images/back/back2_30_blue.png) repeat-x top;
+    background: #fff url(../images/back/back2_24.png) repeat-x bottom;
+}
+
+.ListView2 table .eit td
+{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #91C2FF;
+    xbackground: #fff url(../images/back/back2_30_yellow.png) repeat-x top;
+}
+
+.ListView2 table .iit td
+{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: #FFE28A;
+    xbackground: #fff url(../images/back/back2_30_red.png) repeat-x top;
+}
+
+
+/*----- ListView2 tables -----*/
+div.paPath 
+{
+    display: block;
+    
+    xheight: 24px;
+    
+    padding: 4px;
+    border-left: solid 1px silver;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    
+    white-space: normal;
+    xwidth: 424px; 
+    
+    xbackground: url('../images/back/back2_20.png') repeat-x bottom;
+}
+
+.paPath span 
+{
+    white-space: nowrap;
+    xcolor: black;
+    color: #0066CC;
+    font-weight: normal;
+}
+
+.paPath span a
+{
+    white-space: nowrap;
+    xcolor: #4472B0;
+    color: #0066CC;
+    font-weight: normal;
+    text-decoration: none;
+}
+.paPath span a:hover
+{
+    color: #E00024; 
+    text-decoration: underline;
+}
+.paPath span.disabled { color: Silver; }
+.paPath span.selected { font-weight: bold; }
+
+
+/*----- Panel kierownika - pracownicy -----*/
+div.tbKierPracownicy 
+{
+    height: 570px; 
+    xheight: 100px; 
+    border: solid 1px silver;}
+table.tbKierPracownicy {width: 416px; }
+.tbKierPracownicy span.kierownik {color: #0066CC; font-weight: bold;}
+.tbKierPracownicy .sit span.kierownik {color: HighlightText; font-weight: bold;}
+
+.tbKierPracownicy table.edt td {vertical-align: middle; padding-top: 8px;}
+.tbKierPracownicy table.edt input {vertical-align: middle; }
+.tbKierPracownicy input.btselect:hover {position: relative; left: 1px;}
+.tbKierPracownicy input.btsubitems:hover {position: relative; left: 1px; top: 1px;}
+.tbKierPracownicy input.btupitems:hover {position: relative; left: -1px; top: -1px;}
+.tbKierPracownicy td {} 
+
+.tbKierPracownicy td.select {width: 40px; padding-left: 3px !important; text-align: left !important; vertical-align: middle;}  
+.tbKierPracownicy th.select {width: 40px; padding-right: 3px !important; text-align: right !important; vertical-align: middle;}
+.tbKierPracownicy td.select input {margin: 0px; vertical-align: middle; }
+.tbKierPracownicy th.select input {margin: 0px; vertical-align: middle; }
+
+.tbKierPracownicy td.col2 {width: 175px; }
+.tbKierPracownicy td.col2 span
+{
+   width: 175px;
+   display: inline-block;
+   text-overflow: ellipsis; 
+   overflow:hidden; 
+   white-space:nowrap;
+}
+.tbKierPracownicy td.col3 {width: 120px; }
+.tbKierPracownicy td.col3 span
+{
+   width: 120px;
+   display: inline-block;
+   text-overflow: ellipsis; 
+   overflow:hidden; 
+   white-space:nowrap;
+}
+.tbKierPracownicy td.col4 { width: 55px; }
+.tbKierPracownicy td.col4 span{ float: left; }
+.tbKierPracownicy td.col4 span.pcent{ float: right; }
+
+/*----- Panel kierownika - program rozwoju pracownika Informacje -----*/
+#ProgramInfo {line-height: 17px;}
+
+#ProgramInfo span.col1 {width: 110px; display: inline-block; }
+#ProgramInfo span.col2 {width: 200px; display: inline-block; xfloat: left;}
+#xProgramInfo .dataEdit .col1 {width: 110px; display: block; float: left;}
+#ProgramInfo #divStatus {display: block; color: #555; padding: 4px 0px 8px 0px; border-bottom: dotted 1px silver;}
+
+#ProgramInfo div.dataQuery {padding: 4px 0px 4px 0px; border-bottom: dotted 1px silver;}
+#ProgramInfo div.dataQuery span {line-height : 20px;}
+#ProgramInfo div.dataQuery input {width: 60px; vertical-align: middle !important; }
+
+#ProgramInfo div.dataEdit {padding: 4px 0px 4px 0px; border-bottom: dotted 1px silver;}
+#ProgramInfo div.dataEdit span {line-height : 20px;}
+#ProgramInfo div.dataEdit input {left: 0px; vertical-align: middle;}
+#ProgramInfo div.dataEdit select {vertical-align: middle;}
+
+#ProgramInfo div#divRealizacja {display: block; padding-top: 8px; }
+#ProgramInfo div#divRealizacja span.pcent {display: inline-block; width: 50px; text-align: right; margin-right: 16px;}
+    
+    
+/*
+#ProgramInfo #divRealizacja {display: block; padding-top: 8px; }
+#ProgramInfo .progressBar3 { display: inline-block; vertical-align: bottom; position: absolute; }
+#ProgramInfo .pcent {display: inline-block; width: 50px; text-align: right; margin-right: 16px;}
+*/
+
+
+
+
+
+
+
+/*----- WYNIKI -----*/
+.scrollbox 
+{
+	display: block;
+	width: 720px;
+	height: 580px !important;
+	
+	xwidth: 100%;
+	height: 100%;
+	overflow: auto;
+	
+	border: solid 1px #aaaaaa;
+	xborder-collapse: collapse;
+}
+
+/*----- tabelka raportu -----*/
+
+.report
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    xwidth: 100%;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border: solid 1px silver;
+    xborder: none;
+    text-align: left;
+}
+
+.report th
+{
+    background: #fff url(../images/back/back1_20.png) repeat-x bottom;
+    height: 20px;
+    font-weight: bold;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: gray;
+    padding: 0px 8px 0px 8px;
+    text-align: left;
+    border-right: solid 1px silver;
+    border-bottom: solid 1px silver;
+}
+
+.report td
+{
+    background: #fff url(../images/back/back2_20.png) repeat-x bottom;
+    padding: 2px 8px 2px 8px;
+    border-bottom: solid 1px silver;
+    border-right: dotted 1px silver;
+    height: 20px;           /* to jest wysokość bez padding */
+    vertical-align: top;    /* jak textbox ma wiecej niz 1 linie to ladniej jak od gory wyswietla */
+    line-height: 20px;      /* kompromis pomiedzy odstepami linii a połozeniem top przy - wymaga ustawienia padding*/
+}
+
+/*>>>> border usunac */
+
+
+
+/* std ramki bez boków 
+table#wyniki_podsumowanie { border: none; border-top: solid 1px silver; }
+#wyniki_podsumowanie td { border: none; border-bottom: solid 1px silver; }
+#wyniki_podsumowanie td.col1 { border-right: dotted 1px silver; }  /**/
+/* std ramki */
+table#wyniki_podsumowanie { border: solid 1px silver; width: 100%; }
+#wyniki_podsumowanie td { border: none; border-bottom: solid 1px silver; }
+#wyniki_podsumowanie td.col1 { border-right: dotted 1px silver; }  /**/
+/* light
+table#wyniki_podsumowanie { border: none; border-top: solid 1px #F0F0F0; }
+#wyniki_podsumowanie td { border: none; border-bottom: solid 1px #E0E0E0; }
+#wyniki_podsumowanie td.col1 { border-right: solid 1px #F0F0F0; }  /**/
+
+#wyniki_podsumowanie a { xcolor: Black; color: #0066CC; text-decoration: none; }
+#wyniki_podsumowanie a:hover { xcolor: Highlight; color: #E00024; text-decoration: underline; }
+
+#wyniki_podsumowanie td.col2 
+{
+    text-align: right;
+    width: 280px;
+    white-space: nowrap;
+}
+
+table.wyniki_realizacja { width: 737px; }
+.wyniki_realizacja a { color: Black; text-decoration: none; }
+.wyniki_realizacja a:hover { color: Highlight; text-decoration: underline; }
+.wyniki_realizacja td.col1 {border-left: none; }
+.wyniki_realizacja th {border-top: none;}
+.wyniki_realizacja td.col2 { width: 55px; }
+.wyniki_realizacja td.col2 span{ float: left; }
+.wyniki_realizacja td.col2 span.pcent{ float: right; }
+.wyniki_realizacja td.col2 a{ float: left; }
+.wyniki_realizacja td.col2 a.pcent{ float: right; }
+.wyniki_realizacja td.col7 a { display: block; width: 300px; }
+
+table.wyniki_sciezka { width: 737px; }
+.wyniki_sciezka a { color: Black; text-decoration: none; }
+.wyniki_sciezka a:hover { color: Highlight; text-decoration: underline; }
+.wyniki_sciezka a[disabled] { color: Gray; text-decoration: none; }
+.wyniki_sciezka a[disabled]:hover { color: Gray; text-decoration: none; }
+.wyniki_sciezka td { border-right: solid 1px #EAEAEA !important;}
+.wyniki_sciezka .col3 {border-right: none !important;}
+.wyniki_sciezka td.col3 {width: 50px; text-align: right; }
+.wyniki_sciezka .opis td.col1 {padding-left: 32px; color:gray;}
+.wyniki_sciezka .opis td.col3 {color: Gray; }
+.wyniki_sciezka .opis td.col3 a {color: Gray; }
+
+table#wyniki_szkolenia { width: 737px; }
+#wyniki_szkolenia a { color: Black; text-decoration: none; }
+#xxwyniki_szkolenia a:visited { color: Black; text-decoration: none; }
+#wyniki_szkolenia a:hover { color: Highlight; text-decoration: underline; }
+#wyniki_szkolenia .col2 {width: 50px;}
+#wyniki_szkolenia .col3 {width: 50px; border-right: none;}
+#wyniki_szkolenia td.col1 { padding-left: 32px;}
+#wyniki_szkolenia td.group { padding-left: 8px; font-weight: bold; border-right: none; background: #fff url(../images/back/back1_20.png) repeat-x bottom;}
+#wyniki_szkolenia td.col1 span { color: Gray;}
+#wyniki_szkolenia td.col2 {text-align: center;}
+#wyniki_szkolenia td.col3 {text-align: right; color: Gray;}
+
+table#rep_stanowiska {width: 737px;}
+#rep_stanowiska a { color: Black; text-decoration: none; }
+#rep_stanowiska a:hover { color: Highlight; text-decoration: underline; }
+#rep_stanowiska .col2 { width: 50px; text-align: right; border-right: solid 1px silver;}
+#rep_stanowiska .dzial td {font-weight: bold; background: #fff url(../images/back/back1_20.png) repeat-x bottom;}
+#rep_stanowiska .stanowisko td.col1 {padding-left: 32px;}
+#rep_stanowiska td.col2 { color: Gray; }
+
+div.rep_pracinfo table.table3A {width: 737px; }
+table.rep_nodata {width: 737px; }
+.printon {display: none;}
+
+div.OpisStanuAnkiety { text-align: left; }
+div.OpisStanuAnkiety b.kierstan { color: Black; }
+div.KierPanel b.kierstan { color: Red; }
+
+
+/*----- ListBox1 -----*/ /* SELECT ale zdaje sie ze to nie dziala ... */
+.ListBox1
+{
+    line-height: 25px;
+}
+
+.ListBox1 option
+{
+    line-height: 25px;
+    height: 25px;
+}
+
+
+/*----- tabsContent: LeftMenu LeftMenuConent -----*/
+table.tabsContent 
+{
+    margin: 0px;
+    padding: 0px;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100% !important;    /* chrome */
+}
+
+/*----- REPORTS -----*/
+div.rep_content
+{
+    xtext-align: center;
+    
+    xborder: solid 1px red;
+}
+
+.rep_content table.tabsContent
+{
+    xwidth: auto !important;
+    xwidth: 960px !important;
+    xmin-width: 900px !important;
+    
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    display: inline-table;      /*centrowanie na chrome*/
+}
+
+.rep_content td.LeftMenu
+{
+    border-left: solid 1px gray;
+    border-top: solid 1px gray;
+    border-bottom: solid 1px gray;
+}
+
+.rep_content td.LeftMenuContent
+{
+    border-right: solid 1px gray;
+    border-top: solid 1px gray;
+    border-bottom: solid 1px gray;
+}
+
+.rep_content table.tabsStrip { position: relative; bottom: -1px; }
+.rep_content div.tabsStrip { position: relative; bottom: -1px; }
+
+
+/*----- nagłówek raportu ----- 123 */
+table.rep_header  
+{
+    border-collapse: collapse;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 16px 0px;
+    xmargin: 0px 0px 0px 0px;
+    
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    xvertical-align: middle;
+    xwhite-space: nowrap;
+    
+    width: 100%;
+}
+
+table.rep_header xxximg
+{
+    padding-top:2px;
+    padding-left:24px;
+    padding-right:16px;
+    vertical-align:top;
+}
+
+table.rep_header td { text-align: left; vertical-align: middle; xborder: solid 1px red; }
+table.rep_header td.col1 { padding-left: 16px; padding-right: 16px; width: 32px; height: 50px;}
+table.rep_header td.col3 { width: 158px; }
+table.rep_header td.col3 img { xposition: relative; xtop: -8px; }
+
+/*---------------------------*/
+.tabsContent td.LeftMenu
+{
+    vertical-align: top;
+    padding: 25px 0px 8px 8px;
+    xbackground-color: #ECF0FB;
+    background-color: #EEF3F7;
+    border-right: solid 1px silver;
+    width: 10px; 
+    height: 580px;      /* chrome */
+
+    -moz-border-radius-topleft: 5px;                        
+    -moz-border-radius-bottomleft: 5px;                        
+    -webkit-border-top-left-radius: 5px;                     
+    -webkit-border-bottom-left-radius: 5px;                         
+    -khtml-border-top-left-radius: 5px;                      
+    -khtml-border-bottom-left-radius: 5px;                              
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    xbehavior: url(css/border-radius.htc);    
+}
+
+.LeftMenu .item 
+{
+    position:relative;
+    left:1px;
+    padding: 0px;
+
+    font-weight:bold;    
+    white-space: nowrap; 
+    border-collapse: collapse;
+    width: 180px !important;
+
+    line-height: 30px;
+    
+    xborder: #ECF0FB;
+    xborder-spacing: 1px;
+}
+
+.LeftMenu .item td
+{
+    xborder-left: solid 1px #ECF0FB;
+    xborder-top: solid 1px #ECF0FB;
+    xborder-bottom: solid 1px #ECF0FB;
+    border-left: solid 1px #EEF3F7;
+    border-top: solid 1px #EEF3F7;
+    border-bottom: solid 1px #EEF3F7;
+    border-right: solid 1px silver;
+    padding: 0px 8px 0px 7px;    
+}
+
+.LeftMenu a.item         
+{
+    xpadding: 0px 8px 0px 7px;
+    color: #0066CC;
+}
+
+.LeftMenu a.item:visited         
+{
+    color: #0066CC;
+}
+
+.LeftMenu .selected td
+{
+    background-color: #fff;
+    border-left: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    border-right: none;
+}
+
+/*--- chrome ---*/
+.LeftMenu div.menu 
+{
+    width: 100%;
+}
+
+.LeftMenu div.menu br
+{
+    display: none;    
+}
+
+.LeftMenu span.item 
+{
+    display: block;   
+    height: 32px;
+    line-height: 32px;
+    padding-left: 8px;
+    width: 171px;
+}
+
+.LeftMenu span.item a.item
+{
+    border: none;
+}
+
+.LeftMenu span.selected 
+{
+    height: 30px;
+    line-height: 30px;
+    background-color: #fff;
+    border-left: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    border-right: none;
+
+    -moz-border-radius-topleft: 5px;                        
+    -moz-border-radius-bottomleft: 5px;                        
+    -webkit-border-top-left-radius: 5px;                     
+    -webkit-border-bottom-left-radius: 5px;                         
+    -khtml-border-top-left-radius: 5px;                      
+    -khtml-border-bottom-left-radius: 5px;                          
+    xborder-radius: 5px;                             
+    xbehavior: url(../styles/border-radius.htc);    
+}
+/*
+-moz-border-radius:6px;
+border-radius:6px 5px;
+-khtml-border-radius:6px;
+-icab-border-radius:6px;
+-webkit-border-radius:6px;
+-khtml-border-radius:6px;
+*/
+
+.LeftMenu span.selected a.selected
+{
+    position: relative;
+    top: -1px;
+    left: 0px;
+}
+
+.LeftMenu .hover
+{
+    color: red;
+}
+
+.LeftMenu span.item[disabled]
+{
+    line-height: 30px;
+    color: Silver;
+    padding-left: 9px;
+}
+
+.LeftMenu span.selected[disabled]
+{
+    line-height: 28px;
+    padding-left: 8px;
+    color: Silver;
+}
+
+
+
+
+
+/*----- content -----*/
+.tabsContent td.LeftMenuContent
+{
+    width: 100%;        /* chrome */
+    vertical-align: top;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 16px 16px 16px 16px;
+
+    -webkit-box-shadow: -8px 0px 8px -6px #DDDDDD;    
+}
+
+
+
+.progstatus 
+{
+    display: block;
+    padding: 0px 0px 16px 0px;
+    xborder-bottom: dotted 1px silver;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #449513;
+    font-size: 14px; 
+}
+
+
+
+
+
+
+
+/*----- TreeView -----*/
+
+.columns_tree { }
+
+.columns_tree table 
+{ 
+    width: 432px;                   /* ustawione na formatce */
+    xborder: solid 1px green; 
+    background: url(../images/treecol_bg.png) repeat-y right; 
+}     /* to rozciąga tabelkę każdego wiersza ale jak td[class] to nie musi być */
+
+
+.xcolumns_tree td { min-width: 20px; }   /* min-width - szerokość td z ikonkami - regulować tak lub szerokością ikonek */
+.xcolumns_tree table {border-collapse: separate;}  /* testy */
+    
+
+.columns_tree td.ctl00_ContentPlaceHolder1_tvKierWorkers_2
+{ 
+    width: 100% ; 
+    vertical-align: top;
+    xborder: solid 1px blue;
+}
+
+.columns_tree td.lastcol
+{ 
+    width: 100% ; 
+    vertical-align: top;
+    xborder: solid 1px red;
+}
+
+.columns_tree td[style] { width: 100%; xborder: solid 1px green;}   /* ostatnia td ma właciwość style ! i po tym rozpoznajemy*/
+
+.columns_tree td 
+{
+    vertical-align: top;
+}
+
+.columns_tree .treeline 
+{ 
+    height: 30px; 
+    line-height: 15px;
+
+    xposition: relative;
+    xborder: solid 1px lime;
+    
+    float: left;
+    width: 100%;
+}
+
+.columns_tree .treeline .col1 
+{ 
+    overflow: hidden;
+    
+    xdisplay: block;
+    xfloat: left;
+    xclear: both;
+    width: 100%;
+}
+
+
+.tvKierWorkers .col23 
+{ 
+    clear: both;
+    float: right; 
+    width: 187px; 
+    clear: both;
+
+    display: inline-block;
+    display: block;
+
+    xborder: solid 1px red;
+    
+    font-weight: normal; 
+    color: Black; 
+    xbackground-color: White;
+    
+    
+    height: inherit;
+    overflow: hidden;
+    
+    padding: 0px 3px 0px 3px;
+    
+    xborder-left: solid 1px silver;
+}
+
+
+.tvKierWorkers .col2 
+{ 
+    width: 130px; 
+    height: 15px;
+    float: left;
+    display: block;
+    xborder: solid 1px red;
+}
+.tvKierWorkers .col3 
+{ 
+    width: 55px; 
+    height: 15px;
+    float: left;
+    display: block;
+    xborder: solid 1px red;
+}
+
+.tvKierWorkers .col23 span.pcent { float: right;}
+
+
+
+
+
+
+
+
+.columns_tree .treeline div
+{
+    xfloat: right;
+    xborder: solid 1px red;    
+}
+
+
+
+
+.qcolumns_tree .treeline .col 
+{ 
+    font-weight: normal; color: Black; background-color: White;
+    height: inherit;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    padding: 0px 3px 0px 3px;
+    border-left: solid 1px silver;
+    background-color: #fafafa;
+    
+    
+    xfloat: left;
+    
+}
+.qcolumns_tree .selected .treeline .col, .columns_tree .selected .treeline .col1 
+{ 
+    color: white; background-color: #0099FF;
+}
+/*-------------*/
+.qtvKierWorkers .col2 { width: 130px; right: 50px;}
+.qtvKierWorkers .col3 { width: 55px; right: 0px;}
+
+
+/*
+.tvKierWorkers .col1 { z-index:1; clear: both;}
+.tvKierWorkers .col23 
+{ z-index:2; width: 300px; clear: both;}
+.tvKierWorkers .col2 { z-index:3; width: 120px; }
+.tvKierWorkers .col3 { z-index:4; width: 55px; }
+*/
+
+
+
+.qqtvKierWorkers .col2 
+{ 
+    float: right; 
+    width: 130px; 
+    background-color: Gray;
+}
+.qqtvKierWorkers .col3  
+{
+    background-color: silver;
+    float: right; 
+    display: block;
+    width: 55px; 
+    xright: 0px;}
+
+
+#tvKierWorkersHeader 
+{   
+    width: 100%; 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 9px; 
+    text-transform: uppercase;
+    xcolor: Gray;
+    color: #4472B0;     /* niebieskawy jak groupbox title */
+}
+#tvKierWorkersHeader td {}
+#tvKierWorkersHeader .col1 {}
+#tvKierWorkersHeader .col2 { width: 130px; }
+#tvKierWorkersHeader .col3 { width: 70px; }
+
+/*----- DZIALY I STANOWISKA -----*/
+.selectstanowiska {width: 100%; padding: 0px; margin: 16px 0px 16px 0px; border-collapse: collapse; border-style: none; xline-height: 1em;}
+.selectstanowiska td {background-image: none; 
+                      border-style: none; 
+                      xborder: solid 1px green; 
+                      padding: 0px !important;
+                      xline-height: 20px;}
+.selectstanowiska .tree {width: 400px;}
+
+.selectstanowiska .controls {width: 75px; padding: 0px 8px 0px 8px !important; vertical-align:top;}
+.selectstanowiska .controls input {width: 100%;}
+.selectstanowiska .list {xwidth: 350px;}
+
+.selectstanowiska .paTree
+{
+    xoverflow: auto;
+    xdisplay: block;
+    width: 430px;
+    height: 310px;
+    border: solid 1px silver;
+}
+
+/**/
+.selectstanowiska .paTree td 
+{
+    height: 20px; 
+    line-height: 20px; 
+    width : 20px !important;
+    vertical-align: top; 
+}
+
+.selectstanowiska .paTree td div 
+{
+    display: block !important; 
+    height: 20px !important;
+    width: 20px !important;
+}
+
+.selectstanowiska .paTree td a 
+{
+    height: 20px;
+    vertical-align: top;
+    display: inline-block;
+    white-space: nowrap !important;
+}
+
+.selectstanowiska .paTree td a[tabIndex]
+{
+    padding-top: 2px;
+    padding-left: 1px;
+    padding-right: 0px;
+    width: 16px;
+    height: 18px;
+}
+
+.selectstanowiska select.lbStanowiska
+{
+    display: block;
+    width: 370px;
+    xheight: 310px;
+    border: solid 1px silver;
+}
+
+
+
+
+
+/*----- SELECTSTANOWISKA 2 -----*/
+.selectstanowiska2 select.lbStanowiska
+{
+    width: 400px;
+}
+
+
+
+
+
+/*----- PANEL KIEROWNIKA -----*/
+span.ankieta_s0 { } /* … */
+span.ankieta_s1 { } /* P */
+span.ankieta_s2 { font-weight: bold; color: Red;} /* K */
+span.ankieta_s3 { font-weight: bold; color: Red;} /* PK */
+span.ankieta_s4 { } /* A */
+span.ankieta_s5 { font-weight: bold; color: Red;} /* S */
+span.ankieta_s6 { } /* Z */
+span.ankieta_s7 { } /* X */
+span.ankieta_s8 { } /* N */
+span.ankieta_np { xcolor: Green;} /* nie podlega (okres ochrony) */
+span.ankieta_no { xcolor: Green;} /* nie oceniany */
+
+.treeline span {float: left}
+.treeline span.pcent { float: right;}
+
+/*-----------*/
+
+/* tabela ale nie działa link z <a ..>
+.columns_tree table { width: 100%; }
+.columns_tree a { display: block; }
+.treeline       { display: inline-table; table-layout: fixed; width: 100%; border-collapse: collapse; }
+.treeline td    { overflow: hidden; padding: 3px; }   // ikonka ma rozmiar większy wiec trzeba dodać /
+.treeline .col1 { }
+.treeline .col2 { font-weight: normal; color: #000; border-left: solid 1px silver; }
+.treeline .col3 { font-weight: normal; color: #000; border-left: solid 1px silver; }
+*/
+/*----- Progress bar -----*/
+.Progress1
+{
+    xdisplay: block;
+    xfloat:right;    
+    xfloat: left;
+    
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 9px; 
+    text-transform: uppercase;
+    color: Silver;
+    padding: 0px;
+    margin: 0px;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    
+    xposition: static;
+    xleft: 0px;
+}
+
+.Progress1 .stepdone
+{
+    xdisplay: block;
+    xcolor: #0066CC;
+    color: Gray;
+}
+
+.Progress1 .stepcurrent
+{
+    color: #0066CC;
+}
+
+.progressBar3 
+{
+    display: inline-block;
+    height: 11px;
+    background: url(../images/progress/ProgressBar3.png) 0px top;
+    background-position: 400px top;
+}
+
+/*----- ProgressBar2 -----*/
+div.progressBar2 { display: inline-block; height: 11px; }
+div.progressBar2 div { float: left; height: 11px;}
+div.progressBar2 div.pbar_left { width: 1px; background: url(../images/progress/ProgressBar3left.png) no-repeat left top; }
+div.progressBar2 div.pbar { background: url(../images/progress/ProgressBar3.png) no-repeat; background-position: -400px top; }
+div.progressBar2 div.pbar_right { width: 1px; background: url(../images/progress/ProgressBar3right.png) no-repeat right top; }
+
+/*----- BUTTONS -----*/
+.bottom_buttons 
+{
+    text-align: right;
+    xmargin-top: 8px;
+    padding-top: 8px;
+    xborder: solid 1px green;
+}
+.bottom_buttons span
+{
+    display: inline-block;
+    line-height: 25px;
+    height: 25px;
+    vertical-align: top;
+}
+
+.button200 {width: 200px; height: 25px}
+.button150 {width: 150px; height: 25px}
+.button125 {width: 125px; height: 25px}
+.button100 {width: 100px; height: 25px}
+.button75 {width: 75px; height: 25px}
+.button40 {width: 40px; height: 25px}
+.button {height: 25px}
+.button_postback { visibility: hidden;}
+
+.fileupload { xheight: 25px; 
+              xborder: solid 1px red;
+              }
+
+/*----- ERROR/INFO PAGE -----*/
+.error_form 
+{
+    height:100%;
+    width: 100%;
+}
+
+.error_form #content .content2 
+{
+    padding: 40px 48px 48px 48px !important;
+}
+
+div#info_content 
+{
+    padding: 32px 40px 16px 40px !important;
+}
+
+.error_title 
+{
+    text-align: right;
+    font-size: 25px;
+    padding: 8px 0px 4px 0px;
+    margin-bottom: 32px;
+    float: right;
+    color: #882F2F;
+    width: 60%;
+    border-bottom: solid 1px #882F2F;
+    text-transform: uppercase;
+}
+
+.error_img 
+{
+    text-align: left;
+    float: left;
+    width: 30%;
+    xpadding-left: 8px;
+    padding-left: 48px;
+    margin: 0px !important;
+    padding: 0px 0px 0px 24px !important;
+}
+
+.error_content /* tekst poniżej ramki */
+{
+    padding-top: 32px;
+    padding-bottom: 8px;
+    border-bottom: dotted 1px gray;
+    clear: right;
+}
+
+.error_code /* ramka */
+{
+    padding: 16px 16px 16px 16px;
+    border: solid 1px gray;
+    background-color: white;
+    color: #5B5B5B;
+    xclear: right;
+    clear: both;
+    min-height: 250px;
+}
+
+/*----- LOGIN FORM -----*/
+.login_form 
+{
+    height:100%;
+    width: 100%;
+}
+
+.login_form #content .content2 
+{
+    padding: 40px 48px 48px 48px !important;
+}
+
+.login_form #content .content2 span.red { color: Red; }
+
+.login_form table.GroupBox1 
+{
+    text-align: left; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
+
+.login_form table.login_data 
+{
+    text-align: left; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login_form table.login_data td
+{
+    xborder: solid 1px red;
+    height: 32px;
+    line-height: 32px;
+    vertical-align: middle;
+}
+
+.login_form table.login_data td.col1 { width: 60px; }
+.login_form table.login_data td.col2 span { font-weight: bold; line-height: 25px;}
+.login_form table.login_data td.col2 input { position: relative; top: 2px; }
+.login_form table.login_data td.col2 input.textbox { width: 100px; top: 0px; } /*[type="text"]*/
+
+/*----- list view -----*/
+/*
+.ListView1 .table
+{
+    border-collapse:collapse;
+    border:1px solid #2E2E2E;
+}
+
+.ListView1 .thead th
+{
+    background: #243D02 url(../images/1/th.jpg) no-repeat right;
+    height: 47px;
+    color: #FFFFFF;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 0px 7px;
+    margin: 20px 0px 0px;
+    text-align: left;
+    border-right: 1px solid #8D8D8D;
+}
+
+.ListView1 .tbody tr
+{
+    background: url(../images/1/td1.jpg) repeat-x top;
+}
+
+.ListView1 .tbody tr.odd
+{
+    background: #7DBB27;
+}
+
+.ListView1 .tbody th,td
+{
+    font-size: 0.8em;
+    line-height: 1.4em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2E2E2E;
+    padding: 10px 7px;
+    border-top: 1px solid #243D02;
+    border-right: 1px solid #8D8D8D;
+    text-align: left;
+}
+
+.ListView1 .a
+{
+    color: #2E2E2E;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.ListView1 .a:hover
+{
+    color: #FFFF50;
+    text-decoration: underline;
+}
+
+.ListView1 .tfoot th
+{
+    background: #243D02 url(../images/1/foot.jpg) repeat-x bottom;
+    border-top: 1px solid #243D02;
+    color: #FFFFFF;
+    height: 30px;
+}
+
+.ListView1 .tfoot td
+{
+    background: #243D02 url(../images/1/foot.jpg) repeat-x bottom;
+    color: #FFFFFF;
+    height: 30px;
+}
+    
+*/
+
+
+
+/*----- form caption - table -----
+
+            <table class="caption"><tr><td>
+                <img alt="" src="../images/captions/layout_edit.png"/>
+            </td><td>
+                Parametry programu rozwoju pracowników - Ankieta<br />
+                <span class="t1">Program:</span>
+                <asp:Label ID="lbProgram" runat="server" Text="Program" CssClass="t0"></asp:Label>
+            </td></tr></table>
+
+----------------------------------*/
+
+
+
+/*
+#div1 {border: solid 1px red;}
+#div2 {border: solid 1px red;}
+*/
+
+
+
+
+/*----- slider programu do ustalania dat -----*/
+
+table.progprogress { border-collapse: collapse; border-spacing: 0px; 
+    width: auto; 
+    xtable-layout: auto; empty-cells: show;
+    border: solid 1px silver; 
+    width: 100%;
+}
+table.progprogress td 
+{
+    padding: 0px 2px 2px 2px; margin: 0px; width: auto; white-space: nowrap; 
+    text-align: center; 
+}
+
+table.progprogress td input
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal; 
+    font-size: 9px; 
+    color: black;
+}
+table.progprogress th 
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 9px; 
+    text-transform: uppercase;
+    color: Gray;
+    text-align: left;
+}
+table.progprogress .row0 th     /* jak table3B */
+{
+    background: url('../images/back/back1_20.png') repeat-x bottom;
+    border-bottom: solid 1px silver;
+    padding: 3px 8px 3px 8px;
+    line-height: normal;
+}
+table.progprogress .row1 th 
+{
+    font-weight: normal; 
+    color: #444;
+    text-align: center;
+}
+table.progprogress .row3 td 
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: normal; 
+    font-size: 9px; 
+    color: black;
+
+    xpadding: 2px; 
+    xpadding: 0px 0px 0px 0px; 
+    vertical-align: middle;
+    color: #444;
+    height: 14px; 
+}
+table.progprogress .col1 
+{
+    border-right: solid 1px silver;
+}
+table.progprogress .row4 td.col1 
+{
+    xpadding: 2px; 
+    xpadding: 0px 0px 0px 0px; 
+    border-top: none;
+}
+table.progprogress .row4 td.col2 
+{
+    padding: 2px; 
+    xpadding: 0px 0px 0px 0px; 
+    vertical-align: top;
+    text-align: left;
+    height: 22px; 
+    border-top: solid 1px silver;
+}
+.progprogress input.dni {left: 0px; width: 16px; text-align: center;}
+.progprogress input.data {left: 0px; width: 70px; text-align: center;}
+
+table.progprogress #xxxmultiSliderExtender_handle_3 
+{
+    background-color: Red !important;
+    background-image: none;
+    border: solid 1px green;
+}
+
+table.progprogress div.color_marker
+{
+    position: absolute;
+    width: 100px;
+    height: 22px;
+    display: block;
+}
+
+table.progprogress #multiSliderExtender_outer
+{
+    background: url('../images/progress/sliderLine.gif') repeat-x 50% top;
+    xbackground-image: none;
+    xbackground-color: Transparent;
+}
+/*najblade
+table.progprogress .color0 {background-color: #F5F7F0;}
+table.progprogress .color1 {background-color: #FFFAED;}
+table.progprogress .color2 {background-color: #FCECEE;}
+table.progprogress .color3 {background-color: #F6F8FC;}
+table.progprogress .color4 {background-color: #FFFAED;}
+table.progprogress .color5 {background-color: #FCECEE;}
+table.progprogress .color6 {background-color: #EEF1F5;}
+*/
+/*blade1*/
+table.progprogress .color0 {background-color: #D3ECB7;}
+table.progprogress .color1 {background-color: #FFEAB2;}
+table.progprogress .color2 {background-color: #F4ACB7;}
+table.progprogress .color3 {background-color: #D9E3F2;}
+table.progprogress .color4 {background-color: #FFEAB2;}
+table.progprogress .color5 {background-color: #F4ACB7;}
+table.progprogress .color6 {background-color: #B8C6D7;}
+/**/
+/*zywe
+table.progprogress .color0 {background-color: #7AC524;}
+table.progprogress .color1 {background-color: #FFC014;}
+table.progprogress .color2 {background-color: #E00024;}
+table.progprogress .color3 {background-color: #8BACDA;}
+table.progprogress .color4 {background-color: #FFC014;}
+table.progprogress .color5 {background-color: #E00024;}
+table.progprogress .color6 {background-color: #255085;}
+*/
+/*
+table.progprogress .color0 {background-color: #8FFF8F;}
+table.progprogress .color1 {background-color: #8FFF8F;}
+table.progprogress .color2 {background-color: #A9F18F;}
+table.progprogress .color3 {background-color: #C5D98F;}
+table.progprogress .color4 {background-color: #E3BA8F;}
+table.progprogress .color5 {background-color: #F6A18F;}
+table.progprogress .color6 {background-color: #FF8F8F;}
+*/
+/*    
+table.progprogress .color0 {background-color: #00FF00;}
+table.progprogress .color1 {background-color: #27D700;}
+table.progprogress .color2 {background-color: #629E00;}
+table.progprogress .color3 {background-color: #C23C00;}
+table.progprogress .color4 {background-color: #A65900;}
+table.progprogress .color5 {background-color: #A35B00;}
+table.progprogress .color6 {background-color: #FE0000;}
+*/    
+
+
+
+
+/*----- table3A, musi byc za -----*/
+#pracInfo1 input.prac_opis, #pracInfo1 input.prac_mail { width: 545px; }
+#pracInfo1 input.prac_login { width: 300px; }
+#pracInfo1 select.prac_stanowisko { width: 306px; }
+/*----- Panel Kierownika -----*/
+#pracInfo2 input.prac_opis, #pracInfo2 input.prac_mail, 
+#pracInfo2 input.prac_login { width: 260px; }
+#pracInfo2 select.prac_stanowisko { width: 266px; }
+#pracInfo2 label.prac_name {display: inline-block; width: 76px; }
+#pracInfo2 span.prac_name_space {display: none;}
+
+
+
+/*----- ANKIETA WERYFIKACJI DANYCH -----*/
+/* ankieta - dane podstawowe */
+table.table5     
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: solid 1px silver;
+    border-collapse:collapse;
+    width: 100%;
+}
+
+table.table5 th
+{
+    background: url(../images/back/back1_20.png) repeat-x bottom;
+    font-weight: bold;
+    font-size: 9px;
+    text-transform: uppercase;
+    text-align: left;
+    color: gray;
+    padding: 0px 8px 0px 8px;
+    height: 20px;
+    xborder-right: solid 1px silver;
+    xborder-right: solid 1px #E0E0E0;
+    
+    border-left: solid 1px #E0E0E0;
+    border-bottom: solid 1px silver;
+}
+
+table.table5 td
+{
+    height: 22px;
+    xline-height: 22px;
+    xborder-top: dotted 1px silver;    
+    
+    xborder-top: solid 1px #E0E0E0;
+    border-bottom: solid 1px #E0E0E0;
+    
+    xborder-right: solid 1px #EEEEEE;
+    border-left: solid 1px #EEEEEE;
+    padding: 7px 8px 3px 8px;
+    text-align: left;
+    vertical-align: top;
+    background: #FCFCFC url('../images/back/back2_30.png') repeat-x bottom;
+}
+
+table.table5 tr.lastrow td { border-bottom-color: Silver; }
+
+table.table5 th.colDane, 
+table.table5 td.colNazwa   { border-left-color: Silver; }
+table.table5 th.colDane    { xtext-align: center; } 
+table.table5 td.colNazwa   { line-height: 18px; background: #FAFAFA url('../images/back/back1_32.png') repeat-x bottom; }
+table.table5 td.colWartosc { line-height: 18px; }                  
+table.table5 td.colPAcc    { }
+table.table5 td.colPValue  { line-height: 18px; }
+table.table5 td.colKAcc    { }
+table.table5 td.colKValue  { line-height: 18px; }                  
+table.table5 td.colOValue  { line-height: 18px; }                  
+table.table5 td.colAcc     { }
+table.table5 td.colEdit    { padding: 4px 5px 4px 5px; }
+
+table.table5 th.colNazwa, 
+table.table5 td.colNazwa    { width: 200px; }
+table.table5 th.colWartosc, 
+table.table5 td.colWartosc  { width: auto; }
+table.table5 th.colPAcc     { width: 21px }  
+table.table5 td.colPAcc     { width: 20px; }
+table.table5 th.colPValue   { width: 271px; }
+table.table5 td.colPValue   { width: 270px; }
+table.table5 th.colKAcc, 
+table.table5 td.colKAcc     { width: 20px; }
+table.table5 th.colKValue, 
+table.table5 td.colKValue   { width: 270px; }
+table.table5 th.colOValue, 
+table.table5 td.colOValue   { width: 320px; }
+table.table5 th.colAcc, 
+table.table5 td.colAcc      { width: 60px; }
+table.table5 th.colEdit     { width: 274px; } 
+table.table5 td.colEdit     { width: 280px; }
+
+table.table5 select               { height: 20px; }
+table.table5 td.colEdit input.textbox { width: 274px; }
+table.table5 td.colEdit select    { width: 280px; margin-top: 2px; }
+table.table5 td.colEdit input.ico { margin-top: 2px; vertical-align: top; }
+table.table5 td.colEdit span      { display: block; margin-top: 4px;}
+
+table.table5 td.colWyjasnic        { padding: 4px 5px 4px 5px; vertical-align: middle; text-align: right; border-left-color: Silver; border-bottom-color: Silver; }
+table.table5 td.colWyjasnicRed     { background: #FFD9D9 url('../images/back/back3_r1.png') repeat-x bottom !important; 
+                                     xbackground: #FFF3F3 url('../images/back/back3_r.png') repeat-x bottom !important; 
+                                     xbackground: #FFFDE5 url('../images/back/back3_y.png') repeat-x bottom !important; }
+
+table.table5 td.colWyjasnic span, 
+table.table5 td.controlline span { vertical-align: middle; }
+table.table5 td.colWyjasnic select,
+table.table5 td.controlline select { vertical-align: middle; }
+.ListView3 table.table5 td.controlline select { position: relative; top: 1px; }
+
+table.table5 td.colWyjasnic span.buttons, 
+table.table5 td.controlline span.buttons { width: 120px; display: inline-block; }
+/*table.table5 td.colWyjasnic div.buttons,  div nie moze być na IE7 bo się psuje
+table.table5 td.controlline div.buttons { width: 120px; display: inline-block; } */
+
+table.table5 tr.PanelP th.colDane { text-align: left; }
+table.table5 tr.PanelP th.colPAcc,
+table.table5 tr.PanelP td.colPAcc,
+table.table5 tr.PanelP th.colAcc,
+table.table5 tr.PanelP td.colAcc  { text-align: right; border-left: none; }
+table.table5 tr.PanelP td.colPAcc { width: 60px; }
+table.table5 tr.PanelP td.colPValue { width: 336px; }
+table.table5 tr.PanelP th.colEdit,
+table.table5 tr.PanelP td.colEdit { width: 336px; }
+table.table5 tr.PanelP td.colEdit input.textbox { width: 336px; }
+table.table5 tr.PanelP td.colEdit select { width: 342px; }
+
+table.table5 tr.NoP th.colKValue,
+table.table5 tr.NoP td.colKValue,
+/*table.table5 tr.NoP th.colOValue,
+table.table5 tr.NoP td.colOValue,*/
+table.table5 tr.NoP th.colEdit,
+table.table5 tr.NoP td.colEdit { width: 436px; } /* do ListView3 inside... td.colEdit 442px */
+table.table5 tr.NoP td.colEdit input.textbox { width: 436px; }
+table.table5 tr.NoP td.colEdit select { width: 442px; }
+
+table.table5 tr.PanelK th.colPValue,
+table.table5 tr.PanelK td.colPValue,
+table.table5 tr.PanelK th.colKValue,
+table.table5 tr.PanelK td.colKValue,
+table.table5 tr.PanelK th.colEdit,
+table.table5 tr.PanelK td.colEdit { border-left-color: Silver; }
+table.table5 tr.PanelK td.colPAcc,
+table.table5 tr.PanelK td.colPValue 
+{
+    background: #F3FAEB url('../images/back/back3_g.png') repeat-x bottom;
+    xbackground: #F4F9FF url('../images/back/back3_b.png') repeat-x bottom;
+}
+table.table5 tr.PanelK td.colKAcc,
+table.table5 tr.PanelK td.colKValue,
+table.table5 tr.PanelK td.colAcc,
+table.table5 tr.PanelK td.colEdit  
+{
+    xbackground: #F3FAEB url('../images/back/back3_g.png') repeat-x bottom;
+    background: #F4F9FF url('../images/back/back3_b.png') repeat-x bottom;
+}
+
+xxxtable.table5 td.colWartosc { border-left-color: Silver; }
+
+table.table5 tr.PanelK th.colPValue,
+table.table5 tr.PanelK th.colKValue { border-left: none; }
+
+/*
+table.table5 th.colPAcc,
+table.table5 th.colKAcc,
+table.table5 td.colPAcc,
+table.table5 td.colKAcc { border-left: none; }
+*/
+
+
+table.table5 tr.PanelO th.colPValue,
+table.table5 tr.PanelO td.colPValue { border-left-color: Silver; }
+
+table.table5 tr.PanelO td.colPAcc,
+table.table5 tr.PanelO td.colPValue  
+{
+    xbackground: #F4F9FF url('../images/back/back3_b.png') repeat-x bottom;
+    background: #F3FAEB url('../images/back/back3_g.png') repeat-x bottom;
+}
+table.table5 tr.PanelO td.colOValue 
+{
+    background: #FFFDE5 url('../images/back/back3_y.png') repeat-x bottom; 
+}
+
+table.table5 tr.PanelO th.colPValue,
+table.table5 tr.PanelO th.colKValue { border-left: none; }
+
+table.table5 tr.PanelO th.colOValue,
+table.table5 tr.PanelO td.colOValue { border-right: solid 1px Silver; }
+
+/*
+table.table5 th.colDane    { }
+table.table5 th.colAcc     { border-left: none; }
+table.table5 th.colAcc, table.table5 td.colAcc { text-align: right; }                   
+*/
+
+table.table5 span.nazwa {}
+table.table5 span.star { font-size: 10px; color: Red;}
+table.table5 span.opis, table.table5 span.opis2    
+{
+    display: block;
+    font-weight: normal;
+    font-size: 10px; 
+    xtext-transform: uppercase;
+    color: Gray;
+    line-height: 12px;
+    margin-bottom: 2px;
+}
+table.table5 span.opis2 { line-height: 10px; margin: 0px !important; vertical-align: middle;}  
+
+.center_wide table.table5 td.colWartosc {}
+.center_wide table.table5 td.colWartosc {}
+
+/* ankieta - lista (dzieci, szkoły itd.) */
+table.ListView3   /*zewnętrzna tabelka*/
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.ListView3 table    /*tabelka z danymi*/
+{
+    border-collapse: collapse;
+    padding: 0px;
+    margin: 0px;
+    xwidth: 100%;
+    text-align: left;
+}
+
+.ListView3 table tr.iit td { background: #FFE28A; }
+
+.ListView3 table td.control { text-align: center; } 
+.ListView3 table td.control input[type=submit]
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px !important;
+    text-transform: uppercase; 
+    
+    xborder: solid 1px red;
+    border: none;
+    
+    font-weight: bold;
+    xtext-decoration: underline;
+    color:#375C8E;
+    background-color:Transparent;
+    cursor: pointer;
+ 
+    padding: 2px 0px 2px 0px;   /* ciekawostka - jak padding jest na 0 to czasem nie zaznacza hover */
+    xpadding: 0px;
+    margin: 0px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.ListView3 .control input:hover { color:Red !important; text-decoration: underline;}
+
+.xxxListView3 .table5 td.last 
+{ 
+    border-bottom: solid 2px Silver; 
+    }
+/*.ListView3 .table5 tr.iit td { border: solid 1px Silver; }*/
+.ListView3 .table5 tr.eit td 
+{ 
+    vertical-align: middle; 
+    border-left-color: Silver; 
+    border-bottom: solid 2px Silver;
+    padding: 4px 8px 4px 8px; 
+}
+.ListView3 .table5 tr.iit td  
+{
+    padding: 4px 5px 4px 5px; 
+    border-left: solid 1px Silver;
+    border-bottom: solid 1px Silver;
+    xborder-left-color: Silver; 
+    background-color: white;
+    background: #FAFAFA url('../images/back/back1_32.png') repeat-x bottom; 
+}
+.xxxListView3 .table5 tr.iit td.col2 { xheight: 22px; padding: 4px 5px 4px 5px; }
+
+
+
+/*
+.ListView3 .table5 td.col1 { width: 200px; }
+.ListView3 .table5 td.col2 { width: auto; xwidth: 300px; }
+.ListView3 .table5 td.col3 { width: 50px; xtext-align: right; }
+.ListView3 .table5 td.col4 { width: 336px; }
+
+.ListView3 .table5 th.col1 { width: 200px; }
+.ListView3 .table5 th.col2 { width: auto; xwidth: 300px; }
+.ListView3 .table5 th.col3 { width: 44px; xtext-align: right; }
+.ListView3 .table5 th.col4 { width: 330px; }
+
+.ListView3 .table5 tr.iit td.col2 input { width: 294px; }
+.ListView3 .table5 tr.iit td.col2 input.ico { width: auto; }
+
+.ListView3 .table5 td.col3 input { xwidth: 75px; xmargin-left: auto; xmargin-right: auto; }
+.ListView3 .table5 td.col3 span.dataacc { display: block; padding-top: 1px; padding-bottom: 3px; margin-bottom: 3px; border-bottom: dotted 1px Silver;}
+.ListView3 .table5 td.col4 input { width: 330px; }
+.ListView3 .table5 td.col4 input.ico { width: auto; }
+*/
+
+
+.ListView3 table.table5 td.controlline
+{
+    text-align: right; 
+    vertical-align: middle;
+    height: auto; 
+    line-height: 20px;
+    
+    border-left: solid 1px Silver;
+    border-bottom: solid 1px Silver;
+    background: #FAFAFA url('../images/back/back1_20.png') repeat-x bottom; 
+    padding: 4px 5px 4px 5px; 
+
+    xbackground: url(../images/back/back1_30_yellow.png) repeat-x bottom;
+    xbackground: #FAFAFA url('../images/back/back2_20.png') repeat-x bottom; 
+    xxbackground: #FAFAFA url('../images/back/back1_30_red.png') repeat-x bottom; 
+    xbackground-color: #F7F7F7 !important;
+    xbackground-image: none;
+    zbackground-color: White !important;
+}
+
+.ListView3 table.table5 td.controlline span.info 
+{ 
+    xheight: 12px;
+    line-height: 12px;
+    float: left;
+    font-weight: normal;
+    xfont-weight: bold;
+    font-size: 9px; 
+    text-transform: uppercase;
+    color: Gray !important;
+    xcolor: silver! important; 
+}
+
+.ListView3 table.table5 tr.lastrow td { border-bottom: solid 2px Silver; }
+.ListView3 table.table5 tr.lastrow td.controlline { xborder-top: solid 1px Silver; }
+.ListView3 table.table5 tr.lastrow:last-child td { border-bottom: solid 1px Silver !important; } 
+
+table.ListView3_edt
+{
+    border-collapse: collapse;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    text-align: left;
+    border: solid 1px Silver; 
+}
+table.ListView3_edt td
+{
+    padding: 8px;
+    background: #FCFCFC url('../images/back/back2_30.png') repeat-x bottom;
+}
+
+/*----- ListView3 inside ListView3 (ANEKSY) -----*/
+.ListView3 table.table5 tr.firstrow td { border-top: solid 1px Silver; } 
+
+.ListView3 table.table5 td.container { padding: 0px; margin: 0px; border: none; }
+.ListView3 table.table5 td.container table.ListView3 td.td_container { padding: 0px; margin: 0px; border: none; }
+.ListView3 table.table5 td.container table.ListView3 
+{ 
+    xborder: none !important; 
+    border: none; 
+    xborder-bottom: solid 1px red !important;
+}
+.ListView3 table.table5 td.container table.ListView3 table.table5  
+{
+    xborder: none !important; 
+    border: none; 
+    xborder-bottom: solid 1px red !important;
+}
+.ListView3 table.table5 td.container table.ListView3 table.table5 td 
+{ 
+    padding: 7px 8px 3px 8px;
+    border-left: solid 1px #EEEEEE;
+    xborder-bottom: solid 1px #E0E0E0 !important;
+    border-bottom: solid 1px #E0E0E0;
+}
+.ListView3 table.table5 td.container table.ListView3 table.table5 td.colNazwa
+{ 
+    border-left: none;
+    background: #F0F9E7 url('../images/back/back3_g1.png') repeat-x bottom; 
+}
+.ListView3 table.table5 td.container table.ListView3 table.table5 td.colWartosc
+{ 
+    background: #F3FAEB url('../images/back/back3_g.png') repeat-x bottom; 
+}
+.ListView3 table.table5 td.container table.ListView3 table.table5 td.colEdit 
+{ 
+    border-left-color: Silver;
+    padding: 4px 5px 4px 5px; 
+    width: 442px; 
+}
+.ListView3 table.table5 td.container table.ListView3 table.table5 td.colKValue 
+{ 
+    border-left-color: Silver;
+}
+.ListView3 table.table5 td.container table.ListView3 table.table5 td.colOValue 
+{ 
+    border-right: none;
+}
+.ListView3 table.table5 td.container table.ListView3 table.table5 tr.lastrow td
+{   
+    xborder-bottom: solid 2px Silver !important;
+    border-bottom: solid 2px Silver;
+    xbackground-image: none;
+}
+.ListView3 table.table5 td.container table.ListView3 table.table5 td.controlline 
+{   
+    border-left: none;
+    padding: 4px 5px 4px 5px; 
+    background: #F0F9E7 url('../images/back/back3_g1.png') repeat-x bottom; 
+    
+    xborder-bottom: solid 1px Silver !important;
+    xbackground-image: none !important;
+    xbackground-color: Red;
+    
+}
+.ListView3 table.table5 td.container table.ListView3 table.table5 tr.eit td
+{ 
+    padding: 4px 8px 4px 8px; 
+    vertical-align: middle; 
+    xborder-bottom: solid 2px Silver;
+    background: #F0F9E7 url('../images/back/back3_g1.png') repeat-x bottom; 
+}
+
+
+
+.ListView3 table.ListView3_edt
+{
+    border: none;
+}
+
+.ListView3 table.ListView3_edt td
+{ 
+    xpadding: 4px 8px 4px 8px; 
+    xvertical-align: middle; 
+    background: #F0F9E7 url('../images/back/back3_g1.png') repeat-x bottom; 
+    border: none !important;
+    height: auto;
+}
+
+.ListView3 table.table5 td.container table.ListView3 table.table5 tr.iit td
+{ 
+    border-left: none;
+    padding: 4px 5px 4px 5px; 
+    xborder-bottom: solid 1px red !important;
+    xborder-bottom: none !important;
+    xborder-bottom: solid 0px red !important;
+    border-bottom: solid 2px Silver;
+    background: #F0F9E7 url('../images/back/back3_g1.png') repeat-x bottom; 
+}
+
+
+/*
+.xxxListView3 table.table5 td.container table.table5 td { padding: 0px; margin: 0px; border: none; }
+.xxListView3 table.table5 td.container table.table5 { border: none; padding: 0px; margin: 0px; }
+
+/*
+.ListView3 table.table5 td.infoline { height: 12px; background: none; background-color: White; border-left-color: Silver; }
+.ListView3 table.table5 td.infoline span 
+{     
+    font-weight: normal;
+    xfont-weight: bold;
+    font-size: 9px; 
+    text-transform: uppercase;
+    color: Gray;
+ }
+*/
+
+/*---------------------------*/
+.ListView3 .tbSzkolenia th.col1,
+.ListView3 .tbSzkolenia td.col1 { width: 99%; border-left-color: Silver;}
+.ListView3 .tbSzkolenia td.col2 { width: 60px; text-align: center; }
+.ListView3 .tbSzkolenia td.col1 span.grupa { font-weight: bold; line-height: 18px; }
+.ListView3 .tbSzkolenia td.col1 span.szkolenie { display: block; margin-left: 24px; }
+.ListView3 .tbSzkolenia td.col1 span.szkolenie_opis { display: block; margin: 2px 0px 4px 24px; color: Gray; }
+
+/*---------------------------*/
+/*
+div.PanelP textarea.ankietaUwagi { width: 918px; }
+div.PanelK textarea.ankietaUwagi { width: 1158px; }
+div.PanelO textarea.ankietaUwagi { width: 1158px; }
+div.PanelP span.ankietaUwagi { width: 908px; }
+div.PanelK span.ankietaUwagi { width: 1148px; }
+div.PanelO span.ankietaUwagi { width: 1148px; }
+*/
+textarea.ankietaUwagi { width: 918px; }
+span.ankietaUwagi { width: 908px; }
+.center_wide textarea.ankietaUwagi { width: 1158px; }
+.center_wide span.ankietaUwagi { width: 1148px; }
+
+span.ankietaUwagi  
+{
+    display: block;
+    border: solid 1px Silver;
+    padding: 8px;
+    min-height: 14px;
+    background: #FCFCFC url('../images/back/back2_30.png') repeat-x bottom;
+}
+
+table.ankietaButtons
+{
+    border-top: dotted 1px Gray;
+    padding: 0px;
+    margin: 24px 0px 0px 0px;
+    border-collapse: separate;
+    border-spacing: 0px;
+    width: 100%;
+}
+
+table.ankietaButtons td { padding: 8px 0px 0px 0px; vertical-align: top; }
+table.ankietaButtons td.col1 { xwidth: 650px; }
+table.ankietaButtons td.col2 { text-align: right; }
+
+
+xxxdiv.updProgress1back 
+{ 
+    width: 100%; 
+    height: 100%; 
+    position: absolute; 
+    z-index: 2001; 
+    left: 0px;
+    xtop: 0px;
+    bottom: 0px;
+    xborder: solid 2px red;
+    xbackground-color: #DDDDFF;
+    background-color: Gray;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+div.updProgress1back 
+{ 
+    xbackground-color: Silver;     
+    xfilter: alpha(opacity=30);     
+    xopacity: 0.3; 
+}  
+
+div.updProgress1
+{
+    z-index: 2002;
+    position: fixed; 
+    bottom: 0px; 
+    left: 0px;
+    width: 100%; 
+    xheight: 18px; 
+    height: 24px;
+    line-height: 24px;  
+    
+    text-align: center; 
+    vertical-align: middle; 
+    padding-top: 0px; 
+
+    xfilter: alpha(opacity=60);    
+    xbackground-color: green; 
+    xbackground: #F0F9E7 url('../images/back/back3_g1.png') repeat-x bottom; 
+    xbackground-color: #F0F9E7;
+
+    background-color: #8FDB3C;
+}
+div.updProgress1 div.center { text-align: center! important; xtext-align: right !important;}
+div.updProgress1 img { vertical-align: middle; xheight: 24px; display: inline-block;}
+div.updProgress1 span 
+{ 
+    font-weight: bold;
+    font-size: 9px; 
+    text-transform: uppercase;
+    color: Gray;
+    vertical-align: middle; 
+    display: inline-block;
+    height: 24px;
+    line-height: 22px; 
+}
+
+.box_rotate 
+{      
+    -moz-transform: rotate(7.5deg);  /* FF3.5+ */        
+    -o-transform: rotate(7.5deg);  /* Opera 10.5 */   
+    -webkit-transform: rotate(7.5deg);  /* Saf3.1+, Chrome */              
+    filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083);  /* IE6,IE7 */          
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0.083)"; /* IE8 */ 
+} 
+
+.rotate90L 
+{   
+    xborder: solid 1px red;
+    display: block;
+    -webkit-transform: rotate(-90deg);  /* Safari */
+    -moz-transform: rotate(-90deg);     /* Firefox */
+    -ms-transform: rotate(-90deg);      /* IE */
+    -o-transform: rotate(-90deg);       /* Opera */ 
+    xxfilter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);   /* Internet Explorer */
+    -ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);   /* Internet Explorer */
+    filter: flipv fliph;                /* Internet Explorer #2 cd. */
+    writing-mode: tb-rl;                /* Internet Explorer #2 */
+}
+
+
+
+/*----- Panel Kontrolera i Operatora -----*/
+.ListView1 table.tbPracownicy th,
+.ListView1 table.tbPracownicy td { padding-left: 4px; padding-right: 4px; }
+.ListView1 table.tbPracownicy td.col1 { width: 200px; xwhite-space: nowrap; }
+.ListView1 table.tbPracownicy td.col2 { width: 48px; white-space: nowrap; }
+.ListView1 table.tbPracownicy td.col3 { width: 200px; max-width: 230px; overflow: hidden; }
+.ListView1 table.tbPracownicy td.col4 { width: 80px; text-align: center; white-space: nowrap;}
+.ListView1 table.tbPracownicy td.col5 { width: 80px; text-align: center; }
+.ListView1 table.tbPracownicy td.col6 { width: auto; }
+.ListView1 table.tbPracownicy td.col7 { width: 80px; text-align: center; }
+.ListView1 table.tbPracownicy td.col8 { width: auto; }
+.ListView1 table.tbPracownicy td.col9 { width: 80px; }
+.ListView1 table.tbPracownicy td.control { width: 70px; vertical-align: top; padding: 4px 5px 0px 5px;}
+.ListView1 table.tbPracownicy td.control input { xwidth: 70px; xpadding: 0px; xmargin: 0px; }
+
+.ListView1 table.tbPracownicy td a { color: #0066CC; text-decoration: none; }
+.ListView1 table.tbPracownicy td a:hover { color: #E00024; text-decoration: underline; }
+
+.ListView1 .prac41 table.tbPracownicy th.col6,
+.ListView1 .prac41 table.tbPracownicy td.col6,
+.ListView1 .prac6 table.tbPracownicy th.col8,
+.ListView1 .prac6 table.tbPracownicy td.col8, 
+.ListView1 .prac10 table.tbPracownicy th.col9,
+.ListView1 .prac10 table.tbPracownicy td.col9,
+.ListView1 .prac20 table.tbPracownicy th.col9,
+.ListView1 .prac20 table.tbPracownicy td.col9,
+.ListView1 .prac21 table.tbPracownicy th.col9,
+.ListView1 .prac21 table.tbPracownicy td.col9,
+.ListView1 .prac22 table.tbPracownicy th.col6,
+.ListView1 .prac22 table.tbPracownicy td.col6,
+.ListView1 .prac32 table.tbPracownicy th.col9,
+.ListView1 .prac32 table.tbPracownicy td.col9,
+.ListView1 .prac33 table.tbPracownicy th.col9,
+.ListView1 .prac33 table.tbPracownicy td.col9,
+.ListView1 .prac34 table.tbPracownicy th.col9,
+.ListView1 .prac34 table.tbPracownicy td.col9,
+.ListView1 .prac36 table.tbPracownicy th.col9,
+.ListView1 .prac36 table.tbPracownicy td.col9,
+.ListView1 table.tbPracownicy th.control,
+.ListView1 table.tbPracownicy td.control { border-right-color: Silver; }
+
+.ListView1 table.tbPracownicy tr th:last-child,
+.ListView1 table.tbPracownicy tr td:last-child { border-right-color: Silver; }
+
+.ListView1 table.tbPracownicy span.tel { display: block; white-space: nowrap; }
+.ListView1 table.tbPracownicy th.col2 { white-space: nowrap; }
+.ListView1 table.tbPracownicy td.col6 span, 
+.ListView1 table.tbPracownicy td.col8 span { white-space: nowrap; }
+
+table.caption_ankieta { width: 100%; }
+table.caption_ankieta td { padding-bottom: 16px; }
+table.caption_ankieta td.col1 { width: 64px; }
+table.caption_ankieta td.col3 { padding-top: 8px; }
+table.caption_ankieta div.caption_text { float: left; padding: 0px 48px 0px 0px; }
+
+/*----- -----*/
+a.button
+{ 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px !important; 
+    font-weight: bold; 
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+    display: inline-block;
+    border: solid 1px silver;
+    xcolor: #267EDF; 
+    color:#375C8E;
+
+    padding: 1px 4px 1px 4px;
+    xvertical-align: top;
+    vertical-align: middle;
+    line-height: 14px;
+    height: 14px;
+    
+    -moz-border-radius: 3px;                 /* FF */ 
+    -webkit-border-radius: 3px;              /* przeglądarki z webkitem (Safari, Chrome itp.) */ 
+    -khtml-border-radius: 3px;               /* przeglądarki typu K-meleon (typowo Linuxowe) */ 
+    border-radius: 3px;                      /* pozostałe przeglądarki */ 
+    xbehavior: url(styles/border-radius.htc);  /* dodatek dla IE */     
+    
+    background: #EEEEEE url('../images/back/back1_20.png') repeat-x bottom;
+    -webkit-box-shadow: 0 1px 3px 0px #DDDDDD;        
+}
+
+a.button:hover { color: red; background: #EEEEEE url('../images/back/back2_20.png') repeat-x bottom; }
+
+/*----- ZASTĘPSTWO INFO -----*/
+
+div.zastinfo 
+{ 
+    height: 24px; 
+    background-color: #8FDB3C;
+    xborder-top: solid 2px #E00024;
+    xborder-bottom: solid 2px #E00024;
+    xborder-top: solid 2px #6FB522;
+    xborder-bottom: solid 2px #6FB522;
+    
+    xbackground-color: #FFD24A;
+    xborder-top: solid 2px #FFA500;
+    xborder-bottom: solid 2px #FFA500;
+
+    border-top: solid 1px #F0F0F0;
+    
+    vertical-align: middle;
+    line-height: 24px; 
+    text-align: center;
+}
+div.zastinfo div.center960 { width: 960px; margin-left: auto; margin-right: auto; }
+div.zastinfo div.center960 div { float: left; display: inline-block; height: 24px;}
+div.zastinfo div.left { width: 200px; }
+div.zastinfo div.middle { width: 556px; text-align: center; }
+div.zastinfo div.right { width: 200px; text-align: right; }
+div.zastinfo span.t1 { color: White; font-size: 11px; }
+div.zastinfo a 
+{ 
+    xcolor: #AED2FF; 
+    zcolor: #D6EBFF;
+    zfont-weight: bold; 
+    text-decoration: none;
+    
+    -webkit-box-shadow: 0 1px 3px 0px #297C0E;        
+    position: relative;
+    top: 2px;
+}
+
+/*----- ADMINISTRACJA i PANEL KIEROWNIKA -----*/
+div#admTabsContent { padding: 0px; }
+div#admTabsContent div.padding { padding: 16px; }
+
+/*----- ADMINISTRACJA - PARAMETRY -----*/
+div#admTabsContent table.tabsContent { border: none; }
+div#admTabsContent .LeftMenu .item { xwidth: 180px; }
+
+div.paAdmin .LeftMenu span[disabled] { font-weight: normal; color: Gray; }
+
+/*----- ADMINISTRACJA - PRACOWNICY -----*/
+table.tbPracownicy2 th { white-space: nowrap;}  
+table.tbPracownicy2 td 
+{ 
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    padding: 2px 4px 2px 4px; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    xclip: auto;
+}  
+table.tbPracownicy2 input.textbox { left: 0px }
+
+xxxtable.tbPracownicy2 td { overflow: hidden; }
+
+table.tbPracownicy2 td.col1,
+table.tbPracownicy2 th.col1 { width: 150px; max-width: 150px; }
+table.tbPracownicy2 td.col2,
+table.tbPracownicy2 th.col2 { width: 30px; max-width: 30px; text-align: center; }
+table.tbPracownicy2 td.col3,
+table.tbPracownicy2 th.col3 { width: 50px; max-width: 50px; }
+table.tbPracownicy2 td.col4,
+table.tbPracownicy2 th.col4 { width: 50px; max-width: 50px; }
+table.tbPracownicy2 td.col5,
+table.tbPracownicy2 th.col5 { width: 150px; max-width: 150px; } 
+table.tbPracownicy2 td.col6,
+table.tbPracownicy2 th.col6 { width: 150px; max-width: 150px; }
+table.tbPracownicy2 td.col7,
+table.tbPracownicy2 th.col7 { width: 100px; max-width: 100px; }
+table.tbPracownicy2 td.col8, 
+table.tbPracownicy2 th.col8 { width: 150px; max-width: 150px; }
+table.tbPracownicy2 td.col9,
+table.tbPracownicy2 th.col9 { width: 150px; max-width: 150px; }
+table.tbPracownicy2 td.col10,
+table.tbPracownicy2 th.col10 { xwidth: 50px; xmax-width: 50px; }
+table.tbPracownicy2 th.col11 { text-align: center; }
+table.tbPracownicy2 td.col11 { padding-left: 1px; padding-right: 1px;}
+
+table.tbPracownicy2 td.control { width: 40px; vertical-align: top; padding-top: 4px; }
+table.tbPracownicy2 th.control { width: 40px; vertical-align: middle; }
+
+xxxtable.tbPracownicy tr.eit td.col12 input { display: inline-block; }
+
+.tbPracownicy2 table.edit span.label { display: inline-block; width: 150px;}
+.tbPracownicy2 table.edit input[type=text] { width: 350px; }
+.tbPracownicy2 table.edit select { width: 356px; height: 20px; }
+.tbPracownicy2 table.edit { text-align: left; }
+.tbPracownicy2 table.edit { border: none; border-collapse: collapse; }
+.tbPracownicy2 table.edit td { border: none; line-height: 25px; }
+.tbPracownicy2 table.edit td.coled2 { border-left: dotted 1px #EEEEEE; padding-left: 8px; }
+
+/*
+table.tbPracownicy th.control,
+table.tbPracownicy td.control { width: 70px; padding-left: 0px; padding-right: 0px; text-align: center; border-right-color: Silver; }
+table.tbPracownicy th.control { padding: 2px 0px 0px 0px; }
+table.tbPracownicy tr.it td.control { padding: 4px 0px 0px 0px; }
+table.tbPracownicy td.col1 input.textbox { width: 180px; }  //265
+table.tbPracownicy td.col3 input.textbox { width: 120px; }
+table.tbPracownicy td.col4 input.textbox { width: 200px; }
+table.tbPracownicy td.col11 select { height: 20px; position: relative; top: 1px;}
+table.tbPracownicy td.col12 input.textbox { width: 80px; }
+table.tbPracownicy td.col12 input.ico { position: relative; top: 2px;}
+table.tbPracownicy a { color: #0066CC; text-decoration: none; }
+table.tbPracownicy a:hover { color: #E00024; text-decoration: underline; }
+*/
+
+table.tbCzasPracy td { padding: 2px 4px 2px 4px; white-space: nowrap;}  
+table.tbCzasPracy tr.details td { color: Gray;}
+table.tbCzasPracy tr.details td span.otherday { color: Silver; }
+table.tbCzasPracy tr.details td.rogername span { width: 200px; display: inline-block; overflow: hidden; text-overflow: ellipsis; xborder: solid 1px red;}
+
+table.pracownicy_rcp table.tbCzasPracy tr.details td.rogername span { width: 220px; } 
+table#tbAdmStruktura table.tbCzasPracy tr.details td.rogername span { width: 270px; } 
+table#cntPPAccept table.tbCzasPracy tr.details td.rogername span { width: 180px; } 
+
+table.tbCzasPracy tr.edt td span.info { color: Red; }
+
+table.tbCzasPracy td.col1 { width: 20%; } 
+table.tbCzasPracy td.col2 { width: 20%; } 
+table.tbCzasPracy td.col3 { width: 20%; } 
+table.tbCzasPracy td.col4 { width: 20%; } 
+table.tbCzasPracy td.col5 { width: 20%; } 
+
+table.tbCzasPracyParams { width: 100%; border-collapse: collapse; border-spacing: 0px; border-width: 0px; margin-bottom: 8px; }
+xxtable.tbCzasPracyParams td { vertical-align: middle; }
+
+table.tbCzasPracyParams td.col1 { text-align: left; }
+table.tbCzasPracyParams td.col2 { text-align: right; }
+table.tbCzasPracyParams td.col3 { text-align: right; }
+
+xxxtable.tbCzasPracyParams td.col2 select { width: 250px; }
+
+
+
+
+table.tbRcpAnalize 
+{ 
+    border: none; 
+    xfont-size: 9px; 
+    border-right: solid 1px #EEEEEE;
+}
+table.tbRcpAnalize td { padding-top: 0px; padding-bottom: 0px; line-height: 18px; }
+table.tbRcpAnalize tr td { height: auto; border: none; background-image: none !important;}
+
+table.tbRcpAnalize tr.typ0 td { color: #050505; }
+table.tbRcpAnalize tr.typ1 td { color: #06C; }
+table.tbRcpAnalize tr.typ2 td { color: Silver; }
+table.tbRcpAnalize tr.typ3 td { color: #449513; background-color: #FFE88A; }    /*#E1FFE1 #F7FFE1*/
+table.tbRcpAnalize tr.typ4 td { color: #06C; background-color: #FFE88A; }
+table.tbRcpAnalize tr.typ5 td { color: Silver; background-color: #FFE88A; }
+table.tbRcpAnalize tr.typ6 td { color: Silver; }
+table.tbRcpAnalize tr.typ7 td { color: #06C; }
+table.tbRcpAnalize tr.typ8 td { color: Silver; }
+table.tbRcpAnalize tr.typ1 td.col1,
+table.tbRcpAnalize tr.typ2 td.col1,
+table.tbRcpAnalize tr.typ4 td.col1,
+table.tbRcpAnalize tr.typ5 td.col1, 
+table.tbRcpAnalize tr.typ7 td.col1, 
+table.tbRcpAnalize tr.typ8 td.col1 { padding-left: 16px; }
+
+table.tbRcpAnalize tr.suma_firstline td { border-top: solid 1px #E0E0E0; }
+table.tbRcpAnalize tr.suma_lastline td { padding-bottom: 8px; border-bottom: solid 1px #E0E0E0;}
+
+/*
+public const int aeWork = 0;
+public const int aeBreak = 1;
+public const int aeBreakNoCount = 2;
+public const int aeOver = 3;
+public const int aeBreakOver = 4;
+public const int aeBreakOverNoCount = 5;
+public const int aeWorkNoCount = 6; 
+public const int aeOut = 7;         
+public const int aeOutNoCount = 8;         
+*/
+
+table.tbKodyWyjasnic {width: 890px; }
+table.tbKodyWyjasnic td { padding: 4px 8px 4px 8px !important; line-height: 24px; height: 24px !important; }
+table.tbKodyWyjasnic input.textbox { left: 0px; }
+table.tbKodyWyjasnic td.col1 { width: 80px; }
+table.tbKodyWyjasnic td.col1 input.textbox { width: 90px; }
+table.tbKodyWyjasnic td.col2 input.textbox { width: 640px; }
+table.tbKodyWyjasnic th.control,
+table.tbKodyWyjasnic td.control { padding-left: 0px; padding-right: 0px; text-align: center; vertical-align: middle; border-right-color: Silver; 
+                                  white-space: nowrap;
+                                  }
+table.tbKodyWyjasnic tr.iit td,
+table.tbKodyWyjasnic tr.eit td { padding: 8px 4px 8px 4px !important; }
+xtable.tbKodyWyjasnic tr.iit td.control,
+table.tbKodyWyjasnic tr.eit td.control { vertical-align: middle; white-space: nowrap;}
+
+table.tbKodyWyjasnic td.control input {xborder: solid 1px red; padding: 2px; margin: 0px;}
+
+td.btprint_top { vertical-align: top; }
+td.btprint_bottom { position: relative; top: -8px;}
+
+
+table.importInfo {}
+table.importInfo td 
+{ 
+    xborder: solid 1px red;
+    xvertical-align: top; 
+    padding: 4px 0px 4px 8px; 
+    xline-height: 14px;
+    xheight: 40px;
+}
+
+
+
+
+/*----- ADMINISTRACJA - ZMIANY -----*/
+div.zmiany { display: inline-block;}
+div.zmiany div.zmiana
+{
+    display: inline-block;
+    width: 368px;
+    border: solid 1px silver;
+    abackground-color: #F7F7F7;
+    margin: 8px; 
+    vertical-align: top;
+    float: left;
+    line-height: 18px; 
+    
+    background: #FBFBFB url('../images/back/back1_30.png') repeat-x bottom; 
+    padding: 1px 0px 0px 1px; 
+}
+div.zmiany div.eit
+{
+    width: 366px;
+    border: solid 2px #375C8E;
+    abackground-color: #F7F7F7;
+    xbackground-color: #E0E9F3;    
+    padding: 0px 1px 1px 0px; 
+}
+div.zmiany div.iit
+{
+    width: 366px;
+    height: auto;
+    border: solid 2px #EE9B01;
+    abackground-color: #F7F7F7;
+    xbackground-color: #FFF1D9;
+}
+div.zmiany div.fullline { width: 100%; display: inline-block;}
+
+div.zmiany div.zmiana table.zmiana { border-collapse: collapse; border-spacing: 0px; width: 100%; }
+div.zmiany div.zmiana table.zmiana td { vertical-align: top; padding: 0px; }
+div.zmiany div.zmiana table.zmiana td.col1 { width: 64px; text-align: center; }
+div.zmiany div.zmiana table.zmiana td.col3 { text-align: right; }
+div.zmiany div.zmiana table.zmiana td.col4 { width: 64px; text-align: center; }
+
+div.zmiany div.zmiana table.zmiana tr.firstline td { padding-top: 16px; padding-bottom: 12px; }
+
+div.zmiany div.zmiana table.zmiana span.symbol 
+{ 
+    display: block; 
+    width: 32px;
+    height: 32px;
+    line-height: 32px; 
+    border: solid 1px Gray;
+    color: #3F3F3F;
+    font-weight: bold;
+    margin-left: 16px;
+    margin-right: 16px;
+    text-align: center;
+    vertical-align: middle;
+}
+div.zmiany div.zmiana table.zmiana span.nazwa
+{
+    display: inline-block; 
+    font-weight: bold;
+    vertical-align: top;
+    color: #3F3F3F;
+}
+div.zmiany div.zmiana table.zmiana span.checkbox input { margin-left: 0px; position: relative; top: 2px; }
+div.zmiany div.zmiana table.zmiana span.checkbox label { margin-left: 4px; }
+
+div.zmiany div.zmiana table.zmiana tr.title td { padding-bottom: 2px; }
+div.zmiany div.zmiana table.zmiana tr.godziny td { padding-top: 4px; padding-bottom: 4px; }
+div.zmiany div.zmiana table.zmiana tr.godziny td.col2 { border-top: solid 1px Silver; xborder-bottom: solid 1px Silver; }
+div.zmiany div.zmiana table.zmiana tr.godziny td.col3 { border-top: solid 1px Silver; xborder-bottom: solid 1px Silver; vertical-align: middle; }
+
+div.zmiany div.zmiana table.zmiana tr.nadgodziny_header td.col2 { border-bottom: solid 1px Silver; padding-top: 6px; padding-bottom: 2px; }
+div.zmiany div.zmiana table.zmiana tr.nadgodziny_header table.table0 td { vertical-align: bottom; padding-top: 8px; xpadding-bottom: 2px; border-bottom: none; }
+
+div.zmiany div.zmiana table.zmiana tr.nadgodziny_one td,
+div.zmiany div.zmiana table.zmiana tr.nadgodziny_nodata td { padding-top: 3px; }
+div.zmiany div.zmiana table.zmiana tr.nadgodziny_first td { padding-top: 3px; }
+
+div.zmiany div.zmiana table.zmiana td.col3 { text-align: right; }
+div.zmiany div.zmiana table.zmiana span.label { width: 60px; display: inline-block; }
+div.zmiany div.zmiana table.zmiana input.symbol { width: 60px; }
+div.zmiany div.zmiana table.zmiana input.nazwa { width: 220px; }
+div.zmiany div.zmiana table.zmiana input.kolor { width: 60px; }
+div.zmiany div.zmiana table.zmiana input.czas { width: 60px; }
+div.zmiany div.zmiana table.zmiana input.stawka { width: 60px; }
+
+div.zmiany div.eit table.zmiana tr.firstline td { line-height: 26px; }
+div.zmiany div.eit table.zmiana tr.firstline td input.palette { position: relative; top: 3px; }
+div.zmiany div.eit table.zmiana tr.godziny td { line-height: 24px; }
+div.zmiany div.eit table.zmiana tr.nadgodziny_header td { padding-top: 0px; padding-bottom: 4px; }
+div.zmiany div.eit table.zmiana tr.nadgodziny td { line-height: 24px; vertical-align: middle; }
+div.zmiany div.eit table.zmiana tr.nadgodziny_first td { padding-top: 5px; }
+div.zmiany div.eit table.zmiana tr.nadgodziny_one td { padding-top: 5px; padding-bottom: 5px;}
+div.zmiany div.eit table.zmiana tr.nadgodziny_one td.col4 { line-height: normal; vertical-align: middle; padding: 0px;}
+
+div.zmiany div.buttons { text-align: right; padding: 8px;}
+div.zmiany div.zmiana table.zmiana input.control,
+div.zmiany div.buttons input {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    color:#375C8E;
+    border: none;
+    background-color:Transparent;
+    cursor: pointer;
+    padding: 2px 4px 2px 4px;   /* ciekawostka - jak padding jest na 0 to czasem nie zaznacza hover */
+    text-align: center;
+}
+div.zmiany div.zmiana table.zmiana input.control:hover,
+div.zmiany div.buttons input:hover { color: Red; }
+
+div.zmiany_buttons { padding: 0px 8px 8px 8px; }
+
+/*----- PLAN PRACY - ZMIANY SELECT -----*/
+xxdiv.zmiany_select 
+{ 
+    border: solid 1px Silver; 
+    width: 1148px; 
+    padding: 8px; 
+    margin: 2px 0px 0px 0px; 
+    background: white url('../images/back/back1_20.png') repeat-x bottom;
+}
+
+div.zmiany_select 
+{ 
+    width: 1164px; 
+    padding: 8px; 
+    margin: 2px 0px 0px 0px; 
+    xpadding: 8px 0px 8px 0px;
+    padding: 0px 0px 8px 0px;
+    border-top: dotted 1px Silver;
+    xborder-bottom: dotted 1px Silver;
+    font-size: 0px; 
+}
+
+div.zmiany_select span.zmiana
+{
+    font-size: 12px; 
+    display: inline-block;
+    border: solid 1px silver;
+    xbackground-color: white;
+    
+    xmargin-right: 8px; 
+    xmargin-top: 8px; 
+    
+    margin: 8px 8px 1px 1px; 
+    vertical-align: top;
+    min-width: 160px;
+    white-space: nowrap;
+    
+    abackground-color: #F7F7F7;
+    background: #FBFBFB url('../images/back/back1_30.png') repeat-x bottom;     
+}
+
+div.zmiany_select span.sit { margin: 7px 7px 0px 0px; border: solid 2px #375C8E; background-color: #E0E9F3; background-image: none;}
+
+div.zmiany_select .zmiana table.zmiana { border-collapse: collapse; border-spacing: 0px; }
+div.zmiany_select .zmiana table.zmiana td { vertical-align: top; padding: 4px; xborder: solid 1px red;}
+div.zmiany_select .zmiana table.zmiana td.col1 { width: 24px; text-align: center; }
+div.zmiany_select .zmiana table.zmiana tr.control td { padding: 0px 4px 0px 4px; }
+
+div.zmiany_select .zmiana table.zmiana { xcolor: Gray; }
+div.zmiany_select .zmiana table.zmiana span.symbol 
+{ 
+    color : Black;    
+    font-size: 9px;
+    display: block; 
+    width: 24px;
+    height: 24px;
+    line-height: 24px; 
+    border: solid 1px Gray;
+    xcolor: #3F3F3F;
+    xfont-weight: bold;
+    xmargin-left: 4px;
+    xmargin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.zmiany_select .zmiana table.zmiana span.nazwa
+{
+    color : Black;    
+    display: inline-block; 
+    font-weight: bold;
+    vertical-align: top;
+    xcolor: #3F3F3F;
+}
+
+div.zmiany_select table.zmiana tr.control input.control {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    color:#375C8E;
+    border: none;
+    background-color:Transparent;
+    cursor: pointer;
+    padding: 2px 4px 2px 4px;   /* ciekawostka - jak padding jest na 0 to czasem nie zaznacza hover */
+    width: 60px;                /* ie */
+    text-align: center;
+}
+div.zmiany_select table.zmiana tr.control input.control:hover { color: red; }
+div.zmiany_select table.zmiana tr.control span.checkbox { vertical-align: middle; }
+div.zmiany_select table.zmiana tr.control span.checkbox input { cursor: pointer; margin: 2px 0px 3px 0px; vertical-align: top;}
+div.zmiany_select .clickable { cursor: pointer; }
+div.zmiany_select .clickable:hover { border-color: red; }
+
+
+
+
+
+/*
+div.zmiany_select div.zmiana
+{
+    display: inline-block;
+    border: solid 1px silver;
+    background-color: #F7F7F7;
+    xbackground-color: white;
+    margin-right: 4px; 
+    margin-top: 8px; 
+    vertical-align: top;
+    min-width: 160px;
+}
+div.zmiany_select div.sit { border: solid 1px #375C8E; background-color: #E0E9F3; }
+
+div.zmiany_select div.zmiana table.zmiana { border-collapse: collapse; border-spacing: 0px; width: 100%; }
+div.zmiany_select div.zmiana table.zmiana td { vertical-align: top; padding: 4px; xborder: solid 1px red;}
+div.zmiany_select div.zmiana table.zmiana td.col1 { width: 24px; text-align: center; }
+div.zmiany_select div.zmiana table.zmiana tr.control td { padding: 0px 4px 0px 4px; xvertical-align: top;}
+
+div.zmiany_select div.zmiana table.zmiana span.symbol 
+{ 
+    font-size: 9px;
+    display: block; 
+    width: 24px;
+    height: 24px;
+    line-height: 24px; 
+    border: solid 1px Gray;
+    xcolor: #3F3F3F;
+    xfont-weight: bold;
+    xmargin-left: 4px;
+    xmargin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+}
+div.zmiany_select div.zmiana table.zmiana span.nazwa
+{
+    display: inline-block; 
+    font-weight: bold;
+    vertical-align: top;
+    xcolor: #3F3F3F;
+}
+
+div.zmiany_select table.zmiana tr.control input.control {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    color:#375C8E;
+    border: none;
+    background-color:Transparent;
+    cursor: pointer;
+    padding: 2px 4px 2px 4px;   /* ciekawostka - jak padding jest na 0 to czasem nie zaznacza hover * /
+    text-align: center;
+}
+div.zmiany_select table.zmiana tr.control input.control:hover { color: red; }
+div.zmiany_select table.zmiana tr.control span.checkbox { vertical-align: middle; }
+div.zmiany_select table.zmiana tr.control span.checkbox input { cursor: pointer; margin: 2px 0px 3px 0px; vertical-align: top;}
+div.zmiany_select div.clickable { cursor: pointer; }
+div.zmiany_select div.clickable:hover { border-color: red; }
+
+*/
+
+/*
+div.zmiany_select div.zmiana table.zmiana span.checkbox input { margin-left: 0px; position: relative; top: 2px; }
+
+div.zmiany_select div.zmiana table.zmiana tr.title td { padding-bottom: 2px; }
+div.zmiany_select div.zmiana table.zmiana tr.godziny td { padding-top: 4px; padding-bottom: 4px; }
+div.zmiany_select div.zmiana table.zmiana tr.godziny td.col2 { border-top: solid 1px Silver; border-bottom: solid 1px Silver; }
+div.zmiany_select div.zmiana table.zmiana tr.godziny td.col3 { border-top: solid 1px Silver; border-bottom: solid 1px Silver; vertical-align: middle; }
+
+div.zmiany_select div.zmiana table.zmiana tr.nadgodziny_one td,
+div.zmiany_select div.zmiana table.zmiana tr.nadgodziny_nodata td { padding-top: 3px; }
+div.zmiany_select div.zmiana table.zmiana tr.nadgodziny_first td { padding-top: 3px; }
+
+div.zmiany_select div.zmiana table.zmiana td.col3 { text-align: right; }
+div.zmiany_select div.zmiana table.zmiana span.label { width: 60px; display: inline-block; }
+div.zmiany_select div.zmiana table.zmiana input.symbol { width: 60px; }
+div.zmiany_select div.zmiana table.zmiana input.nazwa { width: 220px; }
+div.zmiany_select div.zmiana table.zmiana input.kolor { width: 60px; }
+div.zmiany_select div.zmiana table.zmiana input.czas { width: 60px; }
+div.zmiany_select div.zmiana table.zmiana input.stawka { width: 60px; }
+*/
+
+
+
+
+/*----- tbZmiany -----*/
+/* wersja taby */
+table.zmianyhours { border: none; width: auto; margin: 4px 0px 8px 0px;}
+table.zmianyhours th, 
+table.zmianyhours td { border: none; background: none !important; }
+table.zmianyhours th { border-bottom: solid 1px Silver; }
+table.zmianyhours th.col2 { width: 80px; }
+table.zmianyhours th.control,
+table.zmianyhours td.control { width: 200px; text-align: left !important; }
+/*----- -----*/
+table.tbZmiany div.colorpicker {width:18px; height:18px; border:1px solid #000; z-index:100;}
+table.tbZmiany input.colorpicker {width:0px; height: 21px; 
+                                  border:none; 
+                                  xcolor:white; 
+                                  margin: 0px;
+                                  padding: 0px;
+                                  background-color: Transparent; 
+                                  float: left;
+                                  xposition: relative;
+                                  xleft:10px;
+                                  z-index:99;
+                                  }
+table.tbZmiany tr.eit div.colorpicker { cursor:pointer; }
+table.tbZmiany td.overtimes { padding-left: 110px; xtext-align: center;}
+xtable.tbZmiany td.control,
+xtable.tbZmiany td.overtimes {border-bottom: solid 2px Silver;} 
+
+table.tbZmianySelect {}
+table.tbZmianySelect div.colorpicker 
+{
+    height:18px; 
+    border:1px solid #000; 
+    text-align: center; 
+    font-size: 9px;
+}
+
+/*----- ADMINISTRACJA - USTAWIENIA -----*/
+table.tbStawki { width: auto; }
+table.tbStawki td { white-space: nowrap; }
+table.tbAlgorytmy { width: auto; }
+
+table.tbCC { }
+table.tbCC table th { white-space: nowrap; vertical-align: bottom; }
+table.tbCC table td.col1 input { width: 40px; }
+table.tbCC table td.col4 input { width: 160px; }
+table.tbCC table td.col7 select { width: 160px; }
+table.tbCC table tr.actual td { xborder-top: solid 1px Silver; }
+table.tbCC table tr.old td { color: Gray; }
+table.tbCC table tr.grupa td { font-weight: bold; }
+table.tbCC table tr.grupa td.date { font-weight: normal; }
+
+div.tbCCfilter { width: 100%; line-height: 32px; vertical-align: middle; border-top: dotted 1px Silver; 
+    border-top: dotted 1px Silver;
+    border-bottom: dotted 1px Silver;
+    background-color: #F0F0F0;
+    margin-bottom: 8px; 
+    xtext-align: right; } 
+div.tbCCfilter input[type="checkbox"] { vertical-align: middle; margin: 0px 4px 2px 8px; } 
+div.tbCCfilter input[type="image"] { position: relative; top:3px; } 
+div.tbCCfilter input[type="submit"] { margin-right: 8px; } 
+
+table.tbAdmOkresy { }
+table.tbAdmOkresy td { white-space: nowrap; }
+
+table.tbAdmKierParams th,
+table.tbAdmKierParams td { white-space: nowrap; }
+table.tbAdmKierParams tr td.data { text-align: left; }
+
+table.tbStrefy { width: 100%; }
+table.tbStrefy td { vertical-align: top; }
+table.tbStrefy td select { height: 200px; }
+
+table.tbStrefyRejestratory { }
+table.tbStrefyRejestratory 
+table.tbReadersSelector td.check { vertical-align: top; padding: 6px 4px 0px 4px; }
+
+
+/*----- STRUKTURA ORGANIZACYJNA -----*/
+table#tbAdmStruktura { }
+table#tbAdmStruktura td { vertical-align: top; }
+table#tbAdmStruktura td.tdLeft { width: 430px; padding-right: 24px; }
+table#tbAdmStruktura td.tdRight {}
+table#tbAdmStruktura td.tdLeft div.SelectOkres { text-align: center; }
+
+div.paSearch 
+{ 
+    width: 432px; 
+    height: 25px; 
+    margin-bottom: 8px;
+    white-space: nowrap;
+    xborder: solid 1px red;
+}
+
+div.paSearch input.textbox { width: 340px; float: left; margin-top: 2px;}
+div.paSearch input.button75 { float: right; margin: 0px; }
+
+div.tvStructure 
+{ 
+    width: 430px; 
+    height: 500px;
+    border: solid 1px Gray;
+    background-color: White; 
+}
+
+div.tvStructure td
+{
+    height: 20px; 
+    line-height: 20px; 
+    width : 20px !important;
+    vertical-align: top; 
+}
+div.tvStructure td div 
+{
+    display: block !important; 
+    height: 20px !important;
+    width: 20px !important;
+}
+div.tvStructure td a 
+{
+    height: 20px;
+    vertical-align: top;
+    display: inline-block;
+    white-space: nowrap !important;
+}
+div.tvStructure td a[tabIndex]
+{
+    padding-top: 2px;
+    padding-left: 1px;
+    padding-right: 0px;
+    width: 16px;
+    height: 18px;
+}
+div.tvStructure select {cursor: hand; margin: 0px;}
+div.tvStructure select option {cursor: hand;}
+
+div.StrukturaControl div.buttons { margin-top: 8px; }
+
+/*----- STRUKTURA - IMPORT -----*/
+table.paImportButtons { margin-top: 16px; border-top: dotted 1px silver; xborder-bottom: dotted 1px silver; }
+table.paImportButtons div.fileupload { background-color: #F0F0F0; vertical-align: middle; padding: 4px; border: solid 1px Silver; display: inline-block;} 
+table.paImportButtons input.fileupload { vertical-align: middle; width: 300px; margin-left: 2px; } 
+table.paImportButtons td span { vertical-align: middle;}
+table.paImportButtons td input { vertical-align: middle;}
+table.paImportButtons td { padding-top: 16px; xpadding-bottom: 8px; vertical-align: middle;}
+table.paImportButtons td.right div { text-align: left; width: auto; display: inline-block;}
+table.paImportButtons td.right div hr { height: 0px; border: none; border-bottom: solid 1px Silver; }
+
+/*----- DZIAŁY - STREFY - ALGORYTMY -----*/
+table.DzialyControl { border-collapse: collapse; border-width: 0px; width: 100%; }
+table.DzialyControl td { vertical-align: top; }
+table.DzialyControl td.dzialy { width: 300px; }
+table.DzialyControl th.strefy,
+table.DzialyControl td.strefy { padding-left: 8px; }
+
+table.tbDzialy {}
+table.tbDzialy th { vertical-align: bottom; line-height: 14px; xline-height: normal; padding: 4px 4px 2px 4px; height: auto;}
+table.tbDzialy th.title { text-align: center; } 
+table.tbDzialy td { white-space: nowrap; overflow: hidden; line-height: 16px; }
+table.tbDzialy td.col1 { width: auto; max-width: 150px; }
+table.tbDzialy td.col2 { width: 45px; }
+table.tbDzialy td.control { width: 55px; vertical-align: middle; }
+
+table.tbDzialy tr.eit td { line-height: 26px; }
+table.tbDzialy tr.eit td span.label { width: 70px; display: inline-block; }
+table.tbDzialy tr.eit td select { width: 308px; }
+table.tbDzialy tr.eit td input.textbox { width: 300px; }
+
+table.tbDzialy tr.eit td.nazwa input { width: 250px; }
+
+
+table.tbDzialyStrefy {}
+table.tbDzialyStrefy td { white-space: nowrap; overflow: hidden; }
+table.tbDzialyStrefy td.col1 { width: auto; xmax-width: 150px; }
+table.tbDzialyStrefy td.col2 { width: 45px; }
+table.tbDzialyStrefy td.control { width: 55px; vertical-align: middle; }
+
+/*----- PLAN PRACY ZMIANY -----*/
+div.divider_ppacc { margin-top: 16px; xborder-bottom: dotted 1px Silver; margin-bottom: 2px;}
+div.cntSelectZmiana { margin-bottom: 2px; }
+div.cntSelectZmiana span.nadgodziny { cursor: default; }
+
+.ListView1 div a { xcolor: Highlight; color: #0066CC; text-decoration: none; }
+.ListView1 div a:hover { xcolor: Highlight; color: #E00024; text-decoration: underline; }
+.ListView1 div a.nolink,
+.ListView1 div a.nolink:hover { color: #0066CC; text-decoration: none; cursor: default; }
+
+.tbPlanPracy th.day 
+{ 
+    font-weight: normal;
+    font-size: 9px; 
+    text-transform: none;
+    color: Gray;
+    width: 28px; 
+    text-align: center; 
+    cursor: default;    
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+}
+.tbPlanPracy th.day img { display: block; margin-left: auto; margin-right: auto;}
+
+.tbPlanPracy th.holiday 
+{ 
+    Color: Red !important;  
+    background: url(../images/back/holiday.png) repeat-x bottom; 
+}
+.tbPlanPracy th.today
+{
+    border-top: solid 2px #8FDB3C;
+    border-left: solid 2px #8FDB3C;
+    border-right: solid 2px #8FDB3C;
+}
+.tbPlanPracy td.today
+{
+    border-left: solid 2px #8FDB3C;
+    border-right: solid 2px #8FDB3C;
+}
+.tbPlanPracy tr:last-child td.today
+{
+    border-bottom: solid 2px #8FDB3C;
+}
+/*th.today, td.today {border-color: #8FDB3C !important; }*/
+
+.tbPlanPracy tr.it td.selected div.day 
+{ 
+    background-color: #DDDDFF;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.tbPlanPracy th.day span.day_date { font-weight: bold; }
+
+.tbPlanPracy th.pracname { width: auto; }
+.tbPlanPracy th.pracname input.btupitems { vertical-align: middle; width: 16px; height: 16px;}
+.tbPlanPracy th.pracname input.btupitems:hover {position: relative; left: -1px; top: -1px;}
+.tbPlanPracy th.pracname span { vertical-align: middle; }
+.tbPlanPracy th.colselect { width: 20px; xvertical-align: bottom; }
+
+.tbPlanPracy tr.it td.day 
+{ 
+    font-size: 9px; 
+    
+    xfont-family: Tahoma, Arial, Helvetica, sans-serif;
+    xletter-spacing: -1px; 
+    
+    
+    margin: 0px; 
+    padding: 0px; 
+    background-image: none; 
+    font-weight: normal;
+    text-transform: none;
+    color: Black;
+    vertical-align: top;
+    line-height: normal;
+    cursor: default;
+    
+    white-space: nowrap;
+}
+.clickable table.tbPlanPracy tr.it td.day div.day { cursor: pointer; }
+.tbPlanPracy tr.it td.mode0 { height: 24px; }
+.tbPlanPracy tr.it td.mode1 { height: 48px; xheight: 60px; }
+/*
+.tbPlanPracy tr.it td wt1 { xcolor: Black; }
+.tbPlanPracy tr.it td wt2 { color: Green; xcolor: Navy; }
+.tbPlanPracy tr.it td wt3 { color: Maroon; }
+.tbPlanPracy tr.it td wt4 { xcolor: Black; }
+*/
+wt1, st1 { xcolor: Black; }
+wt2, st2 { color: Green; xcolor: Navy; }
+wt3, st3 { color: Maroon; }
+wt4, st4 { xcolor: Black; }
+str { color: Red; }
+
+wt2, wt3 { letter-spacing: -1px; padding-right: 1px;}   /* na IE nie działają tagi wt1 */
+
+.tbPlanPracy tr.it td.holiday 
+{ 
+    xbackground-image: url(../images/back/holiday.png); 
+    xbackground-position: bottom; 
+    xbackground-repeat: repeat-x; 
+    background: #FFF3F3 url(../images/back/holiday.png) repeat-x bottom;
+}
+.tbPlanPracy tr.it td.day div.day
+{
+    width: 100%;
+    height: 100%;    
+}
+
+.tbPlanPracy tr.it td.day div.day span.toptext
+{
+    display: block;
+    width: 100%;
+    height: 11px;
+    text-align: center;
+}
+.tbPlanPracy tr.it td.day div.day span.bottomtext
+{
+    display: block;
+    width: 100%;
+    height: 11px;
+    text-align: center;
+}
+.tbPlanPracy tr.it td.day div.day span.overlaptext
+{
+    xmargin-top: 34px; 
+    margin-top: 30px; 
+    width: 28px;
+    
+    xfont-size: 12px;
+    xcolor: Gray;
+    
+    font-size: 9px;
+    font-weight: bold;
+    color: Black;
+    
+    text-align: center;
+    vertical-align: middle;
+
+    display: block;
+    position: absolute;
+    
+    xline-height: 48px;
+    xheight: 22px;
+    xfont-size: 14px;
+    xfont-weight: bold;
+    
+    xborder: solid 2px red;
+
+
+    xtext-shadow: -1px 0px #E0E0E0;
+    
+    xfont-effect: outline;
+}
+
+.tbPlanPracy tr.it td.absK div.day span.overlaptext
+{
+    xtext-outline: 1px 1px White; 
+    font-effect: outline;
+
+    font-style: italic;
+    xtext-shadow: 1px 1px Silver;
+    xfont-weight: normal;
+    xtext-decoration: underline overline;
+    xbackground-color : Yellow;
+    
+    color: #A00000;
+}
+
+
+
+
+
+.tbPlanPracy tr.it td.day div.info
+{ 
+    background-image: url(../images/back/infomarker.png);
+    background-position: right bottom; 
+    background-repeat: no-repeat;
+}
+
+.tbPlanPracy tr.it td.day div.alert { background-color: Red; xcursor: pointer; }
+.tbPlanPracy tr.it td.day div.alert2 { color: #AE001B; xcolor: Red; }
+.tbPlanPracy tr.it td.day div.bck { display: none; }
+.tbPlanPracy tr.it td.noacc { border: dotted 2px red; }
+
+.tbPlanPracy tr.it td.colselect,
+.tbPlanPracy tr.it td.pracname 
+{ 
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    padding: 0px; 
+}
+.tbPlanPracy tr.it td.colselect div.colselect,
+.tbPlanPracy tr.it td.pracname div.pracname { width: auto; height: 100%; padding: 2px 4px 2px 4px; }
+
+.xxxtbPlanPracy tr.it td.pracname div.pracname span { xxpadding: 2px 4px 2px 4px; }
+
+.tbPlanPracy tr.it td.selPrac div.colselect,
+.tbPlanPracy tr.it td.selPrac div.pracname,
+.tbPlanPracy tr.it td.selPrac div.day
+{
+    background-color: #DDDDFF;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+.tbPlanPracy th.selDay, 
+.tbPlanPracy tr.it td.selDay div.day
+{
+    background-color: #DDDDFF;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.tbPlanPracy tr.it td.selPrac.selDay div.day
+{
+    width: auto;
+    border: solid 1px Navy;
+
+    background-color: #DDFFFF;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+}
+
+.tbPlanPracy th.day 
+{ 
+    font-weight: normal;
+    font-size: 9px; 
+    text-transform: none;
+    color: Gray;
+    width: 28px; 
+    text-align: center; 
+    cursor: default;    
+    padding: 2px 0px 2px 0px;
+}
+
+.tbPlanPracy tr.it td.noday
+{
+    background-color: #E0E0E0;
+    xbackground-color: gray;
+}
+
+
+/*
+.tbPlanPracy tr.it td.pracname input.zeruj
+{ 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    color:#375C8E;
+    xborder: solid 1px #375C8E;
+    xbackground-color:Transparent;
+    background-color:#F0F0F0;
+    border: solid 1px Gray;
+    cursor: pointer;
+    padding: 0px 3px 1px 3px;   
+    text-align: center;
+    
+    float: right;
+}
+.tbPlanPracy tr.it td.pracname input.zeruj:hover { color: #E00024; border-color: #E00024; background-color: #FFD6D6;}
+*/
+
+.tbPlanPracy tr.it div.action { position: relative; }
+.tbPlanPracy tr.it div.action div { position: absolute; right: 0px; padding: 2px; }
+.tbPlanPracy tr.it input.zeruj
+{ 
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    text-transform: uppercase; 
+    font-weight: bold;
+    color:#375C8E;
+    xborder: solid 1px #375C8E;
+    xbackground-color:Transparent;
+    background-color:#F0F0F0;
+    border: solid 1px Gray;
+    cursor: pointer;
+    padding: 0px 3px 1px 3px;   
+    text-align: center;
+}
+.tbPlanPracy tr.it input.zeruj:hover { color: #E00024; border-color: #E00024; background-color: #FFD6D6;}
+
+
+
+
+/*----*/
+.tbPlanPracy tr th.suma,
+.tbPlanPracy tr td.suma { width: 28px; }
+.tbPlanPracy tr th.suma 
+{ 
+    font-size: 9px; 
+    font-weight: bold;
+    text-transform: none;
+    color: Gray;
+    text-align: center; 
+    xcursor: default;    
+    padding: 2px 0px 2px 0px;
+    zbackground: url('../images/back/back2_20.png') repeat-x bottom;
+}
+
+.tbPlanPracy tr.it td.suma
+{ 
+    font-size: 9px; 
+    font-weight: normal;
+    text-transform: none;
+    color: Black;
+    text-align: center;
+    xvertical-align: middle;
+    vertical-align: top;
+    line-height: normal;
+    xcursor: default;
+    padding: 0px; 
+    margin: 0px; 
+    background: url('../images/back/back2_20.png') repeat-x bottom;
+}
+
+.tbPlanPracy tr th.suma span { display: block; white-space: nowrap; }
+.tbPlanPracy tr td.suma1,
+.tbPlanPracy tr th.suma1 { border-left: solid 2px Silver; }
+
+.tbPlanPracy tr.it td.suma span { display: block; white-space: nowrap;}
+.tbPlanPracy tr.it td.suma span.lb0 { height: 11px; }
+.tbPlanPracy tr.it td.suma { cursor: default; }
+
+.tbPlanPracy tr th.suma div { width: 30px; height: auto; }
+
+/*----*/
+table.ZmianySelect {width: auto !important; }
+table.ZmianySelect table {width: auto !important; }
+
+/*----*/
+
+
+
+/*----- SELECT OKRES -----*/
+div.SelectOkres { width: auto; xborder: solid 1px red; xfloat: left; vertical-align: middle; white-space: nowrap;}
+div.SelectOkres input { min-width: 25px;}
+div.SelectOkres input.button2 { width: 40px; }
+div.SelectOkres span.info 
+{
+    display: inline-block;
+    vertical-align: middle;    
+}
+
+div.SelectOkres span.status 
+{ 
+    color: Gray;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+/*
+div.SelectOkres input { 
+    xcolor:#375C8E;
+    
+    color: #3F3F3F;
+    text-decoration: none;
+    display: inline-block;
+    border: solid 1px silver;
+    
+    background-color: White;
+    
+    text-align: center;
+    padding: 1px;
+    vertical-align: top;
+    height: 20px;
+
+    -moz-border-radius: 3px;                 
+    -webkit-border-radius: 3px;              
+    -khtml-border-radius: 3px;               
+    border-radius: 3px;                      
+    xbehavior: url(../styles/border-radius.htc); 
+    background: url('../images/back/back1_20.png') repeat-x bottom;
+}
+
+div.SelectOkres input:hover { 
+    color: #E00024;
+    background-color: White;
+    background-image: none;
+    position: relative;
+    top: 1px;
+    left: 1px;
+}
+*/
+
+
+
+
+/*----- OKRES NAVIGATOR -----*/
+table.okres_navigator 
+{ 
+    border-collapse: collapse; 
+    width: 100%; 
+    margin: 0px 0px 8px 0px; 
+    border-top: dotted 1px Silver;
+    border-bottom: dotted 1px Silver;
+    background-color: #F0F0F0;
+    xbackground-color: #F7F7F7;
+}
+table.okres_navigator td { padding: 2px 4px 2px 4px !important; 
+                           height: 28px; 
+                           vertical-align: middle !important; 
+                           xline-height: 28px; }
+
+table.okres_navigator td.colleft { text-align: left; width: 301px; }
+
+table.okres_navigator td.colmiddle { text-align: center; line-height: 24px; }
+table.okres_navigator td.colmiddle span { vertical-align: middle; }    
+
+table.okres_navigator td.colright { text-align: right; width: 300px; }
+table.okres_navigator td.col1 { text-align: left; }
+table.okres_navigator td.col2 { text-align: right; }
+
+table.okres_navigator span.t5 { xfont-weight: bold; xfont-size: 15px;}
+table.okres_navigator span.info { vertical-align: middle;}
+table.okres_navigator span.info span { vertical-align: middle !important; }
+table.okres_navigator input { vertical-align: middle;}
+
+table.okres_navigator td.colright span.t1 { height: auto; line-height: 10px; 
+                                            margin-top: 16px; 
+                                            display: inline-block; }
+
+table.okres_navigator_arch { background-color: #FFFBBF;}
+
+
+/*----- ROCZNA KARTA PRACY NAVIGATOR -----*/
+div.rep_navigator 
+{
+    padding: 5px 4px 5px 4px; 
+    border-top: dotted 1px Silver;
+    border-bottom: dotted 1px Silver;
+    background-color: #F0F0F0;    
+}
+
+/*-----*/
+table.okres_navigator_struktura
+{
+    margin-top: 2px;
+    margin-bottom: 8px;
+    xborder-top: dotted 1px Silver;
+    xborder-bottom: dotted 1px Silver;
+    xbackground-color: #F0F0F0;
+}
+table.okres_navigator_struktura td
+{
+    padding-top: 4px;
+    padding-bottom: 4px;    
+}
+/*-----*/
+table.okres_navigator_pracownicy
+{
+    margin-top: 16px;
+    margin-bottom: 6px;
+    xborder-top: dotted 1px Silver;
+    xborder-bottom: dotted 1px Silver;
+    xbackground-color: #F0F0F0;
+}
+table.okres_navigator_pracownicy td
+{
+    padding-top: 4px;
+    padding-bottom: 4px;    
+}
+
+
+/*----- PLAN PRACY - ZMIANY c.d. -----*/
+div.PlanPracyZmiany table.okres_navigator td.colleft { vertical-align: bottom !important; }
+
+/*----- PLAN PRACY - AKCEPTACJA -----*/
+div.PlanPracyAccept table.okres_navigator td.colleft { vertical-align: bottom !important; }
+div.PlanPracyAccept table.okres_navigator td.colright { width: 400px; white-space: nowrap; xvertical-align: bottom; }
+div.PlanPracyAccept table.okres_navigator input { vertical-align: middle;}
+div.PlanPracyAccept table.okres_navigator span { vertical-align: middle;}
+div.PlanPracyAccept table.okres_navigator input.dateico { vertical-align: middle; width: 16px; height: 16px; }
+
+/*----- AKCEPTACJA -----*/
+.modalBackground
+{
+    xbackground-color:Gray;
+    xfilter:alpha(opacity=40);
+    xopacity:0.4;
+}
+
+.zmodalBackground
+{
+    xbackground-color:#CCCCFF;
+    xfilter:alpha(opacity=40);
+    xopacity:0.5;
+}
+.zzzmodalBackground {
+	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7;
+}
+
+div.modalPopup {
+	width:1090px;
+	height: 655px;
+	xborder: solid 1px #F7F7F7;
+	border: solid 2px Silver;
+    zborder: solid 1px Silver;
+    
+    padding: 0px;
+    margin: 0px;
+
+    abackground: white url('../images/master/back_w200a.png') repeat-x bottom;
+    background-color: White;
+
+    xbackground: white url('../images/master/podcien.png') repeat-x top;
+    xbackground: white url('../images/master/podcien_dn.png') repeat-x bottom;
+    
+    -moz-border-radius: 5px;                        
+    -webkit-border-radius: 5px;                         
+    -khtml-border-radius: 5px;                      
+    border-radius: 5px;                             
+    xbehavior: url(css/border-radius.htc);   
+    
+    x-webkit-box-shadow: 0 0 20px #D0D0D0;    
+    -webkit-box-shadow: 0 0 20px #B0B0B0;    
+}
+
+div.vscrollbox 
+{
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+
+xxxdiv.modalPopup input.btClose { float: right; }
+
+table#cntPPAccept { height: 100%; }
+
+table#cntPPAccept tr.title td.title  
+{
+    background: #FBFBFB url('../images/back/back1_30.png') repeat-x bottom; 
+    /**/   
+    -moz-border-radius-topleft: 5px;                        
+    -moz-border-radius-topright: 5px;                        
+    -webkit-border-top-left-radius: 5px;                     
+    -webkit-border-top-right-radius: 5px;                     
+    -khtml-border-top-left-radius: 5px;                      
+    -khtml-border-top-right-radius: 5px;                      
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    xbehavior: url(css/border-radius.htc);    
+    /**/                             
+}
+
+table#cntPPAccept td { vertical-align: top; }
+
+table#cntPPAccept td.title { padding: 12px 24px 4px 20px; height: 68px; border-bottom: solid 1px #EFEFEF; }
+
+table#cntPPAccept td.title div.title3 { float: left; margin-top: 8px; }
+table#cntPPAccept td.title div.title3 span.caption { width: 80px;}
+
+table#cntPPAccept div.kierinfo { float: right; 
+                                 padding: 4px 16px 4px 16px;
+                                 border: solid 1px Silver; 
+                                 background-color: White;
+                                 xbackground: #FBFBFB url('../images/back/back1_30.png') repeat-x bottom; }
+
+table#cntPPAccept table.kierinfo { width: auto; }
+table#cntPPAccept table.kierinfo span { white-space: nowrap;}
+table#cntPPAccept table.kierinfo td { line-height: 15px;  vertical-align: baseline; }
+table#cntPPAccept table.kierinfo td.col1 { text-align: right; xpadding-left: 16px; padding-right: 8px; }
+table#cntPPAccept table.kierinfo td.col2 { text-align: left; xpadding-right: 16px; }
+table#cntPPAccept td.divider div { border-bottom: dotted 1px Silver; height: 1px; margin: 0px 16px 3px 16px; }
+
+table#cntPPAccept td.colleft { width: 50%; padding: 0px 12px 0px 24px;}
+table#cntPPAccept td.colright { width: 50%; padding: 0px 24px 0px 12px;}
+
+table#cntPPAccept tr.line1 td { height: 20px; vertical-align: bottom; xborder: solid 1px red; }
+table#cntPPAccept tr.line1 td.colright1 { text-align: left; vertical-align: bottom; 
+                                          padding: 8px 8px 0px 12px; 
+                                          xpadding: 4px 0px 0px 8px; white-space: nowrap;}
+table#cntPPAccept tr.line1 td.colright2 { text-align: right; vertical-align: middle; 
+                                          padding: 8px 24px 4px 0px; 
+                                          xpadding: 4px 16px 4px 0px; xborder: solid 1px red; }
+table#cntPPAccept tr.line1 select { margin: 0px;}
+table#cntPPAccept td.buttons { height: 30px; text-align: right; vertical-align: middle; 
+                               padding: 8px 24px 8px 24px; 
+                               xborder-top: solid 1px #F7F7F7; 
+                               xbackground-color: #F5F5F5; }
+table#cntPPAccept div.buttons { padding-top: 8px; text-align: right; }
+                               
+table#cntPPAccept table.tbCzasPracyParams td.col1 { vertical-align: bottom; padding: 0px; }
+table#cntPPAccept div#paAcceptScroll { xheight: 100%;        /* na IE nie chodzi */
+                                       height: 492px;                                        
+                                       border: solid 1px Silver;                                       
+                                       xpadding-top: 8px;}
+table#cntPPAccept div#paAcceptScroll table.tbCzasPracy { border: none; }                                       
+table#cntPPAccept div#paAcceptScroll table.tbCzasPracy tr.itsumy td { border-top: none; }                                       
+table#cntPPAccept div#paAcceptScroll table.tbCzasPracy tr:last-child td { border-bottom: none; }                                       
+
+table#cntPPAccept div#paRcpScroll { xheight: 100%;        /* na IE nie chodzi */
+                                    height: 200px;                                        
+                                    border: solid 1px Silver;                                       
+                                    xpadding-top: 8px;}
+
+
+table.tbAccept2,
+table.tbAccept3,
+table.tbAccept4 { border: solid 1px Silver;}
+table.tbAccept2 td,
+table.tbAccept3 td,
+table.tbAccept4 td { vertical-align: middle; line-height: 22px; padding: 0px 4px 0px 4px; white-space: nowrap; }
+table.tbAccept2 td.col1,
+table.tbAccept3 td.col1 { width: 150px; 
+                          border-right: solid 1px #EAEAEA;
+                          xborder-right: solid 1px #F0F0F0;
+                          background: #FBFBFB url('../images/back/back1_30.png') repeat-x bottom; color: Gray; 
+                          /*font-size: 9px; font-weight: bold; text-transform: uppercase; /**/}
+table.tbAccept2 td.col2,
+table.tbAccept3 td.col2,
+table.tbAccept3 td.col3 { background: White url('../images/back/back2_30.png') repeat-x bottom; }
+table.tbAccept2 tr.divider td,
+table.tbAccept3 tr.divider td { border-top : dotted 1px Silver; }
+
+table.tbAccept3 td { line-height: 25px; padding-top: 0px; padding-bottom: 0px; xheight: 19px; }
+table.tbAccept3 td.col2 { width: 121px; border-right: solid 1px #EAEAEA;}  /*width ustawic nieparzyste bo divider się solid rysuje w chrome*/
+table.tbAccept3 td.col3 { }
+table.tbAccept3 tr.topline td { line-height: 18px; border-bottom: solid 1px #EAEAEA;
+                                background: White url('../images/back/back1_30.png') repeat-x bottom; color: Gray; 
+                                font-size: 9px; font-weight: bold; text-transform: uppercase; }
+table.tbAccept3 tr.absencja td { height: 25px;}
+table.tbAccept3 tr.absencja td span.absencja { color: Silver; text-decoration: line-through; }
+
+table.tbAccept3 tr.uwagi td { height: 52px;}
+table.tbAccept3 tr.uwagi3 td { height: 37px; }
+table.tbAccept3 tr.uwagi3 td.col3 { padding-top: 2px; }
+table.tbAccept3 td.col3 span.t4n { line-height: 16px; vertical-align: baseline; }
+table.tbAccept2 tr.zmiana select { width: 341px; height: 20px; margin-top: 2px; margin-bottom: 2px; }
+table.tbAccept3 td.col3 select { width: 341px; height: 20px; margin-top: 2px; }
+table.tbAccept3 td.col3 textarea { width: 335px; }
+
+table.tbAccept4 td { background: White url('../images/back/back2_30.png') repeat-x bottom; }
+atable.tbAccept4 td { background: #FCFFFC url('../images/back/back1_30_green.png') repeat-x bottom; }
+
+atable.tbAccept4 td.alerty { background: #FFFCFC url('../images/back/back1_30_red.png') repeat-x bottom; }
+xtable.tbAccept4 td.alerty { background: #FFD6D6 url('../images/back/back3_r1.png') repeat-x bottom; }
+table.tbAccept4 td.alerty { background: #FFF3F3 url('../images/back/back3_r.png') repeat-x bottom; }
+
+table.tbAccept4 td { padding: 0px; } 
+table.tbAccept4 td div#paAlertyScroll { max-height: 106px; height: 68px; padding: 0px 8px 0px 4px;}
+
+ul.alerty { padding: 2px 0px 0px 22px; margin: 0px; }
+ul.alerty li { padding: 0px; margin: 0px; line-height: 18px; }
+
+/*----- AKCEPTACJA - CC -----*/
+table.tbEnterMPK {}
+table.tbEnterMPK table th { white-space: normal; line-height: normal; vertical-align: bottom; white-space: nowrap; }
+table.tbEnterMPK table th.control, 
+table.tbEnterMPK table td.control { min-width: 90px !important; width: 90px !important; }
+table.tbEnterMPK table td input.timeedit { width: 40px !important; }
+table.tbEnterMPK table td.col2,
+table.tbEnterMPK table td.col2 input.timeedit { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; }
+table.tbEnterMPKedt { border: solid 1px Silver; width: 100%; } 
+table.tbEnterMPKedt td { padding: 8px 8px 8px 8px; } 
+
+
+
+
+
+/*----- ZASTEPSTWA -----*/
+table.tbZastepstwa { width: auto; }
+table.tbZastepstwa table td { white-space: nowrap; }
+table.tbZastepstwa td.bottom_buttons { text-align: left; padding-left: 0px; padding-top: 8px; }
+
+
+
+/*
+
+
+
+
+.table3B     /* parametry programu oceny - dolna tabelka * /
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    border: solid 1px silver;
+    border-collapse:collapse;
+    width: 100%;
+    line-height: 30px;
+}
+
+.table3B td.col1, .table3B td.col2
+{
+    border-top: solid 1px silver;
+    border-right: solid 1px silver;
+    padding: 0px 8px 0px 8px;
+    vertical-align: middle;
+}
+
+.table3B td.col1
+{
+    text-align: left;
+    vertical-align: top;
+    background: url('../images/back/back1_30.png') repeat-x bottom;
+    width: auto;
+}
+
+.table3B td.col2
+{
+    text-align: right;
+    background: url('../images/back/back2_30.png') repeat-x bottom;
+    width: 50px;
+}
+
+.table3B td.checkbox
+{
+    xtext-align: center;
+}
+
+.table3B th
+{
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 3px 8px 3px 8px;
+    line-height: normal;
+    background: url('../images/back/back1_20.png') repeat-x bottom;
+    color: Gray;
+}
+
+.table3B input[type="text"]   /* 1 line edit * /
+{
+    text-align: right;
+}
+
+.table3B .row_2lines td.col1 {line-height: 17px;}
+
+/*------------------------* /
+.table3A input.textbox {xtext-align: left;}
+.table3A input.textbox[readonly]
+{
+    border: solid 1px Transparent !important;
+    background-color: Transparent;
+    xtext-align: right;
+}
+
+.table3B input.textbox 
+{
+    text-align: left;
+}
+
+.table3B input.textbox[readonly]
+{
+    border: solid 1px Transparent !important;
+    background-color: Transparent;
+    text-align: right;
+}
+*/
+
+/*----- RAPORTY - KARTA ROCZNA -----*/
+table.tbKartaRoczna th.header { height: 130px; vertical-align: top; padding: 0px;}
+table.tbKartaRoczna th.suma { max-width: 28px; height: 150px; text-align: left; vertical-align: bottom; }
+table.tbKartaRoczna th.suma span { xborder: solid 1px red; }
+table.tbKartaRoczna th.suma span.rotate90L { display: block; font-weight: normal; font-size: 11px; white-space: nowrap; margin-bottom: 10px; }                                             
+table.tbKartaRoczna th.month,
+table.tbKartaRoczna td.month { text-align: center; white-space: nowrap;}
+
+table.tbKartaRoczna tr.it td.suma { vertical-align: middle; font-size: 12px; }
+table.tbKartaRoczna td.suma span.lb0 { display: inline; }
+table.tbKartaRoczna td.suma1 { border-left-width: 1px; } 
+table.tbKartaRoczna tr.it td.day div.day span.overlaptext { margin-top: 11px; font-size: 9px; color: Black;}
+
+table.tbKartaRoczna tr.it td.holiday { background: none;}
+table.tbKartaRoczna tr.it td.holiday div { border-top: solid 3px #FFCCD3 !important;}  /*#FF3755*/
+table.tbKartaRoczna tr.it td.holiday span.toptext,
+table.tbKartaRoczna tr.it td.holiday span.bottomtext { position: relative; top: -3px; }
+
+
+/*----- RAPORTY - NADGODZINY -----*/
+table.tbRepNadgodziny {}
+table.tbRepNadgodziny td.col1 { white-space: nowrap; }
+table.tbRepNadgodziny td.col3 { white-space: nowrap; }
+table.tbRepNadgodziny td.suma { text-align: right; width: 80px; white-space: nowrap;}
+table.tbRepNadgodziny tr.sumy td { xfont-weight: bold;}
+table.tbRepWarning td { color: Red; }
+table.tbRepNadgodziny td span.warning { color: Red; }
+
+/*----- RAPORTY - INFORMACJE O PRACOWNIKU -----*/
+table.cntRepPracInfo { width: auto; margin-top: 8px; margin-left: 8px; border: none; }
+table.cntRepPracInfo td { border: none; vertical-align: baseline; xborder: solid 1px red;
+                          height: 12px;
+                          line-height: 12px;
+                          padding: 2px 4px 2px 4px;
+                          }
+table.cntRepPracInfo td.col2 { font-size: 12px; font-weight: normal; text-transform: none; color: Black;}
+
+/*----- RAPORTY - URLOPY -----*/
+table.tbRepUrlopy {}
+table.tbRepUrlopy tr th { xwhite-space: nowrap; }
+table.tbRepUrlopy tr td.col1 { white-space: nowrap; width: 250px; }
+table.tbRepUrlopy tr td.col2 { width: 60px; }
+table.tbRepUrlopy tr td.col4 { white-space: nowrap; width: 80px; }
+table.tbRepUrlopy tr td.col5 { white-space: nowrap; width: 80px; background-color: #F5F5F5; background-image: none; xbackground: #fff url(../images/back/back1_20.png) repeat-x bottom; }
+
+div.PracUrlopy {}
+div.PracUrlopy table { width: 100%; border: solid 1px #EEEEEE;}
+div.PracUrlopy table th { text-align: left; font-size: 9px; font-weight: bold; text-transform: uppercase; white-space: nowrap; }
+
+div.PracUrlopy div.buttons { padding-top: 8px; text-align: right; }
+
+
+/*----- LEGENDA -----*/
+div.legendabox 
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 16px; 
+}
+
+div.legenda 
+{
+    display: inline-block;
+    margin-top: 2px;
+    border-top: dotted 1px silver;
+    border-bottom: dotted 1px silver;
+    padding: 4px;
+    background-color: #F7F7F7;
+}
+
+div.legenda table td { vertical-align: top; xborder: solid 1px red; }
+div.legenda table td.col1 { width: 40px; }
+
+/*----- ABSENCJA i PP LEGENDA -----*/                  
+.AbsencjaLegenda span.item { white-space: nowrap; xmin-width: 250px; xdisplay: inline-block;}
+.AbsencjaLegenda span.symbol { font-weight: bold; min-width: 30px; display: inline-block;}
+.AbsencjaLegenda span.nazwa {}
+
+.PPDayLegenda table td.col2 { width: 360px; }
+.PPDayLegenda table span.day 
+{ 
+    width: 40px;
+    height: 60px; 
+    display: block;
+    background: #6699FF url(../images/back/infomarker.png) no-repeat right bottom;
+    text-align: center;     
+    margin: 0px 2px 0px 2px;
+}
+.PPDayLegenda table tr.line2 td.col1 { vertical-align: bottom; }
+.PPDayLegenda table span.border { border: dotted 2px Red; background-image: none; margin: 0px; }
+
+.PPDayLegenda table span.triangle 
+{
+    background: url('../images/back/infomarker.png') no-repeat right bottom;
+    width: 8px;
+    height: 10px;
+    display: inline-block;
+ }
+
+.PPSumyLegenda table td.col2 { width: 390px; }
+.PPSumyLegenda table span.suma
+{ 
+    width: 40px;
+    height: 46px; 
+    display: block;
+    text-align: center;    
+    border: solid 1px Silver;
+    xbackground: url('../images/back/back2_30.png') repeat-x bottom;
+    background-color: White;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----- DATETIME ENTER -----*/                  
+input.dateedit { width: 80px; }
+                         
+/*----- KIER PARAMS-----*/       
+div.cntKierParams {}
+div.cntKierParams table.GroupBox1 { width: auto; margin-bottom: 8px; }
+
+div.cntKierParams table.table0 { }
+div.cntKierParams table.table0 td { white-space: nowrap; vertical-align: middle; height: 50px; padding-left: 16px; padding-right: 16px; } 
+div.cntKierParams table.table0 td.divider { height: auto; } 
+div.cntKierParams table.table0 td.divider div { height: 1px; border-bottom: dotted 1px Silver; margin: 8px 0px 8px 0px; }
+div.cntKierParams table.table0 td.col1 { }
+
+div.cntKierParams span { }       
+div.cntKierParams select { width: 180px; }
+div.cntKierParams select[disabled] { background-color: #E7E7E7; }
+
+/*----- ADM USTAWIENIA -----*/
+div.cntAdmUstawienia {}
+div.cntAdmUstawienia table.table3B { width: auto; }
+div.cntAdmUstawienia table.table3B td { white-space: nowrap; }
+div.cntAdmUstawienia table.table3B td.col1 { width: 50%; }
+div.cntAdmUstawienia table.table3B td.col2 { text-align: left; }
+div.cntAdmUstawienia table.table3B select.timeround { width: 200px; }
+div.cntAdmUstawienia div.buttons { padding-top: 8px; xtext-align: right; }
+
+/*----- ROUNDED RAMKI -----*/
+.round2 
+{ 
+    -moz-border-radius: 2px;                        /* FF */ 
+    -webkit-border-radius: 2px;                     /* przeglądarki z webkitem (Safari, Chrome itp.) */ 
+    -khtml-border-radius: 2px;                      /* przeglądarki typu K-meleon (typowo Linuxowe) */ 
+    border-radius: 2px;                             /* pozostałe przeglądarki */ 
+    xbehavior: url(../styles/border-radius.htc);    /* dodatek dla IE */ 
+} 
+
+.round3 
+{ 
+    -moz-border-radius: 3px;                        
+    -webkit-border-radius: 3px;                     
+    -khtml-border-radius: 3px;                      
+    border-radius: 3px;                             
+    xbehavior: url(../styles/border-radius.htc);    
+} 
+
+.round5 
+{ 
+    -moz-border-radius: 5px;                        
+    -webkit-border-radius: 5px;                     
+    -khtml-border-radius: 5px;                      
+    border-radius: 5px;                             
+    xbehavior: url(../styles/border-radius.htc);    
+} 
+                    
+/*----- Ajax Color Picker, powinno byc po ListView1 -----*/
+div.ajax__colorPicker table 
+{ 
+    border-collapse: separate; 
+    border-spacing: 1px;
+    height: auto;
+    width: auto;
+}
+
+div.ajax__colorPicker table td 
+{
+    padding: 0px !important; 
+    background-color: White !important; 
+    height: 10px; 
+    border: none;
+}
+/*----- -----*/
+div.ui-dialog  
+{
+    -webkit-box-shadow: 0 0 15px Silver;    
+}
+
+div.ui-widget-overlay 
+{ 
+    background-image: none !important; 
+    opacity: 0.2 !important;
+    filter: alpha(Opacity=20) !important;
+}
+div.ui-dialog 
+{
+    background-image: none !important;
+    xbackground-color: White !important;
+    xbackground-color: #F5F5F5 !important;
+    background-color: #FAFAFA !important;
+}
+
+
+
+    
+/*----- CALENDAR -----*/
+.calendar .ajax__calendar_days TD,
+.calendar .ajax__calendar_years TD,
+.calendar .ajax__calendar_months TD
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    
+    border: none !important;
+    padding: 0px 0px 0px 0px !important;
+    width: auto !important;
+    xheight:auto;
+    border-collapse: separate !important;
+    background-image: none !important;
+    background-color: white !important;
+    height: 16px !important;
+    line-height: 16px !important;
+}
+
+.calendar div.ajax__calendar_body table
+{
+    border: none;
+}
+
+
+
+.calendar
+{
+    line-height: 16px;
+    border-spacing: 0px;    
+}
+
+.calendar .ajax__calendar_container   
+{
+    background-color: #E9E9E9;
+    border: solid 1px #D2D2D2;
+}
+
+.calendar .ajax__calendar_header  
+{
+    background-color: #ffffff; 
+}
+
+.calendar .ajax__calendar_body    
+{
+    background-color: #fff;
+}
+
+.calendar .ajax__calendar_dayname 
+{
+    text-align:center; 
+    border-bottom: solid 1px #F5F5F5;
+    padding-top: 8px;
+}
+
+.calendar .ajax__calendar_day 
+{
+    text-align:center;
+}
+
+.calendar .ajax__calendar_today   
+{
+    font-weight:bold;
+    border-top: solid 1px #f5f5f5; 
+}
+
+.calendar .ajax__calendar_other 
+{
+    color: #bbbbbb;
+}
+
+.calendar .ajax__calendar_active 
+{
+    background-color: #CAEEFF;
+    border: solid 1px #3399FF !important;
+}
+
+.calendar .ajax__calendar_hover .ajax__calendar_day 
+{
+    background-color: #CAEEFF;
+}
+       
+.calendar .ajax__calendar_hover .ajax__calendar_month 
+{
+    background-color: #CAEEFF;
+}
+      
+.calendar .ajax__calendar_hover .ajax__calendar_year 
+{
+    background-color: #CAEEFF;
+}
+      
+.calendar .ajax__calendar_title,
+.calendar .ajax__calendar_prev,
+.calendar .ajax__calendar_next 
+{
+    position: relative;
+    top: 4px;
+}
+
+.calendar .ajax__calendar_months 
+{
+    line-height: 14px;
+    margin-top: 2px;
+}
+
+.calendar .ajax__calendar_years 
+{
+    line-height: 14px;
+    margin-top: 2px;
+}
+
+.calendar .ajax__calendar_day[date~=Sun] { color: red !important; }
+.calendar .ajax__calendar_days td:last-child { color: red !important; }
+.xxxcalendar .ajax__calendar_days td + td + td + td + td + td + td { color: red !important; }
+
+
+/*----- Ajax validators -----*/
+.MaskedEditFocus
+{
+    background-color: #ffffcc;
+    color: #000000;
+}
+.MaskedEditMessage
+{
+	color: #ff0000;
+	font-weight: bold;
+}
+.MaskedEditError
+{
+    background-color: #ffcccc;
+}
+
+
+
+
+
+
+tr.hilite td {
+  background: #f00;
+  color: #fff;
+}  
+
+
+
+
+img.background {
+    position: absolute;
+    xz-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    width: 100px;
+    height: 100px;
+    border: solid 1px red;
+    
+    color: Red;
+}
+

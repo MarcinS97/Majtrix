@@ -1,0 +1,250 @@
+﻿@model HRRcp.Areas.MVC.Models.obdSzablon
+
+
+@{
+    ViewBag.Title = "Szablon";
+    Layout = "~/Areas/MVC/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Szablon</h2>
+
+
+  <!-- Modal Trigger -->
+
+<!-- Modal Structure -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        &nbsp
+        <div class="mui-form znaczniki">
+            <div class="znacznikipole">
+                <div class="mui-select">
+                    <p>Podaj rodzaj</p>
+                    
+                        @Html.DropDownList("idpoladictznacznik", (IEnumerable<SelectListItem>)ViewBag.znacznikirodzaj, null, new { @class = "mui-select" })
+                    
+                </div>
+                <div class="mui-textfield mui-textfield--float-label">
+
+                    <input type="text" id="nazwaPola" value="@ViewBag.nazwaPola" />
+                    <label for="nazwaPola">Nazwa znacznika</label>
+                </div>
+                <div class="mui-textfield mui-textfield--float-label">
+
+                    <input type="text" id="maxdDlugoscPola" value="@ViewBag.maxdDlugoscPola" />
+                    <label for="maxDlugoscPola">Maksymalna długość</label>
+                </div>
+                <div class="mui-textfield mui-textfield--float-label">
+
+                    <input type="text" id="minDlugoscPola" value="@ViewBag.minDlugoscPola" />
+                    <label for="minDlugoscPola">Minimalna długość</label>
+                </div>
+                <div class="mui-textfield mui-textfield--float-label">
+
+                    <input type="text" id="dozwoloneZnakiPola" value="@ViewBag.dozwoloneZnakiPola" />
+                    <label for="dozwoloneZnakiPola">Dozwolone znaki</label>
+                </div>
+
+
+                <button class="mui-btn mui-btn--danger" onclick="dodajznacznik()">dodaj</button>
+                <button class="mui-btn mui-btn--accent" onclick="zamknijmodal()">wylacz</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+  <!-- Modal Trigger -->
+<button id="myBtn" class="mui-btn mui-btn--primary" onclick="activateModal()">Dodaj znacznik</button>
+<table>
+
+
+    <tr>
+        <th>
+            @using (Html.BeginForm())
+            {
+                <div class="form-horizontal">
+                    <h4>Tworzenie szablonu</h4>
+                    <hr />
+
+                    <div class="mui-textfield mui-textfield--float-label">
+
+                        @*@Html.EditorFor(model => model.IdObieguDict, new { htmlAttributes = new { @class = "" } })
+                        @Html.LabelFor(model => model.IdObieguDict, htmlAttributes: new { @class = "" })
+                        @Html.ValidationMessageFor(model => model.IdObieguDict, "", new { @class = "text-danger" })*@
+                        @Html.HiddenFor(model => model.IdObieguDict, new {id="IdObieguDict", Value = ViewBag.idobiegudict })
+                    </div>
+                    <div class="mui-textfield mui-textfield--float-label">
+
+                        @Html.EditorFor(model => model.Nazwa, new { htmlAttributes = new { @class = "" } })
+                        @Html.LabelFor(model => model.Nazwa, htmlAttributes: new { @class = "" })
+                        @Html.ValidationMessageFor(model => model.Nazwa, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mui-textfield mui-textfield--float-label">
+
+                        @Html.EditorFor(model => model.Opis, new { htmlAttributes = new { @class = "" } })
+                        @Html.LabelFor(model => model.Opis, htmlAttributes: new { @class = "" })
+                        @Html.ValidationMessageFor(model => model.Opis, "", new { @class = "text-danger" })
+                    </div>
+
+
+                    <h3>Treść</h3>
+
+                    @Html.TextArea("contentHTML", null, new { @class = "editor tinymce-editor", @name = "contentHTML" })
+
+
+
+                    <input name="znacznikiwszystkie" id="znacznikiwszystkie" type="text" hidden />
+                    <div class="mui-group">
+                        <div class="mui-row">
+                            <div class="mui-col-md-4">
+                                <input type="submit" value="Utwórz" class="mui-btn mui-btn--small mui-btn--primary" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            </th>
+<th style="border:solid white 1px;">
+    <p style="font-weight:bold">Znaczniki Zadeklarowane</p>
+    <div class="znaczniki-zadeklarowane">
+                 @foreach (var item in ViewBag.zniacznikizadklarowanie)
+                 {
+                    <span class="mui-btn mui-btn--primary btn-znaczniki-formularz"> %@item.Nazwa% </span><p></p>
+                 }
+    </div>
+    <p style="font-weight:bold">Znaczniki do wypełnenia</p>
+    <div class="znaczniki-do-wypelnienia"></div>
+        </th>
+    </tr>
+</table>
+<style>
+    .mce-menu {
+     position: absolute !important; 
+}
+</style>
+<script>
+    tinymce.init(
+          {
+              selector: 'textarea',
+              body_class: 'editor-content',
+              height: 500,
+              width: 'auto',
+              language: 'pl',
+              content_css: "../Portal/Styles/editor.css",
+              plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code',
+                'insertdatetime media table contextmenu paste code emoticons textcolor colorpicker'
+              ],
+              paste_data_images: true,
+              convert_urls: false,
+              toolbar: 'insertfile undo redo | fontselect fontsizeselect forecolor backcolor | paste | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | imgupload',
+              setup: function (editor) {
+
+                  editor.on('init', function (editor) {
+                      editor.target.editorCommands.execCommand("fontName", false, "sans-serif");
+                      editor.target.editorCommands.execCommand("fontSize", false, "14px");
+                  });
+                  //alert(0);
+                  editor.addButton('imgupload', {
+
+                      text: 'Dodaj zdjęcie',
+                      icon: false,
+                      onclick: function () {
+                          $('#uploader').trigger('click');
+                          $("#uploader").on("change", function () {
+                              var that = $(this);
+                              var file = that.prop('files')[0];
+
+                              var reader = new FileReader();
+
+                              reader.addEventListener("load", function () {
+                                  var base64 = reader.result;
+                                  editor.insertContent("<img src='" + base64 + "' />");
+                              }, false);
+
+                              if (file) {
+                                  var data = reader.readAsDataURL(file);
+                              }
+                          });
+                      }
+                  });
+              }
+          });
+
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    function zamknijmodal() {
+        modal.style.display = "none";
+    }
+
+
+    $(function () {
+        $(".znaczniki-zadeklarowane").on('click', 'span', function () {
+            var bla = $(this).text();
+            tinymce.activeEditor.execCommand('mceInsertContent', false, bla);
+        });
+    });
+    $(function () {
+        $(".znaczniki-do-wypelnienia").on('click', 'span', function () {
+            var bla = $(this).text();
+            tinymce.activeEditor.execCommand('mceInsertContent', false, bla);
+        });
+    });
+
+    //function pokazznaczniki() {
+    //    $(".znaczniki").show();
+    //}
+    //function schowajznaczniki() {
+    //    $(".znaczniki").hide();
+
+    //}
+
+    function dodajznacznik() {
+        var idpoledict = $("#idpoladictznacznik").val();
+        var nazwapola = $("#nazwaPola").val();
+        var maxdlugoscpola = $("#maxdDlugoscPola").val();
+        var mindlugoscpola = $("#minDlugoscPola").val();
+        var dozwoloneZnakiPola = $("#dozwoloneZnakiPola").val();
+        var lacznie = idpoledict + ";" + nazwapola + ";" + maxdlugoscpola + ";" + mindlugoscpola + ";" + dozwoloneZnakiPola + "|";
+        $("#mojeznaczniki").append($("<option/>", {
+            value: lacznie,
+            text: nazwapola
+        }));
+        var znacznikidodane = $("#znacznikiwszystkie").val() + lacznie;
+        $("#znacznikiwszystkie").val(znacznikidodane);
+
+
+
+        $(".znaczniki-do-wypelnienia").append($("<span class='mui-btn mui-btn--primary btn-znaczniki-formularz'> %" + nazwapola + "% </span><p></p>"));
+
+
+    }
+
+
+</script>

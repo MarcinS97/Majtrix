@@ -1,0 +1,8 @@
+﻿#main #footer{
+    xbackground: url(../../../styles/User/footer-bg.png); 
+    background-color: #F15246;
+    color: #fff;
+}
+
+#main #footer span, #footer div { color: #fff; }
+.okres_navigator { background: #ee524a !important; }

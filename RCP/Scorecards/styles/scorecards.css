@@ -1,0 +1,798 @@
+﻿/*----- COMMON -----*/
+#mainformcontent div#content { background-image: none; background-color: #FAFAFA; }
+
+div.topLine div#program div { display: inline-block; width: 12px; height: 12px; margin-top: -2px; vertical-align: middle; 
+    -moz-border-radius: 8px; 
+    -webkit-border-radius: 8px; 
+    -khtml-border-radius: 8px; 
+    border-radius: 8px; 
+    border: solid 1px Silver; 
+}
+div.topLine div#program div.white { background-color: White; xdisplay: none; margin-right: 4px; }
+div.topLine div#program div.green { background-color: Lime; margin-left: 8px; }
+div.topLine div#program div.yellow { background-color: Yellow; xdisplay: none; }
+div.topLine div#program div.red { background-color: Red; }
+
+div.padding { padding: 16px; }
+
+/*----- tabs -----*/
+div.tabsMenu { background-color: #FAFAFA; }
+div.tabsContent { border: none; border-top: solid 1px #EEEEEE; border-bottom: solid 1px #EEEEEE; -moz-border-radius: 0px; -webkit-border-radius: 0px; -khtml-border-radius: 0px; border-radius: 0px; xbehavior: url(css/border-radius.htc); x-webkit-box-shadow: 0 0 15px Silver; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; width: 100%; min-height: 450px; margin: 0px; }
+table.tabsContent { border: none; -moz-border-radius: 0px; -webkit-border-radius: 0px; -khtml-border-radius: 0px; border-radius: 0px; xbehavior: url(css/border-radius.htc); -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+
+/*----- left menu -----*/
+table.tabsContent td.LeftMenu { xbackground-color: #FDFDFD; xbackground-color: #F4F4F4; border-right: solid 1px #E0E0E0; width: 10px; height: 580px; /* chrome */-moz-border-radius: 0px; -webkit-border-radius: 0px; -khtml-border-radius: 0px; border-radius: 0px; xbehavior: url(css/border-radius.htc); }
+.LeftMenu .selected td { border-color: #DDDDDD; }
+table.tabsContent td.LeftMenuContent { -webkit-box-shadow: none; }
+
+/*----- CONTROLS -----*/
+
+/* ------------------------------------------------------------------------------------------ ADMINISTRACJA ------------------------------------------------------------------------------------------- */
+
+div.pgScParametry div.cntParametersMenu div.cntTypes {  }
+div.pgScParametry div.cntParametersMenu div.cntTypes .ddlTypes { margin-bottom: 16px;}
+
+div.pgScAdministracja div.cntSpreadsheetsTasks {  }
+
+div.pgScAdministracja div.cntSpreadsheetsTasks .buttons { display:inline-block; width:80px; margin-top: 100px;}
+div.pgScAdministracja div.cntSpreadsheetsTasks .buttons input { }
+
+div.pgScAdministracja div.cntSpreadsheetsTasks .left { display:inline-block; width: 530px; vertical-align: top;}
+div.pgScAdministracja div.cntSpreadsheetsTasks .left table { width: 400px;}
+div.pgScAdministracja div.cntSpreadsheetsTasks .middle { display:inline-block; width: 540px; vertical-align: top;}
+div.pgScAdministracja div.cntSpreadsheetsTasks .middle table.ListView1 { width: 520px; }
+div.pgScAdministracja div.cntSpreadsheetsTasks .middle table .blockControl { width: 50px; white-space: normal;}
+div.pgScAdministracja div.cntSpreadsheetsTasks .middle table .task { width: 150px; white-space:normal; }
+
+div.pgScAdministracja div.cntSpreadsheetsTasks .right { display:inline-block; vertical-align: top;}
+div.pgScAdministracja div.cntSpreadsheetsTasks .right table { width: 350px;}
+
+div.pgScAdministracja div.cntSpreadsheetsParameters {  }
+div.pgScAdministracja div.cntSpreadsheetsParameters .paramTable { margin-top: 8px;}
+div.pgScAdministracja div.cntSpreadsheetsParameters .ddl { margin-bottom: 8px; margin-right: 4px;}
+div.pgScAdministracja div.cntSpreadsheetsParameters div.cntAbsence table td.curr input[type=text] { width: 60%;}
+div.pgScAdministracja div.cntSpreadsheetsParameters div.cntAbsence table td.curr input[type=radio] { width: 30px;}
+div.pgScAdministracja div.cntSpreadsheetsParameters div.import { display: inline-block; background-color: #eee; border-radius: 4px; padding: 2px 8px; border: solid 1px #c0c0c0; margin-left: 32px; }
+div.pgScAdministracja div.cntSpreadsheetsParameters .hProd { xmargin-top: 0px; }
+div.pgScAdministracja div.cntSpreadsheetsParameters div#paramWrapper { border-top: solid 1px #eee; }
+div.pgScAdministracja div.cntSpreadsheetsParameters .cntOther { }
+div.pgScAdministracja div.cntSpreadsheetsParameters .cntOther table { margin-bottom: 16px; }
+div.pgScAdministracja div.cntSpreadsheetsParameters .title { display: block; padding: 4px 0px; font-size: 16px; font-weight: bold; margin-top: 8px; color: #333; }
+div.pgScAdministracja div.cntSpreadsheetsParameters .subTitle { display: block; font-size: 12px; font-variant: small-caps; color: #808080; margin-bottom: 8px; xborder-bottom: solid 1px #c0c0c0; xtext-decoration: underline; }
+
+div.pgScAdministracja div.cntSpreadsheetsTasks table .calendar .ajax__calendar_days TD { width: 16px !important; max-width: 16px !important; }
+
+/* NAJLEPSZA KONTROLKA OD SZUKANIA */
+
+div.cntSearch { display: inline-block; xcolor: #333; color: #808080; }
+div.cntSearch h4 { display: inline-block; margin-right: 4px; xtext-transform: uppercase; font-family: Verdana; }
+div.cntSearch .tbSearch { display: inline-block; width: 200px; margin-bottom: 4px; }
+div.cntSearch .xbutton { margin-left: 4px; font-size: 15px; color: #e34; }
+div.cntSearch .xbutton:hover { cursor: pointer; color: #b35; }
+
+/* ------------------------------------------------------------------------------------------ SCORECARDY ------------------------------------------------------------------------------------------- */
+
+
+/* ---- cntEmployeeSelect ---- */
+
+div.pgScorecards .cntEmployeeSelect .ziomek span{ color: #808080; font-size: 12px !important; }
+div.pgScorecards .cntEmployeeSelect .fa-search { font-size: 14px; color: #ccc; position: absolute; right: 6px; top: 39px; z-index: 5000; }
+
+
+div.pgScorecards .cntEmployeeSelect { position: fixed; top: 20%; left: -300px; width: 450px; }
+div.pgScorecards .cntEmployeeSelect .menuItem { position: relative; top: 200px; float: left; display: inline-block; text-align: center; width: 120px; height: 48px; border: solid 1px #ccc; background-color: #fff; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-left: none; margin-bottom: 4px; }
+div.pgScorecards .cntEmployeeSelect .save { width: 88px; } 
+div.pgScorecards .cntEmployeeSelect .accept { width: 103px; }
+div.pgScorecards .cntEmployeeSelect .acceptall { width: 144px; }
+div.pgScorecards .cntEmployeeSelect .acceptall span { font-size: 11px; }
+div.pgScorecards .cntEmployeeSelect .showList { width: 115px; }
+div.pgScorecards .cntEmployeeSelect .showGroups { width: 95px; }
+div.pgScorecards .cntEmployeeSelect .showSuperiors { width: 109px; }
+div.pgScorecards .cntEmployeeSelect .showMine { width: 110px; }
+div.pgScorecards .cntEmployeeSelect .menuItem:hover { border: solid 1px black; cursor: pointer; }
+div.pgScorecards .cntEmployeeSelect .menuItem span.text { margin-top: 14px; margin-left: 8px; float: left; display: inline-block; }
+div.pgScorecards .cntEmployeeSelect .menuItem span.fa { font-size: 28px; line-height: 48px; margin-right: 0px; }
+.cntEmployeeSelect .funnyRotate { animation-name: test; animation-duration: 1s; }
+.alarm { animation-name: test; animation-duration: 1s; animation-iteration-count:  infinite;  }
+.blink { animation: blink 1s linear infinite; }
+@keyframes test { 0%   {transform: rotate(0deg);} 33%  {transform: rotate(30deg);} 66%  {transform: rotate(-30deg);} 100% {transform: rotate(0deg);} }
+@keyframes blink { 0%   {background-color: Red;} 100% {background-color: #fff;} }
+@keyframes blinkColor { 0%   {color: Red;} 100% {color: #fff;} }
+.blinkColor { animation: blinkColor 1s linear infinite; }
+div.pgScorecards .cntEmployeeSelect input { position: fixed; left: -1000px; color: #000; border: none; }
+div.pgScorecards .cntEmployeeSelect .menuItem img { margin-top: 15px; height: 18px; }
+div.pgScorecards .cntEmployeeSelect table.hiddenTable { left: -3px; z-index: 1000; position: relative; float: left; xdisplay: block; display: none; border: solid 1px #ccc; width: 300px; height: 500px; min-height: 500px; background-color: #fff; border-spacing: 0; border-collapse: separate; border-top-right-radius: 8px; border-bottom-right-radius: 8px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); overflow-y: -moz-scrollbars-none; xpadding-right: 15px; overflow-x: hidden; overflow-y: auto; }
+div.pgScorecards .cntEmployeeSelect table.hiddenTable td.head { color: #eee; background-color: #4472B0; xwidth: 300px; font-size: 14px; font-weight: 700; height: 34px; text-align: center; }
+xdiv.pgScorecards .cntEmployeeSelect table.hiddenTable input{ width: 100px; height: 40px; display: block; }
+div.pgScorecards .cntEmployeeSelect table.hiddenTable td { border-bottom: solid 1px #ccc; padding: 0; width: 300px;  }
+div.pgScorecards .cntEmployeeSelect table.hiddenTable td a { line-height: 18px; display: block; text-decoration: none; color: #333; padding: 4px; }
+div.pgScorecards .cntEmployeeSelect table.hiddenTable td a.sel { background-color: #65c2c7; }
+div.pgScorecards .cntEmployeeSelect table.hiddenTable td span { font-size: 16px; }
+div.pgScorecards .cntEmployeeSelect table.hiddenTable td a:hover { background-color: #eee; }
+div.pgScorecards .cntEmployeeSelect table.tbSuperiorsSelect { display: inline-block; }
+div.pgScorecards .cntEmployeeSelect table.hiddenTable tr.search td { }
+div.pgScorecards .cntEmployeeSelect table.hiddenTable tr.search input { height: 20px; width: 100%;  position: static;}
+
+div.pgScorecards .cntEmployeeSelect table.hiddenTable .items .tl { font-weight: bold; }
+
+/* ---- cntScorecardMenu2 (to samo co EmployeeSelect ale mniejsze i bardziej modularne będzie hehe|| NIE JEST) ---- */
+
+.cntScorecardMenu2 { position: fixed; top: 50%; width: 450px; } 
+.cntScorecardMenu2 .menuItem { position: relative; right: 75px; display: block; text-align: center; width: 120px; height: 48px; border: solid 1px #ccc; background-color: #fff; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-left: none; margin-bottom: 4px; }
+.cntScorecardMenu2 .menuItem:hover { border: solid 1px black; cursor: pointer; }
+.cntScorecardMenu2 .save { width: 88px; }
+.cntScorecardMenu2 .back { width: 100px; }
+.cntScorecardMenu2 .menuItem span.text { margin-top: 14px; margin-left: 8px; float: left; display: inline-block; }
+.cntScorecardMenu2 .menuItem span.fa { font-size: 28px; line-height: 48px; margin-right: 0px; }
+.cntScorecardMenu2 .funnyRotate { animation-name: test; animation-duration: 1s; }
+.cntScorecardMenu2 input { position: fixed; left: -1000px; color: #000; border: none; }
+.cntScorecardMenu2 .menuItem img { margin-top: 15px; }
+
+/* ---- cntScorecard ---- */
+
+.cntScorecard { margin: 32px; margin-bottom: 64px;  }
+
+.cntScorecard div.showColumnsTab { display: inline-block; background-color: #fafafa; padding: 4px 8px; text-align: center; border-radius: 8px; border: none !important; } 
+.cntScorecard div.showColumnsTab a.showColumns { text-decoration: none; color: Silver; font-size: 14px; margin-top: 2px; outline: none !important; }
+.cntScorecard div.showColumnsTab:hover { background-color: Silver; cursor: pointer; }
+.cntScorecard div.showColumnsTab:hover a { color: #fafafa; } 
+
+.cntScorecard tr.xmas td { xbackground-color: #eee; } 
+.cntScorecard tr.xmas td input { xbackground-color: #eee; }
+
+.cntScorecard tr.xmas .day{
+    color: Red !important;
+}
+
+.cntScorecard td.selected { background-color: #ac8 !important; }
+.cntScorecard td.selected input { background-color: #ac8 !important; }
+
+.cntScorecard td.selectedN { background-color: #ada !important; }
+.cntScorecard td.selectedN input { background-color: #ada !important; }
+  
+.cntScorecard tr.noteditable td { xbackground-color: #ddd; background-color: #eee;  }
+.cntScorecard tr.noteditable td input { xbackground-color: #ddd; background-color: #eee;  }
+
+.cntScorecard td.edited { background-color: #F2DEDE !important; border-color: #EBCCD1 !important; }
+.cntScorecard td.edited input { background-color: #F2DEDE !important; }
+
+
+/*ttt*/
+.cntScorecard tr.noteditable td { xbackground-color: #FAFAFA; background-color: #eee; color: #808080 !important; border-color: #E0E0E0 !important;   }
+.cntScorecard tr.noteditable td input { xbackground-color: #FAFAFA; background-color: #eee; color: #808080 !important; border-color: #E0E0E0 !important;  }
+
+.cntScorecard tr.xmas td { xbackground-color: #eee; xbackground-color: #FCECEE; xborder-color: #E0E0E0 !important; } 
+.cntScorecard tr.xmas td input { xbackground-color: #eee; xbackground-color: #FCECEE; }
+
+.cntScorecard td.selectedN { background-color: #D6EBFF !important; }
+.cntScorecard td.selectedN input { background-color: #D6EBFF !important; }
+
+x.cntScorecard div.showColumnsTab { background-color: #FAFAFA; width: 30px; height: 18px; text-align: center; border-top-right-radius: 4px; border-top-left-radius: 4px; border: solid 1px #EEEEEE; } 
+x.cntScorecard div.showColumnsTab a.showColumns { text-decoration: none; color: Silver; font-size: 14px; margin-top: 2px; outline: none !important; }
+x.cntScorecard div.showColumnsTab:hover { border: solid 1px Silver; cursor: pointer; } 
+
+.cntScorecard td.edited { background-color: #F2DEDE !important; border-color: #EBCCD1 !important; }
+.cntScorecard td.edited input { background-color: #F2DEDE !important; }
+
+
+
+/* ---- cntScorecardSelect ---- */
+
+div.pgScorecards .cntSpreadsheet .caption td { width: 33%; text-align: center; font-size: 12px; }
+div.pgScorecards .cntSpreadsheet .caption .left { text-align: left; }
+div.pgScorecards .cntSpreadsheet .caption .middle div { padding: 6px 0px; vertical-align: middle; }
+div.pgScorecards .cntSpreadsheet .caption .middle span { width: 100%; padding-left: 8px; padding-right: 8px; white-space: nowrap; }
+div.pgScorecards .cntSpreadsheet .employeeChanger { font-weight: normal;  }
+div.pgScorecards .cntSpreadsheet .employeeChanger input { border-radius: 5px; }
+div.pgScorecards .cntSpreadsheet .caption input { background: #FFF url("../../images/back/gray_70r.png") repeat-x scroll center bottom; min-width: 25px; border: solid 1px #c0c0c0; cursor: pointer; margin: 1px; height: 25px; }
+div.pgScorecards .cntSpreadsheet .caption .cntSelectRokMiesiac { background: transparent; border: none; font-weight: normal; }
+
+/*ttt*/
+div.pgScorecards .cntSpreadsheet table.caption { width: 960px; margin-left: auto; margin-right: auto; }
+div.pgScorecards .cntSpreadsheet table.caption td { width: auto; white-space: nowrap; xborder: solid 1px red; vertical-align: middle; padding: 0px; }
+div.pgScorecards .cntSpreadsheet table.caption td.left { padding-top: 11px; width: 100px; padding-right: 48px; }
+div.pgScorecards .cntSpreadsheet table.caption td.left span.caption4 { padding-left: 0px; }
+div.pgScorecards .cntSpreadsheet table.caption td.left span.caption4 img { padding-left: 0px; }
+div.pgScorecards .cntSpreadsheet table.caption td.middle { text-align: left; font-size: 14px; font-weight: bold; }
+div.pgScorecards .cntSpreadsheet table.caption td.middle .employeeChanger { xfont-weight: bold;  }
+
+div.pgScorecards .cntSpreadsheet table.caption td.right { width: 100px; text-align: right; }
+
+/* ---- cntHeader ---- */
+
+.cntScorecard .cntHeader { margin-bottom: 16px; color: #eee;  }
+.cntScorecard .cntHeader div { display: inline-block; margin-right: 32px; }
+.cntScorecard .cntHeader span { vertical-align: top;  }
+.cntScorecard .cntHeader table { border-collapse: 0; border-spacing: 0px; border-bottom: solid 1px #333; border-right: solid 2px #333; width: 100%; vertical-align: top; }
+.cntScorecard .cntHeader table td { padding: 2px; width: 80px; border-top: solid 1px #324570; border-left: solid 1px #324570;}
+.cntScorecard .cntHeader table td.num { text-align: right; } 
+.cntScorecard .cntHeader input { vertical-align: top; width: 140px; }
+
+
+.cntScorecard .cntHeader div.info { margin-left: 64px; }
+.cntScorecard .cntHeader table.tbInfo { border: solid 1px #EEEEEE; border-collapse: collapse; border-spacing: 0px; color: Black; font-family: Verdana; }
+.cntScorecard .cntHeader table.tbInfo td { border: solid 1px #EEEEEE; line-height: 16px; white-space: nowrap; padding: 2px 32px 2px 8px; background-color: White; }
+.cntScorecard .cntHeader table.tbInfo td:first-child { color: Gray; font-family: Verdana; font-size: 9px; text-transform: uppercase; background-color: #FAFAFA; padding-right: 8px; }
+
+
+/*ttt*/
+.cntScorecard .cntHeader table.tbSums { border: solid 1px #EEEEEE; border-collapse: collapse; border-spacing: 0px; color: Black; font-family: Verdana; }
+.cntScorecard .cntHeader table.tbSums td { border: solid 1px #EEEEEE; line-height: 16px; white-space: nowrap; padding: 2px 32px 2px 8px; background-color: White; }
+.cntScorecard .cntHeader table.tbSums td:first-child { color: Gray; font-family: Tahoma; font-family: Verdana; font-size: 9px; text-transform: uppercase; background-image: none; background-color: #FAFAFA; padding-right: 8px; }
+.cntScorecard .cntHeader table.tbSums th { border: solid 1px #EEEEEE;  line-height: 16px; white-space: nowrap; padding: 2px 8px 2px 8px; text-align: center; color: Gray; font-family: Tahoma; font-size: 9px; text-transform: uppercase; background-color: #FAFAFA; }
+
+.cntScorecard .cntHeader table.tbAbsSums { border: solid 1px #EEEEEE; border-collapse: collapse; border-spacing: 0px; color: Black; font-family: Verdana; vertical-align: top; }
+.cntScorecard .cntHeader table.tbAbsSums td { border: solid 1px #EEEEEE; line-height: 16px; white-space: nowrap; padding: 2px 2px 2px 8px; background-color: White; }
+.cntScorecard .cntHeader table.tbAbsSums td:first-child { color: Gray; font-family: Tahoma; font-family: Verdana; font-size: 9px; text-transform: uppercase; background-image: none; background-color: #FAFAFA; padding-right: 8px; }
+.cntScorecard .cntHeader table.tbAbsSums th { border: solid 1px #EEEEEE;  line-height: 16px; white-space: nowrap; padding: 2px 8px 2px 8px; text-align: center; color: Gray; font-family: Tahoma; font-size: 9px; text-transform: uppercase; background-color: #FAFAFA; }
+ 
+.cntScorecard .cntHeader .scAccepted {  color: #3c5; font-weight: bold; margin: 0; margin-top: 16px; font-size: 20px;}
+.cntScorecard .cntHeader .imgLogo {  vertical-align: top; width: 256px; margin-left: 64px; }
+.cntScorecard .cntHeader .tbRight { width: auto; display: inline-block; border: none; }
+.cntScorecard .cntHeader .tbRight td { border: none; text-align: right; }
+
+/* ---- jakby ktos chcial obracanie --- */
+
+.cntScorecard .row1 td span { xdisplay: block; x-webkit-transform: rotate(-90deg);  x-moz-transform: rotate(-90deg); xfilter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
+
+/* ---- szerokosci kolumn na sc ---- */
+
+.cntScorecard .day { width: 70px !important; }
+.cntScorecard .aim { width: 50px; height: 16px; }
+.cntScorecard .result { width: 60px; height: 16px; }
+.cntScorecard .face { width: 25px; height: 16px; }
+.cntScorecard .nominal { width: 60px; }
+.cntScorecard .nieob { width: 55px; }
+.cntScorecard .kodnieob { width: 55px; }
+.cntScorecard .czasnieprod { width: 45px; }
+.cntScorecard .prinnyarkusz { width: 50px; }
+.cntScorecard .prinnyarkuszx { width: 19px; }
+.cntScorecard .war1 { width: 55px; }
+.cntScorecard .war2 { width: 60px; }
+.cntScorecard .nadg { width: 72px; }
+.cntScorecard .plannedteamsize { width: 70px;}
+.cntScorecard .teamsizecorrection { width: 70px; display: none;}
+.cntScorecard .tlprac { width: 50px; }
+
+.cntScorecard .godzprod { width: 55px; }
+.cntScorecard .prod { width: 80px; }
+.cntScorecard .uwagi { width: 100px; max-width: 100px; overflow: hidden;}
+.cntScorecard .ilosc { width: 35px; height: 16px; }
+.cntScorecard .bledy { width: 35px; height: 16px;}
+.cntScorecard .fpy { width: 55px; height: 16px; }
+.cntScorecard .remover { width: 20px; }
+
+
+/* ---- WAŻNE ---- */
+
+.cntScorecard td.hid { display: none; }
+.cntScorecard .backButton { margin-bottom: 8px; }
+
+.cntScorecard .sc table { border-spacing: 0px; border-collapse: collapse; empty-cells: show;  }
+.cntScorecard .sc td { border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; padding: 2px;  color: Gray; }
+.cntScorecard .cnt { display: inline-block; font-size: 12px; vertical-align: top; white-space: normal; }
+
+.cntScorecard .scrollbox1 { display: inline-block; overflow-x: scroll; overflow-y: hidden; xmax-width: 800px; border-right: solid 1px #808080; border-left: solid 1px #808080;  }
+.cntScorecard .scrollbox3 { overflow-x: hidden; overflow-y: hidden; height: 200px; border-right: solid 1px #808080; border-left: solid 1px #808080; border-bottom: solid 1px #808080;  }
+
+.cntScorecard div.row1 { font-size: 0px; white-space: nowrap; } /*  TO JEST TRIK  */
+.cntScorecard div.row1 td { text-align: center; background-color: #fafafa; border-bottom: solid 1px #eee; border-right: solid 1px #eee;}
+.cntScorecard div.row1 tr.sum td { background-color: #EEEEEE !important; color: Black !important; height: 16px !important; border-bottom: solid 1px #e0e0e0; border-right: solid 1px #e0e0e0; }
+
+
+.cntScorecard div.row2 input[type=text] { border: none; height: 16px; line-height: 16px; margin: 0; padding: 0; font-family: Tahoma; font-size: 12px; }
+.cntScorecard div.row2 td { text-align: center; height: 16px; min-height: 16px; max-height: 16px; padding: 2px; color: Black; }
+.cntScorecard div.row2 .toRemove td { background-color: #F2DEDE; }
+.cntScorecard div.row2 .toRemove td input { background-color: #F2DEDE; }
+.cntScorecard div.row2 td { white-space: nowrap;}
+.cntScorecard div.row2 { font-size: 0px; white-space: nowrap; }
+
+
+/* ---- cntCosmicInfo ---- */
+
+.cntScorecard .cntCosmicInfo input.tbFilter { margin-left: 0px; width: 180px; margin: 4px; }
+
+
+/*ttt*/
+.cntScorecard .cntCosmicInfo { border-bottom: solid 1px #808080; }
+.cntScorecard .cntCosmicInfo table#tbCosmicInfo { background-color: #FAFAFA; border-top: solid 1px #eee; border-left: solid 1px #eee; xborder-bottom: solid 2px #e0e0e0; height: 200px; }
+.cntScorecard .cntCosmicInfo table#tbCosmicInfo td { word-wrap: break-word; border-right: none; border-left: solid 1px #eee; border-bottom: solid 1px #eee;  }
+.cntScorecard .cntCosmicInfo table#tbCosmicInfo tr.sum td { border-color: #e0e0e0; }
+.cntScorecard .cntCosmicInfo table#tbCosmicInfo td.day { height: 32px; }
+.cntScorecard .cntCosmicInfo table#tbCosmicInfo td.pr { height: 32px; }
+.cntScorecard .cntCosmicInfo table#tbCosmicInfo td.ultymat { xheight: 45px; text-align: right; vertical-align: top; }
+
+
+.cntScorecard .cntCosmicInfo table#tbCosmicInfo tr:last-child td { border-bottom: none; }
+
+/* ---- cntTasks ---- */
+
+.cntScorecard .cntTasks {  xmax-width: 800px; height: 200px; overflow: hidden; padding-bottom: 17px; }
+.cntScorecard .cntTasks table.task { border-top: solid 1px #eee; height: 200px;   }
+.cntScorecard .cntTasks table.task td { overflow: hidden; vertical-align: top; }
+.cntScorecard .cntTasks table.task .name { max-width: 60px; min-width: 60px; width: 60px; }
+.cntScorecard .cntTasks table.task .cc { background-color: #EEEEEE; word-wrap: break-word; height: 16px; }
+.cntScorecard .cntTasks table.task .sum { width: 17px; height: 16px; }
+.cntScorecard .cntTasks table.task .time { background-color: #FAFAFA; color: Gray; height: 16px; }
+.cntScorecard .cntTasks table.task .name .qcStar { display: block; margin: 0 auto; width: 16px; height: 16px; }
+.cntScorecard .cntTasks table.task td:last-child { border-right: none; }
+.cntScorecard .cntTasks table.task tr:last-child td { border-bottom: none; }
+
+/* ---- cntCosmicInfo2 ---- */
+
+.cntScorecard .cntCosmicInfo2  { border-bottom: solid 1px #808080 }
+.cntScorecard .cntCosmicInfo2 table#tbCosmicInfo2 { border-top: solid 1px #eee; xborder-left: solid 1px #E0E0E0; xborder-bottom: solid 2px #e0e0e0; height: 200px;  }
+.cntScorecard .cntCosmicInfo2 table#tbCosmicInfo2 td { }
+.cntScorecard .cntCosmicInfo2 table#tbCosmicInfo2 td.godzprod { height: 32px; }
+.cntScorecard .cntCosmicInfo2 table#tbCosmicInfo2 td.qc { height: 36px;}
+.cntScorecard .cntCosmicInfo2 table#tbCosmicInfo2 td.ultymat { height: auto; }
+.cntScorecard .cntCosmicInfo2 table#tbCosmicInfo2 tr:last-child td { border-bottom: none; }
+
+/* ---- cntDays ---- */
+
+.cntScorecard .cntDays { }
+.cntScorecard .cntDays .tbDays { }
+.cntScorecard .cntDays .tbDays td { border-right: none; border-left: solid 1px #ccc; border-bottom: solid 1px #ccc; }
+.cntScorecard .cntDays .tbDays td input{ text-align: center; }
+.cntScorecard .cntDays .tbDays td .other { color: #000; text-decoration: none; font-size: 14px; display: none; }
+.cntScorecard .cntDays .tbDays td:last-child { border-right-color: Black !important; }
+.cntScorecard .cntDays .tbDays td img { width: 14px; height: 14px; }
+@keyframes blink2 { 0%   { color: Red;} 100% { color: #fff;} }
+.cntScorecard .blink2 { animation: blink2 1s linear infinite; }
+.cntScorecard .cntDays td > a { color: #000;}
+
+
+/* ---- cntValues ---- */
+
+.cntScorecard .cntValues { }
+.cntScorecard .cntValues .tbValues { }
+.cntScorecard .cntValues .tbValues td { min-width: 60px; max-width: 60px; width: 60px; text-align: center; }
+.cntScorecard .cntValues .tbValues td input { text-align: center; }  
+.cntScorecard .cntValues .tbValues td:last-child { border-right: none; }
+.cntScorecard .cntValues .tbValues td { border-color: #E0E0E0; }
+.cntScorecard .cntValues .tbValues td input { cursor: default; }
+.cntScorecard .cntValues .tbValues td input:focus { cursor: text; }
+
+
+/* ---- cntCoolStuff ---- */
+
+.cntScorecard .cntCoolStuff { }
+.cntScorecard .cntCoolStuff .tbDays { }
+.cntScorecard .cntCoolStuff .tbDays td { }
+.cntScorecard .cntCoolStuff .tbDays td input{ text-align: center; }
+.cntScorecard .cntCoolStuff .tbDays .uwagi input { text-align: left; }
+.cntScorecard .cntCoolStuff .tbDays .remover { }
+.cntScorecard .cntCoolStuff .tbDays .remover a { color: Red; text-decoration: none; font-size: 12px; }
+
+
+/* TU SIE ZACZYNA ULTYMAT */
+
+.cntScorecard div#daySelectorWrapper { display: inline-block; position: relative; width: 30px;   }
+.cntScorecard div#daySelector { position: absolute; top: 0; left: 0; border: solid 1px #4b7; background-color: #189; width: 25px; border-left: none; height: 100%; }
+
+/* ----- POPUP ----- */
+
+.cntScorecard .cntEmployeeZoom .gv_scroll { overflow-y: auto !important; max-height: 800px !important; }
+.cntScorecard .cntEmployeeZoom td:first-child { text-align: left !important; }
+/* Imię nazwisko */
+.cntScorecard .cntEmployeeZoom td:nth-child(2) { text-align: left !important; }
+.cntScorecard .cntEmployeeZoom table.GridView2 td.zero { color: #C0C0C0 !important; }
+.cntScorecard .cntEmployeeZoom table.GridView2 td.N { text-align: right !important; }
+.cntScorecard .cntEmployeeZoom table.GridView2 tr td { height: 21px !important; padding: 2px 4px !important; background: #FFF url("~/../../../images/back/back4g_12.png") repeat-x scroll center bottom; }
+
+
+/* ------------------------------------------------------------------------------------------ WNIOSKI ------------------------------------------------------------------------------------------- */
+
+
+.cntRequests {  } 
+.cntRequests .tbRequests { xwidth: 400px;  } 
+.cntRequests .button100 { margin-bottom: 8px;  } 
+
+.cntRequests .tbRequests tr.rej td { background: none;  background-color: #F2DEDE !important; border-color: #EBCCD1 !important; } 
+.cntRequests .tbRequests tr.acc td { background: none; background-color: Green; } 
+.cntRequests .tbRequests tr.hr td { background: none; background-color: Blue; } 
+.cntRequests .tbRequests tr.jail td {  } 
+
+
+.cntRequest {  }
+.cntRequest table.tbRequest {  }
+.cntRequest table.tbRequest td.premmies { width: 80px; }
+.cntRequest table.tbRequest td.premuzn { width: 80px; }
+.cntRequest table.tbRequest td.uwagi input { width: 98%; }
+.cntRequest table.tbRequest td.uwagi textarea { height: 20px;  }
+.cntRequest table.tbRequest tr.rej td { background: none;  background-color: #F2DEDE !important; border-color: #EBCCD1 !important; } 
+
+.cntRequestHeader .tdWrapper{
+    background: none !important;
+}
+
+.cntCreateRequest span { width: 100px; display:inline-block; }
+.cntCreateRequest .tbName {  width: 150px; }
+.cntCreateRequest input[type=text] { margin-bottom: 4px;}
+.cntCreateRequest .bottom_buttons { margin-top: 140px; }
+
+
+.tb_scroll { overflow-y: auto !important; max-height: 550px !important;  }
+
+/*----- Matryca - Zoom pracownik -----*/
+.cntRequestHeader table.tbZoomPracownik { xmargin-top: 8px; xborder-top: solid 1px #E0E0E0; width: 400px; margin-bottom: 8px; }
+x.cntRequestHeader table.tbZoomPracownik table { xborder-top: solid 1px Silver; }
+.cntRequestHeader table.tbZoomPracownik  td { width: auto; xbackground: #FFF url("~/../../../images/back/back4g_12.png") repeat-x scroll center bottom;  }
+.cntRequestHeader table.tbZoomPracownik  td.col1 { width: 190px; xbackground: #FAFAFA url('~/../../../images/back/back4h_32.png') repeat-x left 4px;}
+.cntRequestHeader table.tbZoomPracownik .employeeCount input[type=text] { width: 55px;}
+.cntRequestHeader table.tbZoomPracownik .employeeCount .btnEdit { float: right; margin-right: 4px;}
+
+.cntRequestHeader table .tdWrapper { vertical-align: top; }
+.cntRequestHeader table .tdWrapper .col2 { margin-left: 16px; }
+.cntRequestHeader table .tdWrapper .col3 { margin-left: 16px; }
+.cntRequestHeader table .tdWrapper .col3 td { text-align: center; }
+.cntRequestHeader table .tdWrapper .col3 td.col1 { text-align: left; }
+
+.cntEmployeeZoom table tr td{
+    text-align: left !important;
+}
+
+
+h3.breakTitle {
+    border-top: 1px solid #DDD;
+    width: 100%;
+    display: block;
+    height: 8px;
+    margin: 16px 0px 8px 0px;
+    padding: 0px; 
+    
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    font-size: 9px;
+    text-transform: uppercase;
+    color: #808080;
+}
+
+h3.breakTitle span 
+{  
+    position: relative;
+    top: -7px;
+    left: 40px;
+    background-color: #FAFAFA;
+    color: #709AE6;
+    font-weight: normal;
+    line-height: normal;
+    display: inline-block;
+    padding: 0px 4px;
+}
+
+.cntRequests .modalPopup 
+{
+    background-color: #fff !important;
+}
+
+.cntRequests .breakTitle > span
+{
+    background-color: #fff !important;
+}
+
+.ListView4
+{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: auto !important;
+}
+
+.ListView4 table
+{
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+.ListView4 table th
+{
+    border: 1px solid #ddd; /*EEE*/
+    word-break: normal;
+    padding: 2px 8px;
+    text-align: left;
+    color: #808080;
+    font-family: Verdana;
+    font-size: 9px;
+    text-transform: uppercase;
+    background: #f0f0f0;
+    vertical-align: bottom;
+}
+
+.ListView4 table a
+{
+    color: #808080;
+    text-decoration: none;
+}
+
+.ListView4 table a:hover
+{
+    color: #39F;
+    text-decoration: underline;
+}
+
+.ListView4 table td
+{
+    border: 1px solid #EEE;
+    line-height: 18px;
+    white-space: nowrap;
+    padding: 2px 4px;
+    background: #fefefe;
+    vertical-align: top;
+}
+
+.ListView4 table tr.it td
+{
+    border: 1px solid #EEE;
+    line-height: 18px;
+    white-space: nowrap;
+    padding: 2px 4px;
+    background: #fefefe !important;
+    vertical-align: top;
+}
+
+.ListView4 table td input[type=text]
+{
+    border: solid 1px #ccc;
+}
+
+.ListView4 table td textarea
+{
+    border: solid 1px #ccc;
+}
+
+.ListView4 table td select
+{
+    xborder-color: #ccc;
+}
+
+.ListView4 table td.num
+{
+    text-align: right;
+}
+
+.ListView4 table td.data
+{
+    text-align: center;
+    white-space: nowrap;
+}
+
+.ListView4 span.sortmarker
+{
+    color: #F00;
+    text-decoration: none;
+    line-height: 10px;
+}
+
+.ListView4 .control, .control1
+{
+    padding: 1px 4px 0px;
+    white-space: nowrap;
+    width: 130px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 13px;
+    border-right: solid 1px #eee !important;
+}
+
+.ListView4 .control input, .ListView4 .control1 input
+{
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9px !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #375C8E;
+    padding: 2px 6px 2px;
+    margin: 0px;
+    border: 1px solid #DDD;
+    background-color: #F9F9F9;
+    border-radius: 8px;
+}
+
+.ListView4 .control input:hover, .ListView4 .control1 input:hover
+{
+    cursor: pointer;
+    color: Red;
+}
+
+.cntRequests .ListView4 .col1
+{
+    border: 1px solid #ddd;
+    line-height: 18px;
+    white-space: nowrap;
+    padding: 2px 8px;
+    text-align: left;
+    color: #808080;
+    font-family: Verdana;
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #f0f0f0 !important;
+}
+
+.cntRequest table.tbRequestHeader,
+.cntRequest table.tbRequestHeader table.ListView4 { width: 100% !important; xborder: solid 1px red; border-collapse: collapse; border-spacing: 0px; }
+.cntRequest table.tbRequestHeader table.ListView4 > tbody > tr > td { padding: 0px; }
+.cntRequest table.tbRequestHeader table.ListView4 td.tdWrapper table { margin: 0px; }
+x.cntRequest table.tbRequestHeader table.ListView4 td.tdWrapper:first-child { text-align: left; }
+x.cntRequest table.tbRequestHeader table.ListView4 td.tdWrapper:nth-child(2) { text-align: center; }
+x.cntRequest table.tbRequestHeader table.ListView4 td.tdWrapper:nth-child(3) { text-align: right; }
+.cntRequest table.tbRequestHeader table.tbZoomPracownik.col1 { }
+.cntRequest table.tbRequestHeader table.tbZoomPracownik.col2 { }
+.cntRequest table.tbRequestHeader table.tbZoomPracownik.col3 { }
+.cntRequest table.tbRequestHeader table.tbZoomPracownik.col3 td { text-align: right; }
+.cntRequest table.tbZoomPracownik th { border: solid 1px #EEEEEE !important; line-height: 18px; white-space: nowrap; padding: 2px 8px 2px 8px; background-color: #FAFAFA !important; text-align: center; }
+.cntRequest table.tbZoomPracownik td { border: solid 1px #EEEEEE !important; line-height: 16px; white-space: nowrap; padding: 2px 8px 2px 8px; background-color: White; vertical-align: middle; }
+.cntRequest table.tbZoomPracownik td.col1 { color: Gray; font-family: Verdana; font-size: 9px; text-transform: uppercase; background-color: #FAFAFA !important; padding-right: 8px; font-weight: normal; text-align: left !important; }
+
+.cntRequest div.tb_scroll { border-top: solid 1px #EEEEEE; border-bottom: solid 1px #EEEEEE; }
+.cntRequest div.tb_scroll table.ListView1 table { border-top: none; border-bottom: none; }
+.cntRequest div.tb_scroll table.ListView1 table th { border-top: none !important; }
+.cntRequest div.tb_scroll table.ListView1 table tr.footer td { border-bottom: none !important; background-color: #FAFAFA !important; vertical-align: middle; }
+.cntRequest div.tb_scroll table.table0 { background-color: #FAFAFA; }
+.cntRequest div.bottom_buttons { margin-top: 8px; }
+
+.cntRequests .ListView4 .footer td
+{
+    xbackground-color: #f5f5f5 !important;
+    xborder: solid 1px #eee;
+}
+
+.cntRequests .ListView4 tr.tl td
+{
+    border-bottom: solid 1px #aaa;
+}
+
+.cntRequest .tbUwagiWniosek{
+    width: 400px;
+    display: block;
+}
+
+.ListView4 tr.iit > td { background: #FFE28A none repeat scroll 0% 0% !important; }
+.ListView4 .rbl { display: inline-block; }
+.ListView4 .rbl td { border: none !important; padding: 2px !important; }
+.ListView4 .rbl td input { margin-right: 2px !important;  }
+
+.cntRequestsAdmin .ListView4 td.type { width: 220px; }
+.cntRequestsAdmin .ListView4 td.type .rbl { width: 70px; }
+.cntRequestsAdmin .ListView4 td.type div { display: inline-block; vertical-align: top; }
+.cntRequestsAdmin .ListView4 td.type input[type=text] { width: 160px; xvertical-align: top; display: block; margin-bottom: 2px; }
+.cntRequestsAdmin .ListView4 td.type select { xvertical-align: top; width: 165px; }
+    
+/*----- FORMS -----*/
+/*----- Common -----*/
+div.view2 div.mcontent div.pagetitle { margin-left: auto; margin-right: auto; }
+
+/*----- Start -----*/
+div.pgScStart {}
+
+/*----- Scorecards -----*/
+div.pgScorecards {
+    font-family: Tahoma;
+    font-size: 12px;
+}
+
+/*----- Wnioski -----*/
+div.pgScWnioski {}
+div.pgScWnioskiAdm .LeftMenu .item { 
+    width: 210px !important; 
+    xwidth: 100% !important; 
+}
+
+div.cntWnioskiMenu {}
+div.cntWnioskiMenu div.kryteria {}
+div.cntWnioskiMenu div.kryteria table td { vertical-align: middle; padding-bottom: 8px; }
+
+/*----- Ustawienia -----*/
+div.pgScUstawienia {}
+
+/*----- Administracja -----*/
+div.pgScAdministracja {}
+div.pgScAdministracja div.pagetitle { margin-left: 32px !important;}
+div.pgScAdministracja div.tabsContent { padding: 0px; }
+
+div.pgScAdministracja table.tbPracownicy2 table.edit input[readonly] { background-color: #EEEEEE; }
+div.pgScAdministracja div.paTeksty,
+div.pgScAdministracja div.paMails, 
+div.pgScAdministracja div.paScheduler { width: 960px; } 
+
+div.pgScAdministracja table.tbZastepstwa { width: 800px; } 
+div#user select.loginas option.poza,
+div.pgScAdministracja table.tbZastepstwa td.kierownik select option.poza { color: Silver; } 
+div#user select.loginas option.acc,
+div.pgScAdministracja table.tbZastepstwa td.kierownik select option.acc { color: Red; } 
+div#user div { display: inline-block; }
+
+div#user select.loginas option.ADM { background-color: Yellow; color: Black; }
+div#user select.loginas option.TLP,
+div#user select.loginas option.TLNP { color: Black; }
+div#user select.loginas option.KIER { color: Red; }
+div#user select.loginas option.ZARZ { color: #668DD7; }
+div#user select.loginas option.WNACC {}
+div#user select.loginas option.HR   { color: #88D92F; }
+div#user select.loginas option.CNTR { color: #88D92F; }
+
+
+/*----- Log -----*/
+table.tbLog td.col5 textarea.textbox,
+table.tbLog td.col6 textarea.textbox { width: 99%; }
+
+/*----- Raporty -----*/
+div.pgScRaporty {}
+
+
+        
+        
+/* RAPORTY */
+
+.filters{
+    margin-bottom: 16px;
+    border: 1px solid #EEE;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    padding: 8px 16px;
+}
+
+.filters .filter{
+    display:inline-block;
+    margin-right: 8px;
+}
+
+.filters .filter span{
+    display: inline-block;
+    color: #808080;
+    xwidth: 60px;
+}
+
+        
+.noborder{
+    border: none !important;
+    -webkit-box-shadow: none !important;
+}
+        
+a.button75{
+    height: 25px;
+    border-radius: 5px;
+    background: #FFF url("../../images/back/gray_70.png") repeat-x scroll center top;
+    border: 1px solid #C0C0C0;
+    cursor: pointer;
+    margin: 1px;
+    width: 75px;
+    padding: 4px 12px;
+    color: #000;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+    -webkit-box-shadow: 2px 2px 3px 0px #DDDDDD;
+    box-shadow: 2px 2px 3px 0px #DDDDDD;
+}
+
+a.button75:hover{
+    background: #FFF url("../images/back/gray_70r.png") repeat-x scroll center bottom;
+}
+
+a.button75 i {
+    margin-right: 8px;
+    font-size: 14px;
+    color: #000;
+}
+
+a.button75 i.fa-file-pdf-o {
+    color: #B70404;
+}
+
+a.button75 i.fa-file-excel-o {
+    color: #007133;
+}
+
+
+.hidden{
+    display: none !important;
+}
+
+
+/* footer RapAbs2 */
+
+.cntEliteReport .GridView1 .sum{
+    text-align: right;
+}

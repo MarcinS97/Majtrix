@@ -1,0 +1,1795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost:9898/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://localhost:9898/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost:9898/">
+      <s:import namespace="http://tempuri.org/SaturnWeb.xsd" />
+      <s:import namespace="http://tempuri.org/WebService.xsd" />
+      <s:import namespace="http://tempuri.org/Slowniki.xsd" />
+      <s:import namespace="http://tempuri.org/Kadry.xsd" />
+      <s:import schemaLocation="http://172.17.39.6/SaturnWebService/SaturnService.asmx?schema=Slowniki" namespace="http://tempuri.org/Slowniki.xsd" />
+      <s:import schemaLocation="http://172.17.39.6/SaturnWebService/SaturnService.asmx?schema=WebService" namespace="http://tempuri.org/WebService.xsd" />
+      <s:import schemaLocation="http://172.17.39.6/SaturnWebService/SaturnService.asmx?schema=Saturn" namespace="http://tempuri.org/SaturnWeb.xsd" />
+      <s:import schemaLocation="http://172.17.39.6/SaturnWebService/SaturnService.asmx?schema=Kadry" namespace="http://tempuri.org/Kadry.xsd" />
+      <s:element name="MPKWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Operation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SymbolMPK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SymbolMPKPrzodka" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nazwa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MiesiacOd" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="MiesiacDo" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="KodKsiegowy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewSymbolMPK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Firma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MPKWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MPKWebResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProjectsWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Operation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Numer" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataOd" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="DataDo" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="KodKsiegowy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewNumer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Firma" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="symbolMPKWla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProjectsWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProjectsWebResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectsWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="shortFirmName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectsWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectsWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/SaturnWeb.xsd" name="namespace" />
+                <s:attribute fixed="ProjectsDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMPKWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMPKWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMPKWebResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/SaturnWeb.xsd" name="namespace" />
+                <s:attribute fixed="OrgCellsDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="onDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="orgSymbol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/WebService.xsd" name="namespace" />
+                <s:attribute fixed="EmployeesDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="onDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="orgSymbol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="onDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/WebService.xsd" name="namespace" />
+                <s:attribute fixed="EmployeesDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="onDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpContractId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="onDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpContractIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpContractIdResult" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEmpContractCondId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="onDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpContractCondIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpContractCondIdResult" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmplCalendar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="month" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="calSymbol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmplCalendarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmplCalendarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/WebService.xsd" name="namespace" />
+                <s:attribute fixed="EmpCalendarsDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmplCalendarXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="month" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="calSymbol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmplCalendarXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmplCalendarXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmpHarmonogram">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="holiday" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpContract" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmpHarmonogramResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertEmpHarmonogramResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEmpHarmonogram">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpContract" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteEmpHarmonogramResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteEmpHarmonogramResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmpAddHours">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idHrsDict" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="idKomorki" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="hoursToCalc" nillable="true" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="holidayDaysCount" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpContract" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idContrConditions" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertEmpAddHoursResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertEmpAddHoursResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpAbsences">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="month" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpAbsencesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpAbsencesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/WebService.xsd" name="namespace" />
+                <s:attribute fixed="EmpAbsencesDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpAbsencesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="month" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpAbsencesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpAbsencesXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHoursDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="current" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHoursDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHoursDictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Slowniki.xsd" name="namespace" />
+                <s:attribute fixed="GodzinySlownikDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHoursDictXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="current" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHoursDictXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHoursDictXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCellsDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idParent" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCellsDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCellsDictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Slowniki.xsd" name="namespace" />
+                <s:attribute fixed="KomorkiOrgDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCellsDictXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idParent" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" nillable="true" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCellsDictXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCellsDictXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAtrDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAtrDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAtrDictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Slowniki.xsd" name="namespace" />
+                <s:attribute fixed="AtrybutyDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAtrDictXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAtrDictXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAtrDictXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAbsDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAbsDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAbsDictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Slowniki.xsd" name="namespace" />
+                <s:attribute fixed="AbsencjeDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAbsDictXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAbsDictXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAbsDictXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobPositionsDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobPositionsDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJobPositionsDictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Slowniki.xsd" name="namespace" />
+                <s:attribute fixed="StanowiskaDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobPositionsDictXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetJobPositionsDictXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetJobPositionsDictXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpMedicalExams">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpMedicalExamsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpMedicalExamsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Kadry.xsd" name="namespace" />
+                <s:attribute fixed="BadaniaLekarskieDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpMedicalExamsXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpMedicalExamsXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpMedicalExamsXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpCourses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpCoursesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpCoursesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Kadry.xsd" name="namespace" />
+                <s:attribute fixed="SzkoleniaDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpCoursesXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empNumb" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateFrom" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateTo" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpCoursesXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmpCoursesXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoursesDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoursesDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCoursesDictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Slowniki.xsd" name="namespace" />
+                <s:attribute fixed="SzkoleniaSlownikDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoursesDictXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoursesDictXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCoursesDictXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMedExamsDict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMedExamsDictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMedExamsDictResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+                <s:attribute fixed="http://tempuri.org/Slowniki.xsd" name="namespace" />
+                <s:attribute fixed="BadaniaLekarskieSlownikDataTable" name="tableTypeName" />
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMedExamsDictXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMedExamsDictXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMedExamsDictXMLResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MPKWebSoapIn">
+    <wsdl:part name="parameters" element="tns:MPKWeb" />
+  </wsdl:message>
+  <wsdl:message name="MPKWebSoapOut">
+    <wsdl:part name="parameters" element="tns:MPKWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProjectsWebSoapIn">
+    <wsdl:part name="parameters" element="tns:ProjectsWeb" />
+  </wsdl:message>
+  <wsdl:message name="ProjectsWebSoapOut">
+    <wsdl:part name="parameters" element="tns:ProjectsWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsWebSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectsWeb" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsWebSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectsWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMPKWebSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMPKWeb" />
+  </wsdl:message>
+  <wsdl:message name="GetMPKWebSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMPKWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployees" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeXML" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpContractIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpContractId" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpContractIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpContractIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpContractCondIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpContractCondId" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpContractCondIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpContractCondIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmplCalendarSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmplCalendar" />
+  </wsdl:message>
+  <wsdl:message name="GetEmplCalendarSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmplCalendarResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmplCalendarXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmplCalendarXML" />
+  </wsdl:message>
+  <wsdl:message name="GetEmplCalendarXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmplCalendarXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpHarmonogramSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEmpHarmonogram" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpHarmonogramSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEmpHarmonogramResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmpHarmonogramSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteEmpHarmonogram" />
+  </wsdl:message>
+  <wsdl:message name="DeleteEmpHarmonogramSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteEmpHarmonogramResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpAddHoursSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertEmpAddHours" />
+  </wsdl:message>
+  <wsdl:message name="InsertEmpAddHoursSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertEmpAddHoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpAbsencesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpAbsences" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpAbsencesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpAbsencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpAbsencesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpAbsencesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpAbsencesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpAbsencesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHoursDictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHoursDict" />
+  </wsdl:message>
+  <wsdl:message name="GetHoursDictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHoursDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHoursDictXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHoursDictXML" />
+  </wsdl:message>
+  <wsdl:message name="GetHoursDictXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHoursDictXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCellsDictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCellsDict" />
+  </wsdl:message>
+  <wsdl:message name="GetCellsDictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCellsDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCellsDictXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCellsDictXML" />
+  </wsdl:message>
+  <wsdl:message name="GetCellsDictXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCellsDictXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAtrDictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAtrDict" />
+  </wsdl:message>
+  <wsdl:message name="GetAtrDictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAtrDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAtrDictXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAtrDictXML" />
+  </wsdl:message>
+  <wsdl:message name="GetAtrDictXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAtrDictXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAbsDictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAbsDict" />
+  </wsdl:message>
+  <wsdl:message name="GetAbsDictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAbsDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAbsDictXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAbsDictXML" />
+  </wsdl:message>
+  <wsdl:message name="GetAbsDictXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAbsDictXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJobPositionsDictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJobPositionsDict" />
+  </wsdl:message>
+  <wsdl:message name="GetJobPositionsDictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJobPositionsDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetJobPositionsDictXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetJobPositionsDictXML" />
+  </wsdl:message>
+  <wsdl:message name="GetJobPositionsDictXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetJobPositionsDictXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpMedicalExamsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpMedicalExams" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpMedicalExamsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpMedicalExamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpMedicalExamsXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpMedicalExamsXML" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpMedicalExamsXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpMedicalExamsXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpCoursesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpCourses" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpCoursesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpCoursesXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmpCoursesXML" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpCoursesXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmpCoursesXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCoursesDictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCoursesDict" />
+  </wsdl:message>
+  <wsdl:message name="GetCoursesDictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCoursesDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCoursesDictXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCoursesDictXML" />
+  </wsdl:message>
+  <wsdl:message name="GetCoursesDictXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCoursesDictXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMedExamsDictSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMedExamsDict" />
+  </wsdl:message>
+  <wsdl:message name="GetMedExamsDictSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMedExamsDictResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMedExamsDictXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMedExamsDictXML" />
+  </wsdl:message>
+  <wsdl:message name="GetMedExamsDictXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMedExamsDictXMLResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SaturnServiceSoap">
+    <wsdl:operation name="MPKWeb">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Wykonuje bezpośrednio procedurę MPKWeb. Poprawne wykonanie procedury zwraca prawdę (true).Błędne wykonanie zwraca fałsz (false), a w errorMsg komunikat błędu.</wsdl:documentation>
+      <wsdl:input message="tns:MPKWebSoapIn" />
+      <wsdl:output message="tns:MPKWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProjectsWeb">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Wykonuje bezpośrednio procedurę ProjektyWeb. Poprawne wykonanie procedury zwraca prawdę (true). Błędne wykonanie zwraca fałsz (false), a w errorMsg komunikat błędu.</wsdl:documentation>
+      <wsdl:input message="tns:ProjectsWebSoapIn" />
+      <wsdl:output message="tns:ProjectsWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsWeb">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera do celów testowych dane o zleceniach . Poprawne wykonanie zwraca tabelę z danymi.Błędne wykonanie zwraca wartość pustą (null), a w errorMsg komunikat błędu.</wsdl:documentation>
+      <wsdl:input message="tns:GetProjectsWebSoapIn" />
+      <wsdl:output message="tns:GetProjectsWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMPKWeb">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera do celów testowych dane o MPK (komórkach organizacyjnych)</wsdl:documentation>
+      <wsdl:input message="tns:GetMPKWebSoapIn" />
+      <wsdl:output message="tns:GetMPKWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane (DataTable) o pracownikach  na datę w parametrze 'onDate', komórki w par. 'orgSymbol'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Jeśli parametry wywołania są równe 'null' to pobierane są wszystkie dane.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmployeesSoapIn" />
+      <wsdl:output message="tns:GetEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane (XML) o pracownikach  na datę w parametrze 'onDate', komórki org. w par. 'orgSymbol'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Jeśli parametry wywołania są równe 'null' to pobierane są wszystkie dane.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmployeesXMLSoapIn" />
+      <wsdl:output message="tns:GetEmployeesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployee">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane (DataTable) o pracowniku  na datę w parametrze 'onDate', o numerze ewid. w 'empNumb'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Jeśli parametry wywołania są równe 'null' to pobierane są wszystkie dane.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmployeeSoapIn" />
+      <wsdl:output message="tns:GetEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane (XML) o pracowniku  na datę w parametrze 'onDate', o numerze ewid. w 'empNumb'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Jeśli parametry wywołania są równe 'null' to pobierane są wszystkie dane.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmployeeXMLSoapIn" />
+      <wsdl:output message="tns:GetEmployeeXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpContractId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane (tablica identyfikatorów) o identyfkatorach umów pracownika na datę w parametrze 'onDate', o numerze ewid. w 'empNumb'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmpContractIdSoapIn" />
+      <wsdl:output message="tns:GetEmpContractIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpContractCondId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (tablica identyfikatorów) o identyfkatorach warunków umów pracownika na datę w parametrze 'onDate', o numerze ewid. w 'empNumb'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmpContractCondIdSoapIn" />
+      <wsdl:output message="tns:GetEmpContractCondIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmplCalendar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane (DataTable) o kalendarzu pracy pracownika o numerze ewid. w 'empNumb', symbolu kalendarza w 'calSymbol', roku i miesiąca w 'month' i 'year'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Jeśli parametry wywołania są równe 'null' to pobierane są wszystkie dane.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmplCalendarSoapIn" />
+      <wsdl:output message="tns:GetEmplCalendarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmplCalendarXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane (XML) o kalendarzu pracy pracownika o numerze ewid. w 'empNumb', symbolu kalendarza w 'calSymbol', roku i miesiąca w 'month' i 'year'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Jeśli parametry wywołania są równe 'null' to pobierane są wszystkie dane.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmplCalendarXMLSoapIn" />
+      <wsdl:output message="tns:GetEmplCalendarXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpHarmonogram">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dodaje dane o dniu pracy pracownika o numerze ewid. w 'empNumb', identyfikatorze umowy w 'idEmpContract',okresie czasu w 'dateFrom' i 'dateTo'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Na wyjściu  procedury 'true' jeśli poprawnie, przeciwnie 'false'.</wsdl:documentation>
+      <wsdl:input message="tns:InsertEmpHarmonogramSoapIn" />
+      <wsdl:output message="tns:InsertEmpHarmonogramSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpHarmonogram">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Usuwa dane o dniu pracy pracownika o numerze ewid. w 'empNumb', identyfikatorze umowy w 'idEmpContract',okresie czasu w 'dateFrom' i 'dateTo'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Na wyjściu  procedury 'true' jeśli poprawnie, przeciwnie 'false'.</wsdl:documentation>
+      <wsdl:input message="tns:DeleteEmpHarmonogramSoapIn" />
+      <wsdl:output message="tns:DeleteEmpHarmonogramSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpAddHours">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Dodaje dane o godzinach nadliczbowych o identyfikatorze rodzaju w 'idHrsDict',  dla pracownika o numerze ewid w 'empNumb', okresie od - do w 'dateFrom' i 'dateFrom'.W 'idKomorki' zawarty jest identyfikator komórki na rzecz której praca została wykonana. W 'hoursToCalc' zamieszczamy liczę godzin do rozliczenia, w 'holidayDaysCount' - liczbę dni do odebrania.W 'idEmpContract' i 'idContrConditions' - identyfikatory umowy i warunku.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Na wyjściu  procedury 'true' jeśli poprawnie, przeciwnie 'false'.</wsdl:documentation>
+      <wsdl:input message="tns:InsertEmpAddHoursSoapIn" />
+      <wsdl:output message="tns:InsertEmpAddHoursSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpAbsences">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane (DataTable) o nieobecnościach pracownika o numerze ewid. w 'empNumb', roku i miesiąca w 'month' i 'year'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Jeśli parametry wywołania są równe 'null' to pobierane są wszystkie dane.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmpAbsencesSoapIn" />
+      <wsdl:output message="tns:GetEmpAbsencesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpAbsencesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane (XML) o nieobecnościach pracownika o numerze ewid. w 'empNumb', roku i miesiąca w 'month' i 'year'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne. Jeśli parametry wywołania są równe 'null' to pobierane są wszystkie dane.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmpAbsencesXMLSoapIn" />
+      <wsdl:output message="tns:GetEmpAbsencesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (DataTable) z słownika godzin nadliczbowych.Jeśli 'current' równe 'true' to pobiera tylko 'aktualne' dane słownikowe.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetHoursDictSoapIn" />
+      <wsdl:output message="tns:GetHoursDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursDictXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (XML) z słownika godzin nadliczbowych.Jeśli 'current' równe 'true' to pobiera tylko 'aktualne' dane słownikowe.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetHoursDictXMLSoapIn" />
+      <wsdl:output message="tns:GetHoursDictXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCellsDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (DataTable) z słownika komórek organizacyjnych dla rodzica wskazanego w 'idParent', roku i miesiąca w 'year' i 'month'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetCellsDictSoapIn" />
+      <wsdl:output message="tns:GetCellsDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCellsDictXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (XML) z słownika komórek organizacyjnych dla rodzica wskazanego w 'idParent', roku i miesiąca w 'year' i 'month'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetCellsDictXMLSoapIn" />
+      <wsdl:output message="tns:GetCellsDictXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAtrDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (DataTable) z słownika klasyfikacji (atrybutów) pracowników.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetAtrDictSoapIn" />
+      <wsdl:output message="tns:GetAtrDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAtrDictXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (XML) z słownika  klasyfikacji(atrybutów) pracowników.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetAtrDictXMLSoapIn" />
+      <wsdl:output message="tns:GetAtrDictXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAbsDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (DataTable) z  słownika nieobecności pracowników.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetAbsDictSoapIn" />
+      <wsdl:output message="tns:GetAbsDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAbsDictXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (XML) z  słownika nieobecności pracowników.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetAbsDictXMLSoapIn" />
+      <wsdl:output message="tns:GetAbsDictXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobPositionsDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (DataTable) z  słownika stanowisk pracowników. Jeśli 'active' równe 'false' to pobiera wszystkie dane.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetJobPositionsDictSoapIn" />
+      <wsdl:output message="tns:GetJobPositionsDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobPositionsDictXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (XML) z  słownika stanowisk pracowników. Jeśli 'active' równe 'false' to pobiera wszystkie dane.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetJobPositionsDictXMLSoapIn" />
+      <wsdl:output message="tns:GetJobPositionsDictXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpMedicalExams">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (DataTable) o badaniach pracownika o numerze ewid. w 'empNumb', które są ważne w okresie czasu  'dateFrom' i 'dateTo'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmpMedicalExamsSoapIn" />
+      <wsdl:output message="tns:GetEmpMedicalExamsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpMedicalExamsXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (XML) o badaniach pracownika o numerze ewid. w 'empNumb', które są ważne w okresie czasu  'dateFrom' i 'dateTo'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmpMedicalExamsXMLSoapIn" />
+      <wsdl:output message="tns:GetEmpMedicalExamsXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpCourses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (DataTable) o szkolenach pracownika o numerze ewid. w 'empNumb', które odbywały się w okresie czasu  'dateFrom' i 'dateTo'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmpCoursesSoapIn" />
+      <wsdl:output message="tns:GetEmpCoursesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpCoursesXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (XML) o szkolenach pracownika o numerze ewid. w 'empNumb', które odbywały się w okresie czasu  'dateFrom' i 'dateTo'.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetEmpCoursesXMLSoapIn" />
+      <wsdl:output message="tns:GetEmpCoursesXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoursesDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (DataTable) z  słownika szkoleń pracowników.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetCoursesDictSoapIn" />
+      <wsdl:output message="tns:GetCoursesDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoursesDictXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (XML) z  słownika szkoleń pracowników.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetCoursesDictXMLSoapIn" />
+      <wsdl:output message="tns:GetCoursesDictXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMedExamsDict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (DataTable) z  słownika badań pracowników.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetMedExamsDictSoapIn" />
+      <wsdl:output message="tns:GetMedExamsDictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMedExamsDictXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Pobiera dane  (XML) z  słownika badań pracowników.W 'errorMsg' komunikat błędu lub 'null' -jeśli wykonanie poprawne.</wsdl:documentation>
+      <wsdl:input message="tns:GetMedExamsDictXMLSoapIn" />
+      <wsdl:output message="tns:GetMedExamsDictXMLSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SaturnServiceSoap" type="tns:SaturnServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MPKWeb">
+      <soap:operation soapAction="http://localhost:9898/MPKWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjectsWeb">
+      <soap:operation soapAction="http://localhost:9898/ProjectsWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsWeb">
+      <soap:operation soapAction="http://localhost:9898/GetProjectsWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMPKWeb">
+      <soap:operation soapAction="http://localhost:9898/GetMPKWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap:operation soapAction="http://localhost:9898/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesXML">
+      <soap:operation soapAction="http://localhost:9898/GetEmployeesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployee">
+      <soap:operation soapAction="http://localhost:9898/GetEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeXML">
+      <soap:operation soapAction="http://localhost:9898/GetEmployeeXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpContractId">
+      <soap:operation soapAction="http://localhost:9898/GetEmpContractId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpContractCondId">
+      <soap:operation soapAction="http://localhost:9898/GetEmpContractCondId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmplCalendar">
+      <soap:operation soapAction="http://localhost:9898/GetEmplCalendar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmplCalendarXML">
+      <soap:operation soapAction="http://localhost:9898/GetEmplCalendarXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpHarmonogram">
+      <soap:operation soapAction="http://localhost:9898/InsertEmpHarmonogram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpHarmonogram">
+      <soap:operation soapAction="http://localhost:9898/DeleteEmpHarmonogram" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpAddHours">
+      <soap:operation soapAction="http://localhost:9898/InsertEmpAddHours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpAbsences">
+      <soap:operation soapAction="http://localhost:9898/GetEmpAbsences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpAbsencesXML">
+      <soap:operation soapAction="http://localhost:9898/GetEmpAbsencesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursDict">
+      <soap:operation soapAction="http://localhost:9898/GetHoursDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursDictXML">
+      <soap:operation soapAction="http://localhost:9898/GetHoursDictXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCellsDict">
+      <soap:operation soapAction="http://localhost:9898/GetCellsDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCellsDictXML">
+      <soap:operation soapAction="http://localhost:9898/GetCellsDictXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAtrDict">
+      <soap:operation soapAction="http://localhost:9898/GetAtrDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAtrDictXML">
+      <soap:operation soapAction="http://localhost:9898/GetAtrDictXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbsDict">
+      <soap:operation soapAction="http://localhost:9898/GetAbsDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbsDictXML">
+      <soap:operation soapAction="http://localhost:9898/GetAbsDictXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobPositionsDict">
+      <soap:operation soapAction="http://localhost:9898/GetJobPositionsDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobPositionsDictXML">
+      <soap:operation soapAction="http://localhost:9898/GetJobPositionsDictXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpMedicalExams">
+      <soap:operation soapAction="http://localhost:9898/GetEmpMedicalExams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpMedicalExamsXML">
+      <soap:operation soapAction="http://localhost:9898/GetEmpMedicalExamsXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpCourses">
+      <soap:operation soapAction="http://localhost:9898/GetEmpCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpCoursesXML">
+      <soap:operation soapAction="http://localhost:9898/GetEmpCoursesXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoursesDict">
+      <soap:operation soapAction="http://localhost:9898/GetCoursesDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoursesDictXML">
+      <soap:operation soapAction="http://localhost:9898/GetCoursesDictXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedExamsDict">
+      <soap:operation soapAction="http://localhost:9898/GetMedExamsDict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedExamsDictXML">
+      <soap:operation soapAction="http://localhost:9898/GetMedExamsDictXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SaturnServiceSoap12" type="tns:SaturnServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MPKWeb">
+      <soap12:operation soapAction="http://localhost:9898/MPKWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProjectsWeb">
+      <soap12:operation soapAction="http://localhost:9898/ProjectsWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsWeb">
+      <soap12:operation soapAction="http://localhost:9898/GetProjectsWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMPKWeb">
+      <soap12:operation soapAction="http://localhost:9898/GetMPKWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployees">
+      <soap12:operation soapAction="http://localhost:9898/GetEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesXML">
+      <soap12:operation soapAction="http://localhost:9898/GetEmployeesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployee">
+      <soap12:operation soapAction="http://localhost:9898/GetEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeXML">
+      <soap12:operation soapAction="http://localhost:9898/GetEmployeeXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpContractId">
+      <soap12:operation soapAction="http://localhost:9898/GetEmpContractId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpContractCondId">
+      <soap12:operation soapAction="http://localhost:9898/GetEmpContractCondId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmplCalendar">
+      <soap12:operation soapAction="http://localhost:9898/GetEmplCalendar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmplCalendarXML">
+      <soap12:operation soapAction="http://localhost:9898/GetEmplCalendarXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpHarmonogram">
+      <soap12:operation soapAction="http://localhost:9898/InsertEmpHarmonogram" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEmpHarmonogram">
+      <soap12:operation soapAction="http://localhost:9898/DeleteEmpHarmonogram" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEmpAddHours">
+      <soap12:operation soapAction="http://localhost:9898/InsertEmpAddHours" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpAbsences">
+      <soap12:operation soapAction="http://localhost:9898/GetEmpAbsences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpAbsencesXML">
+      <soap12:operation soapAction="http://localhost:9898/GetEmpAbsencesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursDict">
+      <soap12:operation soapAction="http://localhost:9898/GetHoursDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHoursDictXML">
+      <soap12:operation soapAction="http://localhost:9898/GetHoursDictXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCellsDict">
+      <soap12:operation soapAction="http://localhost:9898/GetCellsDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCellsDictXML">
+      <soap12:operation soapAction="http://localhost:9898/GetCellsDictXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAtrDict">
+      <soap12:operation soapAction="http://localhost:9898/GetAtrDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAtrDictXML">
+      <soap12:operation soapAction="http://localhost:9898/GetAtrDictXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbsDict">
+      <soap12:operation soapAction="http://localhost:9898/GetAbsDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbsDictXML">
+      <soap12:operation soapAction="http://localhost:9898/GetAbsDictXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobPositionsDict">
+      <soap12:operation soapAction="http://localhost:9898/GetJobPositionsDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetJobPositionsDictXML">
+      <soap12:operation soapAction="http://localhost:9898/GetJobPositionsDictXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpMedicalExams">
+      <soap12:operation soapAction="http://localhost:9898/GetEmpMedicalExams" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpMedicalExamsXML">
+      <soap12:operation soapAction="http://localhost:9898/GetEmpMedicalExamsXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpCourses">
+      <soap12:operation soapAction="http://localhost:9898/GetEmpCourses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpCoursesXML">
+      <soap12:operation soapAction="http://localhost:9898/GetEmpCoursesXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoursesDict">
+      <soap12:operation soapAction="http://localhost:9898/GetCoursesDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoursesDictXML">
+      <soap12:operation soapAction="http://localhost:9898/GetCoursesDictXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedExamsDict">
+      <soap12:operation soapAction="http://localhost:9898/GetMedExamsDict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedExamsDictXML">
+      <soap12:operation soapAction="http://localhost:9898/GetMedExamsDictXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SaturnService">
+    <wsdl:port name="SaturnServiceSoap" binding="tns:SaturnServiceSoap">
+      <soap:address location="http://172.17.39.6/SaturnWebService/SaturnService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SaturnServiceSoap12" binding="tns:SaturnServiceSoap12">
+      <soap12:address location="http://172.17.39.6/SaturnWebService/SaturnService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

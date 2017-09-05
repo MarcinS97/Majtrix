@@ -1,0 +1,235 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="KwitekAdmin.Master.cs" Inherits="HRRcp.KwitekAdminMasterPage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Register src="~/Controls/Help.ascx" tagname="HelpControl" tagprefix="uc1" %>
+<%@ Register src="~/Controls/FooterControl.ascx" tagname="FooterControl" tagprefix="uc1" %>
+
+<%@ Register src="Controls/DateEdit.ascx" tagname="DateEdit" tagprefix="uc2" %>
+
+<%--
+<%@ Register src="Controls/HelpControl.ascx" tagname="HelpControl" tagprefix="uc1" %>
+--%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=EmulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Kwitek płacowy iQor</title>
+
+    <link href="~/styles/master.css" rel="stylesheet" type="text/css" />
+    <link href="~/styles/Controls.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/styles/Portal_iQor.css" rel="stylesheet" type="text/css" runat="server" id="cssPortal_iQor" visible="true"/>    
+
+    <link href="styles/ui-lightness/jquery-ui-1.8.17.custom.css" rel="stylesheet" type="text/css" />
+    <script src="scripts/jquery-1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="scripts/jquery-ui-1.8.17.custom.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="~/../scripts/table2CSV.js"></script>
+    <script type="text/javascript" src="~/../scripts/common.js"></script>
+    <script type="text/javascript" src="~/../scripts/jscolor/jscolor.js"></script>
+
+    <!--[if IE 6]>
+        <script type="text/javascript" src="~/../scripts/jquery.pngFix.js"></script>
+        <script type="text/javascript" src="~/../scripts/jquery.ie6hover.js"></script>
+        <script type="text/javascript">
+            $(document).ready( function() { 
+                $.ie6hover(true); 
+                /*
+                $('input[type="text"]').addClass('textbox');  
+                */
+            }); 
+        </script>
+    <![endif]-->
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- script type="text/javascript">
+        $(document).ready( jQuery(function($) {
+            $('#logo').pngFix();
+        })); 
+    </script -->
+    
+    <!--[if IE 7.0]>
+        <style type="text/css">
+            .clearfix {display: inline-block;}
+        </style>
+    <![endif]-->
+
+    <!--[if lte IE 6]>
+        <style type="text/css">
+            .clearfix {height: 1%;}        
+        </style>   
+    <![endif]-->
+    
+    <script type="text/javascript">
+        function resize() {
+            var wh = getClientSize();
+            var h = wh[1];
+            if (h < 400) h = 400;
+            
+            var c = $('#content');
+            c.height('auto');
+                
+            var ctop = c.offset().top;
+            if (ctop + c.height() + 26 < h) {
+                var h2 = h - ctop - 26;
+                c.height(h2);
+            }
+            showFooter();
+        }
+
+        function initialize() {
+            setColumnIEofs();
+            resize();
+        }
+    </script>
+    
+</head>
+<body onload="javascript:initialize();" onresize="javascript:resize();">
+    <form class="mainform" id="form1" runat="server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" >
+    </asp:ToolkitScriptManager>
+
+    <div id="mainformcontent">
+
+		<div id="header" class="printoff" >
+			<div class="center">
+                <div class="topLine">
+                    <div id="program">
+                        <asp:Label ID="lbProgram" runat="server" ></asp:Label>
+                    </div>
+                    <div id="user">
+                        Witaj: <asp:Label ID="lbUser" runat="server" Text="Niezalogowany" ></asp:Label>
+                    </div>
+
+                    <div id="debug"></div>
+
+                </div>
+                <div id="paLogo" class="logo" runat="server" visible="true" >
+                    <asp:LinkButton ID="lbtLogo" runat="server" >
+    		            <asp:Image ID="imgLogo" ImageUrl="~/images/iQor/iQor2b.png" runat="server" Visible="true" />
+    		        </asp:LinkButton>    	
+                </div>
+                <div id="topMenuContainer" class="topMenuContainer" runat="server">
+                    <div id="topMenu" class="topMenu" runat="server">
+                        <asp:Menu ID="MainMenu" runat="server" Orientation="Horizontal" onmenuitemclick="MainMenu_MenuItemClick">
+                            <StaticMenuStyle CssClass="mmStrip" />
+                            <StaticMenuItemStyle CssClass="mmItem" />
+                            <StaticSelectedStyle CssClass="mmSelected" />
+                            <StaticHoverStyle CssClass="mmHover" />
+                            <Items>
+                                <asp:MenuItem Text="<span>Wypłaty<br />&nbsp;</span><div><br />Kwitki płacowe</div>" Value="1" ></asp:MenuItem>
+                                <asp:MenuItem Text="<span>Urlop<br />&nbsp;</span><div>Wymiar i wykorzystanie urlopu</div>" Value="2" ></asp:MenuItem>
+                                <asp:MenuItem Text="<span>Panel<br>Pracownika</span><div>Przejście do panelu pracownika</div>" Value="3"></asp:MenuItem>
+                            </Items>
+                            <StaticItemTemplate>
+                                <div class="mmCaption" id="mmCaption<%# GetMenuIndex() %>">
+                                    <div class="mmText">
+                                        <asp:Literal runat="server" ID="Literal1" Text='<%# Eval("Text") %>' />
+                                    </div>
+                                </div>
+                            </StaticItemTemplate>
+                        </asp:Menu>
+                    </div>
+                </div>                
+			</div>
+		</div>
+
+		<div id="content">
+            <div id="divHelp" class="center">
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        <div id="helpButton" class="printoff">
+                            <asp:LinkButton ID="btHelp" runat="server" onclick="btHelp_Click">Pomoc</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton ID="lbtTest" runat="server" Visible="false" PostBackUrl="~/test.aspx">Test</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton ID="lbtTest2" runat="server" Visible="false" PostBackUrl="~/test2.aspx">Asseco</asp:LinkButton>
+                            <asp:LinkButton ID="lbChangePass" runat="server" Visible="false" PostBackUrl="~/PracPassChange.aspx">Zmień hasło</asp:LinkButton>
+                        </div>
+                        <uc1:HelpControl ID="cntHelp" runat="server" Visible="false"/>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+			
+			<div id="divContent" runat="server" class="center">
+                <br />
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <table class="table0">
+                            <tr>
+                                <td>
+                                    <asp:DropDownList ID="DropDownList1" runat="server" Visible="false"
+                                        DataSourceID="SqlDataSource1" DataTextField="Pracownik" 
+                                        DataValueField="KadryId" AutoPostBack="True" 
+                                        onselectedindexchanged="DropDownList1_SelectedIndexChanged" 
+                                        ondatabound="DropDownList1_DataBound">
+                                    </asp:DropDownList>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                                        ConnectionString="<%$ ConnectionStrings:ASSECO %>" 
+                                        SelectCommand="
+                                            select 0 as Sort, 'Wybierz pracownika ...' as Pracownik, null as Nazwisko, null as Imie, 'null' as KadryId
+                                            union
+                                            SELECT distinct 1 as Sort, Nazwisko + ' ' + Imie + ' (' + LpLogo + ')' as Pracownik, Nazwisko, Imie, LpLogo as KadryId FROM lp_vv_NaliczeniaNagExtSkl where Rok &gt;= 2013
+                                            ORDER BY Sort, Nazwisko, Imie
+                                        ">
+                                    </asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+                                        ConnectionString="<%$ ConnectionStrings:HRConnectionString %>" 
+                                        SelectCommand="
+                                            select 0 as Sort, 'Wybierz pracownika ...' as Pracownik, 'null' as KadryId
+                                            union
+                                            SELECT KadryId + ' ' + Nazwisko + ' ' + Imie as Pracownik, [KadryId] FROM [Pracownicy] 
+                                            ORDER BY Nazwisko, Imie
+                                        ">
+                                    </asp:SqlDataSource>            
+                                </td>
+                                <td style="white-space: nowrap; text-align: right;" runat="server" id="tdKwitekDo">                                
+                                    Udostępnij pracownikom listy z datą wypłaty do dnia: 
+                                    <uc2:DateEdit ID="deKwitekDo" runat="server" />
+                                    <asp:Button ID="btSetKwitekDo" runat="server" CssClass="button100" Text="Ustaw" onclick="btSetKwitekDo_Click" />
+                                </td>
+                            </tr>
+                        </table>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <br />
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+    		</div>
+		</div>
+
+        <uc1:FooterControl ID="FooterControl1" runat="server" />
+        
+        <asp:UpdateProgress ID="updProgress1" runat="server" DisplayAfter="10">
+            <ProgressTemplate>
+                <div class="updProgress1 printoff">
+                    <div class="center">
+                        <img alt="Indicator" src="images/activity.gif" /> 
+                        <span>Trwa przetwarzanie. Proszę czekać ...</span>
+                    </div>
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+    </div>
+
+    <script type="text/javascript">
+        hideFooter();
+        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+
+        function BeginRequestHandler(sender, args) {
+        }
+
+        function EndRequestHandler(sender, args) {
+            resize();
+        }
+    </script>
+    
+    </form>
+</body>
+</html>

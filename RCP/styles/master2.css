@@ -1,0 +1,126 @@
+﻿body
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px; 
+
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin: 0px;
+	padding: 0px;
+
+    height: 100%;
+    width: 100%;
+
+    xoverflow-y: scroll;   /* mozna tez dodać do master za tabelką <div style="display: block; height: 1px;"></div> */
+    xoverflow: -moz-scrollbars-vertical;
+}
+
+#form div.center
+{
+	width: 960px;
+	text-align: left;	
+    margin-left: auto;
+	margin-right: auto;
+}
+
+/*----- header -----*/
+#form div#header
+{
+    display: block;
+	width: 100%;
+    background: url('~/../../images/header.png') repeat-x top;
+    border-bottom: solid 1px #F0F0F0;
+}
+
+#header div#top_line
+{
+    height: 33px;
+    line-height: 33px;
+    vertical-align: middle;
+    color: #FFF;
+}
+#top_line div#help_button { float: left; }
+#top_line div#help_button a { color: #AED2FF; font-weight: bold; }
+#top_line div#help_button a:hover {color: #E00024; text-decoration: none; }
+#top_line div#user { float: right; position: relative; text-align: right; white-space: nowrap; }
+#top_line div#user span { color: #AED2FF; font-weight: bold; font-size: 13px; font-variant: small-caps; }
+
+
+
+
+#header div {xborder: solid 1px red;}
+
+
+
+
+#header div#mid_line
+{
+    height: 97px;
+    margin-bottom: 10px;
+}
+
+#header div#info
+{
+    width: 700px;
+    height: 81px;
+    padding: 6px 0px 6px 0px;
+    float: right;
+    text-align: justify;
+}
+
+/*----- help -----*/
+#form div#help 
+{
+    min-height: 40px;
+    padding: 8px;
+    border-bottom: dotted 1px silver;
+    background-color: InfoBackground;
+    line-height: normal;
+
+    xmargin-bottom: 8px;
+}
+
+#form div#helpHideButton
+{
+    xborder: solid 1px blue;
+    text-align: right;
+    width: 100%;
+    padding: 0px;
+}
+#form div#helpHideButton a {color: #9EC2EF; font-weight: normal; xfont-variant:small-caps ;}
+#form div#helpHideButton a:hover {color: #E00024; text-decoration: none;}
+
+
+
+
+
+
+/*----- content -----*/
+#form div#content
+{
+    min-height: 400px;
+    xborder: solid 2px cyan;
+    xbackground-color: #DFDFDF;
+    background: url('~/../../images/podcien.png') repeat-x;
+}
+
+
+
+
+/*----- footer -----*/
+#form div#footer 
+{
+	display: block;
+	clear: both;
+    height: 25px;
+	line-height: 25px;
+	width: 100%;
+    background-color:#709AD1;
+    xborder-top: solid 1px #F0F0F0;
+}
+
+#form div#footer div.center
+{
+	text-align: center;
+    vertical-align: middle; 
+} 

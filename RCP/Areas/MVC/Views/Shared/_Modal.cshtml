@@ -1,0 +1,117 @@
+﻿@model HRRcp.Areas.MVC.Models.customModels.Modal
+
+
+<div id="myModal" class="modal fade" role="dialog" >
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">@Model.Header</h4>
+            </div>
+
+            <div class="modal-body">
+                <p>@Html.Raw(Model.Text)</p>
+
+                @if (Model.ShowDDLInModal == true)
+                {
+                    <br />
+                    <center>
+                        <span class="center">@Html.Raw(Model.DDLInModalText)</span><br />
+                        @Html.DropDownList("DDLInModal", null, "Wybierz ...", htmlAttributes: new { @class = "form-control DDLInModal" })
+                    </center>
+                }
+                @if (Model.ShowDDLInModal2 == true)
+                {
+                    <br />
+                    <center>
+                        <span class="center">@Model.DDLInModalText2</span><br />
+                        @Html.DropDownList("DDLInModal2", null, "Wybierz ...", htmlAttributes: new { @class = "form-control DDLInModal" })
+                    </center>
+                }
+
+
+                @if (Model.ShowTextBox == true)
+                {
+                    <br />
+                    <center>
+                        <span>@Model.CommentText</span><br />
+                        <input class="form-control single-line" type="text" name="komentarz" id="komentarz" value="@Model.CommentTextValue">
+                    </center>
+                }
+
+                @if (Model.ShowTextBox2 == true)
+                {
+                    <br />
+                    <center>
+                        <span>@Model.CommentText2</span><br />
+                        <textarea class="form-control single-line" id="komentarz2" name="komentarz2" type="text" value="">@Model.CommentText2Value</textarea>
+                    </center>
+                }
+                @if (Model.ShowDateInModal == true)
+                {
+                    <br />
+                    <center>
+                        <span class="center">@Model.DateInModalText</span><br />
+                        @Html.EditorFor(model => model.DateInModal, new { htmlAttributes = new { @class = "form-control DateInModal" } })
+                        @Html.ValidationMessageFor(model => model.DateInModal, "", new { @class = "text-danger" })
+                    </center>
+                }
+            </div>
+            <div class="modal-footer">
+                @if (Model.ShowConfirmButton == true)
+                {
+                    if (!String.IsNullOrEmpty(Model.ConfirmButtonController))
+                    {
+                        @Html.ActionLink(@Model.ConfirmButtonText, @Model.ConfirmButtonAction, @Model.ConfirmButtonController, @Model.ConfirmButtonRouteValues, new { @class = "btn btn-md btn-success SelectedCheckboxesV btnModalConfirm" })
+
+                    }
+                    else
+                    {
+                        @Html.ActionLink(@Model.ConfirmButtonText, @Model.ConfirmButtonAction, @Model.ConfirmButtonRouteValues, new { @class = "btn btn-md btn-success SelectedCheckboxesV btnModalConfirm" })
+                    }
+                    @*<a href="javascript://" class="btn btn-md btn-success SelectedCheckboxesV btnFakeModalConfirm" style="display: none;">@Model.ConfirmButtonText</a>*@
+                    <img src="~/Content/Images/ajaxLoader.gif" class="btnFakeModalConfirm" style="display: none; height:32px;" />
+                }
+                @if (!String.IsNullOrEmpty(Model.CancelButtonAction))
+                {
+                    if (!String.IsNullOrEmpty(Model.CancelButtonController))
+                    {
+                        @Html.ActionLink(@Model.CancelButtonText, @Model.CancelButtonAction, @Model.CancelButtonController, @Model.CancelButtonRouteValues, new { @class = "btn btn-md btn-danger" })
+                    }
+                    else
+                    {
+                        @Html.ActionLink(@Model.CancelButtonText, @Model.CancelButtonAction, @Model.CancelButtonRouteValues, new { @class = "btn btn-md btn-danger" })
+                    }
+
+                }
+                else
+                {
+                    <button type="button" class="btn btn-md btn-danger" data-dismiss="modal">@Model.CancelButtonText</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div>
+    <script type="text/javascript">
+       @Html.Raw(Model.Javascript)
+    </script>
+
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+
+        $(window).load(function () {
+            $('#myModal').modal('show');
+        });
+    </script>
+}
+

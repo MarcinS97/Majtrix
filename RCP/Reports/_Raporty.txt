@@ -1,0 +1,45 @@
+﻿Opis raportów podziału na CC
+----------------------------
+Parametry:
+p1 - od
+p2 - do
+
+Raporty:
+Controls\RepPodzialCC   Okresy
+RepCCTygodnie           Tygodnie z wybranego okresu
+
+RepCC 		            Podział czasu pracy na CC - wszystkie cc nawet jak 0, sumy
+                            p3 - 1 019 podzielone, 0 niepodzielone
+                            p4 - 1 dopełnienia, 0 bez dopełnień
+RepCCPracCC             Podział czasu pracy na CC pracownika
+
+RepCCDopelnienia        Pracownicy z Typ in (3,13)
+RepCCNadminuty          Pracownicy bez pełnych godzin
+
+RepCCKlasyfikacja       Podział DL BUIL SG&A itd.
+                            p3 -  - zawsze 019 podzielone
+                            p4 - dopełnienia: 1 z dopełnieniami, 0 bez dopełnień (na razie tylko 1)
+
+RepCCPracDni            Dni pracownika, suma bez podziału na CC, z podziałem na typ (cc macierzyste, dopełnienie, absencja ...)
+RepCCPracDniCC           
+RepCCPracownicy         Pracownicy - suma czasu
+RepCCPracownicyCC       Pracownicy - CC w kolumnach: ilości i kwoty
+RepCCSplity             Pracownicy - CC w kolumnach: współczynniki    
+Start
+RepCC2		            Podział czasu pracy na CC - tylko cc > 0
+
+---------------------
+RepCCNadminuty 
++1. wartosci zaokraglone czy bez zaokr. <<< bez zaokr.
+
+RepCCSplity
+1. Data wprowadzenia splitu
+2. Daty obowiązywania
+3. Data naliczenia ???
++4. zoomy z wartości
+
+RepCCPracownicyCC 
++1. zoomy
+
+RepCCPracownicy
+-1. zoom z kierownika  <<< wolne !!!

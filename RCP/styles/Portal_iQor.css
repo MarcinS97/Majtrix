@@ -1,0 +1,639 @@
+﻿/*
+#mainformcontent div#header { background-image: none; background-color: #EAE8E9; }
+
+div#mainformcontent div#header div.topMenuContainer { background: url('~/../../images/portal/header_iQor.png') no-repeat left top; }
+
+
+div.topMenu div.mmStrip td span.mmItem, 
+div.topMenu table.mmStrip td table.mmItem { background-image: none; }
+
+
+.mmItem .mmCaption { background-image: none !important; }
+
+.mmItem #mmCaption2 { background-image: none; }
+*/
+
+
+
+
+
+/*----- MAINMENU -----*/
+/*
+div.topMenuContainer - center 960
+    div.topMenu - align right menu box
+        a.skiplink
+        table.mmStrip
+            td
+                table.mmItem
+                    td
+                        a.mmItem
+                            div.mmCaption
+                                div.mmText
+                                    span - title
+                                    div - opis
+            td 3px
+            td
+            td 3px
+            ...    
+
+*/
+
+
+div#mainformcontent div#header { background: url('~/../../images/iQor/header2.png') repeat-x top; }
+div#mainformcontent div#header div.topLine { background: url('~/../../images/iQor/toolbar.jpg') no-repeat -5px top; height: 33px; }
+
+div#mainformcontent div#header div.topMenuContainer {
+    background: url('~/../../images/iQor/toolbar2.jpg') no-repeat -5px -33px;
+    height: 107px;
+}
+
+div#mainformcontent div#header div.topMenuContainerP {
+    background: url('~/../../images/iQor/toolbar3.png') no-repeat left top;
+    height: 107px;
+}
+
+xxdiv#mainformcontent div#content { background: url('~/../../images/iQor/podcien_up2.png') repeat-x top; }
+div#mainformcontent div#content { background-image: none; background-color: #FAFAFA; }
+div#mainformcontent div#header_left { position: relative; } 
+
+xxxdiv#mainformcontent div#header_left div { position: absolute; margin-top: 33px; width: 50%; height: 107px; xborder: solid 1px red; background-color: #BBBBBB; z-index: 0; } 
+xxxdiv#mainformcontent div.center { z-index: 10; position: relative; } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div#mainformcontent div#header div.topMenu {
+    float: right;
+}
+
+div.topMenu table.mmStrip td { width: 1px !important; } /* chrome 30 i tak zostawia 1px - tak wycinamy odstęp 3px między tabami, działa też na IE6 */
+
+div.topMenu a { height: 1px; display: block; }   /* niektóre przegladarki wyswietlają zawsze height: 1px dla skiplink */ 
+div.topMenu div.mmStrip a.mmItem,
+div.topMenu table.mmStrip a.mmItem { height: auto; }
+
+div.topMenu div.mmStrip,
+div.topMenu table.mmStrip {
+    position: relative;
+    top: -1px;          /* skip link */
+    empty-cells: hide;  /* dla ie78 - td 3px */
+
+    border-collapse: collapse;
+    border-spacing: 0px;    
+    border-width: 0px;
+
+    margin-top: 8px;    /* regulacja wysokości */
+}
+div.topMenu table.mmStrip {
+    z-index: 101;        /* IE8 fix znika tab*/
+}
+
+div.topMenu table.mmStrip td { vertical-align: top; } 
+
+div.topMenu div.mmStrip td span.mmItem,
+div.topMenu table.mmStrip td table.mmItem {
+    border-collapse: collapse;
+    border-spacing: 0px;    
+    border-width: 0px;
+}
+div.topMenu table.mmStrip table.mmItem td { } 
+
+div.topMenu div.mmStrip a.mmItem { float: left; }
+
+div.topMenu div.mmStrip a.mmItem,
+div.topMenu table.mmStrip a.mmItem { 
+    width: 149px;       /* regulacja szerokości */
+}
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption,
+div.topMenu table.mmStrip table.mmItem div.mmCaption { 
+    position: relative;
+    width: 149px;       /* regulacja szerokości */
+    height: 91px;       /* regulacja wysokości */
+    
+    background-image: none !important;
+    
+    cursor: pointer;
+}
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption div.mmText, 
+div.topMenu table.mmStrip table.mmItem div.mmCaption div.mmText 
+{
+    xfont-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    
+    afont-family: Segoe UI, Arial, Verdana, sans-serif;
+    afont-weight: normal;
+
+    font-variant: small-caps;
+    
+    font-size: 16px;
+    line-height: 16px; 
+    text-align: right;
+    color: #FFC014;
+    color: Red;
+    text-shadow: #999999 5px 5px 5px;
+    
+    font-variant: normal;
+}
+.not_ie .mmItem .mmText { xfont-size: 17px; font-size: 16px; }
+.ie .mmItem .mmText { font-size: 16px; }
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption div.mmText span,
+div.topMenu table.mmStrip table.mmItem div.mmCaption div.mmText span
+{
+    display: block;
+    padding: 10px 8px 8px 8px;
+    xtext-shadow: Black 5px 5px 5px;
+}
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption:hover div.mmText span,
+div.topMenu table.mmStrip table.mmItem div.mmCaption:hover div.mmText span
+{
+    position: relative;
+    top: 1px;
+    text-shadow: Gray 5px 4px 3px;
+}
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption div.mmText div,
+div.topMenu table.mmStrip table.mmItem div.mmCaption div.mmText div
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 11px;
+    text-align: left;
+    color: #F5F7F0;
+    color: White;
+    line-height: 16px; 
+
+    padding: 4px 6px 4px 6px;
+    
+    white-space: normal !important;
+    text-shadow: none;
+    text-shadow: 0px 0px 2px Gray;
+}
+
+.mmItem div#mmCaption5 { border-right: solid 1px #DDDDDD !important; }
+.mmItem div.mmCaption { border-left: solid 1px #DDDDDD !important; }
+
+.mmItem div#mmCaption1:hover { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -217px -41px !important; }
+.mmItem div#mmCaption2:hover { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -367px -41px !important; }
+.mmItem div#mmCaption3:hover { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -517px -41px !important; }
+.mmItem div#mmCaption4:hover { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -667px -41px !important; }
+.mmItem div#mmCaption5:hover { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -817px -41px !important; }
+
+.mmSelected div#mmCaption1 { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -217px -41px !important; }
+.mmSelected div#mmCaption2 { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -367px -41px !important; }
+.mmSelected div#mmCaption3 { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -517px -41px !important; }
+.mmSelected div#mmCaption4 { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -667px -41px !important; }
+.mmSelected div#mmCaption5 { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -817px -41px !important; }
+
+/*----- submenu -----*/
+.mmItem div.mmCaption5 { border-right: solid 1px #DDDDDD !important; }
+
+.mmItem div.mmCaption1:hover { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -217px -41px !important; }
+.mmItem div.mmCaption2:hover { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -367px -41px !important; }
+.mmItem div.mmCaption3:hover { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -517px -41px !important; }
+.mmItem div.mmCaption4:hover { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -667px -41px !important; }
+.mmItem div.mmCaption5:hover { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -817px -41px !important; }
+
+.mmSelected div.mmCaption1 { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -217px -41px !important; }
+.mmSelected div.mmCaption2 { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -367px -41px !important; }
+.mmSelected div.mmCaption3 { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -517px -41px !important; }
+.mmSelected div.mmCaption4 { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -667px -41px !important; }
+.mmSelected div.mmCaption5 { background:url(~/../../images/iQor/toolbar3.jpg) no-repeat -817px -41px !important; }
+
+
+
+
+
+
+/*
+div#mainformcontent div#header {
+    background: url('~/../../images/master/header2.png') repeat-x top;
+}
+
+div#mainformcontent div#header div.topLine {
+    background: url('~/../../images/toolbar.jpg') no-repeat -5px top;
+    height: 33px;
+}
+
+div#mainformcontent div#header div.topMenuContainer {
+    background: url('~/../../images/toolbar2.jpg') no-repeat -5px -33px;
+    height: 107px;
+}
+
+div#mainformcontent div#header div.topMenuContainerP {
+    background: url('~/../../images/toolbar3.png') no-repeat left top;
+    height: 107px;
+}
+
+div#mainformcontent div#header div.topMenu {
+    xborder-right: solid 1px #6FA9EA; 
+    height: 91px; 
+    float: right;
+    margin-top: 8px;
+}
+
+div#mainformcontent div#header div.topMenu table.mmStrip {
+    margin: 0px !important;
+    xborder: solid 1px red;
+    top: 0px;
+    position: relative;
+    xtop: -8px;
+}
+
+div#mainformcontent div#header div.topMenu table td {
+    
+    
+    
+    
+    padding: 0px !important; 
+    xborder: solid 1px red;
+
+
+
+}
+
+div#mainformcontent div#header div.mmCaption {
+    background-image: none;
+    height: 91px; 
+    padding: 0px; 
+}
+
+table.mmItem td { xpadding: 8px 0px 8px 0px; border: solid 1px yellow; }
+
+
+
+.mmItem div.mmCaption { border-left: solid 1px #6FA9EA !important; border-right: none !important; }
+
+.mmItem div.mmCaption div.mmText 
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    xfont-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-variant: small-caps;
+    
+    font-size: 16px;
+    text-align: right;
+    
+    color: #FFC014;
+    text-shadow: Black 5px 5px 5px;
+    
+    padding-top: 12px; 
+    xpadding-top: 0px;
+    padding-bottom: 0px;      
+    height: 91px;
+}
+
+.mmItem div.mmCaption div.mmText div
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-size: 11px;
+    xcolor: White;
+    color: #F5F7F0;
+    line-height: 16px; 
+
+    margin-top: 12px; 
+    top: 0px;
+}
+
+.mmItem div.mmCaption:hover span
+{
+    position: relative;
+    top: 1px;
+    text-shadow: Black 5px 4px 3px;
+}
+
+.mmItem .mmCaption .mmText span
+{
+    text-shadow: none;    
+}
+
+.mmItem .mmCaption:hover .mmText span
+{
+    position: relative; top: -2px;
+    text-shadow: none;    
+}
+
+
+.mmItem div#mmCaption5 { border-right: solid 1px #6FA9EA !important; }
+.mmItem div.mmCaption { border-left: solid 1px #6FA9EA; }
+
+.mmItem div#mmCaption1:hover { background:url(~/../../images/toolbar3.jpg) no-repeat -216px -42px !important; }
+.mmItem div#mmCaption2:hover { background:url(~/../../images/toolbar3.jpg) no-repeat -366px -42px !important; }
+.mmItem div#mmCaption3:hover { background:url(~/../../images/toolbar3.jpg) no-repeat -516px -42px !important; }
+.mmItem div#mmCaption4:hover { background:url(~/../../images/toolbar3.jpg) no-repeat -666px -42px !important; }
+.mmItem div#mmCaption5:hover { background:url(~/../../images/toolbar3.jpg) no-repeat -816px -42px !important; }
+
+//.mmItem div#mmCaption1:hover { background:url(~/../../images/toolbar3.jpg) no-repeat -211px -42px !important; }
+//.mmItem div#mmCaption2:hover { background:url(~/../../images/toolbar3.jpg) no-repeat -361px -42px !important; }
+//.mmItem div#mmCaption3:hover { background:url(~/../../images/toolbar3.jpg) no-repeat -512px -42px !important; }
+//.mmItem div#mmCaption4:hover { background:url(~/../../images/toolbar3.jpg) no-repeat -663px -42px !important; }
+//.mmItem div#mmCaption5:hover { background:url(~/../../images/toolbar3.jpg) no-repeat -814px -42px !important; }
+
+.mmSelected div#mmCaption1 { background:url(~/../../images/toolbar3.jpg) no-repeat -216px -42px; }
+.mmSelected div#mmCaption2 { background:url(~/../../images/toolbar3.jpg) no-repeat -366px -42px; }
+.mmSelected div#mmCaption3 { background:url(~/../../images/toolbar3.jpg) no-repeat -516px -42px; }
+.mmSelected div#mmCaption4 { background:url(~/../../images/toolbar3.jpg) no-repeat -666px -42px; }
+.mmSelected div#mmCaption5 { background:url(~/../../images/toolbar3.jpg) no-repeat -816px -42px; }
+*/
+
+
+
+div#header div.logo 
+{ 
+    float: left; 
+    position: relative; 
+    xbackground-color: White;
+    xpadding: 5px; 
+    xborder: solid 1px Gray;
+
+    x-moz-border-radius: 5px;                        
+    x-webkit-border-radius: 5px;                         
+    x-khtml-border-radius: 5px;                      
+    xborder-radius: 5px;                             
+    xbehavior: url(css/border-radius.htc);   
+    
+    
+    margin-left: 22px; 
+    margin-top : 8px; 
+    margin-left: 30px; 
+    margin-top : 4px; 
+    
+	xopacity: 0.5;
+	xfilter:alpha(opacity=50); /* For IE8 and earlier */
+	
+	xwidth: 155px; 
+	xheight : 36px; 	
+	xheight : 45px; 	
+	width: auto;
+	
+	text-align: left;
+	z-index: 105;   /* IE8 fix znikalo */
+}
+
+div#header div.logo img { 
+	xwidth: 200px; 
+	xheight : 70px; 	   
+	width: 90px; 
+	height : 90px; 
+
+
+    margin-top: -5px;
+    margin-left: 0px; 
+	width: 70px; 
+	height : 70px; 
+}
+
+.rcp div#header div.logo img { 
+	width: 90px; 
+	height : 90px; 
+}
+
+.rcp div#header div.logo img.demo_TMX { 
+	margin-top: 8px;
+	width: 150px;
+	height: 45px;
+}
+
+div#header div.search
+{ 
+    position: absolute;
+    margin-top: 75px;
+    margin-left: 12px;
+    z-index: 110; 
+}
+div#header div.search div { position: relative; }
+div#header div.search input.textbox { width: 250px; xheight: 24px; padding: 3px 4px 3px 4px; vertical-align: middle; border: solid 1px Silver; }
+div#header div.search input.textbox:hover { border: solid 1px Silver; }
+div#header div.search input.button { 
+    vertical-align: middle; 
+    
+    width: 70px; 
+    line-height: 26px;
+    height: 26px; 
+    padding: 0px; 
+    xborder: solid 1px #8BACDA;
+    border: solid 1px Silver;
+    color: White;
+    vertical-align: middle;        
+
+    -moz-border-radius: 3px;                        
+    -webkit-border-radius: 3px;                     
+    -khtml-border-radius: 3px;                      
+    border-radius: 3px !important;                             
+    
+    background: #DDDDDD url(../images/magnifier.png) no-repeat center center;
+}
+div#header div.search input.button:hover
+{ 
+    border: solid 1px Silver;
+    background-color: White;
+    color: black;
+}
+
+
+
+
+
+
+div#mainformcontent div#helpButton span.appinfo {
+    xtop: 4px; 
+    xleft: 215px;
+    top: 92px;
+    left: 4px;
+    left: -185px;
+}
+
+
+div#mainformcontent div#content div#helpButton { z-index: 101; }
+div#mainformcontent div#content div#helpButton a,
+div#mainformcontent div#content div#helpButton a.testbutton { color: White; background-color: Transparent; xfont-weight: normal; text-decoration: none; } 
+div#mainformcontent div#header div#user span, 
+div#mainformcontent div#header div#user a { color: Gray; }
+div#mainformcontent div#content div#helpButton a:hover { color: #E00024; }
+
+
+div#mainformcontent div#header div.topLine div#program span { 
+    font-variant: normal;
+    font-weight: bold;
+    font-size: 17px;
+    text-shadow: Black 2px 2px 5px; 
+    line-height: normal;
+    display: inline-block;
+    margin-top: 3px;
+}
+
+
+xxdiv#header div#program2
+{ 
+    float: left; 
+    position: relative; 
+
+    margin-left: 130px; 
+    margin-top : 4px; 
+    
+	text-align: left;
+	z-index: 100;   /* IE8 fix znikalo */
+}
+
+xxdiv#header div#program2 span
+{
+     
+}
+
+/*----- -----*/
+div#mainformcontent div#helpButton div.usersTree { 
+    margin-top: -32px; 
+    margin-left: -240px; 
+}
+
+
+/*----- footer -----*/
+div#mainformcontent div#footer { background-color: Silver; color: Gray; }
+div#mainformcontent div#footer a.regulamin { color: White; font-weight: bold; text-decoration: none; }
+div#mainformcontent div#footer a.regulamin:hover { color: #E00024; text-decoration: none; }
+/*----- -----*/
+
+
+/*----- menu ----*/
+div.mnKategorie span {
+    background-image: none;
+    background-color: #F5F5F5; 
+    background-color: #FBFBFB; 
+    background-color: White; 
+    
+    color: White; 
+    color: Gray;
+    color: #999999;
+    
+    -moz-border-radius: 0px;                        
+    -webkit-border-radius: 0px;                         
+    -khtml-border-radius: 0px;                      
+    border-radius: 3px;                       
+    
+    border-color: #EEEEEE;
+    border-color: #DDDDDD;    
+}
+
+div.mnKategorieContent a {
+    background-image: none;
+    background-color: #F5F5F5; 
+    background-color: #FBFBFB; 
+    background-color: White; 
+    
+    color: White; 
+    color: Gray;
+    
+    -moz-border-radius: 0px;                        
+    -webkit-border-radius: 0px;                         
+    -khtml-border-radius: 0px;                      
+    border-radius: 3px;                       
+    
+    border-color: #EEEEEE;
+    border-color: #DDDDDD;    
+}
+
+table.mnPodKategorie tr.sit a, table.mnPodKategorie tr.sit span
+{
+    background-color: White;
+    color: Red;
+}
+
+/*----- aplikacje menu -----*/
+
+div.cntAplikacjeMenu a {
+    background-image: none;
+    background-color: #F5F5F5; 
+    background-color: #FBFBFB; 
+    background-color: White; 
+    
+    color: White; 
+    color: Gray;
+    
+    -moz-border-radius: 0px;                        
+    -webkit-border-radius: 0px;                         
+    -khtml-border-radius: 0px;                      
+    border-radius: 3px;                       
+    
+    border-color: #EEEEEE;
+    border-color: #DDDDDD;    
+}
+div.cntAplikacjeMenu a:hover {
+    -moz-border-radius: 0px;                        
+    -webkit-border-radius: 0px;                         
+    -khtml-border-radius: 0px;                      
+    border-radius: 3px;                       
+    
+    color: Red; 
+}
+
+div.cntAplikacjeMenu a img { width: 170px; height: 110px;}
+
+div.cntAplikacjeMenu a div.img {
+    padding: 0px;
+    border: none;
+}
+
+/*----------*/
+
+div.zastinfo { border-top: solid 1px Silver; }
+div.zastinfo a.button { line-height: 15px; }
+
+table.tabItem div.tabRight { line-height: 21px; }
+
+
+
+
+
+
+
+
+/* VC
+
+
+div.logo_demo { margin-left: -240px !important; }
+div.logo_demo img { width: 240px !important; height: auto !important; }
+
+img.replogo_demo,
+table.rep_header td.col3 img { width: 240px !important; height: auto !important; background-color: Silver; }
+
+
+div.topMenu div.mmStrip span.mmItem div.mmCaption div.mmText, 
+div.topMenu table.mmStrip table.mmItem div.mmCaption div.mmText 
+{
+    xcolor: #46AA42 !important;
+    color: #00BF00 !important;
+    
+}
+
+span.appinfo { display: none !important; }
+
+/**/
+
+
+

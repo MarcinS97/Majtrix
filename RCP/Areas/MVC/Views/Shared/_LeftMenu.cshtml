@@ -1,0 +1,66 @@
+﻿@model List<HRRcp.Areas.MVC.Models.MagicMenu1>
+@using HRRcp.App_Code;
+        <div id="divSidebar" runat="server" class="sidebar sidebar-left">
+            <div class="user">
+                <div class="cntAvatar avatar">
+                    @*<asp:LinkButton ID="lnkRedirect" runat="server" Enabled="false">
+                            <div id="imgUser" runat="server" class="img-user"></div>
+                        </asp:LinkButton>*@
+                   @{string nrew = HRRcp.App_Code.App.User.NR_EW;
+                       String avatarImg = Tools.GetAvatarImage(nrew + ".jpg", true);
+                       string image = String.Format(@"url(""{0}"");", avatarImg);
+                       string userPath = VirtualPathUtility.ToAbsolute("~/Portal/Social/Profil.aspx"); 
+                   }
+                    <a href="@userPath"><div id="imgUser" style="background-image:@image" runat="server" class="img-user"></div></a>
+                </div>
+                @*<asp:LinkButton ID="lbUserName" runat="server" OnClick="lbUserName_Click" CssClass="name" />*@
+                @{string urlw = Tools.GetRedirectUrl(HRRcp.App_Code.App.DefaultForm);
+                  string absolutePath = VirtualPathUtility.ToAbsolute(urlw);}                    
+                  <a href="@absolutePath" class="name">@HRRcp.App_Code.App.User.NazwiskoImie</a>
+              </div>
+            <nav>               
+                <ul class="nav nav-pills nav-stacked">
+                @foreach (var item in Model)
+                  {
+                    @Html.Raw(item._magic);
+
+                    if (@Html.Raw(item.Avis).ToString() == "0")
+                    {
+                        string tmp = item.command;
+                        string id = item.Id.ToString();
+                        string url = "";
+
+                        if (!String.IsNullOrEmpty(tmp))
+                        {
+                            if (Tools.IsUrl(tmp, out url))
+                            {
+                                //App.Redirect(url);
+                            }
+                            else if (tmp.Contains("REPORT"))
+                            {
+                                string repId = tmp.Split(':')[1];
+                                string p = Tools.SetLineParams(3, repId, null, null, null, null, null);
+                                string e = Report.EncryptQueryString(p, Grid.key, Grid.salt);
+                                url = VirtualPathUtility.ToAbsolute(String.Format("/Redirect.aspx?p={0}&f={1}", e, "RaportF.aspx"));
+                            }
+                            bool append = url.Contains("?");
+                            url += String.Format("{0}mm={1}", (append ? "&" : "?"), id);
+                            url = @VirtualPathUtility.ToAbsolute(url);
+                        }
+                        <a href="@url">@Html.Raw(item.MenuText) </a>
+
+                    }
+
+                    @Html.Raw(item._magic2);
+
+              }
+                   
+                </ul>
+               
+
+            </nav>           
+            <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); color: #aaa; font-size: 24px; text-align: center; width: 240px; border-top: solid 1px #eee; padding: 8px; display: none;">
+                <i class="fa fa-clock-o" style="margin-right: 8px; color: #aaa;"></i>16:14:32
+            </div>        
+        </div>
+   

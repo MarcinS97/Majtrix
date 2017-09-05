@@ -1,0 +1,2137 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+
+using System.Data;
+using System.Data.SqlClient;
+
+//using System.Configuration;
+//using System.Collections;
+//using System.ComponentModel;
+//using System.Drawing;
+//using HRApp.App_Code;
+
+using System.DirectoryServices;
+
+using System.Web.Mail;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.IO;
+using System.IO.Compression;
+using System.Drawing;
+
+using System.Reflection;
+
+
+//wersja programu - zmienić w Properties.AssemblyInfo.cs -> AssemblyVersion
+
+namespace HRRcp.App_Code
+{
+    public class Tools
+    {
+        public static Color warnColor = Color.Red;
+            
+        public static string[] DayName = { "", "Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota" };
+        public static string[] MonthName = { "", "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień" };
+        //public static string[] DayShortName = { "", "Ni", "Po", "Wt", "Śr", "Cz", "Pi", "So" };
+        
+
+        public Tools()
+        {
+        }
+
+        //------------------------------
+        // podmienia znaczniki zeby nie byly interpretowane dla wszystkich kontrolek typu Label
+        // do bazy zapisujemy ze znacznikami, textbox potrafi je wyswietlic, labele interpretuja - wiec musimy wywalić ...
+        // wywołanie: ListView_ItemDataBound (np. PracNotesControl.ascx.cs)
+        // wymaga użycia w aspx formatki: <%@ Page ... ValidateRequest="false" zeby mozna bylo do bazy zapisać
+        public static void HtmlEncodeControls(ControlCollection cc)
+        {
+            for (int i = 0; i < cc.Count; i++)
+                if (cc[i] is Label)
+                {
+                    Label lb = (Label)cc[i];
+                    //lb.Text = HttpContext.Current.Server.HtmlEncode(lb.Text);
+                    lb.Text = HttpUtility.HtmlEncode(lb.Text);
+                }
+        }
+
+        public static void HtmlEncodeControl(ListViewItem li, string cname)    // wywołanie j.w., parametr e.Item 
+        {
+            Label lb = (Label)li.FindControl(cname);
+            if (lb != null)
+                //lb.Text = HttpContext.Current.Server.HtmlEncode(lb.Text);
+                lb.Text = HttpUtility.HtmlEncode(lb.Text);
+        }
+
+        public static string HtmlEncode(string s)
+        {
+            return HttpUtility.HtmlEncode(s);
+        }
+
+        /*  nie moze byc zadeklarowana wewnatrz "generic class" ...
+        public static string HtmlEncode(this string s)   // rozszerzenie funckcji string - wywołanie zmienna.HtmlEncode
+        { 
+            return HttpUtility.HtmlEncode(s); 
+        } 
+        */
+
+        /*
+            ListViewDataItem di = (ListViewDataItem)e.Item;
+            DataRowView drv = (DataRowView)di.DataItem;
+            int cnt = drv.DataView.Table.Columns.Count;
+            for (int i = 0; i < cnt; i++)
+                drv[i] = Server.HtmlEncode(drv[i].ToString());
+            */
+
+        /*
+        Label lb = (Label)e.Item.FindControl("Label1");
+        if (lb != null)
+            lb.Text = Server.HtmlEncode(lb.Text);
+        */
+
+        /*
+        <asp:Label ID="NotatkaLabel" runat="server" Text='<%# Server.HtmlEncode((string)Eval("Notatka")) %>' />
+        */
+
+        //------------------------------
+        public static string RemoveHtmlTags(string html)
+        {
+            return Regex.Replace(html, @"<(.|\n)*?>", string.Empty);
+            //return Regex.Replace(html, "<[^>]*>", string.Empty);
+        }
+
+        public const string TAB = "\t";
+        public const char chTAB = (char)9;
+        public const char CR = (char)13;
+        public const char LF = (char)10;
+        public const string CRLF = "\r\n";
+
+        public static string CtrlToText(string s)
+        {
+            string d = s.Replace(CRLF, "\\n");
+            d = d.Replace(LF.ToString(), "\\n");
+            d = d.Replace(TAB, "\\t");
+            return d;
+        }
+
+        public static string TextToCtrl(string s)
+        {
+            string d = s.Replace("\\n", CRLF);
+            d = d.Replace("\\t", TAB);
+            d = d.Replace("'", "''");
+            return d;
+        }
+        //------------------------------
+        public static Literal AddLiteral(PlaceHolder ph, string literal)
+        {
+            Literal lt = new Literal();
+            lt.Text = literal;
+            ph.Controls.Add(lt);
+            return lt;
+        }
+
+        public static void AddControl(PlaceHolder ph, string literalBefore, Control c, string literalAfter)
+        {
+            if (!String.IsNullOrEmpty(literalBefore))
+                AddLiteral(ph, literalBefore);
+            ph.Controls.Add(c);
+            if (!String.IsNullOrEmpty(literalAfter))
+                AddLiteral(ph, literalAfter);
+        }
+        //---------------------------------------------------
+        public const char LineParamSeparator = '|';
+
+        public static string[] ResizeStringArray(ref string[] sArray, int newSize)
+        {
+            int oldSize = sArray.Length;
+            string[] newArray = new string[newSize];
+            int size = System.Math.Min(oldSize, newSize);
+            if (size > 0)
+                System.Array.Copy(sArray, newArray, size);
+            sArray = newArray;
+            return sArray;
+        }
+
+        public static string SetLineParam(ref string lineParam, int no, string value)  // no: 0..
+        {
+            if (lineParam == null) lineParam = "";
+            string[] values = lineParam.Split(LineParamSeparator);
+            if (no >= 0)
+            {
+                if (no >= values.Length)
+                    ResizeStringArray(ref values, no + 1);
+                values[no] = value;
+                lineParam = String.Join(LineParamSeparator.ToString(), values);
+            }
+            return lineParam;
+        }
+
+        public static string SetLineParams(int count, string p1, string p2, string p3, string p4, string p5, string p6)
+        {
+            string[] values = new string[count];
+            if (0 < count) values[0] = p1;
+            if (1 < count) values[1] = p2;
+            if (2 < count) values[2] = p3;
+            if (3 < count) values[3] = p4;
+            if (4 < count) values[4] = p5;
+            if (5 < count) values[5] = p6;
+            return String.Join(LineParamSeparator.ToString(), values);
+        }
+
+        public static string GetLineParam(string lineParam, int no)  // 0, 1, ...
+        {
+            string[] values = lineParam.Split(LineParamSeparator);
+            if (no >= 0 && no < values.Length)
+                return values[no];
+            else
+                return null;
+        }
+
+        public static void GetLineParams(string lineParam, out string p1, out string p2, out string p3, out string p4, out string p5, out string p6)
+        {
+            string[] values = lineParam.Split(LineParamSeparator);
+            int count = values.Length;
+            if (0 < count) p1 = values[0]; else p1 = null;
+            if (1 < count) p2 = values[1]; else p2 = null;
+            if (2 < count) p3 = values[2]; else p3 = null;
+            if (3 < count) p4 = values[3]; else p4 = null;
+            if (4 < count) p5 = values[4]; else p5 = null;
+            if (5 < count) p6 = values[5]; else p6 = null;
+        }
+
+        public static void GetLineParams(string lineParam, out string p1, out string p2)
+        {
+            string[] values = lineParam.Split(LineParamSeparator);
+            int count = values.Length;
+            if (0 < count) p1 = values[0]; else p1 = null;
+            if (1 < count) p2 = values[1]; else p2 = null;
+        }
+
+        public static void GetLineParams(string lineParam, out string p1, out string p2, out string p3)
+        {
+            string[] values = lineParam.Split(LineParamSeparator);
+            int count = values.Length;
+            if (0 < count) p1 = values[0]; else p1 = null;
+            if (1 < count) p2 = values[1]; else p2 = null;
+            if (2 < count) p3 = values[2]; else p3 = null;
+        }        
+        //----------------------------------------------
+        public static string GetPostBackControlName(bool clientID)
+        {
+            Page page = HttpContext.Current.Handler as Page;
+
+            Control control = null;
+            //first we will check the "__EVENTTARGET" because if post back made by       the controls 
+            //which used "_doPostBack" function also available in Request.Form collection. 
+            string ctrlname = page.Request.Params["__EVENTTARGET"];
+
+            if (ctrlname != null && ctrlname != String.Empty)
+            {
+                control = page.FindControl(ctrlname);
+            }
+            // if __EVENTTARGET is null, the control is a button type and we need to 
+            // iterate over the form collection to find it
+            else
+            {
+                string ctrlStr = String.Empty;
+                Control c = null;
+                foreach (string ctl in page.Request.Form)
+                {
+                    //handle ImageButton they having an additional "quasi-property" in their Id which identifies 
+                    //mouse x and y coordinates
+                    if (ctl.EndsWith(".x") || ctl.EndsWith(".y"))
+                    {
+                        ctrlStr = ctl.Substring(0, ctl.Length - 2);
+                        c = page.FindControl(ctrlStr);
+                    }
+                    else
+                    {
+                        c = page.FindControl(ctl);
+                    }
+                    if (c is System.Web.UI.WebControls.Button ||
+                             c is System.Web.UI.WebControls.ImageButton)
+                    {
+                        control = c;
+                        break;
+                    }
+                }
+            }
+            if (control == null)
+                return null;
+            else
+                return clientID ? control.ClientID : control.ID;
+        }
+        //----------------------------------------------
+        public static void Redirect(string form, string par1, string par2, string par3, string par4, string par5)
+        {
+            HttpContext.Current.Items["__p1"] = par1;
+            HttpContext.Current.Items["__p2"] = par2;
+            HttpContext.Current.Items["__p3"] = par3;
+            HttpContext.Current.Items["__p4"] = par4;
+            HttpContext.Current.Items["__p5"] = par5;
+            HttpContext.Current.Server.Transfer(form, false);  // false domyslna - czyscimy formatkę - nie wiem jeszcze jakie różnice, z true nie było zbytniej różnicy
+        }
+
+        public static void ShowModal(string form, string winparams, string par1, string par2, string par3, string par4, string par5)
+        {
+            HttpContext.Current.Items["__p1"] = par1;
+            HttpContext.Current.Items["__p2"] = par2;
+            HttpContext.Current.Items["__p3"] = par3;
+            HttpContext.Current.Items["__p4"] = par4;
+            HttpContext.Current.Items["__p5"] = par5;
+            //ExecOnStart("showModal", form);
+        }
+
+        // pobiera z Items - wywoływać w !PostBack bo znikają ... 
+        public static string GetParam(int no)   //1..
+        {
+            return (string)HttpContext.Current.Items["__p" + no.ToString()];
+        }
+
+        // wywołać koniecznie w Page_Load !IsPostBack, przepisuje parametry do Viewstate zeby nie zniknęły
+        public static void CatchParams(StateBag ViewState)      // System.Web.UI.StateBag
+        {
+            for (int i = 1; i <= 5; i++)
+            {
+                string id = "__p" + i.ToString();
+                ViewState[id] = HttpContext.Current.Items[id];
+            }
+        }
+
+        // jak wywołamy CatchParams to tą funkcją dostajemy się do parametrów w dowolym czasie bo sa już w ViewState
+        public static string GetParam(StateBag ViewState, int no)   //1..
+        {
+            return (string)ViewState["__p" + no.ToString()];
+        }
+        //-----------------------------------------------------
+        public static int GetViewStateInt(object vs, int def)
+        {
+            if (vs == null) return def;
+            else return (int)vs;
+        }
+
+        public static bool GetViewStateBool(object vs, bool def)
+        {
+            if (vs == null) return def;
+            else return (bool)vs;
+        }
+
+        public static string GetViewStateStr(object vs)
+        {
+            if (vs == null) return "";  // nie null !!!
+            else return (string)vs;
+        }
+
+        public static double GetViewStateDouble(object vs, double def)
+        {
+            if (vs == null) return def;
+            else return (double)vs;
+        }
+        //-----------------------------------------------------
+        public static void MakeBackButton(Button bt)
+        {
+            bt.Attributes.Add("onClick", "javascript:history.back(); return false;");
+        }
+
+        public static void MakeRedirectButton(Button bt, string url)
+        {
+            bt.Attributes.Add("onClick", "javascript:window.location='" + url + "'; return false;");
+        }
+
+        public static void MakeConfirmButton(Button bt, string question)
+        {
+            if (String.IsNullOrEmpty(question))
+                bt.Attributes.Remove("onClick");
+            else
+                bt.Attributes.Add("onClick", "javascript:return confirm('" + question + "');");
+        }
+
+        public static void MakeConfirmButton2(Button bt, string question)  // wymaga podania question w '' ale mozna np wplesc w to jquery zapytanie o wartość ;)
+        {
+            if (String.IsNullOrEmpty(question))
+                bt.Attributes.Remove("onClick");
+            else
+                bt.Attributes.Add("onClick", "javascript:return confirm(" + question + ");");
+        }
+
+        public static void MakeInfoButton(Button bt, string info)
+        {
+            if (String.IsNullOrEmpty(info))
+                bt.Attributes.Remove("onClick");
+            else
+                bt.Attributes.Add("onClick", "javascript:alert('" + info + "');return false;");
+        }
+
+        public static void MakeButton(Button bt, string script)
+        {
+            if (String.IsNullOrEmpty(script))
+                bt.Attributes.Remove("onClick");
+            else
+                bt.Attributes.Add("onClick", script);
+        }
+
+        public static void MakeConfirmButton(Button bt, string question1, string question2)
+        {
+            if (String.IsNullOrEmpty(question1))
+                bt.Attributes.Remove("onClick");
+            else
+                //bt.Attributes.Add("onClick", "javascript:return confirm('" + question1 + "') && confirm('" + question2 + "');");
+                bt.Attributes.Add("onClick", "javascript:if (confirm('" + question1 + "')) return confirm('" + question2 + "'); else return false;");
+        }
+
+        public static void MakeConfirmDeleteRecordButton(Button bt)
+        {
+            MakeConfirmButton(bt, "Potwierdzasz usunięcie rekordu danych ?");
+        }
+
+        public static void MakeConfirmDeleteRecordButton(Control cnt, string btname)
+        {
+            Button bt = (Button)cnt.FindControl(btname);
+            if (bt != null) MakeConfirmDeleteRecordButton(bt);
+        }
+        //------
+        public static void FixMultiLineMaxLen(TextBox tb)
+        {
+            if (tb.TextMode == TextBoxMode.MultiLine && tb.MaxLength > 0)
+            {
+                tb.Attributes.Add("onkeypress", "return isMaxLen(this, " + tb.MaxLength + ");");
+                //tb.Attributes.Add("onchange", "cutMaxLen(this, " + tb.MaxLength + ");");
+                tb.Attributes.Add("onpaste", "cutMaxLen(this, " + tb.MaxLength + ");");
+                tb.Attributes.Add("onblur", "return checkMaxLen(this, " + tb.MaxLength + ");");
+            }
+        }
+
+        //------
+        // RegisterClientStartupScript - umieszcza po tagu <form> - cz. na początku strony
+        // RegisterStartupScript - umieszcza przed tagiem </form> - cz. na końcu strony
+
+        public static void ShowMessage(string msg)
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            ScriptManager.RegisterStartupScript(page, typeof(Page), "alert",
+                "alert('" + msg + "');", true);
+        }
+
+        public static void ShowMessages(string msg1, string msg2)
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            ScriptManager.RegisterStartupScript(page, typeof(Page), "alert2",
+                "alert('" + msg1 + "');alert('" + msg2 + "');", true);
+        }
+
+        public static void ShowMessage(string msgfmt, params object[] parlist)
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            ScriptManager.RegisterStartupScript(page, typeof(Page), "alert",
+                "alert('" + String.Format(msgfmt, parlist) + "');", true);
+        }
+
+        public static void ShowMessage(Control cnt, string msg) // dla ajaxa zalecają przekazac update panel bo moze czasem nie dzialac ale nie zauwazylem
+        {
+            ScriptManager.RegisterStartupScript(cnt, typeof(Page), "alert",
+                "alert('" + msg + "');", true);
+        }
+
+        public static void ExecOnStart(string funcName)   // nazwa funkcji bez () i ;
+        {
+            ExecOnStart(funcName, "");
+        }
+
+        public static void ExecOnStart(string funcName, string par)   // lista parametrów oddzielona , tekst, który będzie wpisany w javascript
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            ScriptManager.RegisterStartupScript(page, typeof(Page), funcName,
+                funcName + "(" + par + ");", true);
+        }
+
+        /*
+        public static void ExecOnStartExist(string funcName, string par)   // lista parametrów oddzielona , tekst, który będzie wpisany w javascript
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            ClientScriptManager sm = page.ClientScript;
+            if (sm.IsStartupScriptRegistered(funcName))
+                sm.
+
+
+            ScriptManager.RegisterStartupScript(page, typeof(Page), funcName,
+                funcName + "(" + par + ");", true);
+        }
+        */
+
+
+
+        public static void ExecOnStart(Control cnt, string funcName)  // dla ajaxa zalecają przekazac update panel bo moze czasem nie dzialac ale nie zauwazylem
+        {
+            ScriptManager.RegisterStartupScript(cnt, typeof(Page), funcName,
+                funcName + "();", true);
+        }
+
+        public static void ExecOnStart(Control cnt, string funcName, string par)  // dla ajaxa zalecają przekazac update panel bo moze czasem nie dzialac ale nie zauwazylem
+        {
+            ScriptManager.RegisterStartupScript(cnt, typeof(Page), funcName,
+                funcName + "(" + par + ");", true);
+        }
+
+        public static void ExecOnStart2(string scname, string script)   // scname np "script1" ale powinno to być unikane
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            ScriptManager.RegisterStartupScript(page, typeof(Page), scname, script, true);
+            //page.ClientScript.RegisterStartupScript(typeof(Page), scname, script, true);  nie działa
+        }
+        //------------------
+        public static void Back()
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            ScriptManager.RegisterStartupScript(page, typeof(Page), "back",
+                "history.back();", true);
+        }
+
+        public static void GoTo(string a_name)  // a_name bez # na początku !!!
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            ScriptManager.RegisterStartupScript(page, typeof(Page), "goto",
+                //"document.location.href('#" + a_name + "');"
+
+                "window.navigate('#" + a_name + "');"
+
+                , true);
+        }
+
+        public static void GoTo(Control c, string a_name)  // a_name bez # na początku !!!
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            ScriptManager.RegisterStartupScript(c, typeof(Page), "goto",
+                //"document.location.href('#" + a_name + "');"
+
+                "window.navigate('#" + a_name + "');"
+
+                , true);
+        }
+
+        public static void HideLabelAfter(Label label, int delayms)
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            ScriptManager.RegisterStartupScript(page, typeof(Page), "hideLabel",
+                //"setTimeout(\"test()\", " + delayms.ToString() + ");"
+                "setTimeout(function() {var lb = document.getElementById('" + label.ClientID + "'); if (lb != null) {lb.style.display = 'none'; lb.value = '';}}, " + delayms.ToString() + ");"
+                , true);
+        }
+
+        public static void x_HideListViewControls(ListView lv, string tbName, bool hide)
+        {
+            HtmlTable tb = (HtmlTable)lv.FindControl(tbName);
+            if (tb != null)
+                tb.Attributes["class"] = hide ? "HideControl" : null;
+        }
+
+        public static void HideControls(ListView lv, string hideClass)
+        {
+            HtmlTable tb = (HtmlTable)lv.FindControl("itemPlaceholderContainer");
+            if (tb != null)
+            {
+                if (String.IsNullOrEmpty(hideClass))
+                    hideClass = "HideControl";   // domyslna
+                if (String.IsNullOrEmpty(tb.Attributes["class"]))
+                    tb.Attributes["class"] = hideClass;
+                else
+                    tb.Attributes["class"] += " " + hideClass;
+            }
+        }
+
+        public static Control SetControlVisible(Control item, string cntName, bool fVisible)
+        {
+            Control c = item.FindControl(cntName);
+            if (c != null)
+                c.Visible = fVisible;
+            return c;
+        }
+        
+        /*
+        public static Control SetControlVisible(ListViewItem item, string cntName, bool fVisible)
+        {
+            Control c = item.FindControl(cntName);
+            if (c != null)
+                c.Visible = fVisible;
+            return c;
+        }
+        /*
+        public static Control SetControlVisible(ListView lv, string cntName, bool fVisible)
+        {
+            Control c = lv.FindControl(cntName);
+            if (c != null)
+                c.Visible = fVisible;
+            return c;
+        }
+        */
+
+        public static WebControl SetControlEnabled(ListView lv, string cntName, bool fEnabled)
+        {
+            WebControl c = (WebControl)lv.FindControl(cntName);
+            if (c != null)
+                c.Enabled = fEnabled;
+            return c;
+        }
+        //------------------
+        public static bool FindTextBox(Control item, string name, out TextBox tb)
+        {
+            tb = (TextBox)item.FindControl(name);
+            return tb != null;
+        }
+        //------------------
+        public static Label FindLabel(Control item, string name)
+        {
+            return (Label)item.FindControl(name);
+        }
+
+        public static TextBox FindTextBox(Control item, string name)
+        {
+            return (TextBox)item.FindControl(name);
+        }
+
+        public static CheckBox FindCheckBox(Control item, string name)
+        {
+            return (CheckBox)item.FindControl(name);
+        }
+
+        public static DropDownList FindDropDownList(Control item, string name)
+        {
+            return (DropDownList)item.FindControl(name);
+        }
+
+        public static bool FindDropDownList(Control item, string name, out DropDownList ddl)
+        {
+            ddl = (DropDownList)item.FindControl(name);
+            return ddl != null;
+        }
+        //------------------
+        public static Label SetText(Control item, string name, string text)
+        {
+            Label lb = (Label)item.FindControl(name);
+            if (lb != null) lb.Text = text;
+            return lb;
+        }
+
+        //------------------
+        public static int? GetDdlSelectedValueInt(Control item, string name)  // w Value są int
+        {
+            DropDownList ddl = (DropDownList)item.FindControl(name);
+            if (ddl != null)
+                if (!String.IsNullOrEmpty(ddl.SelectedValue))
+                    return Convert.ToInt32(ddl.SelectedValue);
+            return null;
+        }
+
+        public static string GetDdlSelectedValue(Control item, string name)  // w Value są int
+        {
+            DropDownList ddl = (DropDownList)item.FindControl(name);
+            if (ddl != null)
+                return ddl.SelectedValue;
+            return null;
+        }
+        //------------------
+        public static bool GetControlValue(Control c, out string value)
+        {
+            value = null;
+            if (c != null)
+            {
+                if (c is HiddenField) value = ((HiddenField)c).Value;
+                else if (c is TextBox) value = ((TextBox)c).Text;
+                else if (c is Label) value = ((Label)c).Text;
+                else return false;
+                return true;
+            }
+            return false;
+        }
+
+        public static bool GetControlValue(Control cnt, string cntName, out string value)  // e.Item i ListView 
+        {
+            Control c = cnt.FindControl(cntName);
+            return GetControlValue(c, out value);
+        }
+        /*
+        public static bool GetControlValue(ListView lv, string cntName, out string value)
+        {
+            Control c = lv.FindControl(cntName);
+            return GetControlValue(c, out value);
+        }
+        */
+        //------------------
+        public static void FillTime(DropDownList ddl, int start, int interval)   // od której godziny startujemy, z jakim interwałem [min]
+        {
+            if (interval <= 0) interval = 60;
+            int i = 60 / interval;
+            for (int h = 0; h < 24; h++)
+            {
+                for (int m = 0; m < i; m++)
+                {
+                    ListItem t = new ListItem(start.ToString("D2") + ":" + (m * interval).ToString("D2"));
+                    ddl.Items.Add(t);
+                }
+                if (start == 23) start = 0;
+                else start++;
+            }
+        }
+        //-------------------------
+        public static int GetDaysCount(DateTime d1, DateTime d2)    // d2 > d1
+        {
+            TimeSpan dd = d2.Date.Subtract(d1.Date);
+            double d = dd.TotalDays + 1;   // od 10 do 10 to jest 1 dzień
+            int i = Convert.ToInt32(d);
+            if (i <= 0) return 0;
+            else return i;
+        }
+
+        public static DateTime bom(DateTime dt)
+        {
+            return dt.AddDays(-dt.Day + 1);
+        }
+
+        public static DateTime eom(DateTime dt)
+        {
+            return dt.AddDays(-dt.Day + 1).AddMonths(1).AddDays(-1);
+        }
+
+        public static DateTime StrToDateTime(string date, string time)
+        {
+            //DateTime dt = String.IsNullOrEmpty(date) ? DateTime.Today : DateTime.Parse(date);
+            DateTime dt = String.IsNullOrEmpty(date) ? Base.DateMinValue : DateTime.Parse(date);
+            TimeSpan ts = String.IsNullOrEmpty(time) ? TimeSpan.MinValue : TimeSpan.Parse(time);
+            return dt.Add(ts);
+        }
+        /*
+        private DateTime StrToDateTime(string date, string time)
+        {
+            DateTime dt = String.IsNullOrEmpty(date) ? DateTime.MinValue : DateTime.Parse(date);
+            TimeSpan ts = String.IsNullOrEmpty(time) ? TimeSpan.MinValue : TimeSpan.Parse(time);
+            return dt.Add(ts);
+        }
+        */
+
+        public static string DateFriendlyName(int typ, DateTime dt)
+        {
+            switch (typ)
+            {
+                default:
+                case 1:
+                    return Tools.MonthName[dt.Month] + " '" + dt.Year.ToString();
+            }
+        }
+
+        //----------------------------------------------------------------------------------------
+        // p = HttpContext.Current.Request.Url.AbsoluteUri; zwraca pełną ścieżkę jak poniżej z nazwą formatki - tez monaz wykorzystać
+
+        public static string PrepareHostAddr(string addr)
+        {
+            string laddr = addr.ToLower();
+            if (!laddr.EndsWith(".aspx") && !laddr.EndsWith(".html"))  // jak nazwa strony to nie ruszam
+                if (!addr.EndsWith("/"))            // jak nie to dokładam / na końcu
+                    addr += "/";
+            return addr;
+        }
+
+        public static string AddrSetPage(string addr, string page)
+        {
+            string laddr = addr.ToLower();
+            if (laddr.EndsWith(".aspx") || laddr.EndsWith(".html"))
+            {
+                int idx = addr.LastIndexOf('/');
+                if (idx > 0)
+                    addr.Remove(idx);
+            }
+            if (addr.EndsWith("/"))
+                return addr + page;
+            else
+                return addr + "/" + page;
+        }
+
+        public static string GetHostAppAddr()  // http://host:port/path/ z / na koncu, ale uwaga - takie jak wpisano w poasek adresu cz. np nazwa komputera lub nr ip
+        {
+            HttpContext context = HttpContext.Current;
+            if (context != null)     //Checking the current context content
+            {
+                string path;         //Formatting the fully qualified website url/name
+                path = string.Format("{0}://{1}{2}{3}",
+                    context.Request.Url.Scheme,
+                    context.Request.Url.Host,
+                    context.Request.Url.Port == 80 ? string.Empty : ":" + context.Request.Url.Port.ToString(),
+                    context.Request.ApplicationPath);
+                if (!path.EndsWith("/")) path += "/";
+                return path;
+            }
+            else return null;
+        }
+
+        /*
+        public static string GetAppAddr2(string page)  // http://host:port/path/ z / na koncu, ale uwaga - takie jak wpisano w poasek adresu cz. np nazwa komputera lub nr ip
+        {
+            Ustawienia settings = Ustawienia.CreateOrGetSession();
+            string addr = settings.AppAddr;
+            if (String.IsNullOrEmpty(addr))
+                addr = GetHostAppAddr();
+            if (!String.IsNullOrEmpty(page))
+                addr = AddrSetPage(addr, page);
+            return addr;
+        }
+        */
+        public static string GetAppPath()  // z bs na końciu
+        {
+            return GetAppPath(null);
+        }
+
+        public static string GetAppPath(string FileName)
+        {
+            HttpContext context = HttpContext.Current;
+            if (context != null)
+            {
+                string path = context.Request.PhysicalPath;
+                return path.Substring(0, path.LastIndexOf("\\") + 1) + FileName;
+            }
+            else return null;
+        }
+
+        public static string GetAppVersion()    // wersja - Properties.AssemblyInfo.cs -> AssemblyVersion
+        {
+            //return typeof(PRPMasterPage).Assembly.GetName().Version.ToString();
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            return assembly.GetName().Version.ToString();  
+        }
+
+        public static string GetAppName()       // nazwa - Properties.AssemblyInfo.cs -> AssemblyTitle
+        {
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            object[] attributes = assembly.GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+            if (attributes.Length == 1)
+                return ((AssemblyTitleAttribute) attributes[0]).Title;
+            else
+                return null;
+        }
+        //------------------------------------------------------------------------------
+        private const string sesExp = "sesExp";
+
+        public static void InitSessionExpired()     // powinna być wywołana w !IsPostBack w Page_Init w master page
+        {
+            HttpContext.Current.Session[sesExp] = sesExp;
+        }
+
+        public static bool IsSessionExpired()
+        {
+            return HttpContext.Current.Session[sesExp] == null;
+        }
+
+        public static void CheckSessionExpired()    // wywoływać w IsPostBack w PageInit w formatkach (Ankieta)
+        {
+            if (IsSessionExpired())
+            {
+                Exception ex = new Exception("Sesja wygasła");
+                HttpContext.Current.Session.RemoveAll();
+                throw ex;
+            }
+        }
+        //----------------------------------------------------------------------------
+        public static void SetNoCache()
+        {
+            HttpContext.Current.Response.AppendHeader("Cache-Control", "no-store");
+            /*
+            //HttpCachePolicy.SetNoStore(); 
+
+            HttpContext.Current.Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1));
+            HttpContext.Current.Response.Cache.SetValidUntilExpires(false);
+            HttpContext.Current.Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
+            HttpContext.Current.Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            HttpContext.Current.Response.Cache.SetNoStore();
+            */ 
+        }
+
+        public static void EnableUpload()
+        {
+            Page page = HttpContext.Current.Handler as Page;
+            page.Form.Attributes.Add("enctype", "multipart/form-data");  // ponieważ mamy FileUpload1 na formatce to musze to dodać bo za pierwszym razem nie widzi wpisanego pliku
+        }
+
+        //-----------------------------------------------------------------------------
+        public static void Delay(int ms)
+        {
+            System.Threading.Thread.Sleep(ms);
+        }
+
+        public static string UniqueId()
+        {
+            string d = DateTime.Now.ToString("u");
+            return d.Replace("-", "").Replace(".", "").Replace(":", "").Replace(" ","");
+        }
+        //----------------------------------------------------------------------------
+        public const int lbADDLAST = 1;
+        public const int lbADDFIRST = 2;
+        public const int lbADDSORT = 3;
+
+        public static int MoveListItem(ListBox lbFrom, ListBox lbTo, int add)
+        {
+            int[] sel = lbFrom.GetSelectedIndices();
+            int cnt = sel.Count();
+            if (cnt == 0) return -1;    // nic nie jest zaznaczone
+            else
+            {
+                lbTo.ClearSelection();
+                int idx = -1;
+                int idx2;
+                switch (add)
+                {
+                    case lbADDFIRST:
+                        idx2 = 0;
+                        for (int i = sel.Count() - 1; i >= 0; i--)
+                        {
+                            ListItem li1 = lbFrom.Items[sel[i]];
+                            string st = li1.Text;
+                            ListItem li = lbTo.Items.FindByText(st);
+                            if (li == null)
+                            {
+                                ListItem li2 = new ListItem(st);
+                                li2.Selected = true;
+                                lbTo.Items.Insert(idx2++, li2);
+                            }
+                            else
+                            {
+                                li.Selected = true;
+                                if (idx == -1)
+                                    idx = lbTo.Items.IndexOf(li);
+                            }
+                            lbFrom.Items.Remove(li1);
+                        }
+                        break;
+                    case lbADDLAST:
+                        idx2 = lbTo.Items.Count;
+                        for (int i = sel.Count() - 1; i >= 0; i--)
+                        {
+                            ListItem li1 = lbFrom.Items[sel[i]];
+                            string st = lbFrom.Items[sel[i]].Text;
+                            ListItem li = lbTo.Items.FindByText(st);
+                            if (li == null)
+                            {
+                                ListItem li2 = new ListItem(st);
+                                li2.Selected = true;
+                                lbTo.Items.Insert(idx2, li2);
+                            }
+                            else
+                            {
+                                li.Selected = true;
+                                if (idx == -1)
+                                    idx = lbTo.Items.IndexOf(li);
+                            }
+                            lbFrom.Items.Remove(li1);
+                        }
+                        break;
+                    case lbADDSORT:  // na razie nie ma
+                        break;
+                }
+                return 0;
+            }
+        }
+
+        public static int MoveListItem1(ListBox lbFrom, ListBox lbTo, int add)
+        {
+            if (lbFrom.SelectedIndex == -1) return -1;
+            else
+            {
+                ListItem li = lbTo.Items.FindByText(lbFrom.SelectedItem.Text);
+                if (li != null) return lbTo.Items.IndexOf(li);
+                else
+                {
+                    switch (add)
+                    {
+                        case lbADDFIRST:
+                            lbTo.Items.Insert(0, lbFrom.SelectedItem.Text);
+                            lbTo.SelectedIndex = 0;
+                            break;
+                        case lbADDLAST:
+                            lbTo.Items.Add(lbFrom.SelectedItem.Text);
+                            lbTo.SelectedIndex = lbTo.Items.Count - 1;
+                            break;
+                        case lbADDSORT:
+                            bool b = false;
+                            for (int idx = 0; idx < lbTo.Items.Count; idx++)
+                                if (lbTo.Items[idx].Text.CompareTo(lbFrom.SelectedItem.Text) > 0)
+                                {
+                                    lbTo.Items.Insert(idx, lbFrom.SelectedItem.Text);
+                                    lbTo.SelectedIndex = idx;
+                                    b = true;
+                                }
+                            if (!b)
+                            {
+                                lbTo.Items.Add(lbFrom.SelectedItem.Text);
+                                lbTo.SelectedIndex = lbTo.Items.Count - 1;
+                            }
+                            break;
+                    }
+                    lbFrom.Items.Remove(lbFrom.SelectedItem);
+                    return 0;
+                }
+            }
+        }
+        //----------------------------------------------
+        public static void CollapseDepth1(TreeView tv)
+        {
+            tv.CollapseAll();
+            for (int i = 0; i < tv.Nodes.Count; i++)
+                tv.Nodes[i].Expand();
+        }
+
+        public static int SelectMenu(Menu menu, string selValue)
+        {
+            for (int i = 0; i < menu.Items.Count; i++)
+                if (menu.Items[i].Value == selValue)
+                {
+                    menu.Items[i].Selected = true;
+                    return i;
+                }
+            return -1;
+        }
+
+        public static int SelectMenu(Menu menu, string selValue, string sesId)  // ustawia w Sesji sesId zeby mogl do tego wrócić jak selValue = null (np main menu -> raporty -> zoom)
+        {
+            if (String.IsNullOrEmpty(selValue))
+                selValue = (string)HttpContext.Current.Session[sesId];
+            for (int i = 0; i < menu.Items.Count; i++)
+                if (menu.Items[i].Value == selValue)
+                {
+                    menu.Items[i].Selected = true;
+                    HttpContext.Current.Session[sesId] = selValue;
+                    return i;
+                }
+            return -1;
+        }
+
+        public static int SelectMenu(Menu menu, string selValue, int defIndex)
+        {
+            int mn = SelectMenu(menu, selValue);
+            if (mn == -1)
+                if (defIndex >= 0 && defIndex < menu.Items.Count)
+                {
+                    menu.Items[defIndex].Selected = true;
+                    mn = defIndex;
+                }
+            return mn;
+        }
+
+        public static int SelectMenuFromSession(Menu menu, string sesId)
+        {
+            string s = (string)HttpContext.Current.Session[sesId];
+            if (String.IsNullOrEmpty(s))
+            {
+                menu.Items[0].Selected = true;   // zakładam ze jest choć jedna pozycja
+                return 0;
+            }
+            else
+                return SelectMenu(menu, s);
+        }
+        //----------------------------------------------
+        public static void SetError(Label lb, string msg)
+        {
+            if (String.IsNullOrEmpty(msg))
+            {
+                lb.Text = null;
+                lb.Visible = false;
+            }
+            else
+            {
+                lb.Text = msg;
+                lb.Visible = true;
+            }
+        }
+
+        public static bool SetErrorMarker(Label lb, bool error)
+        {
+            lb.ForeColor = error ? warnColor : Color.Black;
+            return error;
+        }
+        /*
+        public static bool DateOk(string date)
+        {
+            try
+            {
+                //Convert.ToDateTime(date);
+                //string s = Base.getScalar("select CONVERT(datetime," + Base.strParam(date) + ",20)");
+                if (String.IsNullOrEmpty(date.Trim()))
+                    return false;
+                else
+                {
+                    string s = Base.getScalar("select " + Base.sqlGetDateAsDateTime(Base.strParam(date)));
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        */
+        public static bool DateOk(string date)
+        {
+            DateTime d;
+            return DateOk(date, out d);
+        }
+
+        public static bool DateOk(string date, out DateTime d)
+        {
+            d = DateTime.MinValue;
+            try
+            {
+                //Convert.ToDateTime(date);
+                //string s = Base.getScalar("select CONVERT(datetime," + Base.strParam(date) + ",20)");
+                if (String.IsNullOrEmpty(date.Trim()))
+                    return false;
+                else
+                {
+                    string s = Base.getScalar("select " + Base.sqlGetDateAsDateTime(Base.strParam(date)));
+                    if (DateTime.TryParse(s, out d))
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool IntOk(string value)
+        {
+            try
+            {
+                Int32.Parse(value);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool IntOk(string value, int min, int max)
+        {
+            try
+            {
+                int i = Int32.Parse(value);
+                return min <= i && i <= max;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool CurrencyOk(string value)
+        {
+            try
+            {
+                double d = Double.Parse(value);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        //-------------------
+        public static void SetReadOnly(TextBox tb, bool fEdit)
+        {
+            tb.Visible = true;
+            tb.ReadOnly = !fEdit;
+            if (fEdit)
+                RemoveClass(tb, "readonly");
+            else
+                AddClass(tb, "readonly");
+        }
+
+        public static void SetEdit(TextBox tb, bool fEdit)
+        {
+            tb.Visible = true;
+            tb.ReadOnly = !fEdit;
+            if (fEdit)
+                tb.CssClass = "textbox editable";
+            else
+                tb.CssClass = "textbox readonly";
+        }
+        //-------------------
+        /*
+        public static bool AddClass(WebControl cnt, string css)
+        {
+            string c = cnt.Attributes["class"].ToLower();
+            if (c.IndexOf(css.ToLower()) == -1)     // nie ma 
+            {
+                cnt.Attributes["class"] += String.IsNullOrEmpty(c) ? css : (" " + css);
+                return false;
+            }
+            else              
+                return true;                        // klasa już była
+        }
+
+        public static bool RemoveClass(WebControl cnt, string css)
+        {
+            string c = cnt.Attributes["class"].ToLower();
+            if (c.IndexOf(css.ToLower()) == -1)     // nie ma 
+                return false;
+            else
+            {
+                c = cnt.Attributes["class"].Replace(css, "");
+                return true;
+            }
+        }
+         */
+        public static void AddClass(HtmlControl cnt, string css)
+        {
+            string c = cnt.Attributes["class"];
+            if (String.IsNullOrEmpty(c))
+                cnt.Attributes["class"] = css;
+            else
+            {
+                string[] ca = c.ToLower().Split(' ');
+                if (!ca.Contains(css.ToLower()))
+                    cnt.Attributes["class"] += " " + css;
+            }
+        }
+
+        public static void AddClass(WebControl cnt, string css)
+        {
+            string c = cnt.Attributes["class"];
+            if (String.IsNullOrEmpty(c))
+                cnt.Attributes["class"] = css;
+            else
+            {
+                string[] ca = c.ToLower().Split(' ');
+                if (!ca.Contains(css.ToLower()))
+                    cnt.Attributes["class"] += " " + css;
+            }
+        }
+
+        public static void RemoveClass(HtmlControl cnt, string css)
+        {
+            string c = cnt.Attributes["class"];
+            if (!String.IsNullOrEmpty(c))
+                cnt.Attributes["class"] = c.Replace(css, "").Trim();
+        }
+
+        public static void RemoveClass(WebControl cnt, string css)
+        {
+            string c = cnt.Attributes["class"];
+            if (!String.IsNullOrEmpty(c))
+                cnt.Attributes["class"] = c.Replace(css, "").Trim();
+        }
+        //-------------------
+        public static int StrToInt(string value, int def)
+        {
+            int ret;
+            if (Int32.TryParse(value, out ret))
+                return ret;
+            else
+                return def;
+        }
+
+        public static DateTime? StrToDateTime(string value)
+        {
+            DateTime ret;
+            if (DateTime.TryParse(value, out ret))
+                return ret;
+            else
+                return null;
+        }
+
+        public static byte aSetBit(ref byte flag, byte bit, bool set)  // bits tez
+        {
+            if (set) flag = (byte)(flag | bit);
+            else flag = (byte)(flag & (byte)~bit);
+            return flag;
+        }
+
+        public static byte aSetBit(byte flag, byte bit, bool set)  // bits tez
+        {
+            if (set) flag = (byte)(flag | bit);
+            else flag = (byte)(flag & (byte)~bit);
+            return flag;
+        }
+
+        public static int aSetBit(ref int flag, int bit, bool set)  // bits tez
+        {
+            if (set) flag = flag | bit;
+            else flag = flag & ~bit;
+            return flag;
+        }
+
+        public static int aSetBit(int flag, int bit, bool set)  // bits tez
+        {
+            if (set) flag = flag | bit;
+            else flag = flag & ~bit;
+            return flag;
+        }
+         
+        //---------------------------------------------------
+        public static string StrRepeat(string str, int ntimes)
+        {
+            if (ntimes == 0 || String.IsNullOrEmpty(str))
+                return null;
+            else
+            {
+                string ret = null;
+                for (int i = 0; i < ntimes; i++)
+                    ret += str;
+                return ret;
+                //return String.Join("", Enumerable.Repeat(str, ntimes));
+                //return String.Concat(Enumerable.Repeat(str, ntimes));  wywala błąd
+            }
+        }
+
+        /*
+        public static class StringExtensions {     public static string Repeat(this string input, int count)     {         StringBuilder builder = new StringBuilder(             (input == null ? 0 : input.Length) * count);          for(int i = 0; i < count; i++) builder.Append(input);          return builder.ToString();     } }          
+         */
+        //---------------------------------------------------
+        public static string UnicodeToUtf8(string ustr)
+        {
+            byte[] buff = Encoding.Convert(Encoding.Unicode,
+                                           Encoding.UTF8,
+                                           Encoding.Unicode.GetBytes(ustr));
+            return Encoding.UTF8.GetString(buff);
+        }
+
+        public static string Utf8ToUnicode(string utf8)
+        {
+            byte[] buff = Encoding.Convert(Encoding.UTF8,
+                                           Encoding.Unicode,
+                                           Encoding.UTF8.GetBytes(utf8));
+            return Encoding.Unicode.GetString(buff);
+        }
+
+        public static string Cp1250ToUnicode(string cps)
+        {
+            Encoding cp1250 = Encoding.GetEncoding(1250);
+            byte[] buff = Encoding.Convert(cp1250,
+                                           Encoding.Unicode,
+                                           cp1250.GetBytes(cps));
+            return Encoding.Unicode.GetString(buff);
+        }
+
+        public static string UnicodeToCp1250(string us)  // sprawdzić!!!
+        {
+            Encoding unc = Encoding.Unicode;
+            byte[] buff = Encoding.Convert(unc,
+                                           Encoding.GetEncoding(1250),
+                                           unc.GetBytes(us));
+            return Encoding.GetEncoding(1250).GetString(buff);
+        }
+
+        /*
+        string unicodeString = "This string contains the unicode character Pi (\u03a0)";
+
+        // Create two different encodings.
+        Encoding ascii = Encoding.ASCII;
+        Encoding unicode = Encoding.Unicode;
+
+        // Convert the string into a byte array.
+        byte[] unicodeBytes = unicode.GetBytes(unicodeString);
+
+        // Perform the conversion from one encoding to the other.
+        byte[] asciiBytes = Encoding.Convert(unicode, ascii, unicodeBytes);
+
+        // Convert the new byte[] into a char[] and then into a string.
+        char[] asciiChars = new char[ascii.GetCharCount(asciiBytes, 0, asciiBytes.Length)];
+        ascii.GetChars(asciiBytes, 0, asciiBytes.Length, asciiChars, 0);
+        string asciiString = new string(asciiChars);
+
+        // Display the strings created before and after the conversion.
+        Console.WriteLine("Original string: {0}", unicodeString);
+        Console.WriteLine("Ascii converted string: {0}", asciiString);
+         */
+
+        //http://www.west-wind.com/weblog/posts/2007/Nov/28/Detecting-Text-Encoding-for-StreamReader
+        public static Encoding GetFileEncoding(string srcFile, Encoding def)
+        {
+            // *** Use Default of Encoding.Default (Ansi CodePage)
+            //Encoding enc = Encoding.Default;  // moze nie być 1250bo to sie na serwerze odpala
+            Encoding enc = def; 
+            // *** Detect byte order mark if any - otherwise assume default
+            byte[] buffer = new byte[5];
+            FileStream file = new FileStream(srcFile, FileMode.Open);
+            file.Read(buffer, 0, 5);
+            file.Close();
+            if (buffer[0] == 0xef && buffer[1] == 0xbb && buffer[2] == 0xbf)
+                enc = Encoding.UTF8;
+            else if (buffer[0] == 0xfe && buffer[1] == 0xff)
+                enc = Encoding.Unicode;
+            else if (buffer[0] == 0 && buffer[1] == 0 && buffer[2] == 0xfe && buffer[3] == 0xff)
+                enc = Encoding.UTF32;
+            else if (buffer[0] == 0x2b && buffer[1] == 0x2f && buffer[2] == 0x76)
+                enc = Encoding.UTF7;
+            return enc;
+        }
+
+        //------ IMPORT ------------------------------------------
+        public static string FirstUpper(string s)
+        {
+
+            bool u = true;
+            char[] chars = s.ToCharArray();
+            for (int i = 0; i < s.Length; i++)
+                if (u)
+                {
+                    char U = s.Substring(i, 1).ToUpper()[0];
+                    if (s.Substring(i, 1).ToLower()[0] != U)  // jest to litera!
+                    {
+                        chars[i] = U;
+                        u = false;
+                    }
+                }
+                else
+                    if (s.Substring(i, 1).ToLower() == s.Substring(i, 1).ToUpper())  // nie jest to litera!
+                        u = true;
+            return new string(chars);
+        }
+
+        public static string PrepareName(string s)
+        {
+
+            bool sp = true;
+            char[] chars = s.ToLower().ToCharArray();
+            for (int i = 0; i < s.Length; i++)
+                if (sp)
+                {
+                    if (chars[i] != ' ' && chars[i] != '-')
+                    {
+                        sp = false;
+                        chars[i] = chars[i].ToString().ToUpper()[0];
+                    }
+                }
+                else
+                    if (chars[i] == ' ' || chars[i] == '-')
+                        sp = true;
+            return new string(chars);
+        }
+
+        public static void GetNazwiskoImie(string NazwiskoImie, out string Nazwisko, out string Imie)
+        {
+            string s = NazwiskoImie.Trim();
+            int p = s.LastIndexOf(" ");
+            if (p > -1)
+            {
+                Nazwisko = FirstUpper(s.Substring(0, p).TrimEnd().ToLower());
+                Imie = FirstUpper(s.Substring(p + 1, s.Length - p - 1).TrimStart().ToLower());
+            }
+            else
+            {
+                Nazwisko = NazwiskoImie;
+                Imie = "";  // nie ustawiać null !!!
+            }
+        }
+
+        public static string PreparePhoneNo(string phone)
+        {
+            string p = phone.Replace(" ", "").Replace("+","").Replace("-","").Replace(".","");
+            if (p.Length >= 9)
+            {
+                p = p.Substring(p.Length - 9);
+                //p = p.Insert(5, " ");    //521234567
+                //p = p.Insert(2, " ");    //012345678
+                try
+                {
+                    p = String.Format("{0:## ### ####}", Convert.ToInt64(p)); //52 123 4567
+                }
+                catch (Exception ex)
+                {
+                    p = null;
+                }
+            }
+            return p;
+        }
+
+        //------------------------------------------------
+        public static string GetProperty(SearchResult searchResult, string PropertyName)
+        {
+            if (searchResult.Properties.Contains(PropertyName))
+                return searchResult.Properties[PropertyName][0].ToString();
+            else
+                return string.Empty;
+        }
+
+        //http://stackoverflow.com/questions/246520/how-do-i-find-a-users-active-directory-display-name-in-a-c-web-application
+
+
+
+
+
+        public static List<List<string>> GetADUsers(string adController, string Localization)
+        {
+            /*
+             * pobiera dane-znajduje po loginie
+             * -> nie ma to dopisuje: nazwisko, imie, login, mail 
+             * -> jest to aktualizauje jak wyzej jesli pole = '' 
+             */
+            //DirectoryEntry entry = new DirectoryEntry("LDAP://jgbdc01.corp.jabil.org");
+            //DirectoryEntry entry = new DirectoryEntry("LDAP://jgbdc01");
+
+
+            List<List<string>> AD = new List<List<string>>();
+            try
+            {
+                DirectoryEntry entry = new DirectoryEntry("LDAP://" + adController);
+
+                //entry.AuthenticationType = AuthenticationTypes.Secure; 
+
+                DirectorySearcher dSearch = new DirectorySearcher(entry);
+
+                //String Name = "Richmond";
+                //dSearch.Filter = "(&(objectClass=user)(l=" + Name + "))";
+                //dSearch.Filter = "(&(objectClass=user)(l=Bydgoszcz))";
+
+                //dSearch.Filter = "(&(objectClass=user)(l=" + Localization + "))";
+
+                dSearch.Filter = "(&(objectClass=user)(OU=JGSBydgoszcz))";
+                SearchResultCollection sr = dSearch.FindAll();
+
+                foreach (SearchResult sResultSet in sr)
+                {
+                    List<string> data = new List<string>();
+                    data.Add(GetProperty(sResultSet, "cn"));  //name
+                    data.Add(GetProperty(sResultSet, "sAMAccountName"));  // login
+                    data.Add(GetProperty(sResultSet, "mail"));  // mail 
+
+                    //string logindomain = GetProperty(sResultSet, "userPrincipalName");  // login@domain
+                    //string manager = GetProperty(sResultSet, "manager");
+
+                    data.Add(GetProperty(sResultSet, "givenName"));  //firstname
+                    data.Add(GetProperty(sResultSet, "SN"));    // lastanme
+
+                    AD.Add(data);
+                }
+
+                return AD;
+                //return sr.Count;
+            }
+            catch (Exception ex)
+            {
+                throw;      // tu zdaje sie i tak wywalał exception, którego nie dąło się ukryć ...
+                //return -1;
+            }
+
+            /*
+            // Login Name
+            Console.WriteLine(GetProperty(sResultSet, "cn"));
+            // First Name
+            Console.WriteLine(GetProperty(sResultSet, "givenName"));
+            // Middle Initials
+            Console.Write(GetProperty(sResultSet, "initials"));
+            // Last Name
+            Console.Write(GetProperty(sResultSet, "sn"));
+            // Address
+            string tempAddress = GetProperty(sResultSet, "homePostalAddress");
+            if (tempAddress != string.Empty)
+            {
+                string[] addressArray = tempAddress.Split(';');
+                string taddr1, taddr2;
+                taddr1 = addressArray[0];
+                Console.Write(taddr1);
+                taddr2 = addressArray[1];
+                Console.Write(taddr2);
+            }
+            // title
+            Console.Write(GetProperty(sResultSet, "title"));
+            // company
+            Console.Write(GetProperty(sResultSet, "company"));
+            //state
+            Console.Write(GetProperty(sResultSet, "st"));
+            //city
+            Console.Write(GetProperty(sResultSet, "l"));
+            //country
+            Console.Write(GetProperty(sResultSet, "co"));
+            //postal code
+            Console.Write(GetProperty(sResultSet, "postalCode"));
+            // telephonenumber
+            Console.Write(GetProperty(sResultSet, "telephoneNumber"));
+            //extention
+            Console.Write(GetProperty(sResultSet, "otherTelephone"));
+            //fax
+            Console.Write(GetProperty(sResultSet, "facsimileTelephoneNumber"));
+            // email address
+            Console.Write(GetProperty(sResultSet, "mail"));
+            // Challenge Question
+            Console.Write(GetProperty(sResultSet, "extensionAttribute1"));
+            // Challenge Response
+            Console.Write(GetProperty(sResultSet, "extensionAttribute2"));
+            //Member Company
+            Console.Write(GetProperty(sResultSet, "extensionAttribute3"));
+            // Company Relation ship Exits
+            Console.Write(GetProperty(sResultSet, "extensionAttribute4"));
+            //status
+            Console.Write(GetProperty(sResultSet, "extensionAttribute5"));
+            // Assigned Sales Person
+            Console.Write(GetProperty(sResultSet, "extensionAttribute6"));
+            // Accept T and C
+            Console.Write(GetProperty(sResultSet, "extensionAttribute7"));
+            // jobs
+            Console.Write(GetProperty(sResultSet, "extensionAttribute8"));
+            String tEamil = GetProperty(sResultSet, "extensionAttribute9");
+            // email over night
+            if (tEamil != string.Empty)
+            {
+                string em1, em2, em3;
+                string[] emailArray = tEmail.Split(';');
+                em1 = emailArray[0];
+                em2 = emailArray[1];
+                em3 = emailArray[2];
+                Console.Write(em1 + em2 + em3);
+            }
+            // email daily emerging market
+            Console.Write(GetProperty(sResultSet, "extensionAttribute10"));
+            // email daily corporate market
+            Console.Write(GetProperty(sResultSet, "extensionAttribute11"));
+            // AssetMgt Range
+            Console.Write(GetProperty(sResultSet, "extensionAttribute12"));
+            // date of account created
+            Console.Write(GetProperty(sResultSet, "whenCreated"));
+            // date of account changed
+            Console.Write(GetProperty(sResultSet, "whenChanged"));
+             */
+        }
+
+
+
+        //----------------------------------------------------------------------------------------
+        /* cos nie wychodzi, zwraca większy rozmiar
+        public static string ZipFile(string source, string dest)
+        {
+            FileStream sourceFile = File.OpenRead(source);
+            if (String.IsNullOrEmpty(dest))
+                dest = Path.ChangeExtension(source, ".zip");
+            FileStream destFile = File.Create(dest);
+            GZipStream compStream = new GZipStream(destFile, CompressionMode.Compress);
+            try
+            {
+                int theByte = sourceFile.ReadByte();
+                while (theByte != -1)
+                {
+                    compStream.WriteByte((byte)theByte);
+                    theByte = sourceFile.ReadByte();
+                }
+            }
+            finally
+            {
+                sourceFile.Close();
+                destFile.Close();
+
+                compStream.Dispose();
+            }
+            return dest;
+        }
+        */
+
+        public static string FileToGZip1(string source, string dest)
+        {
+            if (String.IsNullOrEmpty(dest))
+                dest = Path.ChangeExtension(source, ".zip");  // chociaż to powinno być .gz ale to nawet lepiej bo nie wszystko otworzy 7zip otwiera ...
+            FileStream fsSource = new FileStream(source, FileMode.Open, FileAccess.Read, FileShare.Read);
+            try
+            {
+                byte[] bufferWrite = new byte[fsSource.Length];
+                fsSource.Read(bufferWrite, 0, bufferWrite.Length);
+                FileStream fsDest = new FileStream(dest, FileMode.OpenOrCreate, FileAccess.Write);
+                try
+                {
+                    GZipStream gzCompressed = new GZipStream(fsDest, CompressionMode.Compress, true);
+                    try
+                    {
+                        gzCompressed.Write(bufferWrite, 0, bufferWrite.Length);
+                    }
+                    finally { gzCompressed.Close(); }
+                }
+                finally { fsDest.Close(); }
+            }
+            finally { fsSource.Close(); }
+            return dest;
+        }
+        //--------------------------------------------
+        static void CopyStream(Stream input, Stream output)
+        {
+            const int bufferSize = 4096;
+            int read;
+            byte[] buffer = new byte[bufferSize];
+            while ((read = input.Read(buffer, 0, buffer.Length)) > 0)
+                output.Write(buffer, 0, read);
+        }
+
+        public static string FileToGZip(string source, string dest)
+        {
+            if (String.IsNullOrEmpty(dest))
+                dest = Path.ChangeExtension(source, ".zip");  // chociaż to powinno być .gz ale to nawet lepiej bo nie wszystko otworzy 7zip otwiera ...
+            using (Stream input = File.OpenRead(source))
+            using (Stream output = File.OpenWrite(dest))
+            using (Stream gz = new NamedGZipStream(output, Path.GetFileName(source), true))
+                CopyStream(input, gz);
+            return dest;
+        }
+
+        public static MemoryStream FileToGZipStream(string source)
+        {
+            MemoryStream output = new MemoryStream();
+            using (Stream input = File.OpenRead(source))
+            using (Stream gz = new NamedGZipStream(output, Path.GetFileName(source), true))
+                CopyStream(input, gz);
+            output.Position = 0;
+            return output;
+        }
+
+        public static void GZipToFile(string source, string dest) // >>> przetestować !!!
+        {
+            using (Stream input = File.OpenRead(source))
+            using (Stream output = File.OpenWrite(dest))
+            using (Stream gz = new GZipStream(input, CompressionMode.Decompress, true))
+                CopyStream(gz, output);
+        }
+
+        public static MemoryStream GZipToStream(string source) // >>> przetestować !!!
+        {
+            MemoryStream output = new MemoryStream();
+
+            using (Stream input = File.OpenRead(source))
+            using (Stream gz = new GZipStream(input, CompressionMode.Decompress, true))
+                CopyStream(gz, output);
+
+            output.Position = 0;
+            return output;
+        }
+
+        //-------------------------------------------
+        public static bool GetDBBackup_1(out MemoryStream zip, out string zipname)  // plik .bak sie zapisuje a plik .zip tworzy w pamięci
+        {
+            string fname = Tools.GetAppPath(@"uploads\HR_PRP_" + DateTime.Today.ToString("yyyyMMdd") + ".bak");
+            File.Delete(fname);
+            Base.execSQL("backup database HR_PRP to disk = " + Base.strParam(fname));
+            FileInfo file = new FileInfo(fname);
+            if (file.Exists)
+            {
+                zipname = Path.ChangeExtension(Path.GetFileName(fname), ".zip");  // chociaż to powinno być .gz ale to nawet lepiej bo nie wszystko otworzy 7zip otwiera ...
+                zip = Tools.FileToGZipStream(fname);
+                return true;
+            }
+            else
+            {
+                zipname = null;
+                zip = null;
+                return false;
+            }
+        }
+
+        public static bool GetDBBackup(out MemoryStream zip, out string zipname)  // plik .bak sie zapisuje a plik .zip tworzy w pamięci
+        {
+            string fname = Tools.GetAppPath(@"uploads\HR_PRP_" + DateTime.Today.ToString("yyyyMMdd") + ".bak");
+            SqlConnection con = Base.Connect();
+            /*
+            Base.ToFile(con, fname, true, "Ankiety");
+            Base.ToFile(con, fname, false, "AnkietyDokumenty");
+            Base.ToFile(con, fname, false, "AnkietyOdpowiedzi");
+            Base.ToFile(con, fname, false, "AnkietyPytania");
+            Base.ToFile(con, fname, false, "AnkietySkalaOcen");
+            Base.ToFile(con, fname, false, "Informacje");
+            Base.ToFile(con, fname, false, "Log");
+            Base.ToFile(con, fname, false, "Mailing");
+            Base.ToFile(con, fname, false, "Monity");
+            Base.ToFile(con, fname, false, "Notes");
+            Base.ToFile(con, fname, false, "Pracownicy");
+            Base.ToFile(con, fname, false, "Programy");
+            Base.ToFile(con, fname, false, "Stanowiska");
+            Base.ToFile(con, fname, false, "Szkolenia");
+            Base.ToFile(con, fname, false, "SzkoleniaGrupy");
+            Base.ToFile(con, fname, false, "Ustawienia");
+             */
+            Base.Disconnect(con);
+            FileInfo file = new FileInfo(fname);
+            if (file.Exists)
+            {
+                zipname = Path.ChangeExtension(Path.GetFileName(fname), ".zip.txt");  // chociaż to powinno być .gz ale to nawet lepiej bo nie wszystko otworzy 7zip otwiera ...
+                zip = FileToGZipStream(fname);
+                return true;
+            }
+            else
+            {
+                zipname = null;
+                zip = null;
+                return false;
+            }
+        }
+
+        public static void DbImport(string zipname)
+        {
+            MemoryStream zip = GZipToStream(zipname);
+            Base.ImportData(zip);
+        }
+
+        public static bool DBBackupDownload()  // plik .bak sie zapisuje a plik .zip tworzy w pamięci
+        {
+            string zipname;
+            MemoryStream zip;
+            if (GetDBBackup(out zip, out zipname))
+            {
+                HttpContext.Current.Response.Clear();
+                HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=" + zipname);
+                HttpContext.Current.Response.AddHeader("Content-Length", zip.Length.ToString());
+                HttpContext.Current.Response.ContentType = "application/zip";
+                byte[] bzip = zip.ToArray();
+                HttpContext.Current.Response.OutputStream.Write(bzip, 0, bzip.Length);
+                HttpContext.Current.Response.End();
+                return true; // tu sie to nie wykona i tak, ale zeby kompilator był szczęśliwy ...
+            }
+            else
+                return false;
+        }
+        /*
+        public static bool DBMail(string email)
+        {
+            string zipname;
+            MemoryStream zip;
+            if (GetDBBackup(out zip, out zipname))
+            {
+                string subject = "PRP Data";
+                string body = "PRP Database backup: " + zipname;
+                Log.Info(Log.t2MAILTOSEND, email + (char)13 + subject, body, Log.OK);
+                return Mailing.SendMail2(email, subject, body, zip, zipname, "application/zip");
+            }
+            else
+            {
+                Log.Error(Log.t2APP, "DBMail", email + (char)13 + zipname);
+                return false;
+            }
+        }
+        */
+        /*
+        public static bool DBBackupDownload()  // plik .bak sie zapisuje a plik .zip tworzy w pamięci
+        {
+            string fname = Tools.GetAppPath(@"uploads\HR_PRP_" + DateTime.Today.ToString("yyyyMMdd") + ".bak");
+            File.Delete(fname);
+
+            Base.execSQL("backup database HR_PRP to disk = " + Base.strParam(fname));
+            FileInfo file = new FileInfo(fname);
+            if (file.Exists)
+            {
+                string zipname = Path.ChangeExtension(Path.GetFileName(fname), ".zip");  // chociaż to powinno być .gz ale to nawet lepiej bo nie wszystko otworzy 7zip otwiera ...
+
+                MemoryStream zip = Tools.FileToGZipStream(fname);
+                File.Delete(fname);
+
+                HttpContext.Current.Response.Clear();
+                HttpContext.Current.Response.AddHeader("Content-Disposition", "attachment; filename=" + zipname);
+                HttpContext.Current.Response.AddHeader("Content-Length", zip.Length.ToString());
+                HttpContext.Current.Response.ContentType = "application/zip";
+                byte[] bzip = zip.ToArray();
+                HttpContext.Current.Response.OutputStream.Write(bzip, 0, bzip.Length);
+                HttpContext.Current.Response.End();
+                return true; // tu sie to nie wykona i tak, ale zeby kompilator był szczęśliwy ...
+            }
+            else
+                return false;
+        }
+
+        public static bool DBMail(string email)
+        {
+            string fname = Tools.GetAppPath(@"uploads\HR_PRP_" + DateTime.Today.ToString("yyyyMMdd") + ".bak");
+            File.Delete(fname);
+            Base.execSQL("backup database HR_PRP to disk = " + Base.strParam(fname));
+            FileInfo file = new FileInfo(fname);
+            if (file.Exists)
+            {
+                string zipname = Path.ChangeExtension(Path.GetFileName(fname), ".zip");  // chociaż to powinno być .gz ale to nawet lepiej bo nie wszystko otworzy 7zip otwiera ...
+                MemoryStream zip = FileToGZipStream(fname);
+                File.Delete(fname);
+                string subject = "PRP Data";
+                string body = "PRP Database backup: " + zipname;
+                Log.Info(Log.t2MAILTOSEND, email + (char)13 + subject, body, Log.OK);
+                return Mailing.SendMail2(email, subject, body, zip, zipname, "application/zip");
+            }
+            else
+            {
+                Log.Error(Log.t2APP, "DBMail", email + (char)13 + fname);
+                return false;
+            }
+        }
+         */
+
+        //----------------------------------------------------------------------------------------
+        public static string SelectItem(ListControl lc, string selectedValue)
+        {
+            lc.SelectedIndex = -1;   // gasze wsyzstkie inne selected
+            ListItem li = lc.Items.FindByValue(selectedValue);
+            if (li != null)
+            {
+                //lc.SelectedIndex = -1;   // gasze wsyzstkie inne selected
+                li.Selected = true;
+                return li.Text;
+            }
+            else
+                return null;
+        }
+
+        public static string SelectItem(Control c, string cname, object selectedValue)
+        {
+            ListControl lc = (ListControl)c.FindControl(cname);
+            if (lc != null)
+            {
+                lc.SelectedIndex = -1;   // gasze wsyzstkie inne selected
+                string v = selectedValue.ToString();
+                ListItem li = lc.Items.FindByValue(v);
+                if (li != null)
+                {
+                    //lc.SelectedIndex = -1;   // gasze wsyzstkie inne selected
+                    li.Selected = true;
+                    return li.Text;
+                }
+                else 
+                    return null;
+            }
+            else 
+                return null;
+        }
+
+        public static string SelectItem(ListControl lc, object selectedValue)
+        {
+            if (lc != null)
+            {
+                lc.SelectedIndex = -1;   // gasze wsyzstkie inne selected
+                string v = selectedValue.ToString();
+                ListItem li = lc.Items.FindByValue(v);
+                if (li != null)
+                {
+                    //lc.SelectedIndex = -1;   // gasze wsyzstkie inne selected
+                    li.Selected = true;
+                    return li.Text;
+                }
+                else
+                    return null;
+            }
+            else
+                return null;
+        }
+
+
+        /*
+        public static bool SelectItem(ListControl lc, string selectedValue)
+        {
+            ListItem li = lc.Items.FindByValue(selectedValue);
+            if (li != null)
+            {
+                lc.SelectedIndex = -1;
+                li.Selected = true;
+                return true;
+            }
+            else
+                return false;
+        }
+         */
+
+        public static ListItem SetDefaultItem(ListControl lc, string defValue, string defPrefix, string defSuffix)
+        {
+            if (!String.IsNullOrEmpty(defValue))
+            {
+                ListItem li = lc.Items.FindByValue(defValue);
+                if (li != null)
+                {
+                    li.Text = defPrefix + li.Text + defSuffix;
+                    return li;
+                }
+            }
+            return null;
+        }
+
+        public static void SelectItem(ListControl lc, string selValue, string defValue, bool unsetFirst)
+        {               //•√●«»
+            const string defPrefix = "» ";
+            const string defSuffix = " «";
+            SelectItem(lc, selValue, defValue, unsetFirst, defPrefix, defSuffix);
+        }
+
+        public static ListItem SelectItem(ListControl lc, string selValue, string defValue, bool unsetFirst, string prefix, string suffix)
+        {                   // zwraca defaultItem - slected mozna sobie wziac z ddl !
+            bool fs = !String.IsNullOrEmpty(selValue);
+            bool fd = !String.IsNullOrEmpty(defValue);
+            lc.SelectedIndex = -1;   // gasze wszystkie inne selected
+            ListItem defItem = null;
+
+            if (unsetFirst)
+            {
+                foreach (ListItem li in lc.Items)
+                {
+                    string t = li.Text;
+                    if (!String.IsNullOrEmpty(prefix)) t = t.Replace(prefix, "");   // string EndsWith moze lepsze ?
+                    if (!String.IsNullOrEmpty(suffix)) t = t.Replace(suffix, "");
+                    li.Text = t;
+                    //li.Text = li.Text.Replace(prefix, "").Replace(suffix, "");
+                    if (fd && li.Value == defValue)
+                    {
+                        li.Text = prefix + li.Text + suffix;
+                        defItem = li;
+                    }
+                    if (fs && li.Value == selValue)
+                        li.Selected = true;
+                }
+            }
+            else
+            {
+                ListItem li;
+                if (fd)
+                {
+                    li = lc.Items.FindByValue(defValue);
+                    if (li != null)
+                    {
+                        li.Text = prefix + li.Text + suffix;
+                        defItem = li;
+                    }
+                }
+                if (fs)
+                {
+                    li = lc.Items.FindByValue(selValue);
+                    if (li != null)
+                        li.Selected = true;
+                }
+            }
+            return defItem;
+        }
+
+        /*
+        public static void SelectItem(ListControl lc, string selValue, string defValue, bool unsetFirst, string prefix, string suffix)
+        {
+            //•√●«»
+            const string defPrefix = "» ";
+            const string defSuffix = " «";
+
+            bool fs = !String.IsNullOrEmpty(selValue);
+            bool fd = !String.IsNullOrEmpty(defValue);
+            if (fs) lc.SelectedIndex = -1;   // gasze wszystkie inne selected
+
+            if (unsetFirst)
+            {
+                foreach (ListItem li in lc.Items)
+                {
+                    li.Text = li.Text.Replace(defPrefix, "").Replace(defSuffix, "");
+                    if (fd && li.Value == defValue)
+                        li.Text = defPrefix + li.Text + defSuffix;
+                    if (fs && li.Value == selValue)
+                        li.Selected = true;
+                }
+            }
+            else
+            {
+                ListItem li;
+                if (fd)
+                {
+                    li = lc.Items.FindByValue(defValue);
+                    if (li != null)
+                        li.Text = defPrefix + li.Text + defSuffix;
+                }
+                if (fs)
+                {
+                    li = lc.Items.FindByValue(selValue);
+                    if (li != null)
+                        li.Selected = true;
+                }
+            }
+        }
+         */
+        //---------------------
+        public static ListControl BindData(ListViewItem item, string cname, DataSet ds, string textField, string valueField, bool fAddChooseStr, string selectedValue)
+        {
+            ListControl lc = (ListControl)item.FindControl(cname);
+            if (lc != null)
+                BindData(lc, ds, textField, valueField, fAddChooseStr, selectedValue);
+            return lc;
+        }
+
+        public static void BindData(ListControl lc, DataSet ds, string textField, string valueField, bool fAddChooseStr, string selectedValue)
+        {
+            lc.Text = null;
+            DropDownList ddl = (DropDownList)lc;
+            ddl.ClearSelection();
+            ddl.SelectedValue = null;
+            ddl.Items.Clear();
+            lc.DataSource = null;
+            lc.DataBind();
+
+            lc.DataSource = ds;
+            lc.DataTextField = textField;
+            lc.DataValueField = valueField;
+            
+            lc.Text = null;
+            ddl.ClearSelection();
+            ddl.SelectedValue = null;
+            ddl.Items.Clear();
+
+
+
+            lc.DataBind();
+            if (fAddChooseStr)
+                lc.Items.Insert(0, new ListItem("wybierz ...", ""));  // jak null zamiast "" to przyjmie Value=Text, a tak selected zwroci ""
+            if (selectedValue != null)
+                SelectItem(lc, selectedValue);
+            else
+            {
+                lc.SelectedIndex = 0;
+                lc.Text = lc.SelectedItem.Text;
+            }
+        }
+
+        public static int BindData(ListControl lc, DataSet ds, string textField, string valueField1, string valueField2, string valueField3, string selectedValue1)  // Value ma listę parametrów, niewykorzytsane parametry - ustawić na null, przyjmuje "" jako poprawny parametr
+        {
+            int idx = -1;
+            int pcnt = 1;
+            if (valueField2 != null) pcnt = 2;
+            else if (valueField3 != null) pcnt = 3;
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                string v1 = dr[valueField1].ToString();
+                ListItem li = new ListItem(dr[textField].ToString(),
+                                           Tools.SetLineParams(pcnt,
+                                                v1,
+                                                pcnt >= 2 ? dr[valueField2].ToString() : null,
+                                                pcnt >= 3 ? dr[valueField3].ToString() : null,
+                                                null, null, null)
+                                           );
+                lc.Items.Add(li);
+                if (v1 == selectedValue1)
+                {
+                    li.Selected = true;
+                    idx = lc.Items.Count - 1;
+                }
+            }
+            return idx;     // zwraca selected index lub -1
+        }
+
+        //---------------------------------------------------------------------------
+        public static bool SendMail(string to_email, string subject, string message)
+        {
+            Ustawienia settings = Ustawienia.CreateOrGetSession();
+            MailMessage objMail = new MailMessage();
+            objMail.From = settings.Email;
+            objMail.To = to_email;
+            objMail.Subject = subject;
+            objMail.Body = message;
+
+            objMail.BodyEncoding = Encoding.UTF8;
+            //SmtpMail.SmtpServer = "corimc04.corp.jabil.org";
+            SmtpMail.SmtpServer = settings.SMTPSerwer;
+            try
+            {
+                SmtpMail.Send(objMail);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Log.Error(Log.t2SENDMAIL, "SendMail", ex.Message);
+                return false;
+            }
+        }
+
+        //----------------------------------------------------------------------------------------
+    }
+}
+
+
+
+

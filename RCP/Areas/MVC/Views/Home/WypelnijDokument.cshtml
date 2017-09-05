@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "WypelnijDokument";
+    Layout = "~/Areas/MVC/Views/Shared/_Layout.cshtml";
+}
+
+<h2>WypelnijDokument</h2>
+<div style="background-color: white; padding: 10px;">
+    @Html.Raw(ViewBag.ContentHtml)
+    <script>tinymce.init({ selector: 'textarea', readonly: 1, menubar: false, toolbar: false, height: 500 });</script>
+    @Html.TextArea("contentHTML", (string)ViewBag.ContentHTML, new { @class = "editor tinymce-editor", col = "15", @name ="contentHTML" })
+
+</div>
+
+<script>
+      $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    format: 'yyyy-mm-dd',
+    today: 'Dziś',
+    language: 'pl',
+    labelMonthNext: 'Następny miesiąc ',
+    labelMonthPrev: 'Poprzedni miesiąc',
+
+          // The title label to use for the dropdown selectors
+    labelMonthSelect: 'Wybierz miesiąc',
+    labelYearSelect: 'Wybierz rok',
+
+          // Months and weekdays
+    monthsFull: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'],
+    monthsShort: ['Sty.', 'Lut.', 'Mar.', 'Kwi.', 'Maj', 'Cze.', 'Lip.', 'Sie.', 'Wrz.', 'Paź.', 'Lis.', 'Gru'],
+    weekdaysFull: ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"],
+    weekdaysShort: ["Niedz.", "Pon.", "Wt.", "Śr.", "Czw.", "Piąt.", "Sob."],
+    clear: 'Wyczyść',
+    close: 'Ok',
+    closeOnSelect: false // Close upon selecting a date,
+          
+  });
+
+</script>

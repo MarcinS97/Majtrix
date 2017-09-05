@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using HRRcp.App_Code;
+
+namespace HRRcp
+{
+    public partial class RaportLimityNN : System.Web.UI.Page
+    {
+        const string title = "Przekroczenia Limitów Nadgodzin na CC";
+
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+            this.MasterPageFile = App.GetMasterPage();
+        }
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            if (IsPostBack)
+                Tools.CheckSessionExpired();
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                if (cntRaport.Prepare())
+                {
+                    Tools.SetNoCache();
+                }
+                else
+                    App.ShowNoAccess(title, App.User);
+            }
+        }
+
+        protected void Page_Error(object sender, System.EventArgs e)
+        {
+            AppError.Show(title);
+        }
+    }
+}

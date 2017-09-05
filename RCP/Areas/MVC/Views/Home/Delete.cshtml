@@ -1,0 +1,57 @@
+﻿@model HRRcp.Areas.MVC.Models.obdSzablon
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/MVC/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Czy jestes pewien że chcesz usunąć ten rekord?</h3>
+<div>
+    <h4>obdSzablon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdObieguDict)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdObieguDict)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContentHTML)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContentHTML)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

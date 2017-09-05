@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HRRcp.Areas.MVC.Models.dicUprawnienia>
+
+@{
+    Layout = "~/Areas/MVC/Views/Shared/_Layout.cshtml";
+   
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Zdefiniowane uprawnienia</title>
+</head>
+<body class="dicUprawnienia">
+
+    <h4>Uprawnienia w systemie</h4>
+    <hr />
+    <p>
+        @Html.ActionLink("Utwórz nowe", "Create" ,new { }, new {@class= "waves-effect waves-light btn green btnpad" })
+    </p>
+    <br />
+    <table class="striped bordered">
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Nazwa)*@
+                Nazwa uprawnienia
+            </th>
+            <th>
+                Opis
+                @*@Html.DisplayNameFor(model => model.Opis)*@
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opis)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edytuj", "Edit", new { id=item.Id },new {@class="waves-effect waves-light btn blue btnpad" })*@ 
+                <a href="@Url.Action("Edit", "dicUprawnienia",new {id=item.Id })" title="Edytuj">
+               <i class="material-icons gray">edit</i>
+              </a> 
+                @*@Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
+                @*@Html.ActionLink("Usuń", "Delete", new { id = item.Id }, new {@class= "waves-effect waves-light btn red darken-3 btnpad" })*@
+                <a href="@Url.Action("Delete", "dicUprawnienia",new {id=item.Id })" title="Usuń">
+                    <i class="material-icons gray">delete</i>
+                </a>
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

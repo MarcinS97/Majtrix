@@ -1,0 +1,3688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/Kadry.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/Kadry.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/Kadry.xsd" id="Kadry" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="Kadry">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="KartotekaOsobowa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrement="true" name="IdOsoby" type="xs:int" />
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nip">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwiskoRodowe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataUrodzenia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="MiejsceUrodzenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NumerDowodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plec">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdStanu" type="xs:int" />
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="StanCywilny">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdGrupyPraw" type="xs:int" />
+              <xs:element minOccurs="0" name="NazwaGrupy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Konto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NumerPaszportu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdObywatelstwa" type="xs:int" />
+              <xs:element minOccurs="0" name="NazwaObywatelstwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DowodWydanyPrzez">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PaszportWydanyPrzez">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ZatrudnienieZUS" type="xs:int" />
+              <xs:element minOccurs="0" name="ImieOjca">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ImieMatki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwiskoRodoweMatki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Zdjecie" type="xs:base64Binary" />
+              <xs:element minOccurs="0" name="CountFirms" type="xs:int" />
+              <xs:element minOccurs="0" name="DataWydaniaDowodu" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="IdentPodat">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KrajIdentPodat" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolKomorki" type="xs:string" />
+              <xs:element minOccurs="0" name="NazwaKomorki" type="xs:string" />
+              <xs:element minOccurs="0" name="SymbolNazwaKomOrg" type="xs:string" />
+              <xs:element minOccurs="0" name="SODIR" type="xs:boolean" />
+              <xs:element minOccurs="0" name="WysDokPassword" type="xs:string" />
+              <xs:element minOccurs="0" name="HasloWygenerowane" type="xs:boolean" />
+              <xs:element minOccurs="0" name="HasloWyslane" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyAdresy">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrement="true" name="IdAdresu" type="xs:int" />
+              <xs:element name="IdTypu" type="xs:int" />
+              <xs:element minOccurs="0" name="Kraj">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Wojewodztwo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Powiat">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Gmina">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Ulica">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrDomu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrLokalu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Miejscowosc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KodPocztowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Poczta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SkrytkaPocztowa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrTelefonu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrFaksu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Adres1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Adres2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Filtrowane">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="IdSQL" type="xs:string" />
+              <xs:element name="IdRekordu" type="xs:int" />
+              <xs:element name="IdSesji" type="xs:int" />
+              <xs:element name="DataUtworzenia" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyKontekst">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="IdOsoby" type="xs:int" />
+              <xs:element minOccurs="0" name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Konto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UmowyPracownikow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataRozpoczecia" type="xs:dateTime" />
+              <xs:element name="DataPodpisania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataRozwiazania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataZakonczenia" type="xs:dateTime" />
+              <xs:element msdata:AutoIncrement="true" name="IdUmowy" type="xs:int" />
+              <xs:element name="IdUmowySlownik" type="xs:int" />
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="IdKomorki" type="xs:int" />
+              <xs:element minOccurs="0" name="NazwaKomorki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Okres">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Sposob">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RodzajUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TypUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Zus" type="xs:boolean" />
+              <xs:element name="WLP" type="xs:boolean" />
+              <xs:element name="Praca" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ZawarcieNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RozwiazanieNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Dzielo" type="xs:boolean" />
+              <xs:element name="Zlecenie" type="xs:boolean" />
+              <xs:element name="StaleSkladniki" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IdEtatu" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolEtatu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaEtatu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdStanowiska" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolStanowiska">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaStanowiska">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdKosztu" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolKosztu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="OpisKosztu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Zakres">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PozostaleWarunki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KodGUSPrzyjecie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KodGUSZwolnienie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCP" type="xs:boolean" />
+              <xs:element minOccurs="0" name="SymbolOkresuWypowiedzenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdUmowyPoprzedzajacej" type="xs:int" />
+              <xs:element minOccurs="0" name="NumerUmowyPoprzedzajacej">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdZatrudnienia" type="xs:int" />
+              <xs:element name="Godzinowa" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Ryczalt" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IFT1" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="NumerKartoteki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="ImieNazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="LastKomOrg">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdUmowyBazowej" type="xs:int" />
+              <xs:element minOccurs="0" name="ZawarcieAktywna" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ZawarcieCzasowa" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ZawarcieDataZakonczeniaWymag" type="xs:boolean" />
+              <xs:element minOccurs="0" name="FEP" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataUrodzenia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="NumerDowodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SymbolKomorki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SymbolRodzajuUmowy" type="xs:string" />
+              <xs:element minOccurs="0" name="SymbolNazwaKomOrg" type="xs:string" />
+              <xs:element minOccurs="0" name="Uczen" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PrzyczynyZawarcia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="CzasTrwaniaMiesiace">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UmowyWarunki">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element name="DataZmiany" type="xs:dateTime" />
+              <xs:element name="Aneks" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PlacaZasadnicza" type="xs:decimal" />
+              <xs:element name="IdKomorki" type="xs:int" />
+              <xs:element minOccurs="0" name="NazwaKomorki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rentowe" type="xs:boolean" />
+              <xs:element name="Wypadkowe" type="xs:boolean" />
+              <xs:element name="Chorobowe" type="xs:boolean" />
+              <xs:element name="Zdrowotne" type="xs:boolean" />
+              <xs:element name="FP" type="xs:boolean" />
+              <xs:element name="FGSP" type="xs:boolean" />
+              <xs:element name="Sekwencja" type="xs:int" />
+              <xs:element minOccurs="0" name="IdEtatu" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolEtatu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaEtatu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Emerytalne" type="xs:boolean" />
+              <xs:element minOccurs="0" name="KodUbezp">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaKoduUbezp">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SymbolStanowiska">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaStanowiska">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdStanowiska" type="xs:int" />
+              <xs:element minOccurs="0" name="IdKosztu" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolKosztu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="OpisKosztu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdUmowy" type="xs:int" />
+              <xs:element minOccurs="0" name="Zakres">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PozostaleWarunki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="EmerytalneDbData" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="RentoweDbData" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ChoroboweDbData" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="ZdrowotneDbData" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="IdZawodu" type="xs:int" />
+              <xs:element minOccurs="0" name="KodZawodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaZawodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdPracySzczeg" type="xs:int" />
+              <xs:element minOccurs="0" name="KodSzczWarunku">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaSzczWarunku">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ProcAutorski" type="xs:decimal" />
+              <xs:element minOccurs="0" name="IdMiejsca" type="xs:int" />
+              <xs:element minOccurs="0" name="Symbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Opis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Wydruk">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Aktualne" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IdZatrudnienia" type="xs:int" />
+              <xs:element minOccurs="0" name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="ProcentPodatku" type="xs:decimal" />
+              <xs:element minOccurs="0" name="KategoriaZaszer" type="xs:string" />
+              <xs:element minOccurs="0" name="EmerytalneDb" type="xs:boolean" />
+              <xs:element minOccurs="0" name="RentoweDb" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ChoroboweDb" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ZdrowotneDb" type="xs:boolean" />
+              <xs:element minOccurs="0" name="DataPodpisania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="FEP" type="xs:boolean" />
+              <xs:element minOccurs="0" name="SymbolNazwaKomOrg" type="xs:string" />
+              <xs:element minOccurs="0" name="UczniowieRodzaj" type="xs:int" />
+              <xs:element minOccurs="0" name="UczniowieStawka" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WybraneWLP">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdUmowy" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="IdWzorca" type="xs:int" />
+              <xs:element name="IdFirmy" type="xs:int" />
+              <xs:element minOccurs="0" name="Opis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="SymbolNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="83" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Aktywny" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DostepneWLP">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="IdWzorca" type="xs:int" />
+              <xs:element name="IdFirmy" type="xs:int" />
+              <xs:element minOccurs="0" name="Opis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="SymbolNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="83" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Aktywny" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Pracownicy">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="IdPracownika" type="xs:int" />
+              <xs:element name="IdFirmy" type="xs:int" />
+              <xs:element name="IdOsoby" type="xs:int" />
+              <xs:element name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Osoby">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdOsoby" type="xs:int" />
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nip">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwiskoRodowe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataUrodzenia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="MiejsceUrodzenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NumerDowodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plec">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdStanu" type="xs:int" />
+              <xs:element minOccurs="0" name="NumerPaszportu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdObywatelstwa" type="xs:int" />
+              <xs:element minOccurs="0" name="DowodWydanyPrzez">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PaszportWydanyPrzez">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Rodzina">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UbezpSpoleczne" type="xs:boolean" />
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataUrodzenia" type="xs:dateTime" />
+              <xs:element minOccurs="0" default="&lt;T&gt;" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WspolneGospodarstwo" type="xs:boolean" />
+              <xs:element name="AdresZgodny" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IdAdresu" type="xs:int" />
+              <xs:element minOccurs="0" name="IdNiepelnosprawnosci" type="xs:int" />
+              <xs:element minOccurs="0" name="DataUzyskUpr" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataUtrUpr" type="xs:dateTime" />
+              <xs:element msdata:AutoIncrement="true" name="IdCzlonka" type="xs:int" />
+              <xs:element name="IdPokrewienstwa" type="xs:int" />
+              <xs:element name="IdOsoby" type="xs:int" />
+              <xs:element minOccurs="0" name="NazwaPokrewienstwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KodNiepelnosprawnosci">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaNiepelnosprawnosci">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NumerDowodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NumerPaszportu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DokDoZus">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="UbezpZdrowotne" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Nip">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KodPokrewienstwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DoZdrowotnegoDataUzyskUpr" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DoZdrowotnegoDataUtrUpr" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataZgloszenia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataWyrejestrowania" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Adresy">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrement="true" name="IdAdresu" type="xs:int" />
+              <xs:element name="IdTypu" type="xs:int" />
+              <xs:element minOccurs="0" name="Kraj">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Wojewodztwo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Powiat">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Gmina">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Ulica">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrDomu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrLokalu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Miejscowosc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KodPocztowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Poczta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SkrytkaPocztowa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrTelefonu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrFaksu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Adres1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Adres2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Uproszczony" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyPodatki">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ulga">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WyznaczanieProcentu" type="xs:boolean" />
+              <xs:element name="ObnizanieProgu" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IdUrzedu" type="xs:int" />
+              <xs:element minOccurs="0" name="NazwaUrzedu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="IdKosztu" type="xs:int" />
+              <xs:element minOccurs="0" name="ProcentZaliczki" type="xs:decimal" />
+              <xs:element minOccurs="0" name="BlokadaKosztowAutorskich" type="xs:dateTime" />
+              <xs:element name="TypIdentPodat" type="xs:string" />
+              <xs:element minOccurs="0" name="RodzIdentPodat">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdentPodat">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KrajIdentPodat" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GrupyPracownikowAnaliza">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdGrupy" type="xs:int" />
+              <xs:element minOccurs="0" name="IdGrupyPrzodka" type="xs:int" />
+              <xs:element name="IdFirmy" type="xs:int" />
+              <xs:element name="Nazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Opis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KontoKsiegowe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyGrupyAnaliza">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="IdGrupy" type="xs:int" />
+              <xs:element name="IdOsoby" type="xs:int" />
+              <xs:element name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyBilansOtwarcia">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="DataRozpoczecia" type="xs:dateTime" />
+              <xs:element name="UrlopWykDni" type="xs:decimal" />
+              <xs:element name="UrlopWykGodziny" type="xs:decimal" />
+              <xs:element name="UrlopEkwDni" type="xs:decimal" />
+              <xs:element name="UrlopEkwGodziny" type="xs:decimal" />
+              <xs:element name="Chorobowe" type="xs:decimal" />
+              <xs:element name="Dochod" type="xs:decimal" />
+              <xs:element minOccurs="0" name="KoniecOkresuWyczek" type="xs:dateTime" />
+              <xs:element name="DochodEmRent" type="xs:decimal" />
+              <xs:element minOccurs="0" name="KoniecOkresuPierwszejPracy" type="xs:dateTime" />
+              <xs:element name="UrlopWykNaZadanieDni" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyZatrudnienieZUS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="IdNFZ" type="xs:int" />
+              <xs:element minOccurs="0" name="IdUmowySlownik" type="xs:int" />
+              <xs:element minOccurs="0" name="NormaDobowa" type="xs:decimal" />
+              <xs:element minOccurs="0" name="NazwaNFZ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KodNFZ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="TypIdentyfikatoraZUS">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaTypuIdentyfikatora">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DokDoZus">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdZawodu" type="xs:int" />
+              <xs:element minOccurs="0" name="NazwaZawodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KodZawodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SODIR" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PrzebiegZatrudnienia">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="IdEtatu" type="xs:int" />
+              <xs:element msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdZatrudnienia" type="xs:int" />
+              <xs:element name="NazwaZakladu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataOd" type="xs:dateTime" />
+              <xs:element name="DataDo" type="xs:dateTime" />
+              <xs:element name="ZakladMacierzysty" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Etat">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="94" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BiuroPracy" type="xs:boolean" />
+              <xs:element minOccurs="0" name="LiczbaDni" type="xs:string" />
+              <xs:element minOccurs="0" name="Ogolem" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UrlopyBezplatnePZ">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdUrlopu" type="xs:int" />
+              <xs:element name="IdZatrudnienia" type="xs:int" />
+              <xs:element name="DataOd" type="xs:dateTime" />
+              <xs:element name="DataDo" type="xs:dateTime" />
+              <xs:element name="LiczbaDni" type="xs:decimal" />
+              <xs:element name="JubileuszWykluczaj" type="xs:boolean" />
+              <xs:element name="DodatekStazowyWykluczaj" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KartotekaUrlopowa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nip">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumerKartoteki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Rok" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaWymiarDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaWymiarGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaWymiarBiezacyDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaWymiarBiezacyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaWykorzystanyDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaWykorzystanyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaZaleglyDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaZaleglyGodziny" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="SumaPozostalyDni" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="SumaPozostalyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="NaDzien" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="SumaUzupelniajacyDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaUzupelniajacyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" default="0" name="NaZadanie" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaWykorzystanyKorektaDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SumaWykorzystanyKorektaGodziny" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="SumaPozostalyDniWgEtatu" type="xs:decimal" />
+              <xs:element msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="ModyfikacjaReczna" type="xs:boolean" />
+              <xs:element msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" minOccurs="0" name="IdUmowy" type="xs:int" />
+              <xs:element minOccurs="0" name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RaportObliczen" type="xs:string" />
+              <xs:element minOccurs="0" name="IdUmowyBazowej" type="xs:int" />
+              <xs:element minOccurs="0" name="DataRozpoczecia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="NazwaKomorki" type="xs:string" />
+              <xs:element minOccurs="0" name="SymbolKomorki" type="xs:string" />
+              <xs:element minOccurs="0" name="SymbolNazwaKomOrg" type="xs:string" />
+              <xs:element default="false" name="Zamknieta" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="SumaZaleglyPozostalyDni" type="xs:decimal" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="SumaZaleglyPozostalyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KartotekaUrlopowaDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdPracownika" type="xs:int" />
+              <xs:element name="Rok" type="xs:decimal" />
+              <xs:element name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdUmowy" type="xs:int" />
+              <xs:element name="NaDzien" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="WymiarDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="WymiarGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="WymiarBiezacyDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="WymiarBiezacyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="WykorzystanyDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="WykorzystanyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ZaleglyDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ZaleglyGodziny" type="xs:decimal" />
+              <xs:element name="ModyfikacjaReczna" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PozostalyDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="PozostalyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" default="0" name="WymiarUzupelniajacy" type="xs:decimal" />
+              <xs:element minOccurs="0" default="0" name="WymiarUzupelniajacyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" default="0" name="NaZadanie" type="xs:decimal" />
+              <xs:element name="DataRozpoczecia" type="xs:dateTime" />
+              <xs:element minOccurs="0" default="0" name="WykorzystanyKorektaDni" type="xs:decimal" />
+              <xs:element minOccurs="0" default="0" name="WykorzystanyKorektaGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="RaportObliczen" type="xs:string" />
+              <xs:element name="IdUmowyBazowej" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="PozostalyDniWgEtatu" type="xs:decimal" />
+              <xs:element default="false" name="Zamknieta" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UrlopyPracownikaWymiary">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nip">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumerKartoteki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="Wymiar" type="xs:decimal" />
+              <xs:element name="DataOd" type="xs:dateTime" />
+              <xs:element name="ModyfikacjaReczna" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Rok" type="xs:int" />
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UrlopyPracownikaWymiaryDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="Wymiar" type="xs:decimal" />
+              <xs:element name="DataOd" type="xs:dateTime" />
+              <xs:element name="ModyfikacjaReczna" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WyksztalceniePracownika">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdSzkoly" type="xs:int" />
+              <xs:element name="NazwaSzkoly">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdWyksztalcenia" type="xs:int" />
+              <xs:element minOccurs="0" name="LataDoUrlopu" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="NazwaWyksztalcenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Specjalnosc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GrupyPracownikowPrawa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdGrupy" type="xs:int" />
+              <xs:element name="IdFirmy" type="xs:int" />
+              <xs:element name="Nazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Opis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyGrupyPrawa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="IdGrupyPraw" type="xs:int" />
+              <xs:element name="IdOsoby" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdPracownika" type="xs:int" />
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyUmowy">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataRozpoczecia" type="xs:dateTime" />
+              <xs:element name="DataPodpisania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataRozwiazania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataZakonczenia" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdUmowy" type="xs:int" />
+              <xs:element name="IdUmowySlownik" type="xs:int" />
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="Okres">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ZawarcieNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Sposob">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RozwiazanieNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RodzajUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TypUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Zus" type="xs:boolean" />
+              <xs:element name="WLP" type="xs:boolean" />
+              <xs:element name="Praca" type="xs:boolean" />
+              <xs:element name="Dzielo" type="xs:boolean" />
+              <xs:element name="Zlecenie" type="xs:boolean" />
+              <xs:element name="StaleSkladniki" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IdEtatu" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolEtatu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaEtatu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdKosztu" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolKosztu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="OpisKosztu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdUmowyPoprzedzajacej" type="xs:int" />
+              <xs:element name="IdUmowyBazowej" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UmowyKontaKsieg">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdUmowy" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdKonta" type="xs:int" />
+              <xs:element name="Rok" type="xs:decimal" />
+              <xs:element name="Miesiac" type="xs:decimal" />
+              <xs:element name="Konto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Wartosc" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UmowyKontaKsiegKomorki">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdUmowy" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdKonta" type="xs:int" />
+              <xs:element name="Rok" type="xs:decimal" />
+              <xs:element name="Miesiac" type="xs:decimal" />
+              <xs:element minOccurs="0" name="IdKomorki" type="xs:int" />
+              <xs:element minOccurs="0" name="Konto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Wartosc" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="NazwaKomorkiOrg">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyKosztyWydatki">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Kwota" type="xs:decimal" />
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="Rok" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Renty">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdRenty" type="xs:int" />
+              <xs:element name="IdPrawaDoRenty" type="xs:int" />
+              <xs:element name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="KodPrawa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="102" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RentaRodzinna" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NiepelnosprawnosciPracownika">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="IdNiepelnosprawnosciSlownik" type="xs:int" />
+              <xs:element minOccurs="0" name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdNiepelnosprawnosci" type="xs:int" />
+              <xs:element minOccurs="0" name="KodNiepelnosprawnosci">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="102" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Schorzenia" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UmowyWarunkiGUS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdUmowy" type="xs:int" />
+              <xs:element name="Sekwencja" type="xs:int" />
+              <xs:element name="Kod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Aktywny" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UmowyWarunkiDefault">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Emerytalne" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Rentowe" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Wypadkowe" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Zdrowotne" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Chorobowe" type="xs:boolean" />
+              <xs:element minOccurs="0" name="FP" type="xs:boolean" />
+              <xs:element minOccurs="0" name="FGSP" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Zakres">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PozostaleWarunki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdKosztu" type="xs:int" />
+              <xs:element minOccurs="0" name="IdZawodu" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Sekwencja" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Kod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KodUbezp">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="FEP" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BadaniaLekarskie">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdBadania" type="xs:int" />
+              <xs:element name="IdBadaniaSlownik" type="xs:int" />
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="DataSkierowania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataWykonania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataWaznosciDo" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Uwagi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdBadaniaPoprzedzajacego" type="xs:int" />
+              <xs:element minOccurs="0" name="BadaniePoprzedzajaceDo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrEwid" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Szkolenia">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdSzkolenia" type="xs:int" />
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="IdSzkoleniaSlownik" type="xs:int" />
+              <xs:element minOccurs="0" name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Organizator">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataTrwaniaOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataTrwaniaDo" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataWaznosciOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataWaznosciDo" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Uwagi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdSzkoleniaPoprzedzajacego" type="xs:int" />
+              <xs:element minOccurs="0" name="SzkoleniePoprzedzajaceDo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrEwid" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RachunkiPracownika">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" name="IdRachunku" type="xs:int" />
+              <xs:element minOccurs="0" name="IdRachunkuSlownik" type="xs:int" />
+              <xs:element minOccurs="0" name="IdBanku" type="xs:int" />
+              <xs:element minOccurs="0" name="IdSkladnika" type="xs:int" />
+              <xs:element minOccurs="0" name="LK">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Procent" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Kwota" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Opis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Aktywny" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IndywidualnyCzlonRachunku">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Tytulem">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sekwencja" type="xs:int" />
+              <xs:element minOccurs="0" name="SkladnikKod" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SkladnikNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RachunekBanku">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaSkrocona">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RachunekIndywidualny">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RachunekSlownikowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="284" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Instytucja">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RachunekPrac">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="TytulemRach">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdWzorca" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolWzorca">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaWzorca">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Podstawowy" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyWstrzymanaZaliczka">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="Data" type="xs:dateTime" />
+              <xs:element name="Kwota" type="xs:decimal" />
+              <xs:element name="Rok" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Umiejetnosci">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="IdUmiejetnosci" type="xs:int" />
+              <xs:element minOccurs="0" name="Opis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdPoziomu" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolUmiejetnosci">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaUmiejetnosci">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Poziom" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SymbolPoziomu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaPoziomu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownicyUrlopDodatkowy">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="Rodzaj">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Wymiar" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdUrlopu" type="xs:int" />
+              <xs:element minOccurs="0" name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdUmowyBazowej" type="xs:int" />
+              <xs:element minOccurs="0" name="NumerUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataRozpoczecia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="WykorzystanyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="PozostalyGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="WymiarGodziny" type="xs:decimal" />
+              <xs:element minOccurs="0" name="RejestracjaGodzinowa" type="xs:boolean" />
+              <xs:element minOccurs="0" name="WymiarBiezGodz" type="xs:decimal" />
+              <xs:element minOccurs="0" default="false" name="ModyfikacjaReczna" type="xs:boolean" />
+              <xs:element minOccurs="0" default="0" name="ZaleglyDni" type="xs:decimal" />
+              <xs:element minOccurs="0" default="0" name="ZaleglyGodz" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Zalegly" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Biezacy" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Wykorzystany" type="xs:int" />
+              <xs:element minOccurs="0" name="Pozostaly" type="xs:int" />
+              <xs:element minOccurs="0" name="WymiarBiezDni" type="xs:decimal" />
+              <xs:element minOccurs="0" name="DodatkowyNaZalegly" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Zamknieta" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ZestUmowPracownikow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdUmowy" type="xs:int" />
+              <xs:element name="NrUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="NrUmowyWar">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="63" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataRozpoczecia" type="xs:dateTime" />
+              <xs:element name="DataPodpisania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataRozwiazania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataZakonczenia" type="xs:dateTime" />
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element name="Sekwencja" type="xs:int" />
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NrKartoteki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaKomorki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="TypUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RCP" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" minOccurs="0" name="IdKomorki" type="xs:int" />
+              <xs:element minOccurs="0" name="IdKomorkiPrzodka" type="xs:int" />
+              <xs:element minOccurs="0" name="Id" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="NazwaKom2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="NazwiskoImie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZUS_Emerytalne" type="xs:boolean" />
+              <xs:element name="ZUS_Rentowe" type="xs:boolean" />
+              <xs:element name="ZUS_Wypadkowe" type="xs:boolean" />
+              <xs:element name="ZUS_Chorobowe" type="xs:boolean" />
+              <xs:element name="ZUS_Zdrowotne" type="xs:boolean" />
+              <xs:element name="ZUS_FP" type="xs:boolean" />
+              <xs:element name="ZUS_FGSP" type="xs:boolean" />
+              <xs:element minOccurs="0" name="UmowaPraca" type="xs:boolean" />
+              <xs:element minOccurs="0" name="UmowaDzielo" type="xs:boolean" />
+              <xs:element minOccurs="0" name="UmowaZlecenie" type="xs:boolean" />
+              <xs:element minOccurs="0" name="PlacaZasadnicza" type="xs:decimal" />
+              <xs:element name="Godzinowa" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Final" type="xs:boolean" />
+              <xs:element name="RodzajUmowySymbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RodzajUmowyNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Ryczalt" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IFT1" type="xs:boolean" />
+              <xs:element minOccurs="0" name="ProcentPodatku" type="xs:decimal" />
+              <xs:element minOccurs="0" name="SymbolEtatu" type="xs:string" />
+              <xs:element minOccurs="0" name="NazwaEtatu" type="xs:string" />
+              <xs:element minOccurs="0" name="SymbolStanowiska" type="xs:string" />
+              <xs:element minOccurs="0" name="NazwaStanowiska" type="xs:string" />
+              <xs:element minOccurs="0" name="ZawarcieNazwa" type="xs:string" />
+              <xs:element msdata:Caption="Zakres umowy" minOccurs="0" name="Zakres" type="xs:string" />
+              <xs:element minOccurs="0" name="Pesel" type="xs:string" />
+              <xs:element minOccurs="0" name="KategoriaZaszSymbol" type="xs:string" />
+              <xs:element minOccurs="0" name="KategoriaZaszNazwa" type="xs:string" />
+              <xs:element minOccurs="0" name="NazwaZawodu" type="xs:string" />
+              <xs:element minOccurs="0" name="KodZawodu" type="xs:string" />
+              <xs:element minOccurs="0" name="PoczatekZatrudnienia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataPodpisaniaWar" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="LicznikEtatu" type="xs:int" />
+              <xs:element minOccurs="0" name="MianownikEtatu" type="xs:int" />
+              <xs:element name="RejestrSwiadczen" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IdUmowyBazowej" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:Expression="'sssss'" minOccurs="0" name="NazwiskoImieNrUmWar" type="xs:string" />
+              <xs:element minOccurs="0" name="IdPracIdUmowySekwencja" type="xs:string" />
+              <xs:element minOccurs="0" name="AtrybutyPracownikaValue">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="AtrybutyUmowyValue">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="FEP" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Konto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SymbolKomorki" type="xs:string" />
+              <xs:element minOccurs="0" name="SymbolNazwaKomOrg" type="xs:string" />
+              <xs:element minOccurs="0" name="UczniowieRodzaj" type="xs:int" />
+              <xs:element minOccurs="0" name="UczniowieStawka" type="xs:int" />
+              <xs:element name="Uczen" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Plec">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="ImieDrugie" type="xs:string" />
+              <xs:element minOccurs="0" name="KodPocztowy" type="xs:string" />
+              <xs:element minOccurs="0" name="Miejscowosc" type="xs:string" />
+              <xs:element minOccurs="0" name="Poczta" type="xs:string" />
+              <xs:element minOccurs="0" name="Ulica" type="xs:string" />
+              <xs:element minOccurs="0" name="NrDomu" type="xs:string" />
+              <xs:element minOccurs="0" name="NrLokalu" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UmowyPoprzedzajace">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataPodpisania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataRozpoczecia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataRozwiazania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataZakonczenia" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdUmowy" type="xs:int" />
+              <xs:element minOccurs="0" name="IdUmowySlownik" type="xs:int" />
+              <xs:element minOccurs="0" name="IdPracownika" type="xs:int" />
+              <xs:element minOccurs="0" name="KodGUSPrzyjecie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KodGUSZwolnienie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Okres">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Sposob">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="SymbolOkresuWypowiedzenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="RodzajUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="TypUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Praca" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Dzielo" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Zlecenie" type="xs:boolean" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="IdUmowyPoprzedzajacej" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RozdzielnikKsiegMPK">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdRozdzielnika" type="xs:int" />
+              <xs:element name="IdFirmy" type="xs:int" />
+              <xs:element name="IdUmowy" type="xs:int" />
+              <xs:element minOccurs="0" name="Typ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Suma" type="xs:decimal" />
+              <xs:element minOccurs="0" name="IdSkladnika" type="xs:int" />
+              <xs:element minOccurs="0" name="NazwiskoImie" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RozdzielnikKsiegMPKPozycje">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdPozycji" type="xs:int" />
+              <xs:element name="IdRozdzielnika" type="xs:int" />
+              <xs:element name="IdFirmy" type="xs:int" />
+              <xs:element name="Wartosc" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Konto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NumerZlecenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KontoKsiegowe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdKomorki" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WypadkiPracownikow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nip">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumerKartoteki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdWypadku" type="xs:int" />
+              <xs:element minOccurs="0" name="DataZdarzenia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Skutki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IloscDniZwolnienia" type="xs:decimal" />
+              <xs:element minOccurs="0" name="NumerStatystycznyChor">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Opis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataProtokolu" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Odszkodowanie" type="xs:decimal" />
+              <xs:element minOccurs="0" name="Rodzaj" type="xs:decimal" />
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RozdzielnikKsiegUmowa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdRozdzielnika" type="xs:int" />
+              <xs:element name="IdUmowy" type="xs:int" />
+              <xs:element name="Typ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Suma" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RozdzielnikKsiegUmowaPozycje">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdPozycji" type="xs:int" />
+              <xs:element name="IdRozdzielnika" type="xs:int" />
+              <xs:element name="Wartosc" type="xs:decimal" />
+              <xs:element name="Konto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SimplePracownik">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdPracownika" type="xs:int" />
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PracownikRodzajPrzebiegZatr">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Symbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdFirmy" type="xs:int" />
+              <xs:element minOccurs="0" name="IdZatrudnienia" type="xs:int" />
+              <xs:element minOccurs="0" name="PrzebZatrPrac" type="xs:boolean" />
+              <xs:element minOccurs="0" name="Zatrudnienie" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UmowaRodzajPrzebiegZatr">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Symbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdFirmy" type="xs:int" />
+              <xs:element minOccurs="0" name="IdUmowy" type="xs:int" />
+              <xs:element minOccurs="0" name="PrzebZatrUmowa" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SpecjalnoscPracownika">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Specjalnosc">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UmowyDodatkiStazowe">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdDodatku" type="xs:int" />
+              <xs:element minOccurs="0" name="IdUmowy" type="xs:int" />
+              <xs:element minOccurs="0" name="Symbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Aktywny" type="xs:boolean" />
+              <xs:element minOccurs="0" name="IdDodatkuSlownik" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Okresy" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Alerty">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" minOccurs="0" name="IdAlertu" type="xs:int" />
+              <xs:element minOccurs="0" name="Typ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="TypInfo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Info1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="400" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Info2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="400" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NumerPracownika">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="PozostaloDni" type="xs:int" />
+              <xs:element minOccurs="0" name="Usunal">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Przeczytane" type="xs:unsignedByte" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RejestrPrzepustek">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdPrzepustki" type="xs:int" />
+              <xs:element minOccurs="0" name="IdFirmy" type="xs:int" />
+              <xs:element name="NrPrzepustki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataWystawienia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="IdUmowy" type="xs:int" />
+              <xs:element minOccurs="0" name="NumerUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataRozpoczeciaUmowy" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataZakonczeniaUmowy" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataRozwiazaniaUmowy" type="xs:dateTime" />
+              <xs:element name="Tymczasowa" type="xs:boolean" />
+              <xs:element minOccurs="0" name="DaneDodatkowe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataWaznosciOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataWaznosciDo" type="xs:dateTime" />
+              <xs:element name="Rowerowa" type="xs:boolean" />
+              <xs:element minOccurs="0" name="DataZdania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Uwagi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdKomorki" type="xs:int" />
+              <xs:element minOccurs="0" name="SymbolKomorki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaKomorki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NumerKartoteki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataUrodzenia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="NumerDowodu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Stanowisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Zdjecie" type="xs:base64Binary" />
+              <xs:element minOccurs="0" name="IdStanowiska" type="xs:int" />
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KaryPracownikow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="NazwiskoImie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="101" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrKartoteki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NrUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdUmowyBazowej" type="xs:int" />
+              <xs:element minOccurs="0" name="KorgSymbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KorgNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="StSymbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="StNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdKary" type="xs:int" />
+              <xs:element name="IdKarySlownik" type="xs:int" />
+              <xs:element msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdPracownika" type="xs:int" />
+              <xs:element name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Przyczyna">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel" type="xs:string" />
+              <xs:element minOccurs="0" name="Uwagi">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataRozpoczecia" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataRozwiazania" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataRozpZatr" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RejestrSwiadczenSocjalnych">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdSwiadczenia" type="xs:int" />
+              <xs:element name="IdFirmy" type="xs:int" />
+              <xs:element name="SymbolSwiadczeniaSlownik">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NazwaSwiadczenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Pesel">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NrKartoteki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdUmowy" type="xs:int" />
+              <xs:element name="NrUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataPrzyznania" type="xs:dateTime" />
+              <xs:element name="LacznyKoszt" type="xs:decimal" />
+              <xs:element name="DoplataZakladu" type="xs:decimal" />
+              <xs:element name="OdplatnoscPrac" type="xs:decimal" />
+              <xs:element minOccurs="0" name="InformacjeDodatkowe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="RodzajSwiadczenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="195" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="DoplataZakladuStatus" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="OdplatnoscPracStatus" type="xs:int" />
+              <xs:element minOccurs="0" name="DoplataZakladuNrListy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="OdplatnoscPracNrListy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DoplataZakladuMcKosztListy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="OdplatnoscPracMcKosztListy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="NazwaKomorki" type="xs:string" />
+              <xs:element minOccurs="0" name="SymbolKomorki" type="xs:string" />
+              <xs:element minOccurs="0" name="SymbolNazwaKomOrg" type="xs:string" />
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UmowaOkresyRozliczeniowe">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdOkresuRozlicz" type="xs:int" />
+              <xs:element name="Symbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Opis">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="NazwaSymbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="195" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdUmowy" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RozdzielnikWspolny">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Pracownik">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="187" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Imie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Numer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="PESEL">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="NrUmowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="UmowaOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="KontoKsiegowe">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="UmowaDo" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Rozdzielnik">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="Typ">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="DataOd" type="xs:dateTime" />
+              <xs:element msdata:ReadOnly="true" minOccurs="0" name="DataDo" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="Skladnik">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Konto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="Wartosc" type="xs:decimal" />
+              <xs:element minOccurs="0" name="NrZlecenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdKomorki" type="xs:int" />
+              <xs:element minOccurs="0" name="Komorka">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KomorkaSymbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="DataZakonczeniaUmowy" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="KomorkaUmowaNazwa">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KomorkaUmowaSymbol">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="KomorkaUmowaKonto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="IdPozycji" type="xs:int" />
+              <xs:element minOccurs="0" name="IdRozdzielnika" type="xs:int" />
+              <xs:element minOccurs="0" name="IdUmowy" type="xs:int" />
+              <xs:element minOccurs="0" name="ImieDrugie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KartotekaUrlopyDodatkowe">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdUrlopu" type="xs:int" />
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element name="IdUmowyBazowej" type="xs:int" />
+              <xs:element name="Rok" type="xs:decimal" />
+              <xs:element name="NaDzien" type="xs:dateTime" />
+              <xs:element name="WymiarDni" type="xs:decimal" />
+              <xs:element name="WymiarGodz" type="xs:decimal" />
+              <xs:element name="WymiarBiezacyDni" type="xs:decimal" />
+              <xs:element name="Zamknieta" type="xs:boolean" />
+              <xs:element name="WymZaleglyDni" type="xs:decimal" />
+              <xs:element name="WymZaleglyGodz" type="xs:decimal" />
+              <xs:element minOccurs="0" name="RaportObliczen">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WykorzystanyDni" type="xs:decimal" />
+              <xs:element name="WykorzystanyGodz" type="xs:decimal" />
+              <xs:element name="IdUrlopuDodatkowego" type="xs:int" />
+              <xs:element name="WymiarBiezacyGodz" type="xs:decimal" />
+              <xs:element name="Rodzaj">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModyfikacjaReczna" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OswiadczeniePodstFP">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdPracownika" type="xs:int" />
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" name="IdOswiadczenia" type="xs:int" />
+              <xs:element name="Kod" type="xs:int" />
+              <xs:element minOccurs="0" name="DataOd" type="xs:dateTime" />
+              <xs:element minOccurs="0" name="DataDo" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:PracownicyAdresy" />
+      <xs:field xpath="mstns:IdAdresu" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Filtrowane_Constraint1">
+      <xs:selector xpath=".//mstns:Filtrowane" />
+      <xs:field xpath="mstns:IdSQL" />
+      <xs:field xpath="mstns:IdRekordu" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="PracownicyKontekst_Constraint1">
+      <xs:selector xpath=".//mstns:PracownicyKontekst" />
+      <xs:field xpath="mstns:IdPracownika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="UmowyPracownikow_Constraint1">
+      <xs:selector xpath=".//mstns:UmowyPracownikow" />
+      <xs:field xpath="mstns:IdUmowy" />
+      <xs:field xpath="mstns:IdPracownika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="UmowyWarunki_Constraint1">
+      <xs:selector xpath=".//mstns:UmowyWarunki" />
+      <xs:field xpath="mstns:Sekwencja" />
+      <xs:field xpath="mstns:IdUmowy" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="DostepneWLP_Constraint1">
+      <xs:selector xpath=".//mstns:DostepneWLP" />
+      <xs:field xpath="mstns:IdWzorca" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Pracownicy_Constraint1">
+      <xs:selector xpath=".//mstns:Pracownicy" />
+      <xs:field xpath="mstns:IdPracownika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Osoby_Constraint1">
+      <xs:selector xpath=".//mstns:Osoby" />
+      <xs:field xpath="mstns:IdOsoby" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Rodzina_Constraint1">
+      <xs:selector xpath=".//mstns:Rodzina" />
+      <xs:field xpath="mstns:IdCzlonka" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Adresy_Constraint1">
+      <xs:selector xpath=".//mstns:Adresy" />
+      <xs:field xpath="mstns:IdAdresu" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="PracownicyPodatki_Constraint1">
+      <xs:selector xpath=".//mstns:PracownicyPodatki" />
+      <xs:field xpath="mstns:IdPracownika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="GrupyPracownikowAnaliza_Constraint1">
+      <xs:selector xpath=".//mstns:GrupyPracownikowAnaliza" />
+      <xs:field xpath="mstns:IdGrupy" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="PracownicyGrupyAnaliza_Constraint1">
+      <xs:selector xpath=".//mstns:PracownicyGrupyAnaliza" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:IdGrupy" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="PracownicyBilansOtwarcia_Constraint1">
+      <xs:selector xpath=".//mstns:PracownicyBilansOtwarcia" />
+      <xs:field xpath="mstns:IdPracownika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="PracownicyZatrudnienieZUS_Constraint1">
+      <xs:selector xpath=".//mstns:PracownicyZatrudnienieZUS" />
+      <xs:field xpath="mstns:IdPracownika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="UrlopyBezplatnePZ_Constraint1">
+      <xs:selector xpath=".//mstns:UrlopyBezplatnePZ" />
+      <xs:field xpath="mstns:IdUrlopu" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="UrlopyPracownikaWymiary_Constraint1">
+      <xs:selector xpath=".//mstns:UrlopyPracownikaWymiary" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:DataOd" />
+    </xs:unique>
+    <xs:unique name="UrlopyPracownikaWymiaryDetailsKey1">
+      <xs:selector xpath=".//mstns:UrlopyPracownikaWymiaryDetails" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:DataOd" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="WyksztalceniePracownika_Constraint1">
+      <xs:selector xpath=".//mstns:WyksztalceniePracownika" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:IdSzkoly" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="GrupyPracownikowPrawa_Constraint1">
+      <xs:selector xpath=".//mstns:GrupyPracownikowPrawa" />
+      <xs:field xpath="mstns:IdGrupy" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="PracownicyGrupyPrawa_Constraint1">
+      <xs:selector xpath=".//mstns:PracownicyGrupyPrawa" />
+      <xs:field xpath="mstns:IdPracownika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="UmowyKontaKsieg_Constraint1">
+      <xs:selector xpath=".//mstns:UmowyKontaKsieg" />
+      <xs:field xpath="mstns:IdUmowy" />
+      <xs:field xpath="mstns:IdKonta" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="UmowyKontaKsiegKomorki_Constraint1">
+      <xs:selector xpath=".//mstns:UmowyKontaKsiegKomorki" />
+      <xs:field xpath="mstns:IdUmowy" />
+      <xs:field xpath="mstns:IdKonta" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="PracownicyKosztyWydatki_Constraint1">
+      <xs:selector xpath=".//mstns:PracownicyKosztyWydatki" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:Rok" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Renty_Constraint1">
+      <xs:selector xpath=".//mstns:Renty" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:IdRenty" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="NiepelnosprawnosciPracownika_Constraint1">
+      <xs:selector xpath=".//mstns:NiepelnosprawnosciPracownika" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:IdNiepelnosprawnosci" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="UmowyWarunkiGUS_Constraint1">
+      <xs:selector xpath=".//mstns:UmowyWarunkiGUS" />
+      <xs:field xpath="mstns:IdUmowy" />
+      <xs:field xpath="mstns:Sekwencja" />
+      <xs:field xpath="mstns:Kod" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="BadaniaLekarskie_Constraint1">
+      <xs:selector xpath=".//mstns:BadaniaLekarskie" />
+      <xs:field xpath="mstns:IdBadania" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Szkolenia_Constraint1">
+      <xs:selector xpath=".//mstns:Szkolenia" />
+      <xs:field xpath="mstns:IdSzkolenia" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="RachunkiPracownika_Constraint1">
+      <xs:selector xpath=".//mstns:RachunkiPracownika" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:IdRachunku" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="PracownicyWstrzymanaZaliczka_Constraint1">
+      <xs:selector xpath=".//mstns:PracownicyWstrzymanaZaliczka" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:Rok" />
+    </xs:unique>
+    <xs:unique msdata:PrimaryKey="true" name="UmiejetnosciKey">
+      <xs:selector xpath=".//mstns:Umiejetnosci" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:IdUmiejetnosci" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="ZestUmowPracownikow_Constraint1">
+      <xs:selector xpath=".//mstns:ZestUmowPracownikow" />
+      <xs:field xpath="mstns:IdUmowy" />
+      <xs:field xpath="mstns:Sekwencja" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="UmowyPoprzedzajace_Constraint1">
+      <xs:selector xpath=".//mstns:UmowyPoprzedzajace" />
+      <xs:field xpath="mstns:IdUmowy" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="RozdzielnikKsiegMPK_Constraint1">
+      <xs:selector xpath=".//mstns:RozdzielnikKsiegMPK" />
+      <xs:field xpath="mstns:IdRozdzielnika" />
+      <xs:field xpath="mstns:IdFirmy" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="RozdzielnikKsiegMPKPozycje_Constraint1">
+      <xs:selector xpath=".//mstns:RozdzielnikKsiegMPKPozycje" />
+      <xs:field xpath="mstns:IdPozycji" />
+      <xs:field xpath="mstns:IdRozdzielnika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="WypadkiPracownikow_Constraint1">
+      <xs:selector xpath=".//mstns:WypadkiPracownikow" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:IdWypadku" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="RozdzielnikKsiegUmowa_Constraint1">
+      <xs:selector xpath=".//mstns:RozdzielnikKsiegUmowa" />
+      <xs:field xpath="mstns:IdRozdzielnika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="RozdzielnikKsiegUmowaPozycje_Constraint1">
+      <xs:selector xpath=".//mstns:RozdzielnikKsiegUmowaPozycje" />
+      <xs:field xpath="mstns:IdPozycji" />
+      <xs:field xpath="mstns:IdRozdzielnika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="SimplePracownik_Constraint1">
+      <xs:selector xpath=".//mstns:SimplePracownik" />
+      <xs:field xpath="mstns:IdPracownika" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="UmowyDodatkiStazowe_Constraint1">
+      <xs:selector xpath=".//mstns:UmowyDodatkiStazowe" />
+      <xs:field xpath="mstns:IdDodatku" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="RejestrPrzepustek_Constraint1">
+      <xs:selector xpath=".//mstns:RejestrPrzepustek" />
+      <xs:field xpath="mstns:IdPrzepustki" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="RejestrSwiadczenSocjalnych_Constraint1">
+      <xs:selector xpath=".//mstns:RejestrSwiadczenSocjalnych" />
+      <xs:field xpath="mstns:IdSwiadczenia" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="KartotekaUrlopyDodatkowe_Constraint1">
+      <xs:selector xpath=".//mstns:KartotekaUrlopyDodatkowe" />
+      <xs:field xpath="mstns:IdUrlopu" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="OswiadczeniePodstFP_Constraint1">
+      <xs:selector xpath=".//mstns:OswiadczeniePodstFP" />
+      <xs:field xpath="mstns:IdPracownika" />
+      <xs:field xpath="mstns:IdOswiadczenia" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Relationship142" msdata:parent="DostepneWLP" msdata:child="WybraneWLP" msdata:parentkey="IdWzorca" msdata:childkey="IdWzorca" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" />
+      <msdata:Relationship name="fk_GrupyPrac_GrupyPrac" msdata:parent="GrupyPracownikowAnaliza" msdata:child="GrupyPracownikowAnaliza" msdata:parentkey="IdGrupy" msdata:childkey="IdGrupyPrzodka" />
+      <msdata:Relationship name="fk_PrzebiegZatrudnienia_Pracownik" msdata:parent="Pracownicy" msdata:child="PrzebiegZatrudnienia" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_PrzebiegZatrudnienia_Etaty" msdata:parent="PracownicyUmowy" msdata:child="PrzebiegZatrudnienia" msdata:parentkey="IdEtatu" msdata:childkey="IdEtatu" />
+      <msdata:Relationship name="fk_Wydatki_Pracownik" msdata:parent="Pracownicy" msdata:child="PracownicyKosztyWydatki" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_RachunekPracownika_Pracownik" msdata:parent="Pracownicy" msdata:child="RachunkiPracownika" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_PracownicyWstrzymanaZaliczka_Pracownik" msdata:parent="Pracownicy" msdata:child="PracownicyWstrzymanaZaliczka" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_PracownicyArt188_Pracownik" msdata:parent="Pracownicy" msdata:child="PracownicyUrlopDodatkowy" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_UmowyKontaKsieg" msdata:parent="UmowyPoprzedzajace" msdata:child="UmowyKontaKsieg" msdata:parentkey="IdUmowy" msdata:childkey="IdUmowy" />
+      <msdata:Relationship name="fk_Umowy_Pracownicy" msdata:parent="Pracownicy" msdata:child="UmowyPoprzedzajace" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_RozdzielnikKsiegMPKPozycje_Rozdzielnik" msdata:parent="RozdzielnikKsiegMPK" msdata:child="RozdzielnikKsiegMPKPozycje" msdata:parentkey="IdRozdzielnika IdFirmy" msdata:childkey="IdRozdzielnika IdFirmy" />
+      <msdata:Relationship name="fk_RozdzielnikKsiegMPK_Umowa" msdata:parent="UmowyPoprzedzajace" msdata:child="RozdzielnikKsiegMPK" msdata:parentkey="IdUmowy" msdata:childkey="IdUmowy" />
+      <msdata:Relationship name="fk_RozdzielnikKsiegUmowaPozycje_Rozdzielnik" msdata:parent="RozdzielnikKsiegUmowa" msdata:child="RozdzielnikKsiegUmowaPozycje" msdata:parentkey="IdRozdzielnika" msdata:childkey="IdRozdzielnika" />
+      <msdata:Relationship name="fk_BadaniaLekarskie_Poprzedzajace" msdata:parent="BadaniaLekarskie" msdata:child="BadaniaLekarskie" msdata:parentkey="IdBadania" msdata:childkey="IdBadaniaPoprzedzajacego" />
+      <msdata:Relationship name="fk_Szkolenia_Poprzedzajace" msdata:parent="Szkolenia" msdata:child="Szkolenia" msdata:parentkey="IdSzkolenia" msdata:childkey="IdSzkoleniaPoprzedzajacego" />
+      <msdata:Relationship name="fk_Szkolenia_Pracownik" msdata:parent="Pracownicy" msdata:child="Szkolenia" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_Badania_Pracownik" msdata:parent="Pracownicy" msdata:child="BadaniaLekarskie" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_UrlopyWymiary_Pracownik" msdata:parent="PracownicyUrlopDodatkowy" msdata:child="UrlopyPracownikaWymiaryDetails" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_Wydatki_Pracownik1" msdata:parent="PracownicyUrlopDodatkowy" msdata:child="PracownicyKosztyWydatki" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_Badania_Pracownik1" msdata:parent="PracownicyUrlopDodatkowy" msdata:child="BadaniaLekarskie" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_Szkolenia_Pracownik1" msdata:parent="PracownicyUrlopDodatkowy" msdata:child="Szkolenia" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_PracownicyWstrzymanaZaliczka_Pracownik1" msdata:parent="PracownicyUrlopDodatkowy" msdata:child="PracownicyWstrzymanaZaliczka" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Relationship142" msdata:parent="DostepneWLP" msdata:child="WybraneWLP" msdata:parentkey="IdWzorca" msdata:childkey="IdWzorca" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" />
+      <msdata:Relationship name="fk_GrupyPrac_GrupyPrac" msdata:parent="GrupyPracownikowAnaliza" msdata:child="GrupyPracownikowAnaliza" msdata:parentkey="IdGrupy" msdata:childkey="IdGrupyPrzodka" />
+      <msdata:Relationship name="fk_PrzebiegZatrudnienia_Pracownik" msdata:parent="Pracownicy" msdata:child="PrzebiegZatrudnienia" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_PrzebiegZatrudnienia_Etaty" msdata:parent="PracownicyUmowy" msdata:child="PrzebiegZatrudnienia" msdata:parentkey="IdEtatu" msdata:childkey="IdEtatu" />
+      <msdata:Relationship name="fk_Wydatki_Pracownik" msdata:parent="Pracownicy" msdata:child="PracownicyKosztyWydatki" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_RachunekPracownika_Pracownik" msdata:parent="Pracownicy" msdata:child="RachunkiPracownika" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_PracownicyWstrzymanaZaliczka_Pracownik" msdata:parent="Pracownicy" msdata:child="PracownicyWstrzymanaZaliczka" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_PracownicyArt188_Pracownik" msdata:parent="Pracownicy" msdata:child="PracownicyUrlopDodatkowy" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_UmowyKontaKsieg" msdata:parent="UmowyPoprzedzajace" msdata:child="UmowyKontaKsieg" msdata:parentkey="IdUmowy" msdata:childkey="IdUmowy" />
+      <msdata:Relationship name="fk_Umowy_Pracownicy" msdata:parent="Pracownicy" msdata:child="UmowyPoprzedzajace" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_RozdzielnikKsiegMPKPozycje_Rozdzielnik" msdata:parent="RozdzielnikKsiegMPK" msdata:child="RozdzielnikKsiegMPKPozycje" msdata:parentkey="IdRozdzielnika IdFirmy" msdata:childkey="IdRozdzielnika IdFirmy" />
+      <msdata:Relationship name="fk_RozdzielnikKsiegMPK_Umowa" msdata:parent="UmowyPoprzedzajace" msdata:child="RozdzielnikKsiegMPK" msdata:parentkey="IdUmowy" msdata:childkey="IdUmowy" />
+      <msdata:Relationship name="fk_RozdzielnikKsiegUmowaPozycje_Rozdzielnik" msdata:parent="RozdzielnikKsiegUmowa" msdata:child="RozdzielnikKsiegUmowaPozycje" msdata:parentkey="IdRozdzielnika" msdata:childkey="IdRozdzielnika" />
+      <msdata:Relationship name="fk_BadaniaLekarskie_Poprzedzajace" msdata:parent="BadaniaLekarskie" msdata:child="BadaniaLekarskie" msdata:parentkey="IdBadania" msdata:childkey="IdBadaniaPoprzedzajacego" />
+      <msdata:Relationship name="fk_Szkolenia_Poprzedzajace" msdata:parent="Szkolenia" msdata:child="Szkolenia" msdata:parentkey="IdSzkolenia" msdata:childkey="IdSzkoleniaPoprzedzajacego" />
+      <msdata:Relationship name="fk_Szkolenia_Pracownik" msdata:parent="Pracownicy" msdata:child="Szkolenia" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_Badania_Pracownik" msdata:parent="Pracownicy" msdata:child="BadaniaLekarskie" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_UrlopyWymiary_Pracownik" msdata:parent="PracownicyUrlopDodatkowy" msdata:child="UrlopyPracownikaWymiaryDetails" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_Wydatki_Pracownik1" msdata:parent="PracownicyUrlopDodatkowy" msdata:child="PracownicyKosztyWydatki" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_Badania_Pracownik1" msdata:parent="PracownicyUrlopDodatkowy" msdata:child="BadaniaLekarskie" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_Szkolenia_Pracownik1" msdata:parent="PracownicyUrlopDodatkowy" msdata:child="Szkolenia" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+      <msdata:Relationship name="fk_PracownicyWstrzymanaZaliczka_Pracownik1" msdata:parent="PracownicyUrlopDodatkowy" msdata:child="PracownicyWstrzymanaZaliczka" msdata:parentkey="IdPracownika" msdata:childkey="IdPracownika" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

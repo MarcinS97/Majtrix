@@ -1,0 +1,2197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MatrycaMVCModelStoreContainer" CdmEntityContainer="MatrycaMVCEntities">
+    <EntitySetMapping Name="Absencja">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Absencja">
+        <MappingFragment StoreEntitySet="Absencja">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="NR_EW" ColumnName="NR_EW" />
+          <ScalarProperty Name="DataOd" ColumnName="DataOd" />
+          <ScalarProperty Name="DataDo" ColumnName="DataDo" />
+          <ScalarProperty Name="Kod" ColumnName="Kod" />
+          <ScalarProperty Name="IleDni" ColumnName="IleDni" />
+          <ScalarProperty Name="Godzin" ColumnName="Godzin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbsencjaKody">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.AbsencjaKody">
+        <MappingFragment StoreEntitySet="AbsencjaKody">
+          <ScalarProperty Name="Kod" ColumnName="Kod" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Widoczny" ColumnName="Widoczny" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="GodzinPracy" ColumnName="GodzinPracy" />
+          <ScalarProperty Name="DniWolne" ColumnName="DniWolne" />
+          <ScalarProperty Name="Kolor" ColumnName="Kolor" />
+          <ScalarProperty Name="KolorPU" ColumnName="KolorPU" />
+          <ScalarProperty Name="PokazSymbolPU" ColumnName="PokazSymbolPU" />
+          <ScalarProperty Name="WyborPU" ColumnName="WyborPU" />
+          <ScalarProperty Name="WidocznyPU" ColumnName="WidocznyPU" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="NowaLinia" ColumnName="NowaLinia" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Typ2" ColumnName="Typ2" />
+          <ScalarProperty Name="Kod2" ColumnName="Kod2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AbsencjeDlugotrwale">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.AbsencjeDlugotrwale">
+        <MappingFragment StoreEntitySet="AbsencjeDlugotrwale">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rok" ColumnName="Rok" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Powod" ColumnName="Powod" />
+          <ScalarProperty Name="PowodKod" ColumnName="PowodKod" />
+          <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+          <ScalarProperty Name="DataWpisu" ColumnName="DataWpisu" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Akcja">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Akcja">
+        <MappingFragment StoreEntitySet="Akcja">
+          <ScalarProperty Name="ID_Akcja" ColumnName="ID_Akcja" />
+          <ScalarProperty Name="Akcja1" ColumnName="Akcja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certyfikaty">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Certyfikaty">
+        <MappingFragment StoreEntitySet="Certyfikaty">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUprawnienia" ColumnName="IdUprawnienia" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Numer" ColumnName="Numer" />
+          <ScalarProperty Name="DataWaznosci" ColumnName="DataWaznosci" />
+          <ScalarProperty Name="Kategoria" ColumnName="Kategoria" />
+          <ScalarProperty Name="DataZdobyciaUprawnien" ColumnName="DataZdobyciaUprawnien" />
+          <ScalarProperty Name="DataWaznosciPsychotestow" ColumnName="DataWaznosciPsychotestow" />
+          <ScalarProperty Name="DataWaznosciBadanLekarskich" ColumnName="DataWaznosciBadanLekarskich" />
+          <ScalarProperty Name="DataWaznosciUmowy" ColumnName="DataWaznosciUmowy" />
+          <ScalarProperty Name="UmowaLojalnosciowa" ColumnName="UmowaLojalnosciowa" />
+          <ScalarProperty Name="ImportId" ColumnName="ImportId" />
+          <ScalarProperty Name="DataZdobyciaUprawnienOk" ColumnName="DataZdobyciaUprawnienOk" />
+          <ScalarProperty Name="DataWaznosciPsychotestowOk" ColumnName="DataWaznosciPsychotestowOk" />
+          <ScalarProperty Name="DataWaznosciBadanLekarskichOk" ColumnName="DataWaznosciBadanLekarskichOk" />
+          <ScalarProperty Name="UmowaLojalnosciowaOk" ColumnName="UmowaLojalnosciowaOk" />
+          <ScalarProperty Name="DataWaznosciSet" ColumnName="DataWaznosciSet" />
+          <ScalarProperty Name="Aktualny" ColumnName="Aktualny" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CertyfikatySpaw">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.CertyfikatySpaw">
+        <MappingFragment StoreEntitySet="CertyfikatySpaw">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdCertyfikatu" ColumnName="IdCertyfikatu" />
+          <ScalarProperty Name="IdUprawnienia" ColumnName="IdUprawnienia" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="SymbolSpawacza" ColumnName="SymbolSpawacza" />
+          <ScalarProperty Name="Norma" ColumnName="Norma" />
+          <ScalarProperty Name="Proces" ColumnName="Proces" />
+          <ScalarProperty Name="TypMaterialu" ColumnName="TypMaterialu" />
+          <ScalarProperty Name="TypZlacza" ColumnName="TypZlacza" />
+          <ScalarProperty Name="GrMaterialowa15608" ColumnName="GrMaterialowa15608" />
+          <ScalarProperty Name="MaterialDodatkowy" ColumnName="MaterialDodatkowy" />
+          <ScalarProperty Name="Grubosc" ColumnName="Grubosc" />
+          <ScalarProperty Name="GruboscMin" ColumnName="GruboscMin" />
+          <ScalarProperty Name="GruboscMax" ColumnName="GruboscMax" />
+          <ScalarProperty Name="Srednica" ColumnName="Srednica" />
+          <ScalarProperty Name="Pozycja" ColumnName="Pozycja" />
+          <ScalarProperty Name="NazwaUrzadzenia" ColumnName="NazwaUrzadzenia" />
+          <ScalarProperty Name="NrCertyfikatu" ColumnName="NrCertyfikatu" />
+          <ScalarProperty Name="DataWydania" ColumnName="DataWydania" />
+          <ScalarProperty Name="DataWaznosci" ColumnName="DataWaznosci" />
+          <ScalarProperty Name="DataWaznosciOstPrzedl" ColumnName="DataWaznosciOstPrzedl" />
+          <ScalarProperty Name="DataNastPrzedl" ColumnName="DataNastPrzedl" />
+          <ScalarProperty Name="IdMistrza" ColumnName="IdMistrza" />
+          <ScalarProperty Name="Mistrz" ColumnName="Mistrz" />
+          <ScalarProperty Name="SymbolSpawalni" ColumnName="SymbolSpawalni" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+          <ScalarProperty Name="Aktualny" ColumnName="Aktualny" />
+          <ScalarProperty Name="ImportId" ColumnName="ImportId" />
+          <ScalarProperty Name="Umiejetnosc" ColumnName="Umiejetnosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cmd">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Cmd">
+        <MappingFragment StoreEntitySet="Cmd">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cmd1" ColumnName="Cmd" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Msg1" ColumnName="Msg1" />
+          <ScalarProperty Name="Msg2" ColumnName="Msg2" />
+          <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Executed" ColumnName="Executed" />
+          <ScalarProperty Name="AuthKey" ColumnName="AuthKey" />
+          <ScalarProperty Name="Par1" ColumnName="Par1" />
+          <ScalarProperty Name="Par2" ColumnName="Par2" />
+          <ScalarProperty Name="Par3" ColumnName="Par3" />
+          <ScalarProperty Name="Par4" ColumnName="Par4" />
+          <ScalarProperty Name="Par5" ColumnName="Par5" />
+          <ScalarProperty Name="Par6" ColumnName="Par6" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Frekwencja">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Frekwencja">
+        <MappingFragment StoreEntitySet="Frekwencja">
+          <ScalarProperty Name="Id_Frekwencja" ColumnName="Id_Frekwencja" />
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="Id_Akcja" ColumnName="Id_Akcja" />
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Data_Akcji" ColumnName="Data_Akcji" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrOperacji">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.GrOperacji">
+        <MappingFragment StoreEntitySet="GrOperacji">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrZatr">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.GrZatr">
+        <MappingFragment StoreEntitySet="GrZatr">
+          <ScalarProperty Name="Id_Gr_Zatr" ColumnName="Id_Gr_Zatr" />
+          <ScalarProperty Name="Rodzaj_Umowy" ColumnName="Rodzaj_Umowy" />
+          <ScalarProperty Name="Rodzaj_UmowyEN" ColumnName="Rodzaj_UmowyEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImportData">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ImportData">
+        <MappingFragment StoreEntitySet="ImportData">
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="C_Id" ColumnName="_Id" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Id1" ColumnName="Id1" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+          <ScalarProperty Name="Id3" ColumnName="Id3" />
+          <ScalarProperty Name="Id4" ColumnName="Id4" />
+          <ScalarProperty Name="Text1" ColumnName="Text1" />
+          <ScalarProperty Name="Text2" ColumnName="Text2" />
+          <ScalarProperty Name="Text3" ColumnName="Text3" />
+          <ScalarProperty Name="Text4" ColumnName="Text4" />
+          <ScalarProperty Name="Code1" ColumnName="Code1" />
+          <ScalarProperty Name="Code2" ColumnName="Code2" />
+          <ScalarProperty Name="Code3" ColumnName="Code3" />
+          <ScalarProperty Name="Code4" ColumnName="Code4" />
+          <ScalarProperty Name="Data1" ColumnName="Data1" />
+          <ScalarProperty Name="Data2" ColumnName="Data2" />
+          <ScalarProperty Name="Data3" ColumnName="Data3" />
+          <ScalarProperty Name="Data4" ColumnName="Data4" />
+          <ScalarProperty Name="Float1" ColumnName="Float1" />
+          <ScalarProperty Name="Float2" ColumnName="Float2" />
+          <ScalarProperty Name="Float3" ColumnName="Float3" />
+          <ScalarProperty Name="Float4" ColumnName="Float4" />
+          <ScalarProperty Name="Bool1" ColumnName="Bool1" />
+          <ScalarProperty Name="Bool2" ColumnName="Bool2" />
+          <ScalarProperty Name="Bool3" ColumnName="Bool3" />
+          <ScalarProperty Name="Bool4" ColumnName="Bool4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kody">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Kody">
+        <MappingFragment StoreEntitySet="Kody">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Kod" ColumnName="Kod" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Nazwa2" ColumnName="Nazwa2" />
+          <ScalarProperty Name="Nazwa2EN" ColumnName="Nazwa2EN" />
+          <ScalarProperty Name="Str1" ColumnName="Str1" />
+          <ScalarProperty Name="Str2" ColumnName="Str2" />
+          <ScalarProperty Name="Str3" ColumnName="Str3" />
+          <ScalarProperty Name="Str4" ColumnName="Str4" />
+          <ScalarProperty Name="Int1" ColumnName="Int1" />
+          <ScalarProperty Name="Int2" ColumnName="Int2" />
+          <ScalarProperty Name="Int3" ColumnName="Int3" />
+          <ScalarProperty Name="Int4" ColumnName="Int4" />
+          <ScalarProperty Name="Data1" ColumnName="Data1" />
+          <ScalarProperty Name="Data2" ColumnName="Data2" />
+          <ScalarProperty Name="Data3" ColumnName="Data3" />
+          <ScalarProperty Name="Data4" ColumnName="Data4" />
+          <ScalarProperty Name="Float1" ColumnName="Float1" />
+          <ScalarProperty Name="Float2" ColumnName="Float2" />
+          <ScalarProperty Name="Float3" ColumnName="Float3" />
+          <ScalarProperty Name="Float4" ColumnName="Float4" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Komp">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Komp">
+        <MappingFragment StoreEntitySet="Komp">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="OpisEN" ColumnName="OpisEN" />
+          <ScalarProperty Name="DataOd" ColumnName="DataOd" />
+          <ScalarProperty Name="DataDo" ColumnName="DataDo" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="Lp" ColumnName="Lp" />
+          <ScalarProperty Name="ShowHeader" ColumnName="ShowHeader" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KompOdpowiedzi">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.KompOdpowiedzi">
+        <MappingFragment StoreEntitySet="KompOdpowiedzi">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="IdProgramu" ColumnName="IdProgramu" />
+          <ScalarProperty Name="IdPytania" ColumnName="IdPytania" />
+          <ScalarProperty Name="IdOdpowiedzi" ColumnName="IdOdpowiedzi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KompStan">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.KompStan">
+        <MappingFragment StoreEntitySet="KompStan">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPytania" ColumnName="IdPytania" />
+          <ScalarProperty Name="IdStanowiska" ColumnName="IdStanowiska" />
+          <ScalarProperty Name="DataOd" ColumnName="DataOd" />
+          <ScalarProperty Name="DataDo" ColumnName="DataDo" />
+          <ScalarProperty Name="Poziom" ColumnName="Poziom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KompWskazniki">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.KompWskazniki">
+        <MappingFragment StoreEntitySet="KompWskazniki">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Lp" ColumnName="Lp" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="IdKomp" ColumnName="IdKomp" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="DataOd" ColumnName="DataOd" />
+          <ScalarProperty Name="DataDo" ColumnName="DataDo" />
+          <ScalarProperty Name="ShowGrade" ColumnName="ShowGrade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KompWskaznikiOceny">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.KompWskaznikiOceny">
+        <MappingFragment StoreEntitySet="KompWskaznikiOceny">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Lp" ColumnName="Lp" />
+          <ScalarProperty Name="IdWskaznika" ColumnName="IdWskaznika" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KryteriaOceny">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.KryteriaOceny">
+        <MappingFragment StoreEntitySet="KryteriaOceny">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Klucz0" ColumnName="Klucz0" />
+          <ScalarProperty Name="Klucz1" ColumnName="Klucz1" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lang">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Lang">
+        <MappingFragment StoreEntitySet="Lang">
+          <ScalarProperty Name="Lang1" ColumnName="Lang" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+          <ScalarProperty Name="Trans" ColumnName="Trans" />
+          <ScalarProperty Name="MsgHash" ColumnName="MsgHash" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LinieZadania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.LinieZadania">
+        <MappingFragment StoreEntitySet="LinieZadania">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="Id_Obszary" ColumnName="Id_Obszary" />
+          <ScalarProperty Name="Id_Podobszary" ColumnName="Id_Podobszary" />
+          <ScalarProperty Name="Id_Maszyny" ColumnName="Id_Maszyny" />
+          <ScalarProperty Name="Id_Task" ColumnName="Id_Task" />
+          <ScalarProperty Name="Id_Dzialanie" ColumnName="Id_Dzialanie" />
+          <ScalarProperty Name="Id_Narzedzie" ColumnName="Id_Narzedzie" />
+          <ScalarProperty Name="Id_Rodzaj" ColumnName="Id_Rodzaj" />
+          <ScalarProperty Name="Id_Poziom" ColumnName="Id_Poziom" />
+          <ScalarProperty Name="Id_Director" ColumnName="Id_Director" />
+          <ScalarProperty Name="ProdAdm" ColumnName="ProdAdm" />
+          <ScalarProperty Name="Dyr" ColumnName="Dyr" />
+          <ScalarProperty Name="Lp" ColumnName="Lp" />
+          <ScalarProperty Name="StrOrg" ColumnName="StrOrg" />
+          <ScalarProperty Name="IdZadania1" ColumnName="IdZadania1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Log">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataCzas" ColumnName="DataCzas" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Typ2" ColumnName="Typ2" />
+          <ScalarProperty Name="PracId" ColumnName="PracId" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Par" ColumnName="Par" />
+          <ScalarProperty Name="Kod" ColumnName="Kod" />
+          <ScalarProperty Name="Kod2" ColumnName="Kod2" />
+          <ScalarProperty Name="Kod3" ColumnName="Kod3" />
+          <ScalarProperty Name="Kod4" ColumnName="Kod4" />
+          <ScalarProperty Name="Info" ColumnName="Info" />
+          <ScalarProperty Name="Info2" ColumnName="Info2" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mailing">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Mailing">
+        <MappingFragment StoreEntitySet="Mailing">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Temat" ColumnName="Temat" />
+          <ScalarProperty Name="Tresc" ColumnName="Tresc" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MailingGrupy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.MailingGrupy">
+        <MappingFragment StoreEntitySet="MailingGrupy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="ZnacznikiSql" ColumnName="ZnacznikiSql" />
+          <ScalarProperty Name="ZnacznikiSqlTest" ColumnName="ZnacznikiSqlTest" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MailingZnaczniki">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.MailingZnaczniki">
+        <MappingFragment StoreEntitySet="MailingZnaczniki">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+          <ScalarProperty Name="Znacznik" ColumnName="Znacznik" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MDzialania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.MDzialania">
+        <MappingFragment StoreEntitySet="MDzialania">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+          <ScalarProperty Name="IdParents" ColumnName="IdParents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MMaszyny">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.MMaszyny">
+        <MappingFragment StoreEntitySet="MMaszyny">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+          <ScalarProperty Name="IdParents" ColumnName="IdParents" />
+          <ScalarProperty Name="IdParents2" ColumnName="IdParents2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MNarzedzia">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.MNarzedzia">
+        <MappingFragment StoreEntitySet="MNarzedzia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+          <ScalarProperty Name="IdParents" ColumnName="IdParents" />
+          <ScalarProperty Name="IdParents2" ColumnName="IdParents2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MObszary">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.MObszary">
+        <MappingFragment StoreEntitySet="MObszary">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Monity">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Monity">
+        <MappingFragment StoreEntitySet="Monity">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="EventId" ColumnName="EventId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MPodobszary">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.MPodobszary">
+        <MappingFragment StoreEntitySet="MPodobszary">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+          <ScalarProperty Name="IdParents" ColumnName="IdParents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MPoziomy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.MPoziomy">
+        <MappingFragment StoreEntitySet="MPoziomy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+          <ScalarProperty Name="IdParents" ColumnName="IdParents" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MRodzaje">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.MRodzaje">
+        <MappingFragment StoreEntitySet="MRodzaje">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MZadania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.MZadania">
+        <MappingFragment StoreEntitySet="MZadania">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oceny">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Oceny">
+        <MappingFragment StoreEntitySet="Oceny">
+          <ScalarProperty Name="Id_Oceny" ColumnName="Id_Oceny" />
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+          <ScalarProperty Name="Id_Przelozony" ColumnName="Id_Przelozony" />
+          <ScalarProperty Name="DataOceny" ColumnName="DataOceny" />
+          <ScalarProperty Name="Aktualna" ColumnName="Aktualna" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+          <ScalarProperty Name="IdStruktury" ColumnName="IdStruktury" />
+          <ScalarProperty Name="IdStrParent" ColumnName="IdStrParent" />
+          <ScalarProperty Name="ScalIdPrac" ColumnName="ScalIdPrac" />
+          <ScalarProperty Name="Nr_Ark" ColumnName="Nr_Ark" />
+          <ScalarProperty Name="IdZadania1" ColumnName="IdZadania1" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OcenyNazwy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.OcenyNazwy">
+        <MappingFragment StoreEntitySet="OcenyNazwy">
+          <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="BkColor" ColumnName="BkColor" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="OpisEN" ColumnName="OpisEN" />
+          <ScalarProperty Name="Wybor" ColumnName="Wybor" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Procent" ColumnName="Procent" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oddelegowania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Oddelegowania">
+        <MappingFragment StoreEntitySet="Oddelegowania">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+          <ScalarProperty Name="IdStruktury" ColumnName="IdStruktury" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="IdKierownikaRq" ColumnName="IdKierownikaRq" />
+          <ScalarProperty Name="DataRq" ColumnName="DataRq" />
+          <ScalarProperty Name="UwagiRq" ColumnName="UwagiRq" />
+          <ScalarProperty Name="IdKierownikaAcc" ColumnName="IdKierownikaAcc" />
+          <ScalarProperty Name="DataAcc" ColumnName="DataAcc" />
+          <ScalarProperty Name="UwagiAcc" ColumnName="UwagiAcc" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="MailingKadry" ColumnName="MailingKadry" />
+          <ScalarProperty Name="Pole1" ColumnName="Pole1" />
+          <ScalarProperty Name="Pole2" ColumnName="Pole2" />
+          <ScalarProperty Name="Pole3" ColumnName="Pole3" />
+          <ScalarProperty Name="Pole4" ColumnName="Pole4" />
+          <ScalarProperty Name="Pole5" ColumnName="Pole5" />
+          <ScalarProperty Name="Pole6" ColumnName="Pole6" />
+          <ScalarProperty Name="Pole7" ColumnName="Pole7" />
+          <ScalarProperty Name="Pole8" ColumnName="Pole8" />
+          <ScalarProperty Name="Uwaga1" ColumnName="Uwaga1" />
+          <ScalarProperty Name="Uwaga2" ColumnName="Uwaga2" />
+          <ScalarProperty Name="Uwaga3" ColumnName="Uwaga3" />
+          <ScalarProperty Name="StatusKadry" ColumnName="StatusKadry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBKartaSekcje">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBKartaSekcje">
+        <MappingFragment StoreEntitySet="ONBKartaSekcje">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBKarty">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBKarty">
+        <MappingFragment StoreEntitySet="ONBKarty">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="IdOpiekuna" ColumnName="IdOpiekuna" />
+          <ScalarProperty Name="IdPrzelozonego" ColumnName="IdPrzelozonego" />
+          <ScalarProperty Name="DataZalozenia" ColumnName="DataZalozenia" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DataKoncaOP" ColumnName="DataKoncaOP" />
+          <ScalarProperty Name="DataKoncaPW" ColumnName="DataKoncaPW" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBMiejscaSzkolen">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBMiejscaSzkolen">
+        <MappingFragment StoreEntitySet="ONBMiejscaSzkolen">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEn" ColumnName="NazwaEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBStrSzkolenia">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBStrSzkolenia">
+        <MappingFragment StoreEntitySet="ONBStrSzkolenia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdStrOrg" ColumnName="IdStrOrg" />
+          <ScalarProperty Name="IdSzkolenia" ColumnName="IdSzkolenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBStrZadania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBStrZadania">
+        <MappingFragment StoreEntitySet="ONBStrZadania">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdZadania" ColumnName="IdZadania" />
+          <ScalarProperty Name="IdStrOrg" ColumnName="IdStrOrg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBSzkoleniaGrupy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBSzkoleniaGrupy">
+        <MappingFragment StoreEntitySet="ONBSzkoleniaGrupy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBSzkoleniaPracownicy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBSzkoleniaPracownicy">
+        <MappingFragment StoreEntitySet="ONBSzkoleniaPracownicy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdKarty" ColumnName="IdKarty" />
+          <ScalarProperty Name="SzkolenieId" ColumnName="SzkolenieId" />
+          <ScalarProperty Name="Zaliczyl" ColumnName="Zaliczyl" />
+          <ScalarProperty Name="TypId" ColumnName="TypId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBSzkoleniaTerminy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBSzkoleniaTerminy">
+        <MappingFragment StoreEntitySet="ONBSzkoleniaTerminy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RodzajSzkoleniaId" ColumnName="RodzajSzkoleniaId" />
+          <ScalarProperty Name="TrenerId" ColumnName="TrenerId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="MiejsceId" ColumnName="MiejsceId" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+          <ScalarProperty Name="RzCzasTrwania" ColumnName="RzCzasTrwania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBSzkoleniaTrenerzy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBSzkoleniaTrenerzy">
+        <MappingFragment StoreEntitySet="ONBSzkoleniaTrenerzy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdTrenera" ColumnName="IdTrenera" />
+          <ScalarProperty Name="IdSzkolenia" ColumnName="IdSzkolenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBSzkoleniaTypy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBSzkoleniaTypy">
+        <MappingFragment StoreEntitySet="ONBSzkoleniaTypy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="IdGrupy" ColumnName="IdGrupy" />
+          <ScalarProperty Name="CzasTrwania" ColumnName="CzasTrwania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBZadania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBZadania">
+        <MappingFragment StoreEntitySet="ONBZadania">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ONBZaliczenia">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ONBZaliczenia">
+        <MappingFragment StoreEntitySet="ONBZaliczenia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdKarty" ColumnName="IdKarty" />
+          <ScalarProperty Name="Zaliczyl" ColumnName="Zaliczyl" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IdProwadzacego" ColumnName="IdProwadzacego" />
+          <ScalarProperty Name="Zalecenia" ColumnName="Zalecenia" />
+          <ScalarProperty Name="IdZadania" ColumnName="IdZadania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PassSkills">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.PassSkills">
+        <MappingFragment StoreEntitySet="PassSkills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Poziom" ColumnName="Poziom" />
+          <ScalarProperty Name="OpisZlacza" ColumnName="OpisZlacza" />
+          <ScalarProperty Name="Kwalifikacje" ColumnName="Kwalifikacje" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pkt">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Pkt">
+        <MappingFragment StoreEntitySet="Pkt">
+          <ScalarProperty Name="Lp" ColumnName="Lp" />
+          <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pracownicy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Pracownicy">
+        <MappingFragment StoreEntitySet="Pracownicy">
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Id_Gr_Zatr" ColumnName="Id_Gr_Zatr" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Id_Str_OrgM" ColumnName="Id_Str_OrgM" />
+          <ScalarProperty Name="x_Id_Str_OrgA" ColumnName="x_Id_Str_OrgA" />
+          <ScalarProperty Name="Id_Status" ColumnName="Id_Status" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="IdStrumienia" ColumnName="IdStrumienia" />
+          <ScalarProperty Name="DataZatr" ColumnName="DataZatr" />
+          <ScalarProperty Name="DataUmDo" ColumnName="DataUmDo" />
+          <ScalarProperty Name="DataZwol" ColumnName="DataZwol" />
+          <ScalarProperty Name="ScalData" ColumnName="ScalData" />
+          <ScalarProperty Name="ScalActualId" ColumnName="ScalActualId" />
+          <ScalarProperty Name="Nr_Ewid2" ColumnName="Nr_Ewid2" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Rights" ColumnName="Rights" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+          <ScalarProperty Name="Plec" ColumnName="Plec" />
+          <ScalarProperty Name="Id3" ColumnName="Id3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PracownicyHistoria">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.PracownicyHistoria">
+        <MappingFragment StoreEntitySet="PracownicyHistoria">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+          <ScalarProperty Name="IdStrOrg" ColumnName="IdStrOrg" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="IdStanowiska" ColumnName="IdStanowiska" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PracownicyStrOrg">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.PracownicyStrOrg">
+        <MappingFragment StoreEntitySet="PracownicyStrOrg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="IdStrOrg" ColumnName="IdStrOrg" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+          <ScalarProperty Name="IdParentNew" ColumnName="IdParentNew" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Priorytet">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Priorytet">
+        <MappingFragment StoreEntitySet="Priorytet">
+          <ScalarProperty Name="Id_Piorytet" ColumnName="Id_Piorytet" />
+          <ScalarProperty Name="Priorytet1" ColumnName="Priorytet" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produktywnosc">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Produktywnosc">
+        <MappingFragment StoreEntitySet="Produktywnosc">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Programy">
+        <MappingFragment StoreEntitySet="Programy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataOd" ColumnName="DataOd" />
+          <ScalarProperty Name="DataDo" ColumnName="DataDo" />
+          <ScalarProperty Name="DataOcenyOd" ColumnName="DataOcenyOd" />
+          <ScalarProperty Name="DataOcenyDo" ColumnName="DataOcenyDo" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="OkresKarencji" ColumnName="OkresKarencji" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramyAnkiety">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ProgramyAnkiety">
+        <MappingFragment StoreEntitySet="ProgramyAnkiety">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProgramu" ColumnName="IdProgramu" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="IdStrOrg" ColumnName="IdStrOrg" />
+          <ScalarProperty Name="IdPrzelozonego" ColumnName="IdPrzelozonego" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramyOceny">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ProgramyOceny">
+        <MappingFragment StoreEntitySet="ProgramyOceny">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProgramu" ColumnName="IdProgramu" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="IdZadania" ColumnName="IdZadania" />
+          <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProgramyZadania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ProgramyZadania">
+        <MappingFragment StoreEntitySet="ProgramyZadania">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProgramu" ColumnName="IdProgramu" />
+          <ScalarProperty Name="IdZadania" ColumnName="IdZadania" />
+          <ScalarProperty Name="IdStrOrg" ColumnName="IdStrOrg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Przelozeni_x">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Przelozeni_x">
+        <MappingFragment StoreEntitySet="Przelozeni_x">
+          <ScalarProperty Name="Id_Przelozeni" ColumnName="Id_Przelozeni" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Id_Gr_zatr" ColumnName="Id_Gr_zatr" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Id_Priorytet" ColumnName="Id_Priorytet" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Blokada" ColumnName="Blokada" />
+          <ScalarProperty Name="Rights" ColumnName="Rights" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="x_IdsStrOrg" ColumnName="x_IdsStrOrg" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+          <ScalarProperty Name="DataZatr" ColumnName="DataZatr" />
+          <ScalarProperty Name="DataUmDo" ColumnName="DataUmDo" />
+          <ScalarProperty Name="DataZwol" ColumnName="DataZwol" />
+          <ScalarProperty Name="Nr_Ewid2" ColumnName="Nr_Ewid2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RaportyScheduler">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.RaportyScheduler">
+        <MappingFragment StoreEntitySet="RaportyScheduler">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="IdRaportu" ColumnName="IdRaportu" />
+          <ScalarProperty Name="Parametry" ColumnName="Parametry" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="cc" ColumnName="cc" />
+          <ScalarProperty Name="bcc" ColumnName="bcc" />
+          <ScalarProperty Name="DataStartu" ColumnName="DataStartu" />
+          <ScalarProperty Name="DataStopu" ColumnName="DataStopu" />
+          <ScalarProperty Name="InterwalTyp" ColumnName="InterwalTyp" />
+          <ScalarProperty Name="Interwal" ColumnName="Interwal" />
+          <ScalarProperty Name="InterwalSql" ColumnName="InterwalSql" />
+          <ScalarProperty Name="NextStart" ColumnName="NextStart" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+          <ScalarProperty Name="LastStart" ColumnName="LastStart" />
+          <ScalarProperty Name="LastStop" ColumnName="LastStop" />
+          <ScalarProperty Name="LastError" ColumnName="LastError" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Scheduler">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Scheduler">
+        <MappingFragment StoreEntitySet="Scheduler">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+          <ScalarProperty Name="SQL" ColumnName="SQL" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+          <ScalarProperty Name="Komentarz" ColumnName="Komentarz" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Wersja" ColumnName="Wersja" />
+          <ScalarProperty Name="WersjaData" ColumnName="WersjaData" />
+          <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServerCommands">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ServerCommands">
+        <MappingFragment StoreEntitySet="ServerCommands">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Cmd" ColumnName="Cmd" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Msg1" ColumnName="Msg1" />
+          <ScalarProperty Name="Msg2" ColumnName="Msg2" />
+          <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+          <ScalarProperty Name="Par1" ColumnName="Par1" />
+          <ScalarProperty Name="Par2" ColumnName="Par2" />
+          <ScalarProperty Name="Par3" ColumnName="Par3" />
+          <ScalarProperty Name="Par4" ColumnName="Par4" />
+          <ScalarProperty Name="Par5" ColumnName="Par5" />
+          <ScalarProperty Name="Par6" ColumnName="Par6" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SqlContent">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.SqlContent">
+        <MappingFragment StoreEntitySet="SqlContent">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="MenuText" ColumnName="MenuText" />
+          <ScalarProperty Name="MenuTextEN" ColumnName="MenuTextEN" />
+          <ScalarProperty Name="ConStr" ColumnName="ConStr" />
+          <ScalarProperty Name="Sql" ColumnName="Sql" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SqlMenu">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.SqlMenu">
+        <MappingFragment StoreEntitySet="SqlMenu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="MenuText" ColumnName="MenuText" />
+          <ScalarProperty Name="MenuTextEN" ColumnName="MenuTextEN" />
+          <ScalarProperty Name="ToolTip" ColumnName="ToolTip" />
+          <ScalarProperty Name="ToolTipEN" ColumnName="ToolTipEN" />
+          <ScalarProperty Name="Command" ColumnName="Command" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Rights" ColumnName="Rights" />
+          <ScalarProperty Name="Par1" ColumnName="Par1" />
+          <ScalarProperty Name="Par2" ColumnName="Par2" />
+          <ScalarProperty Name="Sql" ColumnName="Sql" />
+          <ScalarProperty Name="SqlParams" ColumnName="SqlParams" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stanowiska">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Stanowiska">
+        <MappingFragment StoreEntitySet="Stanowiska">
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Nazwa_Stan" ColumnName="Nazwa_Stan" />
+          <ScalarProperty Name="Nazwa_StanEN" ColumnName="Nazwa_StanEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Nazwa2" ColumnName="Nazwa2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusPrac">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.StatusPrac">
+        <MappingFragment StoreEntitySet="StatusPrac">
+          <ScalarProperty Name="Id_Status_Prac" ColumnName="Id_Status_Prac" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StrOrg">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.StrOrg">
+        <MappingFragment StoreEntitySet="StrOrg">
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Id_Parent" ColumnName="Id_Parent" />
+          <ScalarProperty Name="Symb_Jedn" ColumnName="Symb_Jedn" />
+          <ScalarProperty Name="Nazwa_Jedn" ColumnName="Nazwa_Jedn" />
+          <ScalarProperty Name="Nazwa_JednEN" ColumnName="Nazwa_JednEN" />
+          <ScalarProperty Name="ID_Upr_Przel" ColumnName="ID_Upr_Przel" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StrukturaPrzelozeni">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.StrukturaPrzelozeni">
+        <MappingFragment StoreEntitySet="StrukturaPrzelozeni">
+          <ScalarProperty Name="IdStruktury" ColumnName="IdStruktury" />
+          <ScalarProperty Name="IdPrzelozonego" ColumnName="IdPrzelozonego" />
+          <ScalarProperty Name="DataOd" ColumnName="DataOd" />
+          <ScalarProperty Name="DataDo" ColumnName="DataDo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teksty">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Teksty">
+        <MappingFragment StoreEntitySet="Teksty">
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Tekst" ColumnName="Tekst" />
+          <ScalarProperty Name="TekstEN" ColumnName="TekstEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpImportData">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.tmpImportData">
+        <MappingFragment StoreEntitySet="tmpImportData">
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="C_Id" ColumnName="_Id" />
+          <ScalarProperty Name="Created" ColumnName="Created" />
+          <ScalarProperty Name="Id1" ColumnName="Id1" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+          <ScalarProperty Name="Id3" ColumnName="Id3" />
+          <ScalarProperty Name="Id4" ColumnName="Id4" />
+          <ScalarProperty Name="Text1" ColumnName="Text1" />
+          <ScalarProperty Name="Text2" ColumnName="Text2" />
+          <ScalarProperty Name="Text3" ColumnName="Text3" />
+          <ScalarProperty Name="Text4" ColumnName="Text4" />
+          <ScalarProperty Name="Code1" ColumnName="Code1" />
+          <ScalarProperty Name="Code2" ColumnName="Code2" />
+          <ScalarProperty Name="Code3" ColumnName="Code3" />
+          <ScalarProperty Name="Code4" ColumnName="Code4" />
+          <ScalarProperty Name="Data1" ColumnName="Data1" />
+          <ScalarProperty Name="Data2" ColumnName="Data2" />
+          <ScalarProperty Name="Data3" ColumnName="Data3" />
+          <ScalarProperty Name="Data4" ColumnName="Data4" />
+          <ScalarProperty Name="Float1" ColumnName="Float1" />
+          <ScalarProperty Name="Float2" ColumnName="Float2" />
+          <ScalarProperty Name="Float3" ColumnName="Float3" />
+          <ScalarProperty Name="Float4" ColumnName="Float4" />
+          <ScalarProperty Name="Bool1" ColumnName="Bool1" />
+          <ScalarProperty Name="Bool2" ColumnName="Bool2" />
+          <ScalarProperty Name="Bool3" ColumnName="Bool3" />
+          <ScalarProperty Name="Bool4" ColumnName="Bool4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uprawnienia">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Uprawnienia">
+        <MappingFragment StoreEntitySet="Uprawnienia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Poziom" ColumnName="Poziom" />
+          <ScalarProperty Name="PoziomEN" ColumnName="PoziomEN" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Pola" ColumnName="Pola" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Aktywne" ColumnName="Aktywne" />
+          <ScalarProperty Name="Produkcyjne" ColumnName="Produkcyjne" />
+          <ScalarProperty Name="Nieprodukcyjne" ColumnName="Nieprodukcyjne" />
+          <ScalarProperty Name="PaszportSpawacza" ColumnName="PaszportSpawacza" />
+          <ScalarProperty Name="KwalifikacjeId" ColumnName="KwalifikacjeId" />
+          <ScalarProperty Name="PoziomId" ColumnName="PoziomId" />
+          <ScalarProperty Name="PoziomPoziom" ColumnName="PoziomPoziom" />
+          <ScalarProperty Name="Grupa" ColumnName="Grupa" />
+          <ScalarProperty Name="Wymagane" ColumnName="Wymagane" />
+          <ScalarProperty Name="Zablokowane" ColumnName="Zablokowane" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UprawnieniaGrupySpecyfikacja">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.UprawnieniaGrupySpecyfikacja">
+        <MappingFragment StoreEntitySet="UprawnieniaGrupySpecyfikacja">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdGrupy" ColumnName="IdGrupy" />
+          <ScalarProperty Name="IdUprawnienia" ColumnName="IdUprawnienia" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UprawnieniaKwalifikacje">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.UprawnieniaKwalifikacje">
+        <MappingFragment StoreEntitySet="UprawnieniaKwalifikacje">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Aktywna" ColumnName="Aktywna" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UprawnieniaTypy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.UprawnieniaTypy">
+        <MappingFragment StoreEntitySet="UprawnieniaTypy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypNazwa" ColumnName="TypNazwa" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+          <ScalarProperty Name="Wybor" ColumnName="Wybor" />
+          <ScalarProperty Name="TypNazwaEN" ColumnName="TypNazwaEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserParams">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.UserParams">
+        <MappingFragment StoreEntitySet="UserParams">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Str1" ColumnName="Str1" />
+          <ScalarProperty Name="Str2" ColumnName="Str2" />
+          <ScalarProperty Name="Int1" ColumnName="Int1" />
+          <ScalarProperty Name="Int2" ColumnName="Int2" />
+          <ScalarProperty Name="Data1" ColumnName="Data1" />
+          <ScalarProperty Name="Data2" ColumnName="Data2" />
+          <ScalarProperty Name="Float1" ColumnName="Float1" />
+          <ScalarProperty Name="Float2" ColumnName="Float2" />
+          <ScalarProperty Name="Bool1" ColumnName="Bool1" />
+          <ScalarProperty Name="Bool2" ColumnName="Bool2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ustawienia">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Ustawienia">
+        <MappingFragment StoreEntitySet="Ustawienia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Konserwacja" ColumnName="Konserwacja" />
+          <ScalarProperty Name="ADKontroler" ColumnName="ADKontroler" />
+          <ScalarProperty Name="ADPath" ColumnName="ADPath" />
+          <ScalarProperty Name="SMTPSerwer" ColumnName="SMTPSerwer" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="AppAddr" ColumnName="AppAddr" />
+          <ScalarProperty Name="IdSupervisor" ColumnName="IdSupervisor" />
+          <ScalarProperty Name="StartSystemu" ColumnName="StartSystemu" />
+          <ScalarProperty Name="Wersja" ColumnName="Wersja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wagi">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Wagi">
+        <MappingFragment StoreEntitySet="Wagi">
+          <ScalarProperty Name="Id_Waga" ColumnName="Id_Waga" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="Waga_Opis" ColumnName="Waga_Opis" />
+          <ScalarProperty Name="Waga_OpisEN" ColumnName="Waga_OpisEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Widelki">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Widelki">
+        <MappingFragment StoreEntitySet="Widelki">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataOd" ColumnName="DataOd" />
+          <ScalarProperty Name="DataDo" ColumnName="DataDo" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zadania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Zadania">
+        <MappingFragment StoreEntitySet="Zadania">
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="Id_Gr_Oper" ColumnName="Id_Gr_Oper" />
+          <ScalarProperty Name="NazwaZadania" ColumnName="NazwaZadania" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="Sumowane" ColumnName="Sumowane" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="Global" ColumnName="Global" />
+          <ScalarProperty Name="Id_Maszyny1" ColumnName="Id_Maszyny1" />
+          <ScalarProperty Name="Id_Obszary1" ColumnName="Id_Obszary1" />
+          <ScalarProperty Name="Id_Podobszary1" ColumnName="Id_Podobszary1" />
+          <ScalarProperty Name="Id_Director1" ColumnName="Id_Director1" />
+          <ScalarProperty Name="Id_Task1" ColumnName="Id_Task1" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="NazwaZadaniaEN" ColumnName="NazwaZadaniaEN" />
+          <ScalarProperty Name="Id_Rodzaj1" ColumnName="Id_Rodzaj1" />
+          <ScalarProperty Name="Id_Poziom1" ColumnName="Id_Poziom1" />
+          <ScalarProperty Name="ProdAdm1" ColumnName="ProdAdm1" />
+          <ScalarProperty Name="Dyr1" ColumnName="Dyr1" />
+          <ScalarProperty Name="Lp1" ColumnName="Lp1" />
+          <ScalarProperty Name="StrOrg1" ColumnName="StrOrg1" />
+          <ScalarProperty Name="Id_Dzialanie1" ColumnName="Id_Dzialanie1" />
+          <ScalarProperty Name="Id_Narzedzie1" ColumnName="Id_Narzedzie1" />
+          <ScalarProperty Name="Onboarding" ColumnName="Onboarding" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZadaniaGrupy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ZadaniaGrupy">
+        <MappingFragment StoreEntitySet="ZadaniaGrupy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Aktywna" ColumnName="Aktywna" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZadaniaGrupyTypy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ZadaniaGrupyTypy">
+        <MappingFragment StoreEntitySet="ZadaniaGrupyTypy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Wybor" ColumnName="Wybor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZadaniaGrupyZadania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ZadaniaGrupyZadania">
+        <MappingFragment StoreEntitySet="ZadaniaGrupyZadania">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdGrupy" ColumnName="IdGrupy" />
+          <ScalarProperty Name="IdZadania" ColumnName="IdZadania" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZadaniaTypy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ZadaniaTypy">
+        <MappingFragment StoreEntitySet="ZadaniaTypy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypNazwa" ColumnName="TypNazwa" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+          <ScalarProperty Name="Wybor" ColumnName="Wybor" />
+          <ScalarProperty Name="TypNazwaEN" ColumnName="TypNazwaEN" />
+          <ScalarProperty Name="Dodatkowe" ColumnName="Dodatkowe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZadaniaUprawnienia">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ZadaniaUprawnienia">
+        <MappingFragment StoreEntitySet="ZadaniaUprawnienia">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdZadania" ColumnName="IdZadania" />
+          <ScalarProperty Name="IdUprawnienia" ColumnName="IdUprawnienia" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zastepstwa">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Zastepstwa">
+        <MappingFragment StoreEntitySet="Zastepstwa">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdZastepowany" ColumnName="IdZastepowany" />
+          <ScalarProperty Name="IdZastepujacy" ColumnName="IdZastepujacy" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="copyPracownicy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.copyPracownicy">
+        <MappingFragment StoreEntitySet="copyPracownicy">
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Id_Gr_Zatr" ColumnName="Id_Gr_Zatr" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Id_Str_OrgM" ColumnName="Id_Str_OrgM" />
+          <ScalarProperty Name="x_Id_Str_OrgA" ColumnName="x_Id_Str_OrgA" />
+          <ScalarProperty Name="Id_Status" ColumnName="Id_Status" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="IdStrumienia" ColumnName="IdStrumienia" />
+          <ScalarProperty Name="DataZatr" ColumnName="DataZatr" />
+          <ScalarProperty Name="DataUmDo" ColumnName="DataUmDo" />
+          <ScalarProperty Name="DataZwol" ColumnName="DataZwol" />
+          <ScalarProperty Name="ScalData" ColumnName="ScalData" />
+          <ScalarProperty Name="ScalActualId" ColumnName="ScalActualId" />
+          <ScalarProperty Name="Nr_Ewid2" ColumnName="Nr_Ewid2" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Rights" ColumnName="Rights" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="copyPrzelozeni">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.copyPrzelozeni">
+        <MappingFragment StoreEntitySet="copyPrzelozeni">
+          <ScalarProperty Name="Id_Przelozeni" ColumnName="Id_Przelozeni" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Id_Gr_zatr" ColumnName="Id_Gr_zatr" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Id_Priorytet" ColumnName="Id_Priorytet" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Blokada" ColumnName="Blokada" />
+          <ScalarProperty Name="Rights" ColumnName="Rights" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="x_IdsStrOrg" ColumnName="x_IdsStrOrg" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+          <ScalarProperty Name="DataZatr" ColumnName="DataZatr" />
+          <ScalarProperty Name="DataUmDo" ColumnName="DataUmDo" />
+          <ScalarProperty Name="DataZwol" ColumnName="DataZwol" />
+          <ScalarProperty Name="Nr_Ewid2" ColumnName="Nr_Ewid2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="copyStanowiska">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.copyStanowiska">
+        <MappingFragment StoreEntitySet="copyStanowiska">
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Nazwa_Stan" ColumnName="Nazwa_Stan" />
+          <ScalarProperty Name="Nazwa_StanEN" ColumnName="Nazwa_StanEN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="copyStrOrg">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.copyStrOrg">
+        <MappingFragment StoreEntitySet="copyStrOrg">
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Id_Parent" ColumnName="Id_Parent" />
+          <ScalarProperty Name="Symb_Jedn" ColumnName="Symb_Jedn" />
+          <ScalarProperty Name="Nazwa_Jedn" ColumnName="Nazwa_Jedn" />
+          <ScalarProperty Name="Nazwa_JednEN" ColumnName="Nazwa_JednEN" />
+          <ScalarProperty Name="ID_Upr_Przel" ColumnName="ID_Upr_Przel" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="copyStrukturaPrzelozeni">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.copyStrukturaPrzelozeni">
+        <MappingFragment StoreEntitySet="copyStrukturaPrzelozeni">
+          <ScalarProperty Name="IdStruktury" ColumnName="IdStruktury" />
+          <ScalarProperty Name="IdPrzelozonego" ColumnName="IdPrzelozonego" />
+          <ScalarProperty Name="DataOd" ColumnName="DataOd" />
+          <ScalarProperty Name="DataDo" ColumnName="DataDo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Przelozeni_20150124">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Przelozeni_20150124">
+        <MappingFragment StoreEntitySet="Przelozeni_20150124">
+          <ScalarProperty Name="Id_Przelozeni" ColumnName="Id_Przelozeni" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Id_Gr_zatr" ColumnName="Id_Gr_zatr" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Id_Priorytet" ColumnName="Id_Priorytet" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Blokada" ColumnName="Blokada" />
+          <ScalarProperty Name="Rights" ColumnName="Rights" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="x_IdsStrOrg" ColumnName="x_IdsStrOrg" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+          <ScalarProperty Name="DataZatr" ColumnName="DataZatr" />
+          <ScalarProperty Name="DataUmDo" ColumnName="DataUmDo" />
+          <ScalarProperty Name="DataZwol" ColumnName="DataZwol" />
+          <ScalarProperty Name="Nr_Ewid2" ColumnName="Nr_Ewid2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZadaniaStanowiska">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.ZadaniaStanowiska">
+        <MappingFragment StoreEntitySet="ZadaniaStanowiska">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Przelozeni">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.Przelozeni">
+        <MappingFragment StoreEntitySet="Przelozeni">
+          <ScalarProperty Name="Id_Przelozeni" ColumnName="Id_Przelozeni" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Id_Gr_Zatr" ColumnName="Id_Gr_Zatr" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Id_Priorytet" ColumnName="Id_Priorytet" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Blokada" ColumnName="Blokada" />
+          <ScalarProperty Name="Rights" ColumnName="Rights" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="x_IdsStrOrg" ColumnName="x_IdsStrOrg" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+          <ScalarProperty Name="DataZatr" ColumnName="DataZatr" />
+          <ScalarProperty Name="DataUmDo" ColumnName="DataUmDo" />
+          <ScalarProperty Name="DataZwol" ColumnName="DataZwol" />
+          <ScalarProperty Name="Nr_Ewid2" ColumnName="Nr_Ewid2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VCertyfikaty">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VCertyfikaty">
+        <MappingFragment StoreEntitySet="VCertyfikaty">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUprawnienia" ColumnName="IdUprawnienia" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Numer" ColumnName="Numer" />
+          <ScalarProperty Name="DataWaznosci" ColumnName="DataWaznosci" />
+          <ScalarProperty Name="Kategoria" ColumnName="Kategoria" />
+          <ScalarProperty Name="DataZdobyciaUprawnien" ColumnName="DataZdobyciaUprawnien" />
+          <ScalarProperty Name="DataWaznosciPsychotestow" ColumnName="DataWaznosciPsychotestow" />
+          <ScalarProperty Name="DataWaznosciBadanLekarskich" ColumnName="DataWaznosciBadanLekarskich" />
+          <ScalarProperty Name="DataWaznosciUmowy" ColumnName="DataWaznosciUmowy" />
+          <ScalarProperty Name="UmowaLojalnosciowa" ColumnName="UmowaLojalnosciowa" />
+          <ScalarProperty Name="ImportId" ColumnName="ImportId" />
+          <ScalarProperty Name="Aktualny" ColumnName="Aktualny" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+          <ScalarProperty Name="UprId" ColumnName="UprId" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="KwalifikacjeId" ColumnName="KwalifikacjeId" />
+          <ScalarProperty Name="IdUprawnienia2" ColumnName="IdUprawnienia2" />
+          <ScalarProperty Name="PoziomId" ColumnName="PoziomId" />
+          <ScalarProperty Name="PoziomPoziom" ColumnName="PoziomPoziom" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Poziom" ColumnName="Poziom" />
+          <ScalarProperty Name="PoziomEN" ColumnName="PoziomEN" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Pola" ColumnName="Pola" />
+          <ScalarProperty Name="Aktywne" ColumnName="Aktywne" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VCertyfikatyUprawnienie">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VCertyfikatyUprawnienie">
+        <MappingFragment StoreEntitySet="VCertyfikatyUprawnienie">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUprawnienia" ColumnName="IdUprawnienia" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Numer" ColumnName="Numer" />
+          <ScalarProperty Name="DataWaznosci" ColumnName="DataWaznosci" />
+          <ScalarProperty Name="Kategoria" ColumnName="Kategoria" />
+          <ScalarProperty Name="DataZdobyciaUprawnien" ColumnName="DataZdobyciaUprawnien" />
+          <ScalarProperty Name="DataWaznosciPsychotestow" ColumnName="DataWaznosciPsychotestow" />
+          <ScalarProperty Name="DataWaznosciBadanLekarskich" ColumnName="DataWaznosciBadanLekarskich" />
+          <ScalarProperty Name="DataWaznosciUmowy" ColumnName="DataWaznosciUmowy" />
+          <ScalarProperty Name="UmowaLojalnosciowa" ColumnName="UmowaLojalnosciowa" />
+          <ScalarProperty Name="ImportId" ColumnName="ImportId" />
+          <ScalarProperty Name="DataZdobyciaUprawnienOk" ColumnName="DataZdobyciaUprawnienOk" />
+          <ScalarProperty Name="DataWaznosciPsychotestowOk" ColumnName="DataWaznosciPsychotestowOk" />
+          <ScalarProperty Name="DataWaznosciBadanLekarskichOk" ColumnName="DataWaznosciBadanLekarskichOk" />
+          <ScalarProperty Name="UmowaLojalnosciowaOk" ColumnName="UmowaLojalnosciowaOk" />
+          <ScalarProperty Name="DataWaznosciSet" ColumnName="DataWaznosciSet" />
+          <ScalarProperty Name="Aktualny" ColumnName="Aktualny" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+          <ScalarProperty Name="UprId" ColumnName="UprId" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="KwalifikacjeId" ColumnName="KwalifikacjeId" />
+          <ScalarProperty Name="PoziomId" ColumnName="PoziomId" />
+          <ScalarProperty Name="PoziomPoziom" ColumnName="PoziomPoziom" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Poziom" ColumnName="Poziom" />
+          <ScalarProperty Name="PoziomEN" ColumnName="PoziomEN" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Pola" ColumnName="Pola" />
+          <ScalarProperty Name="Aktywne" ColumnName="Aktywne" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VCertyfikatyUprawnienie2">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VCertyfikatyUprawnienie2">
+        <MappingFragment StoreEntitySet="VCertyfikatyUprawnienie2">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUprawnienia" ColumnName="IdUprawnienia" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Numer" ColumnName="Numer" />
+          <ScalarProperty Name="DataWaznosci" ColumnName="DataWaznosci" />
+          <ScalarProperty Name="Kategoria" ColumnName="Kategoria" />
+          <ScalarProperty Name="DataZdobyciaUprawnien" ColumnName="DataZdobyciaUprawnien" />
+          <ScalarProperty Name="DataWaznosciPsychotestow" ColumnName="DataWaznosciPsychotestow" />
+          <ScalarProperty Name="DataWaznosciBadanLekarskich" ColumnName="DataWaznosciBadanLekarskich" />
+          <ScalarProperty Name="DataWaznosciUmowy" ColumnName="DataWaznosciUmowy" />
+          <ScalarProperty Name="UmowaLojalnosciowa" ColumnName="UmowaLojalnosciowa" />
+          <ScalarProperty Name="ImportId" ColumnName="ImportId" />
+          <ScalarProperty Name="DataZdobyciaUprawnienOk" ColumnName="DataZdobyciaUprawnienOk" />
+          <ScalarProperty Name="DataWaznosciPsychotestowOk" ColumnName="DataWaznosciPsychotestowOk" />
+          <ScalarProperty Name="DataWaznosciBadanLekarskichOk" ColumnName="DataWaznosciBadanLekarskichOk" />
+          <ScalarProperty Name="UmowaLojalnosciowaOk" ColumnName="UmowaLojalnosciowaOk" />
+          <ScalarProperty Name="DataWaznosciSet" ColumnName="DataWaznosciSet" />
+          <ScalarProperty Name="Aktualny" ColumnName="Aktualny" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+          <ScalarProperty Name="UprId" ColumnName="UprId" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="KwalifikacjeId" ColumnName="KwalifikacjeId" />
+          <ScalarProperty Name="PoziomId" ColumnName="PoziomId" />
+          <ScalarProperty Name="PoziomPoziom" ColumnName="PoziomPoziom" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="Poziom" ColumnName="Poziom" />
+          <ScalarProperty Name="PoziomEN" ColumnName="PoziomEN" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+          <ScalarProperty Name="Pola" ColumnName="Pola" />
+          <ScalarProperty Name="Aktywne" ColumnName="Aktywne" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+          <ScalarProperty Name="PoziomPoziom2" ColumnName="PoziomPoziom2" />
+          <ScalarProperty Name="DataWaznosci2" ColumnName="DataWaznosci2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VLinie">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VLinie">
+        <MappingFragment StoreEntitySet="VLinie">
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="StrSymbol" ColumnName="StrSymbol" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+          <ScalarProperty Name="LiniaId" ColumnName="LiniaId" />
+          <ScalarProperty Name="LiniaSymbol" ColumnName="LiniaSymbol" />
+          <ScalarProperty Name="LiniaNazwa" ColumnName="LiniaNazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VLinieOddelegowania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VLinieOddelegowania">
+        <MappingFragment StoreEntitySet="VLinieOddelegowania">
+          <ScalarProperty Name="StrSymbol" ColumnName="StrSymbol" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+          <ScalarProperty Name="LiniaId" ColumnName="LiniaId" />
+          <ScalarProperty Name="LiniaSymbol" ColumnName="LiniaSymbol" />
+          <ScalarProperty Name="LiniaNazwa" ColumnName="LiniaNazwa" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="StatusOdd" ColumnName="StatusOdd" />
+          <ScalarProperty Name="KierNazwisko" ColumnName="KierNazwisko" />
+          <ScalarProperty Name="KierImie" ColumnName="KierImie" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="Macierzysty" ColumnName="Macierzysty" />
+          <ScalarProperty Name="Przydelegowany" ColumnName="Przydelegowany" />
+          <ScalarProperty Name="Oddelegowany" ColumnName="Oddelegowany" />
+          <ScalarProperty Name="IdOdd" ColumnName="IdOdd" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+          <ScalarProperty Name="IdStruktury" ColumnName="IdStruktury" />
+          <ScalarProperty Name="StrSymbolOdd" ColumnName="StrSymbolOdd" />
+          <ScalarProperty Name="StrNazwaOdd" ColumnName="StrNazwaOdd" />
+          <ScalarProperty Name="LiniaSymbolOdd" ColumnName="LiniaSymbolOdd" />
+          <ScalarProperty Name="LiniaNazwaOdd" ColumnName="LiniaNazwaOdd" />
+          <ScalarProperty Name="KierNazwiskoOdd" ColumnName="KierNazwiskoOdd" />
+          <ScalarProperty Name="KierImieOdd" ColumnName="KierImieOdd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VLinieZadania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VLinieZadania">
+        <MappingFragment StoreEntitySet="VLinieZadania">
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="NazwaZadania" ColumnName="NazwaZadania" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VLinieZadania3">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VLinieZadania3">
+        <MappingFragment StoreEntitySet="VLinieZadania3">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Id_Zadania2" ColumnName="Id_Zadania2" />
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="Id_Gr_Oper" ColumnName="Id_Gr_Oper" />
+          <ScalarProperty Name="NazwaZadania" ColumnName="NazwaZadania" />
+          <ScalarProperty Name="NazwaZadaniaEN" ColumnName="NazwaZadaniaEN" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="Sumowane" ColumnName="Sumowane" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="Global" ColumnName="Global" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="Id_Obszary" ColumnName="Id_Obszary" />
+          <ScalarProperty Name="Id_Podobszary" ColumnName="Id_Podobszary" />
+          <ScalarProperty Name="Id_Maszyny" ColumnName="Id_Maszyny" />
+          <ScalarProperty Name="Id_Task" ColumnName="Id_Task" />
+          <ScalarProperty Name="Id_Dzialanie" ColumnName="Id_Dzialanie" />
+          <ScalarProperty Name="Id_Narzedzie" ColumnName="Id_Narzedzie" />
+          <ScalarProperty Name="Id_Rodzaj" ColumnName="Id_Rodzaj" />
+          <ScalarProperty Name="Id_Poziom" ColumnName="Id_Poziom" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="TypNazwa" ColumnName="TypNazwa" />
+          <ScalarProperty Name="TypNazwaEN" ColumnName="TypNazwaEN" />
+          <ScalarProperty Name="Dodatkowe" ColumnName="Dodatkowe" />
+          <ScalarProperty Name="Wybor" ColumnName="Wybor" />
+          <ScalarProperty Name="Onboarding" ColumnName="Onboarding" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VMaszynyZadania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VMaszynyZadania">
+        <MappingFragment StoreEntitySet="VMaszynyZadania">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NazwaEN" ColumnName="NazwaEN" />
+          <ScalarProperty Name="IdParent" ColumnName="IdParent" />
+          <ScalarProperty Name="IdParents" ColumnName="IdParents" />
+          <ScalarProperty Name="IdParents2" ColumnName="IdParents2" />
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="Id_Gr_Oper" ColumnName="Id_Gr_Oper" />
+          <ScalarProperty Name="NazwaZadania" ColumnName="NazwaZadania" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="Sumowane" ColumnName="Sumowane" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="Global" ColumnName="Global" />
+          <ScalarProperty Name="Id_Maszyny1" ColumnName="Id_Maszyny1" />
+          <ScalarProperty Name="Id_Obszary1" ColumnName="Id_Obszary1" />
+          <ScalarProperty Name="Id_Podobszary1" ColumnName="Id_Podobszary1" />
+          <ScalarProperty Name="Id_Director1" ColumnName="Id_Director1" />
+          <ScalarProperty Name="Id_Task1" ColumnName="Id_Task1" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="NazwaZadaniaEN" ColumnName="NazwaZadaniaEN" />
+          <ScalarProperty Name="Id_Rodzaj1" ColumnName="Id_Rodzaj1" />
+          <ScalarProperty Name="Id_Poziom1" ColumnName="Id_Poziom1" />
+          <ScalarProperty Name="ProdAdm1" ColumnName="ProdAdm1" />
+          <ScalarProperty Name="Dyr1" ColumnName="Dyr1" />
+          <ScalarProperty Name="Lp1" ColumnName="Lp1" />
+          <ScalarProperty Name="StrOrg1" ColumnName="StrOrg1" />
+          <ScalarProperty Name="Id_Dzialanie1" ColumnName="Id_Dzialanie1" />
+          <ScalarProperty Name="Id_Narzedzie1" ColumnName="Id_Narzedzie1" />
+          <ScalarProperty Name="Onboarding" ColumnName="Onboarding" />
+          <ScalarProperty Name="IdTypu" ColumnName="IdTypu" />
+          <ScalarProperty Name="TypNazwa" ColumnName="TypNazwa" />
+          <ScalarProperty Name="TypNazwaEN" ColumnName="TypNazwaEN" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+          <ScalarProperty Name="Wybor" ColumnName="Wybor" />
+          <ScalarProperty Name="Dodatkowe" ColumnName="Dodatkowe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOceny">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VOceny">
+        <MappingFragment StoreEntitySet="VOceny">
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="NazwaZadania" ColumnName="NazwaZadania" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="Sumowane" ColumnName="Sumowane" />
+          <ScalarProperty Name="SymbolStrumienia" ColumnName="SymbolStrumienia" />
+          <ScalarProperty Name="NazwaStrumienia" ColumnName="NazwaStrumienia" />
+          <ScalarProperty Name="SymbolLinii" ColumnName="SymbolLinii" />
+          <ScalarProperty Name="NazwaLinii" ColumnName="NazwaLinii" />
+          <ScalarProperty Name="GrOperacjiSymbol" ColumnName="GrOperacjiSymbol" />
+          <ScalarProperty Name="GrOperacjiNazwa" ColumnName="GrOperacjiNazwa" />
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Id_Gr_Zatr" ColumnName="Id_Gr_Zatr" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Id_Str_OrgM" ColumnName="Id_Str_OrgM" />
+          <ScalarProperty Name="x_Id_Str_OrgA" ColumnName="x_Id_Str_OrgA" />
+          <ScalarProperty Name="Id_Status" ColumnName="Id_Status" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+          <ScalarProperty Name="DataOceny" ColumnName="DataOceny" />
+          <ScalarProperty Name="Wartość_ważona" ColumnName="Wartość ważona" />
+          <ScalarProperty Name="Pracownik" ColumnName="Pracownik" />
+          <ScalarProperty Name="Id_Oceny" ColumnName="Id_Oceny" />
+          <ScalarProperty Name="Aktualna" ColumnName="Aktualna" />
+          <ScalarProperty Name="IdLinia" ColumnName="IdLinia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOddelegowaniaNaDzis">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VOddelegowaniaNaDzis">
+        <MappingFragment StoreEntitySet="VOddelegowaniaNaDzis">
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Id_Gr_Zatr" ColumnName="Id_Gr_Zatr" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Id_Str_OrgM" ColumnName="Id_Str_OrgM" />
+          <ScalarProperty Name="x_Id_Str_OrgA" ColumnName="x_Id_Str_OrgA" />
+          <ScalarProperty Name="Id_Status" ColumnName="Id_Status" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="IdStrumienia" ColumnName="IdStrumienia" />
+          <ScalarProperty Name="DataZatr" ColumnName="DataZatr" />
+          <ScalarProperty Name="DataUmDo" ColumnName="DataUmDo" />
+          <ScalarProperty Name="DataZwol" ColumnName="DataZwol" />
+          <ScalarProperty Name="ScalData" ColumnName="ScalData" />
+          <ScalarProperty Name="ScalActualId" ColumnName="ScalActualId" />
+          <ScalarProperty Name="DId" ColumnName="DId" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+          <ScalarProperty Name="IdStruktury" ColumnName="IdStruktury" />
+          <ScalarProperty Name="DIdKierownika" ColumnName="DIdKierownika" />
+          <ScalarProperty Name="IdKierownikaRq" ColumnName="IdKierownikaRq" />
+          <ScalarProperty Name="DataRq" ColumnName="DataRq" />
+          <ScalarProperty Name="UwagiRq" ColumnName="UwagiRq" />
+          <ScalarProperty Name="IdKierownikaAcc" ColumnName="IdKierownikaAcc" />
+          <ScalarProperty Name="DataAcc" ColumnName="DataAcc" />
+          <ScalarProperty Name="UwagiAcc" ColumnName="UwagiAcc" />
+          <ScalarProperty Name="DStatus" ColumnName="DStatus" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VPracOceny">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VPracOceny">
+        <MappingFragment StoreEntitySet="VPracOceny">
+          <ScalarProperty Name="Pracownik" ColumnName="Pracownik" />
+          <ScalarProperty Name="Nr_ew_" ColumnName="Nr ew." />
+          <ScalarProperty Name="Strumień_macierzysty" ColumnName="Strumień macierzysty" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+          <ScalarProperty Name="Linia_macierzysta" ColumnName="Linia macierzysta" />
+          <ScalarProperty Name="LiniaNazwa" ColumnName="LiniaNazwa" />
+          <ScalarProperty Name="Suma_ocen" ColumnName="Suma ocen" />
+          <ScalarProperty Name="Wielkość_ważona" ColumnName="Wielkość ważona" />
+          <ScalarProperty Name="Ocena_3" ColumnName="Ocena 3" />
+          <ScalarProperty Name="Ocena_2" ColumnName="Ocena 2" />
+          <ScalarProperty Name="Ocena_1" ColumnName="Ocena 1" />
+          <ScalarProperty Name="Ocena_0" ColumnName="Ocena 0" />
+          <ScalarProperty Name="Brak_oceny" ColumnName="Brak oceny" />
+          <ScalarProperty Name="Wielkość_ważona_Str" ColumnName="Wielkość ważona Str" />
+          <ScalarProperty Name="Ocena_3_Str" ColumnName="Ocena 3 Str" />
+          <ScalarProperty Name="Ocena_2_Str" ColumnName="Ocena 2 Str" />
+          <ScalarProperty Name="Ocena_1_Str" ColumnName="Ocena 1 Str" />
+          <ScalarProperty Name="Ocena_0_Str" ColumnName="Ocena 0 Str" />
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="LiniaId" ColumnName="LiniaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VPracOcenyLinia">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VPracOcenyLinia">
+        <MappingFragment StoreEntitySet="VPracOcenyLinia">
+          <ScalarProperty Name="Pracownik" ColumnName="Pracownik" />
+          <ScalarProperty Name="Nr_ew_" ColumnName="Nr ew." />
+          <ScalarProperty Name="Strumień_macierzysty" ColumnName="Strumień macierzysty" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+          <ScalarProperty Name="Linia_macierzysta" ColumnName="Linia macierzysta" />
+          <ScalarProperty Name="LiniaNazwa" ColumnName="LiniaNazwa" />
+          <ScalarProperty Name="Suma_ocen" ColumnName="Suma ocen" />
+          <ScalarProperty Name="Wielkość_ważona" ColumnName="Wielkość ważona" />
+          <ScalarProperty Name="Ocena_3" ColumnName="Ocena 3" />
+          <ScalarProperty Name="Ocena_2" ColumnName="Ocena 2" />
+          <ScalarProperty Name="Ocena_1" ColumnName="Ocena 1" />
+          <ScalarProperty Name="Ocena_0" ColumnName="Ocena 0" />
+          <ScalarProperty Name="Brak_oceny" ColumnName="Brak oceny" />
+          <ScalarProperty Name="Ilość_czynności" ColumnName="Ilość czynności" />
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="LiniaId" ColumnName="LiniaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VPracOcenyLinia_v1">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VPracOcenyLinia_v1">
+        <MappingFragment StoreEntitySet="VPracOcenyLinia_v1">
+          <ScalarProperty Name="Pracownik" ColumnName="Pracownik" />
+          <ScalarProperty Name="Nr_ew_" ColumnName="Nr ew." />
+          <ScalarProperty Name="Strumień_macierzysty" ColumnName="Strumień macierzysty" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+          <ScalarProperty Name="Linia_macierzysta" ColumnName="Linia macierzysta" />
+          <ScalarProperty Name="LiniaNazwa" ColumnName="LiniaNazwa" />
+          <ScalarProperty Name="Suma_ocen" ColumnName="Suma ocen" />
+          <ScalarProperty Name="wielkość_ważona" ColumnName="wielkość ważona" />
+          <ScalarProperty Name="Ocena_3" ColumnName="Ocena 3" />
+          <ScalarProperty Name="Ocena_2" ColumnName="Ocena 2" />
+          <ScalarProperty Name="Ocena_1" ColumnName="Ocena 1" />
+          <ScalarProperty Name="Ocena_0" ColumnName="Ocena 0" />
+          <ScalarProperty Name="Brak_oceny" ColumnName="Brak oceny" />
+          <ScalarProperty Name="Ilość_czynności" ColumnName="Ilość czynności" />
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="LiniaId" ColumnName="LiniaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VPracOcenyStr">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VPracOcenyStr">
+        <MappingFragment StoreEntitySet="VPracOcenyStr">
+          <ScalarProperty Name="Pracownik" ColumnName="Pracownik" />
+          <ScalarProperty Name="Nr_ew_" ColumnName="Nr ew." />
+          <ScalarProperty Name="Strumień_macierzysty" ColumnName="Strumień macierzysty" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+          <ScalarProperty Name="Linia_macierzysta" ColumnName="Linia macierzysta" />
+          <ScalarProperty Name="LiniaNazwa" ColumnName="LiniaNazwa" />
+          <ScalarProperty Name="Suma_ocen" ColumnName="Suma ocen" />
+          <ScalarProperty Name="Wielkość_ważona" ColumnName="Wielkość ważona" />
+          <ScalarProperty Name="Ocena_3" ColumnName="Ocena 3" />
+          <ScalarProperty Name="Ocena_2" ColumnName="Ocena 2" />
+          <ScalarProperty Name="Ocena_1" ColumnName="Ocena 1" />
+          <ScalarProperty Name="Ocena_0" ColumnName="Ocena 0" />
+          <ScalarProperty Name="Brak_oceny" ColumnName="Brak oceny" />
+          <ScalarProperty Name="Ilość_czynności" ColumnName="Ilość czynności" />
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="LiniaId" ColumnName="LiniaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VPracOddelegowania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VPracOddelegowania">
+        <MappingFragment StoreEntitySet="VPracOddelegowania">
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Id_Gr_Zatr" ColumnName="Id_Gr_Zatr" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Id_Str_OrgM" ColumnName="Id_Str_OrgM" />
+          <ScalarProperty Name="x_Id_Str_OrgA" ColumnName="x_Id_Str_OrgA" />
+          <ScalarProperty Name="Id_Status" ColumnName="Id_Status" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="IdStrumienia" ColumnName="IdStrumienia" />
+          <ScalarProperty Name="DataZatr" ColumnName="DataZatr" />
+          <ScalarProperty Name="DataUmDo" ColumnName="DataUmDo" />
+          <ScalarProperty Name="DataZwol" ColumnName="DataZwol" />
+          <ScalarProperty Name="ScalData" ColumnName="ScalData" />
+          <ScalarProperty Name="ScalActualId" ColumnName="ScalActualId" />
+          <ScalarProperty Name="Nr_Ewid2" ColumnName="Nr_Ewid2" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Rights" ColumnName="Rights" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPracownika" ColumnName="IdPracownika" />
+          <ScalarProperty Name="Od" ColumnName="Od" />
+          <ScalarProperty Name="Do" ColumnName="Do" />
+          <ScalarProperty Name="IdStruktury" ColumnName="IdStruktury" />
+          <ScalarProperty Name="IdKierownikaOdd" ColumnName="IdKierownikaOdd" />
+          <ScalarProperty Name="IdKierownikaRq" ColumnName="IdKierownikaRq" />
+          <ScalarProperty Name="DataRq" ColumnName="DataRq" />
+          <ScalarProperty Name="UwagiRq" ColumnName="UwagiRq" />
+          <ScalarProperty Name="IdKierownikaAcc" ColumnName="IdKierownikaAcc" />
+          <ScalarProperty Name="DataAcc" ColumnName="DataAcc" />
+          <ScalarProperty Name="UwagiAcc" ColumnName="UwagiAcc" />
+          <ScalarProperty Name="StatusOdd" ColumnName="StatusOdd" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vPracownicy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.vPracownicy">
+        <MappingFragment StoreEntitySet="vPracownicy">
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Rodzaj_Umowy" ColumnName="Rodzaj_Umowy" />
+          <ScalarProperty Name="Nazwa_Stan" ColumnName="Nazwa_Stan" />
+          <ScalarProperty Name="Id_Str_OrgM" ColumnName="Id_Str_OrgM" />
+          <ScalarProperty Name="x_Id_Str_OrgA" ColumnName="x_Id_Str_OrgA" />
+          <ScalarProperty Name="Id_Status" ColumnName="Id_Status" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="IdStrumienia" ColumnName="IdStrumienia" />
+          <ScalarProperty Name="Pracownik" ColumnName="Pracownik" />
+          <ScalarProperty Name="Jednostka_org__macierzysta" ColumnName="Jednostka org. macierzysta" />
+          <ScalarProperty Name="Status_obecności" ColumnName="Status obecności" />
+          <ScalarProperty Name="Kierownik" ColumnName="Kierownik" />
+          <ScalarProperty Name="Ocena_3" ColumnName="Ocena 3" />
+          <ScalarProperty Name="Ocena_2" ColumnName="Ocena 2" />
+          <ScalarProperty Name="Ocena_1" ColumnName="Ocena 1" />
+          <ScalarProperty Name="Ocena_0" ColumnName="Ocena 0" />
+          <ScalarProperty Name="Brak_oceny" ColumnName="Brak oceny" />
+          <ScalarProperty Name="Wielkość_ważona" ColumnName="Wielkość ważona" />
+          <ScalarProperty Name="Symbol_strumienia" ColumnName="Symbol strumienia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vPracownicyShort">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.vPracownicyShort">
+        <MappingFragment StoreEntitySet="vPracownicyShort">
+          <ScalarProperty Name="Pracownik" ColumnName="Pracownik" />
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="LiniaId" ColumnName="LiniaId" />
+          <ScalarProperty Name="LiniaSymbol" ColumnName="LiniaSymbol" />
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="StrSymbol" ColumnName="StrSymbol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VPrzelozeniLinie">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VPrzelozeniLinie">
+        <MappingFragment StoreEntitySet="VPrzelozeniLinie">
+          <ScalarProperty Name="IdPrzelozonego" ColumnName="IdPrzelozonego" />
+          <ScalarProperty Name="LiniaId" ColumnName="LiniaId" />
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="LiniaSymbol" ColumnName="LiniaSymbol" />
+          <ScalarProperty Name="LiniaNazwa" ColumnName="LiniaNazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VPrzelozeniOceny">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VPrzelozeniOceny">
+        <MappingFragment StoreEntitySet="VPrzelozeniOceny">
+          <ScalarProperty Name="Kierownik" ColumnName="Kierownik" />
+          <ScalarProperty Name="Pracownik" ColumnName="Pracownik" />
+          <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+          <ScalarProperty Name="DataOceny" ColumnName="DataOceny" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+          <ScalarProperty Name="Aktualna" ColumnName="Aktualna" />
+          <ScalarProperty Name="NazwaZadania" ColumnName="NazwaZadania" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="LiniaSymbol" ColumnName="LiniaSymbol" />
+          <ScalarProperty Name="LiniaNazwa" ColumnName="LiniaNazwa" />
+          <ScalarProperty Name="StrSymbol" ColumnName="StrSymbol" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+          <ScalarProperty Name="Id_Przelozeni" ColumnName="Id_Przelozeni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VPrzelozeniShort">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VPrzelozeniShort">
+        <MappingFragment StoreEntitySet="VPrzelozeniShort">
+          <ScalarProperty Name="Id_Przelozeni" ColumnName="Id_Przelozeni" />
+          <ScalarProperty Name="Kierownik" ColumnName="Kierownik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VPrzelozeniStr">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VPrzelozeniStr">
+        <MappingFragment StoreEntitySet="VPrzelozeniStr">
+          <ScalarProperty Name="IdPrzelozonego" ColumnName="IdPrzelozonego" />
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="StrParentId" ColumnName="StrParentId" />
+          <ScalarProperty Name="StrSymbol" ColumnName="StrSymbol" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VPrzelozeniStrLinie">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VPrzelozeniStrLinie">
+        <MappingFragment StoreEntitySet="VPrzelozeniStrLinie">
+          <ScalarProperty Name="IdPrzelozonego" ColumnName="IdPrzelozonego" />
+          <ScalarProperty Name="LiniaId" ColumnName="LiniaId" />
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="LiniaSymbol" ColumnName="LiniaSymbol" />
+          <ScalarProperty Name="LiniaNazwa" ColumnName="LiniaNazwa" />
+          <ScalarProperty Name="StrParentId" ColumnName="StrParentId" />
+          <ScalarProperty Name="StrSymbol" ColumnName="StrSymbol" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VZadania">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VZadania">
+        <MappingFragment StoreEntitySet="VZadania">
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="NazwaZadania" ColumnName="NazwaZadania" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="Sumowane" ColumnName="Sumowane" />
+          <ScalarProperty Name="SymbolStrumienia" ColumnName="SymbolStrumienia" />
+          <ScalarProperty Name="NazwaStrumienia" ColumnName="NazwaStrumienia" />
+          <ScalarProperty Name="SymbolLinii" ColumnName="SymbolLinii" />
+          <ScalarProperty Name="NazwaLinii" ColumnName="NazwaLinii" />
+          <ScalarProperty Name="GrOperacjiSymbol" ColumnName="GrOperacjiSymbol" />
+          <ScalarProperty Name="GrOperacjiNazwa" ColumnName="GrOperacjiNazwa" />
+          <ScalarProperty Name="IdLinia" ColumnName="IdLinia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VZadaniaOceny">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VZadaniaOceny">
+        <MappingFragment StoreEntitySet="VZadaniaOceny">
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="StrSymbol" ColumnName="StrSymbol" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+          <ScalarProperty Name="LiniaId" ColumnName="LiniaId" />
+          <ScalarProperty Name="LiniaSymbol" ColumnName="LiniaSymbol" />
+          <ScalarProperty Name="LiniaNazwa" ColumnName="LiniaNazwa" />
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="NazwaZadania" ColumnName="NazwaZadania" />
+          <ScalarProperty Name="IloscNaStr" ColumnName="IloscNaStr" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="GrOperSymbol" ColumnName="GrOperSymbol" />
+          <ScalarProperty Name="GrOperNazwa" ColumnName="GrOperNazwa" />
+          <ScalarProperty Name="Ocena3" ColumnName="Ocena3" />
+          <ScalarProperty Name="Ocena3sm" ColumnName="Ocena3sm" />
+          <ScalarProperty Name="Ocena3jm" ColumnName="Ocena3jm" />
+          <ScalarProperty Name="Ocena2" ColumnName="Ocena2" />
+          <ScalarProperty Name="Ocena2sm" ColumnName="Ocena2sm" />
+          <ScalarProperty Name="Ocena2jm" ColumnName="Ocena2jm" />
+          <ScalarProperty Name="Ocena1" ColumnName="Ocena1" />
+          <ScalarProperty Name="Ocena1sm" ColumnName="Ocena1sm" />
+          <ScalarProperty Name="Ocena1jm" ColumnName="Ocena1jm" />
+          <ScalarProperty Name="Ocena0" ColumnName="Ocena0" />
+          <ScalarProperty Name="Ocena0sm" ColumnName="Ocena0sm" />
+          <ScalarProperty Name="Ocena0jm" ColumnName="Ocena0jm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VZadaniaOcenyStrumienie">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VZadaniaOcenyStrumienie">
+        <MappingFragment StoreEntitySet="VZadaniaOcenyStrumienie">
+          <ScalarProperty Name="StrId" ColumnName="StrId" />
+          <ScalarProperty Name="StrSymbol" ColumnName="StrSymbol" />
+          <ScalarProperty Name="StrNazwa" ColumnName="StrNazwa" />
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="NazwaZadania" ColumnName="NazwaZadania" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="GrOperSymbol" ColumnName="GrOperSymbol" />
+          <ScalarProperty Name="GrOperNazwa" ColumnName="GrOperNazwa" />
+          <ScalarProperty Name="Ocena3" ColumnName="Ocena3" />
+          <ScalarProperty Name="Ocena3sm" ColumnName="Ocena3sm" />
+          <ScalarProperty Name="Ocena2" ColumnName="Ocena2" />
+          <ScalarProperty Name="Ocena2sm" ColumnName="Ocena2sm" />
+          <ScalarProperty Name="Ocena1" ColumnName="Ocena1" />
+          <ScalarProperty Name="Ocena1sm" ColumnName="Ocena1sm" />
+          <ScalarProperty Name="Ocena0" ColumnName="Ocena0" />
+          <ScalarProperty Name="Ocena0sm" ColumnName="Ocena0sm" />
+          <ScalarProperty Name="IloscNaStr" ColumnName="IloscNaStr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VZadaniaPracownicy">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VZadaniaPracownicy">
+        <MappingFragment StoreEntitySet="VZadaniaPracownicy">
+          <ScalarProperty Name="Id_Pracownicy" ColumnName="Id_Pracownicy" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Imie2" ColumnName="Imie2" />
+          <ScalarProperty Name="Nr_Ewid" ColumnName="Nr_Ewid" />
+          <ScalarProperty Name="Id_Gr_Zatr" ColumnName="Id_Gr_Zatr" />
+          <ScalarProperty Name="Id_Stanowiska" ColumnName="Id_Stanowiska" />
+          <ScalarProperty Name="Id_Str_OrgM" ColumnName="Id_Str_OrgM" />
+          <ScalarProperty Name="x_Id_Str_OrgA" ColumnName="x_Id_Str_OrgA" />
+          <ScalarProperty Name="Id_Status" ColumnName="Id_Status" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IdKierownika" ColumnName="IdKierownika" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="IdStrumienia" ColumnName="IdStrumienia" />
+          <ScalarProperty Name="DataZatr" ColumnName="DataZatr" />
+          <ScalarProperty Name="DataUmDo" ColumnName="DataUmDo" />
+          <ScalarProperty Name="DataZwol" ColumnName="DataZwol" />
+          <ScalarProperty Name="ScalData" ColumnName="ScalData" />
+          <ScalarProperty Name="ScalActualId" ColumnName="ScalActualId" />
+          <ScalarProperty Name="Nr_Ewid2" ColumnName="Nr_Ewid2" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Rights" ColumnName="Rights" />
+          <ScalarProperty Name="Id2" ColumnName="Id2" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Str_Org" ColumnName="Id_Str_Org" />
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="Id_Obszary" ColumnName="Id_Obszary" />
+          <ScalarProperty Name="Id_Podobszary" ColumnName="Id_Podobszary" />
+          <ScalarProperty Name="Id_Maszyny" ColumnName="Id_Maszyny" />
+          <ScalarProperty Name="Id_Task" ColumnName="Id_Task" />
+          <ScalarProperty Name="Id_Dzialanie" ColumnName="Id_Dzialanie" />
+          <ScalarProperty Name="Id_Narzedzie" ColumnName="Id_Narzedzie" />
+          <ScalarProperty Name="Id_Rodzaj" ColumnName="Id_Rodzaj" />
+          <ScalarProperty Name="Id_Poziom" ColumnName="Id_Poziom" />
+          <ScalarProperty Name="Id_Director" ColumnName="Id_Director" />
+          <ScalarProperty Name="ProdAdm" ColumnName="ProdAdm" />
+          <ScalarProperty Name="Dyr" ColumnName="Dyr" />
+          <ScalarProperty Name="Lp" ColumnName="Lp" />
+          <ScalarProperty Name="StrOrg" ColumnName="StrOrg" />
+          <ScalarProperty Name="IdZadania1" ColumnName="IdZadania1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VZadaniaTyp">
+      <EntityTypeMapping TypeName="MatrycaMVCModel.VZadaniaTyp">
+        <MappingFragment StoreEntitySet="VZadaniaTyp">
+          <ScalarProperty Name="Id_Zadania" ColumnName="Id_Zadania" />
+          <ScalarProperty Name="Id_Gr_Oper" ColumnName="Id_Gr_Oper" />
+          <ScalarProperty Name="NazwaZadania" ColumnName="NazwaZadania" />
+          <ScalarProperty Name="Waga" ColumnName="Waga" />
+          <ScalarProperty Name="Sumowane" ColumnName="Sumowane" />
+          <ScalarProperty Name="APT" ColumnName="APT" />
+          <ScalarProperty Name="Global" ColumnName="Global" />
+          <ScalarProperty Name="Id_Maszyny1" ColumnName="Id_Maszyny1" />
+          <ScalarProperty Name="Id_Obszary1" ColumnName="Id_Obszary1" />
+          <ScalarProperty Name="Id_Podobszary1" ColumnName="Id_Podobszary1" />
+          <ScalarProperty Name="Id_Director1" ColumnName="Id_Director1" />
+          <ScalarProperty Name="Id_Task1" ColumnName="Id_Task1" />
+          <ScalarProperty Name="Typ" ColumnName="Typ" />
+          <ScalarProperty Name="NazwaZadaniaEN" ColumnName="NazwaZadaniaEN" />
+          <ScalarProperty Name="Id_Rodzaj1" ColumnName="Id_Rodzaj1" />
+          <ScalarProperty Name="Id_Poziom1" ColumnName="Id_Poziom1" />
+          <ScalarProperty Name="ProdAdm1" ColumnName="ProdAdm1" />
+          <ScalarProperty Name="Dyr1" ColumnName="Dyr1" />
+          <ScalarProperty Name="Lp1" ColumnName="Lp1" />
+          <ScalarProperty Name="StrOrg1" ColumnName="StrOrg1" />
+          <ScalarProperty Name="Id_Dzialanie1" ColumnName="Id_Dzialanie1" />
+          <ScalarProperty Name="Id_Narzedzie1" ColumnName="Id_Narzedzie1" />
+          <ScalarProperty Name="Onboarding" ColumnName="Onboarding" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypNazwa" ColumnName="TypNazwa" />
+          <ScalarProperty Name="Kolejnosc" ColumnName="Kolejnosc" />
+          <ScalarProperty Name="Aktywny" ColumnName="Aktywny" />
+          <ScalarProperty Name="Wybor" ColumnName="Wybor" />
+          <ScalarProperty Name="TypNazwaEN" ColumnName="TypNazwaEN" />
+          <ScalarProperty Name="Dodatkowe" ColumnName="Dodatkowe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

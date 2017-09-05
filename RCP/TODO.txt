@@ -1,0 +1,2258 @@
+﻿-- render control to string !!!
+
+StringBuilder sb = new System.Text.StringBuilder();
+using (var stringWriter = new System.IO.StringWriter(sb))
+{
+    using (var htmlTextWriter = new System.Web.UI.HtmlTextWriter(stringWriter))
+    {
+        YourPlaceHolder.RenderControl(htmlTextWriter);
+    }
+}
+return sb.ToString();
+---------------------------------
+
+exec sp_updatestats
+dbcc freeproccache
+
+
+zegarek:
+http://www.w3schools.com/js/js_timing.asp
+
+
+
+
+
+ajax editor custom buttons and upload
+http://www.codeproject.com/Articles/667601/ASP-NET-HTML-Editor-Upload-images
+
+
+secure connectionstring
+http://msdn.microsoft.com/en-us/library/dx0f3cf2(v=vs.85).aspx
+http://msdn.microsoft.com/pl-pl/library/89211k9b(v=vs.110).aspx
+
+
+http://stackoverflow.com/questions/1207190/embedding-base64-images
+http://www.websiteoptimization.com/speed/tweak/inline-images/
+http://www.w3.org/TR/REC-html40/struct/objects.html
+
+http://www.dotnetobject.com/Thread-Html-to-Pdf-conversion-in-asp-net-c
+http://www.courtesyindia.com/software/Blogs/publish/asp.net/Datapassing.aspx#1
+
+
+lifecycle!!!
+http://blogs.thesitedoctor.co.uk/tim/2006/06/30/Complete+Lifecycle+Of+An+ASPNet+Page+And+Controls.aspx#cc
+
+
+własna kontrolka, view state drop down list
+http://stackoverflow.com/questions/1313447/listitems-attributes-in-a-dropdownlist-are-lost-on-postback
+http://weblogs.asp.net/jeff/dropdownlist-with-optgroup
+http://ignatu.co.uk/articles/Adding_groups_to_the_ASPNET_DropDownList_control/
+
+pakiet płatnych kontrolek jak devexpress
+http://help.syncfusion.com/ug/js/default.htm#!documents/installationanddeplo.htm
+
+image printer
+http://www.pdfill.com/freewriter_image.html
+http://code-industry.net/print-to-png.php
+http://www.wikihow.com/Convert-PDF-to-Image-Files <<< 9 sposobów pdf->png, inkspace - free converter ???
+
+Report Press
+
+/*
+0:00	0:30
+1:00	1:30
+2:00	2:30
+3:00	3:30
+4:00	4:30
+5:00	5:30
+6:00	6:30
+7:00	7:30
+8:00	8:30
+9:00	9:30
+10:00	10:30
+11:00	11:30
+12:00	12:30
+13:00	13:30
+14:00	14:30
+15:00	15:30
+16:00	16:30
+*/
+
+http://bytes.com/topic/asp-net/answers/843937-convert-app_code-dll
+---------------------------------
+RCP II PRACE DODATKOWE 
+---------------------------------
+1. Blokada dostępu do zmiany stref - przywrócenie pierwotnej koncepcji (Rafał)
++2. Freeze headera przy akceptacji czasu pracy
++3. cc przy mailingach o akceptację przesunięć ???
+4. modyfikacje mailingów dotyczących zamykania okresu i tygodnia
+
+
+
+01196 stempniewicz - zmiana limitu w ciagu roku
+
+
+select * from DostepniKierownicy
+
+alter table DostepniKierownicy add Pracownicy bit not null default 1
+alter table DostePniKierownicy add Edycja bit not null default 1
+--alter table DostePniKierownicy add Zoom bit not null default 1
+
+typ:
+pracownicy kierownika (zoom)
+pracownik - kierownik (zoom)
+pracownik - kierownik (bez zoom)
+pracownik 
+
+alter table sqlMenu add Image nvarchar(255)
+
+
+
+-----------------------------------------------------------
+20150607
+-----------------------------------------------------------
+1.
+CREATE TABLE [dbo].[SqlMenu](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Grupa] [nvarchar](50) NULL,
+	[ParentId] [int] NULL,
+	[MenuText] [nvarchar](200) NOT NULL,
+	[MenuTextEN] [nvarchar](200) NULL,
+	[ToolTip] [nvarchar](500) NULL,
+	[ToolTipEN] [nvarchar](500) NULL,
+	[Command] [nvarchar](500) NULL,
+	[Kolejnosc] [int] NULL,
+	[Aktywny] [bit] NOT NULL,
+	[Image] [nvarchar](255) NULL,
+	[Rights] [varchar](200) NULL,
+	[Par1] [nvarchar](200) NULL,
+	[Par2] [nvarchar](200) NULL,
+	[Sql] [nvarchar](max) NULL,
+	[SqlParams] [nvarchar](max) NULL,
+	[Mode] [int] NULL,
+ CONSTRAINT [PK_SqlMenu] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[SqlMenu] ADD  CONSTRAINT [DF_SqlMenu_Aktywny]  DEFAULT ((1)) FOR [Aktywny]
+GO
+
+2.
+update IPO_Role set Symbol = 'Zarządzający produktami' where Id = 18
+
+-----------------------------------------------------------
+20150411
+-----------------------------------------------------------
+1.
+alter table PracownicyStanowiska add Grade nvarchar(20)
+alter table Stanowiska add Grade nvarchar(20)  <<<< zmienić procedure importu Asseco bo się wywala z invalid column definition !!!
+w SIEMENSIE nie ma pola Pracowniy.PassExpire - trzeba przegenerować View VPrzypisaniaNaDzień !!!
+
+2.
+do indeksu Od dodać Id zeby był unikalny
+Pracownicy - Rights varchar(100)
+PracownicyOkresy - Rights varchar(100)
+
+3.
+ALTER TRIGGER [dbo].[PracownicyKarty_Insert] 
+   ON  [dbo].[PracownicyKarty]
+   AFTER INSERT
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for trigger here
+	/*
+	if exists (
+		select top 1 I.Id from Inserted I 
+		inner join PracownicyKarty PO on PO.IdPracownika = I.IdPracownika and I.Od <= ISNULL(PO.Do, PO.Od) and ISNULL(I.Do, '20990909') >= PO.Od and I.Id <> PO.Id
+	)
+	begin
+		RAISERROR ('Zachodzący okres', 16, 1)
+		ROLLBACK TRANSACTION
+	end
+	else 
+	*/
+	begin
+		update PracownicyKarty set Do = DATEADD(dd, -1, I.Od)
+		from PracownicyKarty PP 
+		inner join Inserted I on I.IdPracownika = PP.IdPracownika 
+		and PP.Od < I.Od
+		--and I.Id <> PP.Id
+		where PP.Do is null
+	end	
+END
+4.
+CREATE TABLE [dbo].[ccLimity](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[id2] [int] NULL,
+	[ccId] [int] NOT NULL,
+	[miesiac] [date] NOT NULL,
+	[Limit] [float] NULL,
+	[date] [datetime] NULL,
+	[note] [nvarchar](max) NULL,
+	[isLast] [bit] NULL,
+ CONSTRAINT [PK_ccLimity_1] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Trigger [tr_OnInsert]    Script Date: 04/11/2015 22:20:20 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TRIGGER [dbo].[tr_OnInsert] ON [dbo].[ccLimity] AFTER INSERT AS 
+BEGIN
+	SET NOCOUNT ON;
+	DECLARE @id INT
+	DECLARE @id2 INT
+	--SET @id = (SELECT id FROM INSERTED);
+	--SET @id2 = (SELECT id2 FROM INSERTED);
+	select @id = id, @id2 = id2 from inserted
+
+	IF @id2 is NULL
+	Begin
+		DECLARE @LccId INT
+		DECLARE @miesiac DATE
+		DECLARE @NId2 INT
+
+		--SET @LccId = (SELECT ccId FROM INSERTED);
+		--SET @miesiac = (SELECT miesiac FROM INSERTED);
+		select @LccId = ccId, @miesiac = miesiac from inserted
+		
+		--SET @NId2 = ISNULL((SELECT id2 FROM ccLimity 
+		--	where ccId = @LccId AND miesiac = @miesiac AND isLast = 1), @id);
+	
+		set @NId2 = ISNULL((select top 1 Id2 from ccLimity 
+			where ccId = @LccId AND miesiac = @miesiac order by Id desc), @id);
+	
+		UPDATE ccLimity SET id2 = @NId2 where id = @id
+		SET @id2 = @NId2
+	End
+	
+	UPDATE ccLimity SET isLast = 0 where id2 = @id2
+	UPDATE ccLimity SET [date] = GETDATE(), isLast = 1 where id = @id
+END
+GO
+
+
+---------------------------------
+20150220 Portal, Kwitek, RCP -> SIEMENS
+---------------------------------
++1.
+alter table Log add AppID char(1)
+alter table Log add UserIP varchar(50)
+alter table Log add SesID varchar(64)
+
+---------------------------------
+20150211 - Portal
+---------------------------------
+alter table SqlContent add Wnioski bit not null default 1
+
+---------------------------------
+20141111 Podział Ludzi
+---------------------------------
++1. update OkresyRozl set DataImportu = DataDo where DataOd <= '20141001'
++2. 
+alter table CC add Surplus bit not null default 0
+update CC set Surplus = 1 where cc = '499'
+
++3. 
+CREATE FUNCTION [dbo].[fn_GetccPrawaKierList]
+(
+	@idCC int, @typ int, @sep nvarchar(100)
+)
+RETURNS nvarchar(max)
+AS
+BEGIN
+	DECLARE @ret nvarchar(max)
+	DECLARE @splitId int
+	
+	if @typ = 1
+		select @ret = isnull(@ret + @sep, '') + P.Nazwisko + ' ' + P.Imie 
+		from ccPrawa R 
+		inner join Pracownicy P on P.Id = R.UserId and dbo.GetRightId(P.Rights, 41) = 1  --edycja splitów
+		where R.IdCC = @idCC
+		order by 1		
+		
+	RETURN @ret
+END
+
+
+
+
+---------------------------------
+20140629
+---------------------------------
+1. RepPlanPracy - spr procedurę liczenia Wolne za nadgodziny - powinna liczyc jak w RepNadgodziny (Siemens), póki co dodane 519 na sztywno z kodów
+2. 
+
+
+---------------------------------
+20140408
+---------------------------------
+1. wnioski urlopowe - walidacja istniejącego wniosku i istniejącej absencji w Asseco
++2. wnioski urlopowe - podwójne mailingi: to i cc/bcc <<< w logu sie zapisuje, usuwa duplikaty na etapie wysyłki
+
+
+
+
+
+
+---------------------------------
+20140105
+---------------------------------
++1.
+CREATE FUNCTION boy (@data datetime)
+--ALTER FUNCTION boy (@data datetime)
+RETURNS datetime
+AS
+BEGIN
+	declare @d datetime
+	set @d = DATEADD(dd, 0, DATEDIFF(dd, 0, @data))
+	set @d = dateadd(d, -datepart(dy, @d) + 1, @d)
+	--set @d = dateadd(year, datepart(year, @data) - 2000, '20000101')	
+	--set @d = dateadd(year, datepart(year, @data) - 1900, 0)
+	return @d
+END
+GO
+
+
+CREATE FUNCTION eoy (@data datetime)
+--ALTER FUNCTION eoy (@data datetime)
+RETURNS datetime
+AS
+BEGIN
+	declare @d datetime
+	set @d = DATEADD(dd, 0, DATEDIFF(dd, 0, @data))
+	set @d = dateadd(d, -datepart(d, @d), dateadd(m, 13 - datepart(m, @d), @d)) 
+	--set @d = dateadd(year, datepart(year, @data) - 2000, '20001231')		
+	--set @d = dateadd(year, datepart(year, @data) - 1900, 364)
+	return @d
+END
+GO
+
+CREATE FUNCTION getdate (@data datetime)
+--ALTER FUNCTION getdate (@data datetime)
+RETURNS datetime
+AS
+BEGIN
+	declare @d datetime
+	select @d = DATEADD(dd, 0, DATEDIFF(dd, 0, @data))
+	return @d
+END
+GO
+
+CREATE FUNCTION bom (@data datetime)
+--ALTER FUNCTION bom (@data datetime)
+RETURNS datetime
+AS
+BEGIN
+	declare @d datetime
+	set @d = DATEADD(dd, 0, DATEDIFF(dd, 0, @data))
+	set @d = DATEADD(mm, DATEDIFF(mm, 0, @d), 0)
+	return @d
+END
+GO
+
+CREATE FUNCTION eom (@data datetime)
+--ALTER FUNCTION eom (@data datetime)
+RETURNS datetime
+AS
+BEGIN
+	declare @d datetime
+	set @d = DATEADD(dd, 0, DATEDIFF(dd, 0, @data))
+	set @d = DATEADD(d, -1, DATEADD(mm, DATEDIFF(m, 0, @d) + 1, 0))
+	return @d
+END
+GO
+
+
+---------------------------------
+20131214
+---------------------------------
++1. PlanPracy - aktualizacja alert, n50, n100
++2. ImportABSENCJA - Kristina ???
++3.
+alter table PodzialNadgodzin add n50 int 
+alter table PodzialNadgodzin add n100 int
+alter table PodzialNadgodzin add DataWpisu datetime
+alter table PodzialNadgodzin add AutorId int
+alter table PodzialNadgodzin add WniosekId int
+
++alter table Kody add Nazwa2 nvarchar(100)
+
++alter table PlanPracy add n50 int 
++alter table PlanPracy add n100 int
+
+4. create view VRozliczenieNadgodzin
+5. view VRozliczenieNadgodzin - rozwiązać etat i przerwę wliczoną/niewliczoną
+
+6. jak liczyć absencje i odbior wolnego dla niepełnego etatu ???
+select * from VRozliczenieNadgodzin where IdPracownika = 420 and Miesiac = '20131101'
+select * from PlanPracy where IdPracownika = 420 and Data = '20131112'
+select * from Pracownicy where Id = 420
+select * from Absencja where IdPracownika = 420 and  DataOd >= '20131101'
+
+7.
+ALTER FUNCTION [dbo].[ToTime](@sec INT)
+RETURNS VARCHAR(100)
+AS
+BEGIN
+	DECLARE @seconds INT;
+	DECLARE @s INT;
+	DECLARE @m INT;
+	DECLARE @h INT;
+	DECLARE @ss VARCHAR(2);
+	DECLARE @mm VARCHAR(2);
+	DECLARE @hh VARCHAR(10);
+	
+	SET @seconds = abs(@sec)
+	SET @s = @seconds % 60;
+	--SET @m = FLOOR((@seconds / 60) % 60);
+	--SET @h = FLOOR(@seconds / 3600);
+	SET @m = (@seconds / 60) % 60;
+	SET @h = @seconds / 3600;
+	
+	IF (@s < 10) SET @ss = '0' + CONVERT(VARCHAR, @s, 1);
+	ELSE SET @ss = CONVERT(VARCHAR, @s, 1);
+	IF (@m < 10) SET @mm = '0' + CONVERT(VARCHAR, @m, 1);
+	ELSE SET @mm = CONVERT(VARCHAR, @m, 1);
+	IF @sec < 0 
+		SET @hh = '-' + CONVERT(VARCHAR, @h, 1);
+	ELSE
+		SET @hh = CONVERT(VARCHAR, @h, 1);
+
+	RETURN @hh + ':' + @mm + ':' + @ss;
+END
+
+ALTER FUNCTION [dbo].[ToTimeHMM](@sec INT)
+RETURNS VARCHAR(100)
+AS
+BEGIN
+	DECLARE @seconds INT;
+	DECLARE @m INT;
+	DECLARE @h INT;
+	DECLARE @mm VARCHAR(2);
+	DECLARE @hh VARCHAR(10);
+	
+	SET @seconds = abs(@sec)
+	--SET @m = FLOOR((@seconds / 60) % 60);
+	--SET @h = FLOOR(@seconds / 3600);
+	SET @m = (@seconds / 60) % 60;
+	SET @h = @seconds / 3600;
+	
+	IF (@m < 10) SET @mm = '0' + CONVERT(VARCHAR, @m, 1);
+	ELSE SET @mm = CONVERT(VARCHAR, @m, 1);
+	IF @sec < 0 
+		SET @hh = '-' + CONVERT(VARCHAR, @h, 1);
+	ELSE
+		SET @hh = CONVERT(VARCHAR, @h, 1);
+	
+	RETURN @hh + ':' + @mm;
+END
+
+8.
+CREATE TABLE [dbo].[OkresyRozliczeniowe](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[DataOd] [datetime] NOT NULL,
+	[DataDo] [datetime] NOT NULL,
+	[Status] [int] NOT NULL,
+	[Zamknal] [int] NULL,
+	[DataZamkniecia] [datetime] NULL,
+ CONSTRAINT [PK_OkresyRozliczeniowe] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE UNIQUE NONCLUSTERED INDEX [IX_OkresyRozliczenioweDataDo] ON [dbo].[OkresyRozl] 
+(
+	[DataDo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+CREATE UNIQUE NONCLUSTERED INDEX [IX_OkresyRozliczenioweDataOd] ON [dbo].[OkresyRozl] 
+(
+	[DataOd] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+insert into OkresyRozliczeniowe values ('20130101','20130331',0,null, null)
+delete from OkresyRozliczeniowe
+
+--
+declare @start datetime = '20130101'
+declare @mies int = 3
+declare @count int = 30 * @mies
+insert into OkresyRozliczeniowe 
+select 
+	DATEADD(MM, Lp * @mies, @start),
+	DATEADD(DD, -1, DATEADD(MM, (Lp + 1)* @mies, @start)),
+	0, null, null
+from dbo.GetDates2(@start,DATEADD(DD, @count, @start))
+
+update OkresyRozliczeniowe set Status = 1 where DataDo < GETDATE()
+--
+select * from OkresyRozliczeniowe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------
+20131203
+---------------------------------
++1.
+alter table Pracownicy add KadryId2 varchar(20)
+
++2.
+alter table PlanPracy add n50 int 
+alter table PlanPracy add n100 int
+
+
+3. uprawnienia Commodity -> przełożeni (kilku!), CC -> przełożeni (kilku!)
+mailingi - jak nie ma w nadstrukturze to wg Commodity
+
+??? 4. na potrzeby raportu stołówkowego <<< na jgbhr02 działa zadowalająco
+CREATE NONCLUSTERED INDEX [IX_RCP_ECReaderId]
+ON [dbo].[RCP] ([ECReaderId])
+INCLUDE ([ECUniqueId],[Czas],[ECCode],[ECUserId])
+
+
+---------------------------------
++20131126
+---------------------------------
++1.
+alter table Przypisania add IdKierownikaRqZast int null
+alter table Przypisania add IdKierownikaAccZast int null
+
+dodać pole w fn_GetSubPrzypisania i fn_GetUpPrzypisania
+	[IdKierownikaRqZast] [int] NULL,
+	[IdKierownikaAccZast] [int] NULL
+
++1.
+alter fn_GetTee i fn_getTreeOkres - dodać
+
+IdPrzypisania [int] NULL,
+
+
+2. <<< nie robię tak !!!, ustawiam w przesunięciach na ostatnie !!!
+alter table PracownicyParametry add RcpStrefaId int 
+alter table PracownicyParametry alter column RcpAlgorytm int
+
++3. uzupełnić Kody: PRACKLAS i PRACGRUPA
+
+----zmienić nazwę pola w Przypisaniach na _RcpStrefaId
++3. <<< spr SIEMENS
+ALTER FUNCTION [dbo].[GetRight](@pracId int, @right int)
+RETURNS int
+AS
+BEGIN
+	declare @value int
+	select @value = 
+		case when Rights is null or @right >= LEN(Rights) then 0 else CONVERT(int, SUBSTRING(Rights, @right + 1, 1)) end
+	from Pracownicy where Id = @pracId
+	RETURN @value;
+END
+
+
+
+---------------------------------
+20131104 >>> funkcje do wymiany
+---------------------------------
+1. Zeruj
+2. Okres.Akceptuj - porównanie funkcji GetWorktime
+3. Worktime2.GetWorktime1 karta roczna - czy withRCP = true ? czy false ?
+4. RepNadgodziny3._GetRcpData
+5. RcpControl
+1. line 685 - Worktime.alCheckInOut - alert ignorować dla dni, w których jest algorytm we/wy - brak we/wy w czasie pracy - tylko dla sumy w strefie
+2. test - zmiana nr karty
+3. test - zmiana strefy
+4. test - zmiana nr karty, strefy i algorytmu
+5. KierParams też powinny być od dat ...
+6. Okres linia 624 - wyłączyć przekzanie rcpId, w Worktime2 usunąć Compare
+
+
+1. Worker.GetPracInfo1 -> GetPracInfo2
+2. Worktime.GetStrefaRCP
+3. cntRCPStruct - zmiana algorytmu na "dzień po dniu", teraz na koniec okresu, którego dotyczy
+4. worktime2 - przeniesc rcpalgorytm, strefa rcpid do liczenia dzien po dniu
+
+
+
+
+
+5. HideZgoda dodać do Zmiany
+6.
+CREATE NONCLUSTERED INDEX IX_PrzypisaniaStOd
+ON [dbo].[Przypisania] ([Status],[Od])
+INCLUDE ([IdPracownika],[Do],[IdKierownika],[RcpStrefaId])
+
+
+
+
+
+
+---------------------------------
+20131031 >>> i tu i tu
+---------------------------------
+1. PracownicyKarty
+2. PracownicyParametry
+3. PracownicyStanowiska
+
+---------------------------------
+20131021 >>> w Jabilu zrobić !!!
+---------------------------------
++1. przy cofnęciu akceptacji pokazuje poprzednią zmianę - nie inicjuje !!!
+2. cofniecie acc na uprawnieniu - spr jak jest spr zamykanie tygodnia czy od początku miesi, bo tak powinno byc  ?
+
+
+1. 
+alter table Zmiany add Margines int not null default 0
+alter table Zmiany add ZgodaNadg bit not null default 0
+alter table Zmiany add Kolejnosc int null 
+alter table Zmiany add NowaLinia bit not null default 0
+alter table Zmiany add Widoczna bit not null default 1
+
+alter table Zmiany add HideZgoda bit not null default 0
+
+update Zmiany set ZgodaNadg = 1 where TypZmiany = 1 or (TypZmiany = 0 and Nadgodziny <> null)
+update Zmiany set Widoczna = 1, HideZgoda = 1
+
+
+2. w designerze zmienić i dodać primary
+CREATE TABLE [dbo].[Stanowiska](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdDzialu] [int] NULL,
+	[Nazwa] [nvarchar](200) NULL,
+	[Aktywne] [bit] NOT NULL,
+ CONSTRAINT [PK_Stanowiska] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[Stanowiska] ADD  CONSTRAINT [DF_Stanowiska_Aktywne]  DEFAULT ((1)) FOR [Aktywne]
+GO
+
+3.
+insert into Kody values ('MARGINES', 5, 'brak', -1, null)  -- kompatybilność, zamienić docelowo na 120 ? albo dodać 480 ?
+insert into Kody values ('MARGINES', 10, '0', 0, null)
+insert into Kody values ('MARGINES', 20, '5', 5, null)
+insert into Kody values ('MARGINES', 30, '10', 10, null)
+insert into Kody values ('MARGINES', 40, '15', 15, null)
+insert into Kody values ('MARGINES', 50, '20', 20, null)
+insert into Kody values ('MARGINES', 60, '30', 30, null)
+insert into Kody values ('MARGINES', 70, '45', 45, null)
+insert into Kody values ('MARGINES', 80, '60', 60, null)
+insert into Kody values ('MARGINES', 90, '90', 90, null)
+insert into Kody values ('MARGINES', 100, '120', 120, null)
+
+4.
+
+alter table Pracownicy add NrKarty1 varchar(50)
+alter table Pracownicy add NrKarty2 varchar(50)
+alter table Pracownicy add DataZwol datetime
+
+
+5. skrypt z PracownicyParametry data trigger.sql 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------
++20130831 
+---------------------------------
++1. IdKierownika na null - moze byc tak ze Status >= 0 a nie ma przypisania
+ALTER FUNCTION [dbo].[fn_GetTree](@rootId int, @data datetime) 
+RETURNS @ret TABLE
+(
+	IdPracownika [int] NOT NULL,
+	Nazwisko nvarchar(50) not null,
+	Imie nvarchar(50) not null,
+	KadryId varchar(15) null,
+	RcpId int null,
+	Status int not null,
+	Kierownik bit not null,
+	IdKierownika [int] NULL,
+	Hlevel int not null,
+	SortPath VARBINARY(8000) not null
+) 
+AS
+BEGIN
+	declare @prac table
+	(
+		Lp [int] NOT NULL,
+		IdPracownika [int] NOT NULL,
+		Nazwisko nvarchar(50) not null,
+		Imie nvarchar(50) not null,
+		KadryId varchar(15) null,
+		RcpId int null,
+		IdKierownika [int] NULL,
+		Kierownik bit not null,
+		Status int not null,
+		IdPrzypisania int null
+	) 
+	----- sortowanie, czas jest odcianany od @data -----
+	insert into @prac
+	select ROW_NUMBER() over(order by Kierownik desc, Nazwisko, Imie, KadryId) AS Lp, 
+		P.Id, P.Nazwisko, P.Imie, P.KadryId, P.RcpId, R.IdKierownika, P.Kierownik, P.Status, R.Id
+	from Pracownicy P
+	left outer join Przypisania R on R.IdPracownika = P.Id and R.Status = 1 and 
+		DATEADD(dd, 0, DATEDIFF(dd, 0, @data)) between R.Od and ISNULL(R.Do, '20990909')
+	where P.Status >= 0;
+	----- tree -----
+	with SubTree as
+	(
+	SELECT 
+		P.IdPrzypisania,
+		P.IdPracownika,
+		P.IdKierownika,
+		1 AS HLevel,
+		P.Nazwisko, P.Imie, P.KadryId, P.RcpId, P.Status, P.Kierownik,
+		CAST(CAST(P.Lp AS BINARY(4)) AS VARBINARY(8000)) AS SortPath
+	FROM @prac P
+	WHERE P.IdKierownika = @rootId 
+
+	UNION ALL 
+
+	SELECT 
+		R.IdPrzypisania,
+		R.IdPracownika,
+		R.IdKierownika,
+		ST.HLevel + 1 AS HLevel,
+		R.Nazwisko, R.Imie, R.KadryId, R.RcpId, R.Status, R.Kierownik,
+		CAST(ST.SortPath + CAST(R.Lp AS BINARY(4)) AS VARBINARY(8000)) AS SortPath
+	FROM @prac R
+	INNER JOIN SubTree ST ON ST.IdPracownika = R.IdKierownika
+	)
+	
+	insert @ret 
+	SELECT 
+		A.IdPracownika, 
+		A.Nazwisko, A.Imie, A.KadryId, A.RcpId, A.Status, A.Kierownik, A.IdKierownika,
+		Hlevel, SortPath
+	FROM SubTree A
+	ORDER BY A.SortPath
+
+	RETURN
+/*-------------------------
+CREATE NONCLUSTERED INDEX IX_PracownicyStatus
+ON [dbo].[Pracownicy] ([Status])
+INCLUDE ([Id],[Imie],[Nazwisko],[Kierownik],[KadryId],[RcpId])
+
+CREATE NONCLUSTERED INDEX IX_PrzypisaniaStatus
+ON [dbo].[Przypisania] ([Status],[Od])
+INCLUDE ([Id],[IdPracownika],[Do],[IdKierownika])
+
+drop index IX_PracownicyStatus on Pracownicy
+drop index IX_PrzypisaniaStatus on Przypisania
+
+
+select * from dbo.fn_GetTree(0, GETDATE())
+select * from dbo.fn_GetTree(1078, GETDATE())
+select 
+SPACE((Hlevel-1)*4) + 
+--replicate('&nbsp;', (Hlevel - 1) * 4) +
+--replicate('&nbsp;|', Hlevel - 1) + '-' +     
+Nazwisko + ' ' + Imie + ' (' + KadryId + ')'
+from dbo.fn_GetTree(0, GETDATE())
+----------------------------*/
+END
+GO
+
+
+
+
+---------------------------------
+20130820 to zrobić przy aktualizacji wersji bo na sterj się funkcja ImportZBIOR wywali - nie znajdzie pola !!!
+---------------------------------
+---5. 
+alter table UrlopZbior add UrlopNomRok int null
+update UrlopZbior set UrlopNomRok = UrlopNom  -- zanim się dorobi procedury importu
+
+<<< na razie chyba nie ...
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------
+20130722
+---------------------------------
++1.
+CREATE NONCLUSTERED INDEX IX_PrzypisaniaKier
+ON [dbo].[Przypisania] ([IdKierownika],[Status],[Od])
+INCLUDE ([Id],[IdPracownika],[Do],[IdCC],[IdCommodity],[IdArea],[IdPosition],[IdKierownikaRq],[DataRq],[UwagiRq],[IdKierownikaAcc],[DataAcc],[UwagiAcc],[Typ],[DoMonit],[RcpStrefaId])
+
++2.
+create view VPrzypisaniaNaDzis as
+--alter view VPrzypisaniaNaDzis as
+select P.*,
+	R.IdKierownika as KierId, 
+	K.Nazwisko + ' ' + K.Imie as KierownikNI, 
+	K.Nazwisko as KierNazwisko,
+	K.Imie as KierImie,
+	K.KadryId as KierKadryId
+from Pracownicy P
+left outer join Przypisania R on R.IdPracownika = P.Id and DATEADD(dd, 0, DATEDIFF(dd, 0, GETDATE())) between R.Od and ISNULL(R.Do, '20990909') and R.Status = 1
+left outer join Pracownicy K on K.Id = R.IdKierownika
+
++3.
+CREATE UNIQUE NONCLUSTERED INDEX [IX_PrzypisaniaPracStOd] ON [dbo].[Przypisania] 
+(
+	[IdPracownika] ASC,
+	[Status] ASC,
+	[Od] ASC,
+	[Id] ASC
+) ON [PRIMARY]
+
++4.
+CREATE FUNCTION [dbo].[fn_GetUpPrzypisania](@pracId int, @data datetime) 
+RETURNS @ret TABLE
+(
+	[Id] [int] NOT NULL,
+	[IdPracownika] [int] NOT NULL,
+	[Od] [datetime] NOT NULL,
+	[Do] [datetime] NULL,
+	[IdKierownika] [int] NOT NULL,
+	[IdCC] [int] NULL,
+	[IdCommodity] [int] NULL,
+	[IdArea] [int] NULL,
+	[IdPosition] [int] NULL,
+	[IdKierownikaRq] [int] NULL,
+	[DataRq] [datetime] NULL,
+	[UwagiRq] [nvarchar](200) NULL,
+	[IdKierownikaAcc] [int] NULL,
+	[DataAcc] [datetime] NULL,
+	[UwagiAcc] [nvarchar](200) NULL,
+	[Status] [int] NOT NULL,
+	[Typ] [int] NOT NULL,
+	[DoMonit] [datetime] NULL,
+	[RcpStrefaId] [int] NULL
+) 
+AS
+BEGIN
+	with Struct AS (
+		select * from Przypisania 
+		where IdPracownika = @pracId and Status = 1 and @data between Od and ISNULL(Do, '20990909')
+	union all
+		select S.* from Przypisania S
+		inner join Struct P ON P.IdKierownika = S.IdPracownika and P.Status = 1 and @data between P.Od and ISNULL(P.Do, '20990909')
+		where S.Status = 1 and @data between S.Od and ISNULL(S.Do, '20990909')
+	)
+	insert @ret 
+		select * from Struct
+	RETURN
+END
+GO
+
+
+
+
+
+
+
+->>>>>> 5. 
+alter table UrlopZbior add UrlopNomRok int null
+update UrlopZbior set UrlopNomRok = UrlopNom  -- zanim się dorobi procedury importu
+
+
+
+
+
+
+
+Przesunięcia
+------------
+1. dodać wartości wnioskowane/zaakceptowane (obie wypełniane, zmiana przez docelowego tylko drugich, po tych liczenie), pokazanie wniosku - w hint (wnioskowano o inne)
+2. obsługa przypisywań z poziomu Adm - zostawiać zaznaczenie / parametry - do zastanowienia
+3. Edycja złożonego wniosku - bez możliwości edycji parametrów: usunąć cały wniosek i założyc nowy
+4. usunięcie wniosku jak jest już następny - modyfikacja dat od-do, albo zmiena statusu z zaakceptowany na do akceptacji
+5. logowanie zmien splitów !!!
+6. automatyczny databind listview na innych zakładkach po wysłaniu wniosku (zmienna i onActivate) 
+
+Wnioski urlopowe
+----------------
+
+
+
+---------------------------------
+20130528
+---------------------------------
++1.
+Przypisania
+Position
+Commodity
+Area
+CC
+
+CREATE FUNCTION [dbo].fn_GetSubPrzypisania(@kierId int, @data datetime) 
+--ALTER FUNCTION [dbo].[fn_GetSubPrzypisania](@kierId int, @data datetime) 
+RETURNS @ret TABLE
+(
+	[Id] [int] NOT NULL,
+	[IdPracownika] [int] NOT NULL,
+	[Od] [datetime] NOT NULL,
+	[Do] [datetime] NULL,
+	[IdKierownika] [int] NOT NULL,
+	[IdCC] [int] NULL,
+	[IdCommodity] [int] NULL,
+	[IdArea] [int] NULL,
+	[IdPosition] [int] NULL,
+	[IdKierownikaRq] [int] NULL,
+	[DataRq] [datetime] NULL,
+	[UwagiRq] [nvarchar](200) NULL,
+	[IdKierownikaAcc] [int] NULL,
+	[DataAcc] [datetime] NULL,
+	[UwagiAcc] [nvarchar](200) NULL,
+	[Status] [int] NOT NULL,
+	[Typ] [int] NOT NULL,
+	[DoMonit] [datetime] NULL,
+	[RcpStrefaId] [int] NULL
+) 
+AS
+BEGIN
+	with Struct AS (
+		select * from Przypisania 
+		where Status=1 and @data between Od and ISNULL(Do, '20990909') and IdKierownika = @kierId 
+	union all
+		select P.* from Przypisania P
+		inner join Struct S ON S.IdPracownika = P.IdKierownika
+		where P.Status=1 and @data between P.Od and ISNULL(P.Do, '20990909')
+	)
+	insert @ret 
+		select * from Struct
+	RETURN
+END
+
+
+
++2. tabela Przypisania - skrypt wziąć
+alter table Przypisania add RcpStrefaId int null
+
+
+2.
+    1. Pliki - muszę rozeznać temat, bo ze względów bezpieczeństwa nie mam dostępu z poziomu aplikacji www do systemu plików, żeby sprawdzić czy nazwa się już powtarza. Poszukam czy można to jakoś obejść.
+    2. Dane działów są pobierane z pliku od Pana Kazimierza, trzeba by zmienić u źródła, bo i tak przy kolejnym imporcie się nadpisze.
+    5. Zostanie dodany alert, że pracownik przyszedł wcześniej do pracy niż to wynika z zaplanowanej dla niego zmiany. Alert będzie się pojawiał po przekroczeniu ustawionego w parametrach marginesu ostrzegania.
+    Ustalenia z naszego ostatniego spotkania:
+
+
+    b) Przygotowany zostanie algorytm liczenia czasu pracy wg zmiany, pomijający czas przed i po - opcja "brak zgody na nadgodziny". Wymagana będzie konsultacja przyjętego rozwiązania z prawnikiem i ewentualna zmiana regulaminu.
+    c) Algorytmy ustalające splity wg określonych kryteriów np. ilości przeprocesowanych sztuk, ilości DL, IL itp. - rozwój systemu.
+    g) Wysyłanie raportów mailem do wskazanych kierowników i "zamawianie przez kliknięcie" przez zainteresowane osoby z możliwością określenia czasu wykonania i wysyłki raportu - rozwój systemu.
+
+	20130820
+	zgoda na nadgodziny przy przekroczeniu limitu wymaga akceptacji HR managera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------
+20130429
+---------------------------------
++1.
+CREATE UNIQUE NONCLUSTERED INDEX [IX_DaneMPK_DataTyp] ON [dbo].[DaneMPK] 
+(
+	[Data] ASC,
+	[Typ] ASC,
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+---------------------------------
+20130415
+---------------------------------
++1. naniesc sql z ccRaporty
+
+RAPORTY
+---------------------------------
+RepPodzialCC
+    okres -> RepCCTygodniowe
+        cc    -> RepCC
+        class -> RepCCKlasyfikacja
+    cc    -> RepCC
+    class -> RepCCKlasyfikacja
+    dop   -> RepCCDopelnienia
+
+
+
+MODYFIKACJE
++1. Podczas zamykania tygodniowego nie następuje podział splitu cc 019. Dopiero zamknięcie miesiąca dzieli czas na cc 019 wg otrzymanego na zakończenie miesiąca splitu, wartości na 019 są wówczas zerowane.
++2. W każdy poniedziałek będzie udostępniony podział ludzi obowiązujący od początku miesiąca do ostatniego dnia zamykanego tygodnia. Wartości zostaną przeliczone od początku miesiąca wg splitów z otrzymanego podziału ludzi.
++3. Udostępnione będą zestawienia w podziale tygodniowym (od poniedziałku do niedzieli).
++4. W RCP, w parametrach u wszystkich kierowników zostaną wprowadzone wartości:
+- czasu przerwy na zmianie: 30 min.,
+- czas przerwy podczas nadgodzin: 10 min.,
+- margines ostrzegania: 5 min.
+Możliwość edycji parametrów zostanie uzależniona od uprawnienia, które będzie nadawane wybranym kierownikom.
+5. Zostanie dodany alert, że pracownik przyszedł wcześniej do pracy niż to wynika z zaplanowanej dla niego zmiany. Alert będzie się pojawiał po przekroczeniu ustawionego w parametrach marginesu ostrzegania.
++6. Zostanie dodany raport pokazujący wszystkich pracowników, którym system policzył dopełnienia - zaokrąglenia do pełnych godzin na koniec miesiąca, ze wskazaniem cc, kierownika, z możliwością podglądu wszystkich pracowników kierownika.
++7. Zostanie dodany raport podsumowujący osobno DL i BUIL.
+
+
+
+---------------------------------
+20130406
+---------------------------------
++1.
+alter table OkresyRozl add Archiwum bit not null default 0
+update OkresyRozl set Archiwum = 1 where Id in (select distinct IdOkresu from PracownicyOkresy) or Id <= 4
+----------------------------------
++2.
+create view VPracownicyOkresy as
+--alter view VPracownicyOkresy as
+
+select O.Id as IdOkresu, O.DataOd, O.DataDo, ISNULL(O.DataBlokady, O.DataDo) as DataBlokady, ISNULL(O.StawkaNocna, 0) as StawkaNocna, 
+PO.Id as IdPracownika, PO.KadryId as Logo, PO.Nazwisko, PO.Imie, 
+PO.IdDzialu, D.Nazwa as Dzial,
+PO.IdStanowiska, S.Nazwa as Stanowisko, PO.Stawka, PO.EtatL, PO.EtatM, N.DniPrac, 
+
+N.DniPrac * 8 * cast(PO.EtatL as float) / PO.EtatM as GodzPrac, 
+PO.Stawka / (N.DniPrac * 8 * cast(PO.EtatL as float) / PO.EtatM) as StawkaGodz, 
+
+PO.IdKierownika, K.KadryId as KierLogo, K.Nazwisko as KierNazwisko, K.Imie as KierImie, PO.Status, PO.GrSplitu
+from OkresyRozl O 
+left outer join PracownicyOkresy PO on PO.IdOkresu = O.Id
+left outer join Dzialy D on D.Id = PO.IdDzialu
+left outer join Stanowiska S on S.Id = PO.IdStanowiska
+left outer join Pracownicy K on K.Id = PO.IdKierownika
+left outer join CzasNom N on N.Data = DATEADD(dd, -DAY(O.DataDo) + 1, O.DataDo)
+where O.Archiwum = 1
+
+union
+
+select O.Id as IdOkresu, O.DataOd, O.DataDo, ISNULL(O.DataBlokady, DATEADD(DAY, -1, O.DataOd)) as DataBlokady, ISNULL(O.StawkaNocna, 0) as StawkaNocna,
+PO.Id as IdPracownika, PO.KadryId as Logo, PO.Nazwisko, PO.Imie, 
+PO.IdDzialu, D.Nazwa as Dzial,
+PO.IdStanowiska, S.Nazwa as Stanowisko, PO.Stawka, PO.EtatL, PO.EtatM, N.DniPrac,
+
+N.DniPrac * 8 * cast(PO.EtatL as float) / PO.EtatM as GodzPrac, 
+PO.Stawka / (N.DniPrac * 8 * cast(PO.EtatL as float) / PO.EtatM) as StawkaGodz, 
+
+PO.IdKierownika, K.KadryId as KierLogo, K.Nazwisko as KierNazwisko, K.Imie as KierImie, PO.Status, PO.GrSplitu
+from Pracownicy PO 
+left outer join OkresyRozl O on O.Archiwum = 0
+--from OkresyRozl O 
+--left outer join Pracownicy PO on PO.Id = PO.Id
+left outer join Dzialy D on D.Id = PO.IdDzialu
+left outer join Stanowiska S on S.Id = PO.IdStanowiska
+left outer join Pracownicy K on K.Id = PO.IdKierownika
+left outer join CzasNom N on N.Data = DATEADD(dd, -DAY(O.DataDo) + 1, O.DataDo)
+--where O.Archiwum = 0
+----------------------------------
++3.
+create view VDaneMPK as
+select * from DaneMPK M 
+left outer join VPracownicyOkresy PO on PO.Logo = M.NR_EW and M.Data between PO.DataOd and PO.DataDo
+----------------------------------
++4.
+CREATE TABLE [dbo].[PodzialLudziImport](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Miesiac] [datetime] NOT NULL,
+	[KadryId] [varchar](20) NOT NULL,
+	[Pracownik] [nvarchar](200) NULL,
+	[Stanowisko] [nvarchar](200) NULL,
+	[TypImport] [nvarchar](20) NOT NULL,
+	[Class] [nvarchar](20) NULL,
+	[Grade] [nvarchar](20) NULL,
+	[FTE] [float] NULL,
+	[Head] [float] NULL,
+	[CC] [nvarchar](20) NULL,
+ CONSTRAINT [PK_PodzialLudziImport] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE UNIQUE NONCLUSTERED INDEX [IX_PodzialLudziImport] ON [dbo].[PodzialLudziImport] 
+(
+	[Miesiac] ASC,
+	[KadryId] ASC
+) ON [PRIMARY]
+
+
+insert into PodzialLudziImport select * from tmpVnPracownicy
+insert into PodzialLudziImport select '20130301', * from tmpVccImport
+... wciągnąć jeszcze raz pliki ze 01,02 i powtórzyć wrzut
+update PodzialLudziImport set Class = TypImport where Class in ('#N/A','') or Class is null
+-----------------------------------
++5.
+update Pracownicy set Rights = '00001011' where Nazwisko in ('Szczęsny', 'Kazubski', 'Czwarno')
+update Pracownicy set Rights = '11011011' where Admin=1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------
+20130330
+---------------------------------
++1.
+alter table OkresyRozl add DataBlokady datetime null
+
+drop view VKlasyfikacja
+create view [dbo].[VKlasyfikacja] as 
+select KadryId as Logo, [Nazwisko Imię] as Pracownik, [Data zatrudnienia] as DataZatr, [Data zwolnienia / status] as DataZwol, Stanowisko, null as Area, null as Position, FTE, HEAD, 'SG&A' as TypImport, [Grade A,B,C,D] as Class, null as Grade from ccSGA
+union 
+select KadryId as Logo, [Nazwisko Imię] as Pracownik, [Data zatrudnienia] as DataZatr, [Data zwolnienia / status] as DataZwol, Stanowisko, null as Area, null as Position, FTE, HEAD, 'BUIL' as TypImport, [Grade A,B,C,D] as Class, null as Grade from ccBUIL
+union 
+select KadryId as Logo, [Nazwisko Imię] as Pracownik, [Data zatrudnienia] as DataZatr, [Data zwolnienia / status] as DataZwol, Stanowisko, Area, Position, FTE, HEAD, 'DL' as TypImport, 'DL' as Class, [Grade A,B,C,D] as Grade from ccDL
+
+
+---------------------------------
+20130202
+---------------------------------
++1.
+create view VPracownicyKier as 
+select P.Id, P.KadryId as Logo, P.Nazwisko + ' ' + P.Imie as Pracownik,
+K.Id as KierId, K.KadryId as KierLogo, K.Nazwisko + ' ' + K.Imie as Kierownik,
+P.Status
+from Pracownicy P 
+left outer join Pracownicy K on K.Id = P.IdKierownika
+
+2.
+-------------------
+select P.Kierownik, P.Pracownik from VPracownicyKier P
+where 
+P.Status >= 0 and 
+(select COUNT(*) from PlanPracy PP where PP.Data between '20130101' and '20130131' and PP.IdZmiany is not null and PP.IdPracownika = P.Id
+) = 0 and 
+(select COUNT(*) from PlanPracy PP where PP.Data between '20130101' and '20130131' and PP.IdZmianyKorekta is not null and PP.IdPracownika = P.Id
+) > 0 
+order by Kierownik, Pracownik
+
+
+
+
+
+select * from Absencja where IleDni < 0
+delete from Absencja where IleDni < 0
+
+
+select * from Pracownicy where Nazwisko = 'Kruszka'
+select * from DostepniKierownicy 
+insert into DostepniKierownicy 
+select 408, Id, '20130101', null from Pracownicy where Nazwisko + ' ' + Imie in (
+'BACHAN DANIEL',
+'TRZCIŃSKI PIOTR',
+'PODRAŻA PAWEL',
+'STANKIEWICZ MARCIN',
+'ROLEWICZ MATEUSZ',
+'GRYGIER PRZEMYSŁAW')
+
+select * from Pracownicy where Id = 408
+update Pracownicy set Rights = '000001' where Id = 408
+
+update Pracownicy set Rights = null where Id = 408
+
+
+
+select 408 as Id, 'Moi pracownicy' as NI, 0 as Sort 
+union 
+select P.Id, P.Nazwisko + ' ' + P.Imie as NI, 1 as Sort
+from DostepniKierownicy D
+left outer join Pracownicy P on P.Id = D.IdKierDostepny
+where D.IdKierownika = 408
+order by Sort, NI
+
+
+
+
+
+
+---------------------------------
+20130128
+---------------------------------
+1. <<<<, na razie nie !!!
+alter table PlanPracy add rcpCzasIn datetime
+alter table PlanPracy add rcpCzasOut datetime
+alter table PlanPracy add rcpCzasZm int
+alter table PlanPracy add rcpNadgDzien int
+alter table PlanPracy add rcpNadgNoc int
+alter table PlanPracy add rcpNocne int
+
++2. 
+select * from Pracownicy where Nazwisko = 'Pepliński' 
+update Pracownicy set Rights = '00001' where Nazwisko = 'Pepliński' 
+1194
+
+3. na HR_DB, HR_DB_COPY i jgbhr01/RCP
+alter table DaneMPK alter column CzasZm varchar(10)
+alter table DaneMPK alter column NadgodzinyDzien varchar(10)
+alter table DaneMPK alter column NadgodzinyNoc varchar(10)
+alter table DaneMPK alter column Nocne varchar(10)
+
+
+
+WITH Prac AS (
+ SELECT *
+ FROM Pracownicy
+ WHERE Id = 1194
+UNION ALL
+ SELECT e.*
+ FROM Pracownicy e
+ INNER JOIN Prac p ON p.Id = e.IdKierownika
+ )
+SELECT Id FROM Prac
+order by Id
+
+---------------------------------
+20130119
+---------------------------------
+1. spr backup przed importem struktury czy kopiuje nick i pass
+2. po imporcie z Asseco sprawdzić jak sie uaktualnił etat L i M
+3.
+insert into AbsencjaKody values (1000, 'Urlop na żądanie', 'UŻ', 1, -2, 8, 0)
+
+CREATE TABLE [dbo].[bufAbsencja](
+	Typ varchar(10) not null,
+	[Id] [int] NOT NULL,
+	[LpLogo] [char](10) NOT NULL,
+	[DataOd] [datetime] NOT NULL,
+	[DataDo] [datetime] NOT NULL,
+	[Kod] [int] NOT NULL,
+	[IleDni] [int] NULL,
+	[Godzin] [float] NULL,
+	Zalegly bit not null,
+	Planowany bit not null,
+	NaZadanie bit not null,
+	Rok int not null,
+	Miesiac int not null,
+	Korekta bit not null,
+	IdKorygowane int null,
+	Aktywny bit not null, 
+ CONSTRAINT [PK_bufAbsencja] PRIMARY KEY CLUSTERED 
+(
+	Typ asc,
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+---------------------------------
++20121231
+---------------------------------
+alter table Pracownicy add GrSplitu int
+alter table Pracownicy add IdLinii int
+alter table Pracownicy add Nick varchar(50)
+alter table Pracownicy add Pass varchar(50)
+
+
+alter table PracownicyOkresy add GrSplitu int
+alter table PracownicyOkresy add IdLinii int
+alter table PracownicyOkresy add Nick varchar(50)
+alter table PracownicyOkresy add Pass varchar(50)
+
+
+--------------------------------
+insert into Splity
+select cc, cc + ' - ' + Nazwa, AktywneOd, AktywneDo, 0 from CC
+
+insert into SplityWsp
+select S.Id, CC.Id, 1 from Splity S left outer join CC on CC.cc = LEFT(S.Nazwa,3)
+--------------------------------
+
+alter table DaneMPK add vCzasZm float
+alter table DaneMPK add vNadg50 float
+alter table DaneMPK add vNadg100 float
+alter table DaneMPK add vNocne float
+
+
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[Splity](
+	[Id] [int] NOT NULL,
+	[GrSplitu] [int] NOT NULL,
+	[Nazwa] [nvarchar](200) NULL,
+	[DataOd] [datetime] NOT NULL,
+	[DataDo] [datetime] NULL,
+	[Typ] [int] NOT NULL
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[SplityWsp](
+	[Id] [int] NOT NULL,
+	[IdSplitu] [int] NOT NULL,
+	[IdCC] [int] NOT NULL,
+	[Wsp] [float] NOT NULL
+) ON [PRIMARY]
+
+CREATE TABLE [dbo].[Linie](
+	[Id] [int] NOT NULL,
+	[Symbol] [nvarchar](25) NULL,
+	[Nazwa] [nvarchar](200) NULL,
+	[DataOd] [datetime] NOT NULL,
+	[DataDo] [datetime] NULL,
+	[GrSplituP] [int] NULL,
+	[GrSplituK] [int] NULL
+) ON [PRIMARY]
+
+
+
+
+
+
+zabiegld
+---------------------------------
+---------------------------------
+CREATE TABLE [dbo].[DaneStr](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PracLogo] [varchar](10) NOT NULL,
+	[KierLogo] [varchar](10) NULL,
+	[OdDnia] [datetime] NOT NULL,
+	[DoDnia] [datetime] NULL
+) ON [PRIMARY]
+
+
+
+
+
+---------------------------------
+2012-12-17
+---------------------------------
+1. alter table DaneMPK add Typ int --not null
+
+
+
+
+
+
+
+
+CREATE TABLE [dbo].[SumyRCP](
+	[OkresRozl] [datetime] NULL,
+	[Pracownik] [nvarchar](255) NULL,
+	[NR_EW] [varchar](10) NULL,
+	[Dział] [nvarchar](255) NULL,
+	[Nominalny] [int] NULL,
+	[Zaplanowany] [int] NULL,
+	[Przepracowany] [int] NULL,
+	[Nieprzepracowany] [int] NULL,
+	[Nadg50] [int] NULL,
+	[Nadg100] [int] NULL,
+	[Wnocy] [int] NULL,
+	[NiedzieleSwieta] [int] NULL,
+	[Uwagi] [nvarchar](255) NULL
+) ON [PRIMARY]
+
+
+drop table SumyRCP
+
+alter table DaneRCP add Nadg50 varchar(8)
+alter table DaneRCP add Nadg100 varchar(8)
+
+alter table DaneMPK add Typ int
+alter table DaneMPK add Akceptacja bit not null default 0
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------
+2012-12-12
+---------------------------------
++1.
+alter table Pracownicy add Rights varchar(50)  
+alter table PracownicyOkresy add Rights varchar(50)  
+alter table copyPracownicy add Rights varchar(50)  
+
+---------------------------------
+2012-12-08
+---------------------------------
++1.
+CREATE TABLE [dbo].[PodzialKosztow](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdPracownika] [int] NOT NULL,
+	[Data] [datetime] NOT NULL,
+	[IdPlanPracy] [int] NULL,
+	[IdMPK] [int] NOT NULL,
+	[CzasZm] [int] NULL,
+	[NadgodzinyDzien] [int] NULL,
+	[NadgodzinyNoc] [int] NULL,
+	[Nocne] [int] NULL,
+	[Uwagi] [nvarchar](200) NULL,
+ CONSTRAINT [PK_PodzialKosztow] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE UNIQUE NONCLUSTERED INDEX [IX_PodzialDataPrac] ON [dbo].[PodzialKosztow] 
+(
+	[Data] ASC,
+	[IdPracownika] ASC,
+	[IdMPK] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+CREATE UNIQUE NONCLUSTERED INDEX [IX_PodzialPracData] ON [dbo].[PodzialKosztow] 
+(
+	[IdPracownika] ASC,
+	[Data] ASC,
+	[IdMPK] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+alter table Dzialy add KierCCInfo nvarchar(200) 
+alter table Dzialy add PracCCInfo nvarchar(200) 
+alter table copyDzialy add KierCCInfo nvarchar(200) 
+alter table copyDzialy add PracCCInfo nvarchar(200) 
+
+alter table Pracownicy add CCInfo nvarchar(200) 
+alter table PracownicyOkresy add CCInfo nvarchar(200) 
+alter table copyPracownicy add CCInfo nvarchar(200) 
+
+---------------------------------
+2012-12-04
+---------------------------------
++1.
+alter table CC alter column cc nvarchar(20) null
+alter table CC add Wybor bit not null default 1
+alter table CC add IdGrupy int null
+alter table CC add Udzial float null
+alter table CC add Grupa bit not null default 0
+
+
+--update PlanPracy set uwagi = 'wymiana UPS-ów na Fordońskiej' where Id in (155193,155194)
+
+---------------------------------
+2012-12-03
+---------------------------------
++1. MPK -> CC zmienić nazwę <<< usunąć MPK
++2. wciągnąć CC
+CREATE TABLE [dbo].[CC](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[cc] [nvarchar](20) NOT NULL,
+	[Nazwa] [nvarchar](200) NOT NULL,
+	[AktywneOd] [datetime] NULL,
+	[AktywneDo] [datetime] NULL,
+	[Status] [int] NOT NULL,
+ CONSTRAINT [PK_CC] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[CC] ON
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (1, N'001', N'HP Lap Cons', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (2, N'002', N'HP Ref', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (3, N'003', N'HP Lap Comm', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (4, N'004', N'Dell Monitors', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (5, N'005', N'Dell Laptop CAR', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (6, N'007', N'Dell Repairs', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (7, N'009', N'Apple', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (8, N'010', N'Lenovo', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (9, N'012', N'HP Monitors', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (10, N'013', N'CT', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (11, N'014', N'Know how', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (12, N'015', N'HP LCD', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (13, N'018', N'DELL LCD', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (14, N'019', N'LCD Repair', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (15, N'020', N'Dixons LCD', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (16, N'021', N'DELL RTV', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (17, N'022', N'3Com', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (18, N'023', N'DIXONS MB', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (19, N'024', N'D&G', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (20, N'025', N'Dell MB', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (21, N'026', N'Apple LCD', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (22, N'027', N'Lenovo LCD', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (23, N'028', N'Lenovo MB', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (24, N'029', N'Lenovo PF', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (25, N'030', N'Lenovo RTV', CAST(0x0000A11A00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (26, N'031', N'Barnes and Noble', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (27, N'399', N'Other', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (28, N'499', N'Surplus', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (29, N'720', N'Dział Utrzymania Ruchu', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (30, N'760', N'Dział Inżynieryjny', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (31, N'780', N'Dział Jakości', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (32, N'790', N'Materials', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (33, N'810', N'logistyka', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (34, N'801', N'HP Planowanie', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (35, N'802', N'Lenovo Planovanie', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (36, N'804', N'Lenovo Zakupy', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (37, N'807', N'Regional Materials', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (38, N'855', N'Regional Logistyka ', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (39, N'910', N'Dział Personalny', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (40, N'912', N'Corp Communications', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (41, N'930', N'IT', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (42, N'950', N'Zarząd', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (43, N'970', N'Reg. Inż', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+INSERT [dbo].[CC] ([Id], [cc], [Nazwa], [AktywneOd], [AktywneDo], [Status]) VALUES (44, N'990', N'Finanse', CAST(0x00009FCB00000000 AS DateTime), NULL, 1)
+SET IDENTITY_INSERT [dbo].[CC] OFF
+/****** Object:  Default [DF_CC_Status]    Script Date: 12/02/2012 07:54:01 ******/
+ALTER TABLE [dbo].[CC] ADD  CONSTRAINT [DF_CC_Status]  DEFAULT ((1)) FOR [Status]
+GO
+
+
+
+
+
+
+
+
+
+
+
+
++3.
+CREATE TABLE [dbo].[UrlopZbior](
+	[Rok] [int] NOT NULL,
+	[KadryId] [varchar](10) NOT NULL,
+	[UrlopNom] [int] NOT NULL,
+	[UrlopZaleg] [int] NOT NULL,
+	[UrlopWyk] [int] NOT NULL,
+ CONSTRAINT [PK_UrlopZbior] PRIMARY KEY CLUSTERED 
+(
+	[Rok] ASC,
+	[KadryId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
++4. 
+alter table Absencja add IleDni int
+alter table Absencja add Godzin float
+
++5. zapytanie z excela przerobić i przenieść
+SELECT KADRY.NR_EW, ZBIOR.ROK, ZBIOR.URLOPNOM, ZBIOR.URLOPZALEG, ZBIOR.URLOPWYK,  
+case when Sum(ABSENCJA.GODZIN) Í
+
+
+SELECT KADRY.NR_EW, ZBIOR.ROK, ZBIOR.URLOPNOM, ZBIOR.URLOPZALEG, ZBIOR.URLOPWYK,  
+case when Sum(ABSENCJA.GODZIN) is null then 0
+else Sum(ABSENCJA.GODZIN) end "URL WYK DO DN",
+KADRY.NAZWISKO, KADRY.IMIE, PRACA.PRZYJ_DN, PRACA.DATA_ZWOL, PRACA.STAWKA, PRACA.KAT_ZASZ, PRACA.RODZ_PRAC,
+
+STANOW.KOD, STANOW.NAZWA, STANOW.TYP, STANOW.OPIS, STANOW.OPIS1, STANOW.OPIS2, STANOW.OPIS3
+
+FROM KADRY KADRY
+left outer join PRACA PRACA on PRACA.NR_EW = KADRY.NR_EW
+left outer join ZBIOR ZBIOR on ZBIOR.NR_EW = KADRY.NR_EW and ZBIOR.ROK=?
+left outer join ABSENCJA ABSENCJA on ABSENCJA.NR_EW=KADRY.NR_EW and (ABSENCJA.KOD_NIEOB=7 or ABSENCJA.KOD_NIEOB=19) AND (ABSENCJA.DATA_OD>=?) AND (ABSENCJA.DATA_DO<=?)
+left outer join STANOW STANOW on STANOW.KOD = PRACA.STANOW
+GROUP BY KADRY.NR_EW, ZBIOR.ROK, ZBIOR.URLOPNOM, ZBIOR.URLOPZALEG, ZBIOR.URLOPWYK, KADRY.NAZWISKO, KADRY.IMIE, PRACA.PRZYJ_DN, PRACA.DATA_ZWOL, PRACA.STAWKA, PRACA.KAT_ZASZ, PRACA.RODZ_PRAC,
+
+STANOW.KOD, STANOW.NAZWA, STANOW.TYP, STANOW.OPIS, STANOW.OPIS1, STANOW.OPIS2, STANOW.OPIS3
+
+ORDER BY KADRY.NR_EW
+
+2012-12-19
+---------------------------------
+CREATE TABLE [dbo].[SumyRCP](
+	[OkresRozl] [datetime] NULL,
+	[Pracownik] [nvarchar](255) NULL,
+	[NR_EW] [varchar](10) NULL,
+	[Dział] [nvarchar](255) NULL,
+	[Nominalny] [int] NULL,
+	[Zaplanowany] [int] NULL,
+	[Przepracowany] [int] NULL,
+	[Nieprzepracowany] [int] NULL,
+	[Nadg50] [int] NULL,
+	[Nadg100] [int] NULL,
+	[Wnocy] [int] NULL,
+	[NiedzieleSwieta] [int] NULL,
+	[Uwagi] [nvarchar](255) NULL
+) ON [PRIMARY]
+
+
+drop table SumyRCP
+
+alter table DaneRCP add Nadg50 varchar(8)
+alter table DaneRCP add Nadg100 varchar(8)
+
+alter table DaneMPK add Typ int
+alter table DaneMPK add Akceptacja bit not null default 0
+
+---------------------------------
+2012-11-11
+---------------------------------
++1.
+CREATE TABLE [dbo].[Monity](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Typ] [char](10) NOT NULL,
+	[EventId] [int] NOT NULL,
+	[UserId] [int] NOT NULL,
+	[Data] [datetime] NOT NULL,
+	[Count] [int] NOT NULL,
+ CONSTRAINT [PK_Monity] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Monity] ON [dbo].[Monity] 
+(
+	[Typ] ASC,
+	[EventId] ASC,
+	[UserId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+2. Odblokować wysyłanie maili
+
+
+2012-10-30
+---------------------------------
++1.
+CREATE TABLE [dbo].[Zastepstwa](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdZastepowany] [int] NOT NULL,
+	[IdZastepujacy] [int] NOT NULL,
+	[Od] [datetime] NOT NULL,
+	[Do] [datetime] NOT NULL
+ CONSTRAINT [PK_Zastepstwa] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[PodzialKosztow](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdPlanPracy] [int] NOT NULL,
+	[IdMPK] [int] NOT NULL,
+	[CzasZm] [int] NULL,
+	[NadgodzinyDzien] [int] NULL,
+	[NadgodzinyNoc] [int] NULL,
+	[Nocne] [int] NULL,
+	[Uwagi] [nvarchar](200) NULL,
+ CONSTRAINT [PK_PodzialKosztow] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE UNIQUE NONCLUSTERED INDEX [IX_PodzialKosztowPP] ON [dbo].[PodzialKosztow] 
+(
+	[IdPlanPracy] ASC,
+	[IdMPK] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[MPK](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nazwa] [nvarchar](200) NOT NULL,
+	[cc] [nvarchar](20) NOT NULL,
+	[Aktywne] [bit] NOT NULL,
+	[Status] [int] NOT NULL,
+ CONSTRAINT [PK_MPK] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[MPK] ADD  CONSTRAINT [DF_MPK_Aktywne]  DEFAULT ((1)) FOR [Aktywne]
+GO
+ALTER TABLE [dbo].[MPK] ADD  CONSTRAINT [DF_MPK_Status]  DEFAULT ((1)) FOR [Status]
+GO
+
+
+
+
+
+
+
+
+
+2012-09-02
+---------------------------------
++1. HR_DB
+CREATE TABLE [dbo].[AD](
+	[Login] [nvarchar](50) NOT NULL,
+	[Nazwisko] [nvarchar](50) NOT NULL,
+	[Imie] [nvarchar](50) NULL,
+	[Email] [nvarchar](50) NOT NULL,
+	[Tel] [varchar](50) NULL,
+	[CN] [nvarchar](100) NULL,
+	[Path] [nvarchar](2000) NULL,
+	[Properties] [ntext] NULL,
+ CONSTRAINT [PK_AD] PRIMARY KEY CLUSTERED 
+(
+	[Login] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
++2. HR_PRP !!! <<<<<
+alter table HR_PRP.dbo.Stanowiska add Status int
+
++3. odpalić na kopii !!!
+
++4. uzupełnić KadryId !!! - mają ankietę, nie mają KadryId
+select * from HR_PRP..Pracownicy P
+left outer join HR_PRP..Ankiety A on A.IdPracownika = P.IdPracownika
+where P.KadryId is null and A.Id is not null
+
+
+
+
+
+2012-07-25
+--------------------------------
+asp:GridView runat="server" ID="SubCategoriesGridView" Width="300px"
+           DataSourceID="SubCategoriesDataSource" DataKeyNames="ProductSubcategoryID" 
+           AutoGenerateColumns="True" />
+
+1. sprawdzić wysyłanie powiadmineń po terminie końca okresu rozl.
+2. spr. błędy w pliku Log 2012-06-20...
+
+
+
+
+
+2012-05-29
+-------------------------------
+USE [HR_DB]
+GO
+CREATE NONCLUSTERED INDEX [IX_KierownikOkresy] ON [dbo].[PracownicyOkresy] 
+(
+    [Kierownik] ASC
+)
+INCLUDE ([Id])
+GO
+
+--INCLUDE ( [Id]) WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+
+
+
+kierownicy pracownika
+
+select P.IdOkresu, O.DataOd, O.DataDo,
+P.Nazwisko,P.Imie,K.Nazwisko,K.Imie 
+from PracownicyOkresy P
+left outer join Pracownicy K on K.Id=P.IdKierownika
+left outer join OkresyRozl O on O.Id=P.IdOkresu
+
+where P.Nazwisko='Słomczewski'
+
+
+
+
+
++2012-05-14
+-------------------------------
+drop view AbsencjeMies
+
+create view AbsencjeMies as 
+select A.NR_EW, CONVERT(varchar(7), D.Data, 120) as Miesiac, A.Kod, COUNT(*) as Count
+from GetDates2('2011-11-01', '2015-12-31') D 
+left outer join Kalendarz K on K.Data = D.Data
+left outer join Absencja A on D.Data between A.DataOd and A.DataDo
+where K.Data is null and A.NR_EW is not null
+group by A.NR_EW, CONVERT(varchar(7), D.Data, 120), A.Kod
+
+-- chorobowe
+select * from AbsencjeMies where Miesiac='2012-02' and Kod = 0
+-- urlop
+select * from AbsencjeMies where Miesiac='2012-02' and Kod = 7
+-------------------------------
+USE [HR_DB]
+GO
+/****** Object:  StoredProcedure [dbo].[GetDiscFree]    Script Date: 05/13/2012 09:03:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[GetDiscFree](@drive char) 
+AS 
+BEGIN
+	CREATE TABLE #discfree1	(Drive varchar(2) NOT NULL, FreeMB int NOT NULL)
+
+	INSERT INTO #discfree1 (Drive, FreeMB)
+		EXEC master.sys.xp_fixeddrives
+	
+	DECLARE @ret int
+	SELECT @ret = FreeMB 
+		FROM #discfree1 
+			WHERE Drive = @drive
+
+	DROP TABLE #discfree1
+	
+	RETURN @ret;
+END
+-------------------------------
+USE [HR_DB]
+GO
+DECLARE	@return_value int
+
+EXEC	@return_value = [dbo].[GetDiscFree]
+		@drive = N'C'
+SELECT	'Return Value' = @return_value
+GO
+-------------------------------
+
+
+
+
+
+2012-04-30
+-------------------------------
++alter table AbsencjaKody add
+	DniWolne bit not null default 0
++alter table PlanPracy add 
+    Alerty int
+
+
+
+
+
+
+2012-04-16
+-------------------------------
+create view AbsencjeMies as 
+select A.NR_EW, CONVERT(varchar(7), D.Data, 120) as Miesiac, COUNT(*) as Count
+from GetDates2('2011-11-01', '2015-12-31') D 
+left outer join Kalendarz K on K.Data = D.Data
+left outer join Absencja A on A.Kod=0 and D.Data between A.DataOd and A.DataDo
+where K.Data is null and A.NR_EW is not null
+group by A.NR_EW, CONVERT(varchar(7), D.Data, 120)
+
+select * from AbsencjeMies where Miesiac='2012-02'
+
+
+
+
+2012-04-11
++alter table OkresyRozl add
+	DataZamkniecia datetime null,
+	StawkaNocna money null
+
+
++2012-04-03
+USE [HR_DB]
+GO
+
+
+/* wydaje sie szybciej bez tego ...
+USE [HR_DB]
+GO
+CREATE NONCLUSTERED INDEX [IX_tmpRCP1_InOut]
+ON [dbo].[tmpRCP1] ([InOut2])
+INCLUDE ([ECUniqueId],[Czas])
+GO
+*/
+
+
+/****** Object:  Table [dbo].[PracownicyOkresy]    Script Date: 04/01/2012 11:50:39 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE TABLE [dbo].[PracownicyOkresy](
+	[IdOkresu] [int] NOT NULL,
+	[Id] [int] NOT NULL,
+	[Imie] [nvarchar](50) NULL,
+	[Nazwisko] [nvarchar](50) NOT NULL,
+	[IdDzialu] [int] NULL,
+	[IdStanowiska] [int] NULL,
+	[IdKierownika] [int] NULL,
+	[IdProjektu] [int] NULL,
+	[Kierownik] [bit] NOT NULL,
+	[KadryId] [char](5) NULL,
+	[Stawka] [money] NULL,
+	[RcpId] [int] NULL,
+	[Status] [int] NULL,
+	[RcpStrefaId] [int] NULL,
+	[RcpAlgorytm] [int] NULL,
+	[EtatL] [int] NULL,
+	[EtatM] [int] NULL,
+ CONSTRAINT [PK_PracownicyOkresy] PRIMARY KEY CLUSTERED 
+(
+	[IdOkresu] ASC,
+	[Id] ASC
+) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+CREATE NONCLUSTERED INDEX [IX_IdKierownikaOkresy] ON [dbo].[PracownicyOkresy] 
+(
+	[IdOkresu] ASC,
+	[IdKierownika] ASC,
+	[Nazwisko] ASC,
+	[Imie] ASC
+) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [IX_KierownikOkresy_NI] ON [dbo].[PracownicyOkresy] 
+(
+	[IdOkresu] ASC,
+	[Kierownik] DESC,
+	[Nazwisko] ASC,
+	[Imie] ASC
+) ON [PRIMARY]
+GO
+
+update Pracownicy set Kierownik=0 where Id not in (select distinct IdKierownika from Pracownicy where IdKierownika is not null and Status >= 0)
+update Pracownicy set Kierownik=1 where Id in (select distinct IdKierownika from Pracownicy where IdKierownika is not null and Status >= 0)
+
+
+
+
+
+2012-03-30
++Ustawienia - MonitDniPrzed int null
+
+2012-03-22
++AbsencjaKody - GodzinPracy, default 0
++CzasNom
+
+----- pytania -------------------------------------------------
+weryfikacja planu pracy:
++1. przerwa dobowa 11h
++2. przerwa tygodniowa 35h
++3. 5/7 czas pracy
+4. wolne za niedziele 
+5. naruszenie doby pracowniczej
+
+pytania:
+1. kontrola w obrębie okresu czy z uwzględnieniem 7 ostatnich dni poprzedniego okresu ? <<< w obrębie okresu !!!
+2. 
+
+---------------------------------------------------------------
+2012-03-15
++Pracownicy Raporty
+
+2012-03-06
++ Zmiany - TypZmiany, NadgodzinyDzien, NadgodzinyNoc
++ Ustawienia - ZaokrTyp i dla sum
+- procedury skladowane
++ tmpRCP3
+
+2012-02-23,27
++ PlanPracy - dodać pole Uwagi
++ PlanPracy - Czas łączny
++ Ustawienia - Przerwa2MM
++ Ustawienia - StartDoby
++ Pracownicy - Stawka
+
+2012-02-20
++ indeksy założyć !!!
++ stored proc TimeToSec i intersec
++ poprawka GetRcpData
++ Stawki
++ Ustawienia
++ modyfikacja PlanPracy
+update PlanPracy set CzasZm2=dbo.TimeToSec(CzasZm), Nadgodziny2=dbo.TimeToSec(Nadgodziny)
++ usunąć z kodów algorytm z Typ=null
+
+
+------------------------------------------
+SELECT DB_NAME(database_id) AS DatabaseName,
+Name AS Logical_Name,
+Physical_Name, (size*8)/1024 SizeMB,
+*
+FROM sys.master_files
+WHERE DB_NAME(database_id) = 'HR_DB'
+GO
+
+
+>>> Microsoft tego nie zaleca ..., doczytać
+USE HR_DB
+GO
+BACKUP LOG HR_DB TO DISK='NUL:'
+GO
+DBCC SHRINKFILE(HR_DB_Log, 1)
+DBCC SHRINKFILE(HR_DB_Log, 1, TRUNCATEONLY)
+
+
+
+------------------------------------------
+USE HR_DB
+GO
+DBCC SHRINKFILE(HR_DB_Log, 1)
+BACKUP LOG HR_DB WITH TRUNCATE_ONLY
+DBCC SHRINKFILE(HR_DB_Log, 1)
+GO
+------------------------------------------
+http://www.techrepublic.com/blog/datacenter/monitor-database-file-sizes-with-sql-server-jobs/296
+IF OBJECT_ID('DatabaseFiles') IS NULL
+  BEGIN
+      SELECT TOP 0 * INTO DatabaseFiles
+      FROM sys.database_files            
+
+      ALTER TABLE DatabaseFiles
+      ADD CreationDate DATETIME DEFAULT(GETDATE())
+  END        
+
+ TRUNCATE TABLE DatabaseFiles        
+
+ EXECUTE sp_msforeachdb 'INSERT INTO DatabaseFiles SELECT *, GETDATE() FROM [?].sys.database_files'        
+
+ IF EXISTS
+ (
+         SELECT SizeInMB = CAST(((SIZE * 8.00)/1024.00) AS DECIMAL(18,2))
+         from DatabaseFiles
+         WHERE CAST(((SIZE * 8.00)/1024.00) AS DECIMAL(18,2)) > 5000
+ )
+ BEGIN
+         EXECUTE msdb.dbo.sp_send_dbmail
+         @recipients=N'chapman.tim@gmail.com',
+         @body='The size of one or more databases have grown outside of the expected bounds.',
+         @subject ='Database(s) possibly need attention.',
+         @profile_name ='Database-mailProfile';
+ END
+------------------------------------------
+C:\Users\tomekw\AppData\Local\Google\Chrome\Application\chrome.exe
+C:\Program Files\Google\Chrome\Application\chrome.exe
+
+
+1. Kody - alg 3
+2. Pracownicy - pola i null
+3.
+
+
+
+
+
+USE Sawe
+GO
+DBCC SHRINKFILE(Sawe_Log, 1)
+BACKUP LOG Sawe WITH TRUNCATE_ONLY
+DBCC SHRINKFILE(Sawe_Log, 1)
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ramki
+http://www.e2mtechnologies.eu/Company.aspx
+
+FormView
+http://www.learn-asp.net/asptutorials/FormView.aspx
+http://www.aspxcode.net/free-asp-net-data-sample-source-code.aspx?Topics=How to use FormView
+
+http://forum.4programmers.net/Bazy_danych/98678-MSSQL_Wyliczanie_czasu_trwania_nachodzacych_sie_zajec
+
+DECLARE MeetingsCursor cursor read_only FOR 
+SELECT meetingdate, meetingdate+lasting FROM Meetings ORDER BY meetingdate, lasting
+ 
+DECLARE @meetingDate datetime
+DECLARE @endDate datetime
+DECLARE @startPoint datetime
+DECLARE @endPoint datetime
+DECLARE @SUM datetime
+SET @SUM = CONVERT(datetime, '1900-01-01 00:00:00:000', 21)
+ 
+OPEN MeetingsCursor
+fetch NEXT FROM MeetingsCursor INTO @startPoint, @endPoint
+fetch NEXT FROM MeetingsCursor INTO @meetingDate, @endDate
+WHILE (@@fetch_status <> -1)
+BEGIN
+        IF(@@fetch_status <> -2)
+        BEGIN
+                IF ((@startPoint<=@meetingDate) AND (@endPoint >= @meetingDate)) --poczatek zawiera sie w przedziale
+                BEGIN
+                        IF(@endDate > @endPoint) -- nie jest zawarte w liczonym okresie
+                        BEGIN
+                                SET @endPoint = @endDate
+                        END
+                END
+                ELSE
+                BEGIN
+                        SET @SUM = @SUM + @endPoint-@startPoint --dodajemy do wspolnej sumy 
+                        SET @startPoint = @meetingDate          --i ustawiamy poczatek
+                        SET @endPoint = @endDate                --i koniec na nastepny kawalek
+                END
+        END
+        fetch NEXT FROM MeetingsCursor INTO @meetingDate, @endDate
+END
+SET @SUM = @SUM + @endPoint-@startPoint --dodajemy do wspolnej sumy koncowy zakres
+close MeetingsCursor
+deallocate MeetingsCursor
+SELECT @SUM
+-------------------------------------
+
+datetime date getdate
+
+DATEADD(dd, 0, DATEDIFF(dd, 0, _yourDate_))
+cast(floor(cast(@dateVariable as float)) as datetime)
+
+bom
+DATEADD(dd, -DAY(data) + 1, data)
+
+eom
+DATEADD(dd, -DAY(DATEADD(mm, 1, data)), DATEADD(mm, 1, data))
+
+-------------------------------------
+KODY
+UpdatePanel - http://www.codedigest.com/Articles/ASPNETAJAX/125_Using_UpdateProgress_Control_Effectively.aspx
+            
+
+INFO
+<% %> znaczenia - http://naspinski.net/post/inline-aspnet-tags-sorting-them-all-out-(3c25242c-3c253d2c-3c252c-3c252c-etc).aspx
+
+
+WYGLĄD
+Podcień - http://turbosoftnetworks.com/solutions_visibility+monitoring+management.php
+Przezroczysosc - http://srinivashelp.blogspot.com/2010/08/position-update-progress-at-mouse-click.html
+http://www.winflector.com/
+
+GOOGLE CONTACTS
+http://code.google.com/intl/pl/apis/contacts/docs/3.0/reference.html
+
+
+
+kolorystyka
+http://haineault.com/media/jquery/ui-timepickr/page/#d-demo-wrapper-1
+
+
+zaokrąglenia IE
+http://www.curvycorners.net/demos/
+
+
+
+modal popup blocker przy ajax:updateProgress
+http://weblogs.asp.net/guillermo/archive/2008/02/24/ajax-how-to-create-a-quot-processing-quot-modal-window-using-updateprogress-and-modalpopup-asp-net-ajax-controls.aspx
+

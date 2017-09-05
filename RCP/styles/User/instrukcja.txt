@@ -1,0 +1,9 @@
+1. w katalogach z nazw¹ u¿ytkownika (np. ~/styles/DBW) trzymamy pliki:
+- user.css
+- user.js
+- logo.png (do menu)
+- raplogo.png (do raportów)
+- obrazki wymagane w aplikacji (np. background) - w zadanych katalogach
+- obrazki u¿ytkownika (wykorzystywane w custom.css) - w dowolnych podkatalogach 
+2. katalogi u¿ytkowników nie s¹ publikowane
+3. po instalacji aplikacji u klienta, wgrywamy zawartoœæ katalogu u¿ytkownika

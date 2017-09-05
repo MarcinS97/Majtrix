@@ -1,0 +1,44 @@
+﻿@model IEnumerable<HRRcp.Areas.MVC.Models.obdRoleDict>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h4>Role w systemie</h4>
+
+<p>
+    @Html.ActionLink("Utwórz Nową", "Index","Role", new { RoleId="-1" }, new { @class = "waves-effect waves-light btn green btnpad" })
+</p>
+<hr />
+<br />
+<table class="striped bordered">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Nazwa)*@
+            Nazwa roli
+        </th>        
+       <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nazwa)
+        </td>
+       
+        <td>
+            @*@Html.ActionLink("Edit", "Index","Role", new { RoleId=item.Id },null) |*@
+            <a href="@Url.Action("Index", "Role",new {RoleId=item.Id })" title="Edytuj">
+                <i class="material-icons gray">edit</i>
+            </a>
+            @*@Html.ActionLink("Details", "Details", new { id=item.Id }) |*@
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+            <a href="@Url.Action("", "",new {id=item.Id })" title="Usuń">
+                <i class="material-icons gray">delete</i>
+            </a>
+          
+        </td>
+    </tr>
+}
+
+</table>

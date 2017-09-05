@@ -1,0 +1,98 @@
+﻿@using HRRcp.Areas.MVC.Models;
+
+@model IEnumerable<dicUprawnienia>
+
+
+@{
+    ViewBag.Title = "Adding";
+    Layout = "~/Areas/MVC/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .list-container{visibility:hidden; }
+</style>
+
+<h4>Definiowanie uprawnień</h4>
+<hr />
+
+<div class="row">
+    <form class="col s4">
+        <div class="row">
+            <div class="input-field col s12">
+                @*<h6>Uprawnienia dla pracownika</h6>*@
+            </div>
+            <div class="input-field col s12">
+                @Html.DropDownList("selectlista", ViewBag.PracownicyList as SelectList, "Wybierz pracownika...", new { @class = "ddlLogin2" })
+              </div>
+
+            </div>
+    </form>
+</div>
+
+<div class="list-container">
+    @Html.Action("ListAdding", Model)
+</div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+   // $('.list-container').css("visibility", "hidden");
+    $(function () {
+        $('.ddlLogin2').material_select();
+       
+    })
+
+    $('.ddlLogin2').on('change', function () {
+        //alert("zmiana");
+        var val = $(this).val();
+        
+        if (val != null && val != "") {
+            $('.list-container').css("visibility", "visible");
+        } else {
+            $('.list-container').css("visibility", "hidden");
+        }
+
+        //alert(val);
+        loadList(val);
+
+    });
+
+    function loadList(gr, search) {
+        var vid = gr || '';
+       
+        $.ajax(
+            {
+                type: "POST",
+
+        url: '/MVC/dicUprawnienia/ListAdding',
+            data: {
+            id: vid
+        },
+        success: function (data) {
+
+            $('.list-container').html(data);
+        }
+    })
+        @*var url = '@Url.Action("ListAdding", "dicUprawnienia")' + '?id=' + vid;
+            //console.log(url);
+            $.get(url, function (data) {
+                $('.test-swipe-1').fadeOut('medium', function () {
+                    $('.test-swipe-1').html(data);
+                    $('.test-swipe-1').fadeIn('medium');
+                });
+
+            });*@
+    }
+
+</script>
+
+
+
+
+

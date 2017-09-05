@@ -1,0 +1,41 @@
+﻿
+
+.card .card:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+}
+
+    .card .card:hover .card-content .card-title {
+        color: black;
+    }
+
+.card .card .card-content .card-body {
+    font-size: 14px;
+    padding-top:-50px;
+}
+
+.card .card .card-content .card-title {
+    font-size: 19px;
+    padding-top: -10px;
+    padding-bottom: 0px;
+}
+
+
+
+.card .card {
+    margin: -25px 0px 0px 0px;
+    padding: 0px 1px 1px 1px;
+    height: 95px;
+    
+}
+
+
+
+.icon-raport {
+    font-size: 36px !important;
+    padding-bottom: 50px !important;
+    padding-top: 6px !important;
+    padding-right: 10px !important;
+    color: #333333;
+}
+

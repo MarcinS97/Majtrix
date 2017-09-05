@@ -1,0 +1,10 @@
+﻿div.cntAccept4 div.content div.report_page table.GridView1
+{
+    width: 100%;
+}
+
+div.cntAccept4 div.content .btn-fill
+{
+    float: right;
+    margin: 4px;
+}

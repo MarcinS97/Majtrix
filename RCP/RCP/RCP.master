@@ -1,0 +1,323 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage3.Master" AutoEventWireup="true" CodeBehind="RCP.master.cs" Inherits="HRRcp.MasterPage3RCP" %>
+
+
+
+
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="headReport" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderHeader" runat="server">
+
+
+    <nav class="navbar navbar-default navbar-fixed-top printoff">
+        <div class="container-fullwidth">
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <asp:Image ImageUrl="~/styles/User/logo.png" runat="server" />
+                    <%--<i class="glyphicon glyphicon-list-alt" style="color: #333; top: 4px;"></i>--%>
+                    <asp:Label ID="lbAppTitle" runat="server" ></asp:Label>
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav pull-right" id="topMenu" runat="server" >
+      
+                    <asp:Repeater runat="server" DataSourceID="dsMenu">
+                        <ItemTemplate> 
+
+                            
+                            <%# Eval("_magic") %>
+
+                            <%--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" runat="server" visible='<%# Eval("Level") == "0" %>' />--%>
+                             <asp:LinkButton ID="lnkRedirect" runat="server" Text='<%# Eval("MenuText") %>' 
+                                 CommandArgument='<%# Eval("Command") %>' Visible='<%# (int)Eval("Avis") == 0 %>' 
+                                 CssClass='<%# Eval("Class") %>'
+                                 OnClick="lnkRedirect_Click"
+                                 />
+
+                            <%--
+                             <asp:LinkButton ID="lnkRedirect" runat="server" Text='<%# Eval("MenuText") %>' 
+                                 PostBackUrl='<%# Eval("Command") %>' Visible='<%# (int)Eval("Avis") == 0 %>' 
+                                 CssClass='<%# Eval("Class") %>'
+                                 />
+                            --%>                         
+                            <%# Eval("_magic2") %>
+
+
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:HiddenField ID="hidUserRights" runat="server" Visible="false" />
+                    <%--<asp:HiddenField ID="hidAdditionalUserRights" runat="server" Visible="false" />--%>
+                    <asp:SqlDataSource ID="dsMenu" runat="server" ConnectionString="<%$ ConnectionStrings:HRConnectionString %>"
+SelectCommand="
+with hs(root, hsid, h, s) as
+(
+     select
+       sm.ParentId
+     , sm.Id
+     , 0
+     , CAST(CAST(sm.ParentId as VARBINARY(4)) as VARBINARY(8000))
+     from SqlMenu sm
+	 where sm.Grupa = 'MAINMENU' and Aktywny = 1 and (Rights is null or dbo.CheckRightsExpr(isnull(@rights, ''), sm.Rights) = 1) --and (@arights & sm.Mode &gt; 0 or nullif(sm.Mode, 0) is null)
+     union all
+     select
+	   sm.ParentId
+     , hs.hsid
+     , hs.h + 1
+     , CAST(CAST(sm.ParentId as VARBINARY(4)) + hs.s as VARBINARY(8000))
+     from SqlMenu sm
+     inner join hs on hs.root = sm.Id
+	 where sm.Grupa = 'MAINMENU' and Aktywny = 1 and (Rights is null or dbo.CheckRightsExpr(isnull(@rights, ''), sm.Rights) = 1) --and (@arights & sm.Mode &gt; 0 or nullif(sm.Mode, 0) is null)
+)
+select
+   ROW_NUMBER() over (order by CAST(hs.s + CAST(hs.hsid as VARBINARY(4)) 
+as VARBINARY(8000))) sort
+, hs.h
+, hs.hsid
+into #aaa
+from hs
+where hs.root = 0
+order by sort
+
+declare @c int
+select @c = MAX(sort) from #aaa
+
+select distinct ParentId into #bbb from SqlMenu sm where sm.Grupa = 'MAINMENU' and Aktywny = 1
+
+select
+   case when a.h - b.h &lt; 0 then REPLICATE('&lt;/li&gt;&lt;/ul&gt;', ABS(a.h - b.h)) else '' end
+   +
+   case when a.h - b.h &lt; 1 then '&lt;/li&gt;' else '' end
+   +
+   case when a.h - b.h &gt; 0 then REPLICATE('&lt;ul class=''dropdown-menu''&gt;', a.h - b.h) else '' end
+   +
+   case when a.sort is not null then '&lt;li asd=''' + CONVERT(varchar, a.h) + ''' class=''' + case when bb.ParentId is not null then 'dropdown' else '' end + ''' &gt;' else '' end
+   +
+   case when a.h = 0 and bb.ParentId is not null then '&lt;a href=''#'' class=''dropdown-toggle' + isnull(' ' + sm.Class, '') + ''' data-toggle=''dropdown'' role=''button'' aria-haspopup=''true'' aria-expanded=''false'' &gt;' + isnull('&lt;i class=''' + sm.Image + '''&gt;&lt;/i&gt;','') + sm.MenuText + '&lt;/a&gt;' else '' end
+   
+                        
+    _magic
+,  case when a.sort = @c then REPLICATE('&lt;/li&gt;&lt;/ul&gt;', ABS(0 - a.h)) + '&lt;/li&gt;' when Par1 = 'SEP' then '&lt;/li&gt;&lt;li id=''liSep'' role=''separator'' class=''divider''&gt;' else '' end _magic2
+, sm.Command
+, sm.Class
+, isnull('&lt;i class=''' + sm.Image + '''&gt;&lt;/i&gt;','') + sm.MenuText MenuText
+, a.h Level
+, case when a.h = 0 and bb.ParentId is not null then 1 else 0 end Avis
+from #aaa a
+left join #aaa b on a.sort = b.sort + 1
+left join SqlMenu sm on sm.Id = a.hsid
+left join #bbb bb on bb.ParentId = sm.Id
+order by ISNULL(a.sort, 0xFFFF)
+
+drop table #aaa
+drop table #bbb   
+                        
+"
+
+                        >
+                        <SelectParameters>
+                            <asp:ControlParameter Name="rights" Type="String" ControlID="hidUserRights" PropertyName="Value" />
+                            <%--<asp:ControlParameter Name="arights" Type="Int32" ControlID="hidAdditionalUserRights" PropertyName="Value" />--%>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                    
+                    
+                    <%--              <li id="mnSTART" runat="server"><asp:LinkButton ID="LinkButton3" runat="server" Text="Start" CommandArgument="Start.aspx" /></li>
+
+                    <li id="mnPRACOWNICY" runat="server" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><asp:Label ID="Label2" runat="server" 
+                        Text="Pracownicy"></asp:Label></a>
+                        <ul class="dropdown-menu">
+                            <li id="opPLANPRACY" runat="server"><asp:LinkButton ID="LinkButton22" runat="server" Text="Plan pracy" CommandArgument="RCP/Harmonogram.aspx" /></li>
+                            <li id="opPLANPRACYACC" runat="server"><asp:LinkButton ID="LinkButton17" runat="server" Text="Plan pracy - Akceptacje" CommandArgument="RCP/HarmonogramAkceptacja.aspx" /></li>
+                            <li id="Li6" runat="server" role="separator" class="divider"></li>
+                            <li id="opCZASPRACYACC" runat="server"><asp:LinkButton ID="LinkButton23" runat="server" Text="Akceptacja czasu pracy" CommandArgument="RCP/AkceptacjaCzasuPracy.aspx" /></li>
+                            <li id="Li2" runat="server" role="separator" class="divider"></li>
+                            <li id="opROZLICZNADG" runat="server"><asp:LinkButton ID="LinkButton24" runat="server" Text="Rozliczanie nadgodzin" CommandArgument="RCP/RozliczanieNadgodzin.aspx" /></li>
+                            <li id="opWNIOSKINADG" runat="server"><asp:LinkButton ID="LinkButton8" runat="server" Text="Wnioski o nadgodziny" CommandArgument="RCP/WnioskiNadgodziny.aspx" /></li>
+                            <li id="Li3" runat="server" role="separator" class="divider"></li>
+                            <li id="opPRACOWNICY" runat="server" ><asp:LinkButton ID="LinkButton25" runat="server" Text="Pracownicy" CommandArgument="RCP/Pracownicy.aspx" /></li>
+                            <li id="opPRZYPISANIA" runat="server"><asp:LinkButton ID="LinkButton29" runat="server" Text="Przypisania" CommandArgument="RCP/Przypisania.aspx" /></li>
+                            <li id="opWNIOSKIURLOPOWE" runat="server" ><asp:LinkButton ID="LinkButton6" runat="server" Text="Wnioski urlopowe" CommandArgument="RCP/WnioskiUrlopowe.aspx" /></li>
+                            <li id="opZASTEPSTWA" runat="server" ><asp:LinkButton ID="LinkButton26" runat="server" Text="Zastępstwa" CommandArgument="RCP/Zastepstwa.aspx" /></li>
+                            <li id="sep1" runat="server" role="separator" class="divider"></li>
+                            <li id="opUSTAWIENIA" runat="server" ><asp:LinkButton ID="LinkButton30" runat="server" Text="Ustawienia" CommandArgument="RCP/UstawieniaForm.aspx" /></li>
+                        </ul>
+                    </li>
+
+                    <li id="mmMODULY" runat="server" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><asp:Label ID="Label4" runat="server" 
+                        Text="Moduły"></asp:Label></a>
+                        <ul class="dropdown-menu last">
+                            <li id="opPODZIALLUDZI"     runat="server" ><asp:LinkButton ID="LinkButton27" runat="server" Text="Podział Ludzi"       CommandArgument="PodzialLudziAdm.aspx" /></li>
+                            <li id="poPLANURLOPOW"      runat="server" ><asp:LinkButton ID="LinkButton1"  runat="server" Text="Plan urlopów"        CommandArgument="RCP/PlanUrlopow.aspx" /></li>
+                            <li id="opSZKOLENIABHP"     runat="server" ><asp:LinkButton ID="LinkButton28" runat="server" Text="Szkolenia BHP"       CommandArgument="SzkoleniaBHP.aspx" /></li>
+                            <li id="opBADANIA"          runat="server" ><asp:LinkButton ID="LinkButton31" runat="server" Text="Badania wstępne"     CommandArgument="Badania.aspx" /></li>
+                            <li id="opMATRYCASZKOLEN"   runat="server" ><asp:LinkButton ID="LinkButton2"  runat="server" Text="Matryca Szkoleń"     CommandArgument="app:WWW_MS" /></li>
+                            <li id="opSCORECARDS"       runat="server" ><asp:LinkButton ID="LinkButton7"  runat="server" Text="Scorecardy"          CommandArgument="app:WWW_SCORECARDS" /></li>
+                            <li id="opPORTAL"           runat="server" ><asp:LinkButton ID="LinkButton10" runat="server" Text="Portal Pracownika"   CommandArgument="app:WWW_PORTAL" /></li>
+                        </ul>
+                    </li>
+
+                    <li id="mnRAPORTY" runat="server"><asp:LinkButton ID="lnkRaporty" runat="server" Text="Raporty" CommandArgument="RCP/Raporty.aspx" /></li>
+
+                    <li id="mnADMINISTRACJA" runat="server" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><asp:Label ID="Label3" runat="server" 
+                        Text="Administracja"></asp:Label></a>
+                        <ul class="dropdown-menu last">
+                          
+                            <li id="opADMOKRESYROZL" runat="server" ><asp:LinkButton ID="LinkButton12" runat="server" Text="Okresy rozliczeniowe" CommandArgument="RCP/Adm/OkresyRozliczeniowe.aspx" /></li>
+                            <li id="Li4" runat="server" role="separator" class="divider"></li>
+                            <li id="opADMSTREFYRCP" runat="server" ><asp:LinkButton ID="LinkButton14" runat="server" Text="Strefy RCP" CommandArgument="RCP/Adm/StrefyRCP.aspx" /></li>
+                            <li id="opADMZMIANY" runat="server" ><asp:LinkButton ID="LinkButton18" runat="server" Text="Zmiany" CommandArgument="RCP/Adm/Zmiany.aspx" /></li>
+                            <li id="opADMSLOWNIKI" runat="server" ><asp:LinkButton ID="LinkButton19" runat="server" Text="Parametry i słowniki" CommandArgument="RCP/Adm/Slowniki.aspx" /></li>
+                            <li id="Li5" runat="server" role="separator" class="divider"></li>
+                            <li id="opRAPORTYADM" runat="server" ><asp:LinkButton ID="LinkButton4" runat="server" Text="Raporty" CommandArgument="AdminRaporty.aspx" /></li>
+                            <li id="opADMUSTAWIENIA" runat="server" ><asp:LinkButton ID="LinkButton13" runat="server" Text="Ustawienia" CommandArgument="RCP/Adm/Ustawienia.aspx" /></li>
+                            <li id="opADMLOG" runat="server" ><asp:LinkButton ID="LinkButton11" runat="server" Text="Podgląd zdarzeń" CommandArgument="LogForm.aspx" /></li>
+                        </ul>
+                    </li>--%>
+
+                    <li><a href="#user" id="user-opener"><i class="glyphicon glyphicon-user"></i></a>
+                        <div id="user" class="xhidden panel panel-default" style="display: none;">
+                            <div class="panel-heading">
+                                <label>Witaj:</label>
+                                <asp:Label ID="_lbUser" runat="server" Text="Niezalogowany" Visible="false"></asp:Label>
+                                <asp:LinkButton ID="lbUser" runat="server" Text="Niezalogowany" OnClick="lbUser_Click"></asp:LinkButton>
+                                <asp:LinkButton ID="btLogout" runat="server" CssClass="btLogout btLogout_margin" onclick="btLogout_Click" Text="Wyloguj" Visible="false"></asp:LinkButton>
+                            </div>
+                            <div class="panel-body">
+                                <div>
+                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+                                        <ContentTemplate>
+                                            <asp:HiddenField ID="hidLoginTyp" runat="server" Visible="false" Value="0" />
+                                            <asp:DropDownList ID="ddlLogin" runat="server" DataSourceID="SqlDataSource1" AutoPostBack="true" Visible="true" CssClass="loginas form-control"
+                                                DataTextField="Pracownik" DataValueField="Id" 
+                                                        
+                                                        
+
+                                                Style="display: inline-block; width: auto;"
+                                                        
+                                                        
+                                                        
+                                                OnSelectedIndexChanged="ddlLogin_SelectedIndexChanged"
+                                                OnDataBound="ddlLogin_DataBound">
+                                            </asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:HRConnectionString %>" CancelSelectOnNullParameter="false"
+                                                SelectCommand="
+--declare @Typ int = 0
+
+declare @kierId int
+--set @kierId = case when @Typ = -1 then 0 else null end
+set @kierId = case when @Typ = -1 then 0 else 0 end
+
+declare @Data datetime
+set @Data = GETDATE()
+-----
+select 'zmień użytkownika ...' as Pracownik, null as Id, 1 as Sort, null as SortPath, null as RolaSort
+union all
+select 'pokaż listę uprawnionych ...' as Pracownik, '0' as Id, 2 as Sort, null as SortPath, null as RolaSort from (select 1 X) X where @Typ = -1 
+union all    
+select 'pokaż podległości ...' as Pracownik, '-1' as Id, 3 as Sort, null as SortPath, null as RolaSort from (select 1 X) X where @Typ = 0 
+union all    
+select Pracownik + case when Rola != '' then ' - ' + Rola else '' end as Pracownik, 
+convert(varchar, IdPracownika) + '|' + case when Rola = '' then 'pracownik' else REPLACE(Rola, ',', ' ') end as Id,   -- css
+4 as Sort,
+case when @Typ = -1 then SortPath else null end as SortPath,
+RolaSort
+from 
+(
+select *
+,SUBSTRING(
+case when ADM	= 1 then ',ADM'     else '' end +
+case when KIER	= 1 then ',K'       else '' end +
+case when M 	= 1 then ',M'       else '' end +
+case when T 	= 1 then ',T'       else '' end +
+case when BHP	= 1 then ',BHP'     else '' end +
+case when HR	= 1 then ',HR'      else '' end
+,2,999) as Rola,
+case 
+when KIER = 1 or M = 1 or T = 1 or BHP = 1 or HR = 1 then 1
+when ADM = 1 then 2
+else 7
+end as RolaSort
+from
+(
+select 
+--REPLICATE(' ',Hlevel * -4 * @Typ) + 
+REPLICATE('&nbsp;', Hlevel * -4 * @Typ) +
+S.Nazwisko + ' ' + S.Imie + ISNULL(' (' + S.KadryId + ')','') as Pracownik,
+P.Login,
+S.IdPracownika, S.SortPath
+,dbo.GetRightId(Rights, 80) as ADM	--rMSAdmin
+,dbo.GetRightId(Rights, 81) as M	--rMSMeister
+,dbo.GetRightId(Rights, 82) as T	--rMSTrener
+,dbo.GetRightId(Rights, 93) as BHP	--rMSBHP
+,dbo.GetRightId(Rights, 94) as HR	--rMSHR
+,S.Kierownik as KIER
+from dbo.fn_GetTree2(@kierId, 1, @Data) S
+left join Pracownicy P on P.Id = S.IdPracownika
+) D1
+where @Typ = -1 or (ADM = 1 or M = 1 or T = 1 or BHP = 1 or HR = 1 or KIER = 1)
+or D1.Login is not null
+) D
+--order by Sort,SortPath,Pracownik
+order by Sort,SortPath,RolaSort,Pracownik
+                                    ">
+                                                <SelectParameters>
+                                                    <asp:ControlParameter ControlID="hidLoginTyp" Name="Typ" PropertyName="Value" Type="Int32" />
+                                                </SelectParameters>
+                                            </asp:SqlDataSource>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </div>
+                                <%--
+                                <div id="divZastInfo" runat="server" class="xzastinfo xprintoff" visible="false">
+                                    <div class="xcenter960">
+                                        <div class="xmiddle">
+                                            <span class="xt1">UWAGA!!! Jesteś w panelu zastępowanego kierownika</span>
+                                        </div>
+                                        <div class="xright">
+                                            <asp:LinkButton ID="lbtEndZastepstwo" CssClass="btn btn-sm btn-default" runat="server" OnClick="lbtEndZastepstwo_Click">Zakończ zastępstwo</asp:LinkButton>
+                                        </div>
+                                    </div>
+                                </div>
+                                --%>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderReport" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
+<%--
+<asp:Content ID="Content7" ContentPlaceHolderID="HeadFooter" runat="server">
+    <asp:ContentPlaceHolder ID="HeadFooter" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="headReport" runat="server">
+    <asp:ContentPlaceHolder ID="headReport" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="ContentPlaceHolderReport" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderReport" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content6" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+--%>
