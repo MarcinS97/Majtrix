@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Web
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRRcp", "HRRcp.csproj", "{B23BDA7E-4717-471B-943C-25DE8152BB3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRRcpMatryca.Tests", "..\HRRcpMatryca.Tests\HRRcpMatryca.Tests.csproj", "{03573FE6-E782-4EA6-A215-BDD39529D0FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B23BDA7E-4717-471B-943C-25DE8152BB3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B23BDA7E-4717-471B-943C-25DE8152BB3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B23BDA7E-4717-471B-943C-25DE8152BB3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03573FE6-E782-4EA6-A215-BDD39529D0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03573FE6-E782-4EA6-A215-BDD39529D0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03573FE6-E782-4EA6-A215-BDD39529D0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03573FE6-E782-4EA6-A215-BDD39529D0FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

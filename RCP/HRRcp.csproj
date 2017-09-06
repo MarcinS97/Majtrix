@@ -961,6 +961,9 @@
     <Compile Include="Areas\ME\Models\copyStanowiska.cs" />
     <Compile Include="Areas\ME\Models\copyStrOrg.cs" />
     <Compile Include="Areas\ME\Models\copyStrukturaPrzelozeni.cs" />
+    <Compile Include="Areas\ME\Models\CustomModels\Filtr\FiltrujPracownikow.cs" />
+    <Compile Include="Areas\ME\Models\CustomModels\Filtr\WyszukajPracownikow.cs" />
+    <Compile Include="Areas\ME\Models\CustomModels\Oceny\WartoscOceny.cs" />
     <Compile Include="Areas\ME\Models\CustomModels\ToDo\Linie.cs" />
     <Compile Include="Areas\ME\Models\CustomModels\MainMenuMatryca.cs" />
     <Compile Include="Areas\ME\Models\CustomModels\Pracownik.cs" />
@@ -969,8 +972,11 @@
     <Compile Include="Areas\ME\Models\GrOperacji.cs" />
     <Compile Include="Areas\ME\Models\GrZatr.cs" />
     <Compile Include="Areas\ME\Models\ImportData.cs" />
+    <Compile Include="Areas\ME\Models\Interfaces\IFiltrujPracownikow.cs" />
     <Compile Include="Areas\ME\Models\Interfaces\IMenuSet.cs" />
+    <Compile Include="Areas\ME\Models\Interfaces\IOcenaValue.cs" />
     <Compile Include="Areas\ME\Models\Interfaces\IToDoGet.cs" />
+    <Compile Include="Areas\ME\Models\Interfaces\IWyszukajPracownikow.cs" />
     <Compile Include="Areas\ME\Models\Kody.cs" />
     <Compile Include="Areas\ME\Models\Komp.cs" />
     <Compile Include="Areas\ME\Models\KompOdpowiedzi.cs" />

@@ -18,7 +18,7 @@ namespace HRRcp.Areas.ME.Controllers
 
             List<Pracownik> listaPracownikow = new List<Pracownik>();
             // Załadowanie pracowników
-            var pracownicy = bazaMatryca.Pracownicy.Take(8);
+            var pracownicy = bazaMatryca.Pracownicy.Take(3);
             foreach (var pracownik in pracownicy)
             {
                 listaPracownikow.Add(

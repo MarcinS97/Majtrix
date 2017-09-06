@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HRRcp.Areas.ME.Models.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +9,7 @@ namespace HRRcp.Areas.ME.Models.CustomModels
 
     public class Pracownik
     {
-
+        private IOcenaValue ocenaValue;
         public int Id_Pracownicy { get; set; }
 
         public string Nr_Ewid { get; set; }
@@ -29,8 +30,9 @@ namespace HRRcp.Areas.ME.Models.CustomModels
 
         public string Status { get; set; }
 
-        public Pracownik(int Id_Pracownicy)
+        public Pracownik(int Id_Pracownicy, IOcenaValue interfaceParam = null)
         {
+            ocenaValue = interfaceParam;
             MatrycaMVC temp = new MatrycaMVC();
 
             var pracownik = temp.Pracownicy.Find(Id_Pracownicy);
@@ -98,10 +100,10 @@ namespace HRRcp.Areas.ME.Models.CustomModels
             #region oceny
             var ocena = temp.Oceny.Where(x => x.Id_Pracownicy == pracownik.Id_Pracownicy);
             int iOcena = 0;
-            if (ocena != null)
+            if (ocena.Any())
             {
-                var tmp = ocena.Sum(x => x.Wartosc);
-                iOcena = tmp.HasValue ? (int)tmp : 0;
+                var tmp = ocenaValue.getWartoscOceny(ocena.ToArray());
+                iOcena = (int)tmp;
             }
             Ocena = iOcena;
 

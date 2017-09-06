@@ -6,6 +6,8 @@ using HRRcp.Areas.ME.Models;
 using HRRcp.Areas.ME.Models.CustomModels;
 using HRRcp.Areas.ME.Models.Interfaces;
 using System.Web.Mvc;
+using HRRcp.Areas.ME.Models.CustomModels.Oceny;
+using HRRcp.Areas.ME.Models.CustomModels.Filtr;
 
 namespace HRRcp.Areas.ME.Infrastructure
 {
@@ -32,6 +34,10 @@ namespace HRRcp.Areas.ME.Infrastructure
         private void AddBindings()
         {
             kernel.Bind<IMenuSet>().To<MainMenuMatryca>();
+            kernel.Bind<IOcenaValue>().To<WartoscOceny>();
+            kernel.Bind<IWyszukajPracownikow>().To<WyszukajPracownikow>();
+            kernel.Bind<IFiltrujPracownikow>().To<FiltrujPracownikow>();
+
         }
     }
 }
