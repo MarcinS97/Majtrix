@@ -13,7 +13,10 @@ namespace HRRcp.Areas.ME.Models.CustomModels.Filtr
         {
             string[] imie = nazwaParam.Split(' ');
             List<Pracownik> lista = (List < Pracownik > )pracownicyParam.Where(m => m.Imie.Contains(imie[0]));
-
+            if (imie[1].Any())
+            {
+                lista = (List<Pracownik>)lista.Where(m => m.Nazwisko.Contains(imie[1]));
+            }
             return lista;
 
         }

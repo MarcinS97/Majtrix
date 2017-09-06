@@ -19,7 +19,7 @@ namespace HRRcp.Areas.ME.Models.CustomModels.Filtr
             List<Pracownik> lista = (List<Pracownik>)wyszukajPracownikow.getByNazwa(pracownicy, nazwaParam);
             if(status != -10)
             {
-
+                lista = (List<Pracownik>)lista.Where(m => m.Status == status.ToString());
             }
             return lista;
         }

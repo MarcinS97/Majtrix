@@ -82,5 +82,31 @@ namespace HRRcpMatryca.Tests
 
 
         }
+
+        [TestMethod]
+        public void Sum_Oceny_From_Pracownicy_WithParams()
+        {
+
+            //przygotowanie
+            var target = new WartoscOceny();
+
+            var expected = new Dictionary<int, double>();
+            expected.Add(1, 10);
+            expected.Add(2, 18);
+            expected.Add(3, 24);
+
+
+
+            //działanie MNOŻENIE
+            var result = target.getWartoscOceny(oceny, pracownicy, 2, 2);
+
+            //wynik
+            foreach (var item in result)
+            {
+                Assert.AreEqual(expected[item.Key], item.Value);
+            }
+
+
+        }
     }
 }
