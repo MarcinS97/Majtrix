@@ -1,9 +1,0 @@
-Stworzenie modelów do filtru, 
-
-wyszukiwania pracownikow w bazie danych, 
-
-liczenia wartosci oceny
-interfejsy od filtracji, ocen, szukania,
-Nauka moq i ninject, imitacja obiektów
-test liczenia, test filtracji
-testy liczenia z parametrami
